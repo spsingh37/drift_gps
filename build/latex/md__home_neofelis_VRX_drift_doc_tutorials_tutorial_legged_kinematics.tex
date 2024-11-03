@@ -1,0 +1,113 @@
+This tutorial will guide you through adding a custom legged kinematics class to our library to enable legged kinematics correction functionality on a unique legged platform. The class allows computation of the foot-\/frame body displacement given the robot joint variables. The DRIFT library uses this definition to subsequently integrate foot contact events to compute localization of the body in the local world-\/frame. The DRIFT library comes with kinematics definitions for the MIT Mini Cheetah and the Unitree Go1 platforms. For any other legged platform, a custom class will be necessary containing the appropriate kinematic chain forward transform and Jacobian definitions.\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_legged_kinematics_autotoc_md50}{}\doxysubsection{Step 1\+: Generate Kinematics Definition Header and Source Files}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_legged_kinematics_autotoc_md50}
+Users must to generate their own kinematics files. For this, we used the \href{http://ayonga.github.io/frost-dev/}{\texttt{ Fast Robot Optimization and Simulation Toolkit (FROST) Library}}.
+
+The kinematics definition header files should be placed under an appropriately named folder under the {\ttfamily drift/include/kinematics/robots} directory, and source files should be placed under an appropriately named folder under the {\ttfamily drift/src/kinematics/robots} directory, similar to the robots/mini\+\_\+cheetah folders.\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_legged_kinematics_autotoc_md51}{}\doxysubsection{Step 2\+: Create Custom Kinematics Class Header and Source Files}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_legged_kinematics_autotoc_md51}
+Users can create a new derived Legged\+Kinematics\+Measurement class by following the format of the existing {\ttfamily drift/include/kinematics/mini\+\_\+cheetah\+\_\+kinematics.\+h} header file. Let\textquotesingle{}s take the {\ttfamily \mbox{\hyperlink{mini__cheetah__kinematics_8h}{mini\+\_\+cheetah\+\_\+kinematics.\+h}}} header file as an example. The full file looks like\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef MC\_KIN\_H}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define MC\_KIN\_H}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Jp__Body__to__FrontLeftFoot_8h}{drift/kinematics/robots/mini\_cheetah/Jp\_Body\_to\_FrontLeftFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Jp__Body__to__FrontRightFoot_8h}{drift/kinematics/robots/mini\_cheetah/Jp\_Body\_to\_FrontRightFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Jp__Body__to__HindLeftFoot_8h}{drift/kinematics/robots/mini\_cheetah/Jp\_Body\_to\_HindLeftFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Jp__Body__to__HindRightFoot_8h}{drift/kinematics/robots/mini\_cheetah/Jp\_Body\_to\_HindRightFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{p__Body__to__FrontLeftFoot_8h}{drift/kinematics/robots/mini\_cheetah/p\_Body\_to\_FrontLeftFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{p__Body__to__FrontRightFoot_8h}{drift/kinematics/robots/mini\_cheetah/p\_Body\_to\_FrontRightFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{p__Body__to__HindLeftFoot_8h}{drift/kinematics/robots/mini\_cheetah/p\_Body\_to\_HindLeftFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{p__Body__to__HindRightFoot_8h}{drift/kinematics/robots/mini\_cheetah/p\_Body\_to\_HindRightFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lie__group_8h}{drift/math/lie\_group.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{legged__kinematics_8h}{drift/measurement/legged\_kinematics.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemini__cheetah__kinematics}{mini\_cheetah\_kinematics}} \{}
+\DoxyCodeLine{\textcolor{keyword}{enum} \mbox{\hyperlink{namespacemini__cheetah__kinematics_ae614010af7e33aedc2ede8f0f3610304}{Leg}} \{ \mbox{\hyperlink{namespacemini__cheetah__kinematics_ae614010af7e33aedc2ede8f0f3610304a232b3ebd6ab53a491be5b00484048209}{FR}}, \mbox{\hyperlink{namespacemini__cheetah__kinematics_ae614010af7e33aedc2ede8f0f3610304a8de8e684231a4a79ce0e3fd3efd3a12a}{FL}}, \mbox{\hyperlink{namespacemini__cheetah__kinematics_ae614010af7e33aedc2ede8f0f3610304a3657a459d9f4500d2d64b830f7176b34}{HR}}, \mbox{\hyperlink{namespacemini__cheetah__kinematics_ae614010af7e33aedc2ede8f0f3610304adaf2f2ace10f9bdb71a22816367ca6de}{HL}} \};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemini__cheetah__kinematics}{mini\_cheetah\_kinematics}};}
+\DoxyCodeLine{\textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemath}{math}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemeasurement_1_1kinematics}{measurement::kinematics}} \{}
+\DoxyCodeLine{\textcolor{keyword}{class }MiniCheetahKinematics : \textcolor{keyword}{public} LeggedKinematicsMeasurement \{}
+\DoxyCodeLine{ \textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \mbox{\hyperlink{classmeasurement_1_1kinematics_1_1MiniCheetahKinematics_a877caa148aaba329b47dd17a1079e62b}{MiniCheetahKinematics}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \mbox{\hyperlink{classmeasurement_1_1kinematics_1_1MiniCheetahKinematics_a877caa148aaba329b47dd17a1079e62b}{MiniCheetahKinematics}}(}
+\DoxyCodeLine{      \textcolor{keyword}{const} Eigen::Matrix<double, Eigen::Dynamic, 1>\& encoders,}
+\DoxyCodeLine{      \textcolor{keyword}{const} Eigen::Matrix<double, Eigen::Dynamic, 1>\& d\_encoders,}
+\DoxyCodeLine{      \textcolor{keyword}{const} Eigen::Matrix<bool, Eigen::Dynamic, 1>\& contacts);}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} \mbox{\hyperlink{classmeasurement_1_1kinematics_1_1MiniCheetahKinematics_ad29e1d4ac26a2e9faff7dd25f083449d}{ComputeKinematics}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordtype}{int} \mbox{\hyperlink{classmeasurement_1_1kinematics_1_1MiniCheetahKinematics_a87d48de997efc17ea1f2f705044d36fe}{get\_num\_legs}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keyword}{const} Eigen::Vector3d \mbox{\hyperlink{classmeasurement_1_1kinematics_1_1MiniCheetahKinematics_a1144518e17bd302eb17fc79f4b780435}{get\_init\_velocity}}(\textcolor{keyword}{const} Eigen::Vector3d\& w) \textcolor{keyword}{override};}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\}    \textcolor{comment}{// namespace measurement::kinematics}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif    }\textcolor{comment}{// MC\_KIN\_H}}
+
+\end{DoxyCode}
+
+
+Let\textquotesingle{}s go through the code step by step.\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_legged_kinematics_autotoc_md52}{}\doxysubsubsection{2.\+1 Define guards and include necessary libraries}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_legged_kinematics_autotoc_md52}
+We need to include necessary libraries along with the header files of kinematic position transforms and Jacobian definitions\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef MC\_KIN\_H  }\textcolor{comment}{//define guards}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define MC\_KIN\_H}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Jp__Body__to__FrontLeftFoot_8h}{drift/kinematics/robots/mini\_cheetah/Jp\_Body\_to\_FrontLeftFoot.h}}"{}}  \textcolor{comment}{// Jacobian Definitions}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Jp__Body__to__FrontRightFoot_8h}{drift/kinematics/robots/mini\_cheetah/Jp\_Body\_to\_FrontRightFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Jp__Body__to__HindLeftFoot_8h}{drift/kinematics/robots/mini\_cheetah/Jp\_Body\_to\_HindLeftFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Jp__Body__to__HindRightFoot_8h}{drift/kinematics/robots/mini\_cheetah/Jp\_Body\_to\_HindRightFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{p__Body__to__FrontLeftFoot_8h}{drift/kinematics/robots/mini\_cheetah/p\_Body\_to\_FrontLeftFoot.h}}"{}}   \textcolor{comment}{// position transforms}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{p__Body__to__FrontRightFoot_8h}{drift/kinematics/robots/mini\_cheetah/p\_Body\_to\_FrontRightFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{p__Body__to__HindLeftFoot_8h}{drift/kinematics/robots/mini\_cheetah/p\_Body\_to\_HindLeftFoot.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{p__Body__to__HindRightFoot_8h}{drift/kinematics/robots/mini\_cheetah/p\_Body\_to\_HindRightFoot.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lie__group_8h}{drift/math/lie\_group.h}}"{}}                 \textcolor{comment}{// lie group header must be included}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{legged__kinematics_8h}{drift/measurement/legged\_kinematics.h}}"{}}  \textcolor{comment}{// legged kinematics inherited class header must be included}}
+
+\end{DoxyCode}
+\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_legged_kinematics_autotoc_md53}{}\doxysubsubsection{2.\+2 Namespace and leg enumerators}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_legged_kinematics_autotoc_md53}
+Create custom namespace, in this example we use the \mbox{\hyperlink{namespacemini__cheetah__kinematics}{mini\+\_\+cheetah\+\_\+kinematics}} namespace. In cases with \texorpdfstring{$>$}{>}2 legs, enumeration will make indexing matricies easier. Indexing should match the contact definitions matrix. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemini__cheetah__kinematics}{mini\_cheetah\_kinematics}} \{}
+\DoxyCodeLine{\textcolor{keyword}{enum} \mbox{\hyperlink{namespacemini__cheetah__kinematics_ae614010af7e33aedc2ede8f0f3610304}{Leg}} \{ \mbox{\hyperlink{namespacemini__cheetah__kinematics_ae614010af7e33aedc2ede8f0f3610304a232b3ebd6ab53a491be5b00484048209}{FR}}, \mbox{\hyperlink{namespacemini__cheetah__kinematics_ae614010af7e33aedc2ede8f0f3610304a8de8e684231a4a79ce0e3fd3efd3a12a}{FL}}, \mbox{\hyperlink{namespacemini__cheetah__kinematics_ae614010af7e33aedc2ede8f0f3610304a3657a459d9f4500d2d64b830f7176b34}{HR}}, \mbox{\hyperlink{namespacemini__cheetah__kinematics_ae614010af7e33aedc2ede8f0f3610304adaf2f2ace10f9bdb71a22816367ca6de}{HL}} \};  \textcolor{comment}{// leg definitions enumerated according to some intuitive scheme i.e. FR for "{}front right"{}}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemini__cheetah__kinematics}{mini\_cheetah\_kinematics}};}
+\DoxyCodeLine{\textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemath}{math}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemeasurement_1_1kinematics}{measurement::kinematics}} \{  \textcolor{comment}{// measurement::kinematics namespace will be used for the class}}
+
+\end{DoxyCode}
+\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_legged_kinematics_autotoc_md54}{}\doxysubsection{2.\+3 Class definition}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_legged_kinematics_autotoc_md54}
+Next, create the class derived from Legged\+Kinematics\+Measurement with the following constructors and member functions\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class }MiniCheetahKinematics : \textcolor{keyword}{public} LeggedKinematicsMeasurement \{}
+\DoxyCodeLine{ \textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{  MiniCheetahKinematics();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  MiniCheetahKinematics(}
+\DoxyCodeLine{      \textcolor{keyword}{const} Eigen::Matrix<double, Eigen::Dynamic, 1>\& encoders,}
+\DoxyCodeLine{      \textcolor{keyword}{const} Eigen::Matrix<double, Eigen::Dynamic, 1>\& d\_encoders,}
+\DoxyCodeLine{      \textcolor{keyword}{const} Eigen::Matrix<bool, Eigen::Dynamic, 1>\& contacts);}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} ComputeKinematics() \textcolor{keyword}{override};}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordtype}{int} get\_num\_legs() \textcolor{keyword}{override};}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keyword}{const} Eigen::Vector3d get\_init\_velocity(\textcolor{keyword}{const} Eigen::Vector3d\& w) \textcolor{keyword}{override};}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\}    \textcolor{comment}{// namespace measurement::kinematics}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif    }\textcolor{comment}{// MC\_KIN\_H define guard close}}
+
+\end{DoxyCode}
+ 

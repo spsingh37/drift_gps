@@ -1,0 +1,5 @@
+if(EXISTS "/home/neofelis/VRX/drift/build/tests/contactmeasurement_test/TEST_contactmeasurement_test[1]_tests.cmake")
+  include("/home/neofelis/VRX/drift/build/tests/contactmeasurement_test/TEST_contactmeasurement_test[1]_tests.cmake")
+else()
+  add_test(TEST_contactmeasurement_test_NOT_BUILT TEST_contactmeasurement_test_NOT_BUILT)
+endif()

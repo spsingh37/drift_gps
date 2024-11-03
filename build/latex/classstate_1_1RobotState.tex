@@ -1,0 +1,1288 @@
+\hypertarget{classstate_1_1RobotState}{}\doxysection{state\+::Robot\+State Class Reference}
+\label{classstate_1_1RobotState}\index{state::RobotState@{state::RobotState}}
+
+
+state class containing its pose and augmented states, biases, and covariances.  
+
+
+
+
+{\ttfamily \#include $<$robot\+\_\+state.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstate_1_1RobotState_a0206a6f1d4cd3efc841167b68723486e}{Robot\+State}} ()
+\begin{DoxyCompactList}\small\item\em Default \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstate_1_1RobotState_a5aee2665c4ec92d34be8d651700bbf4d}{Robot\+State}} (const Eigen\+::\+Matrix\+Xd \&X)
+\begin{DoxyCompactList}\small\item\em Construct a new Robot State object with state matrix X. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstate_1_1RobotState_aebf755dad8e2edfa01ccec9be4e2e67d}{Robot\+State}} (const Eigen\+::\+Matrix\+Xd \&X, const Eigen\+::\+Vector\+Xd \&Theta)
+\begin{DoxyCompactList}\small\item\em Construct a new Robot State object with state matrix X, and bias matrix Theta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstate_1_1RobotState_a5bfcd72135c8d0b5b9b76925fcb7d35b}{Robot\+State}} (const Eigen\+::\+Matrix\+Xd \&X, const Eigen\+::\+Vector\+Xd \&Theta, const Eigen\+::\+Matrix\+Xd \&P)
+\begin{DoxyCompactList}\small\item\em Construct a new Robot State object with state matrix X, bias matrix Theta, and covariance matrix P. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstate_1_1RobotState_a285e4fb0457b0c22b45bf474006693c2}{Robot\+State}} (\mbox{\hyperlink{classmath_1_1SEK3}{SEK3}} \&X)
+\begin{DoxyCompactList}\small\item\em Construct a new Robot State object with state matrix X. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstate_1_1RobotState_a44dbba45eb1daef7bb0fc1ea80419ebf}{Robot\+State}} (\mbox{\hyperlink{classmath_1_1SEK3}{SEK3}} \&X, const Eigen\+::\+Vector\+Xd \&Theta)
+\begin{DoxyCompactList}\small\item\em Construct a new Robot State object with state matrix X, and bias matrix Theta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classstate_1_1RobotState_a37dde0f9e5eea29a9b655825898f6d02}{Robot\+State}} (\mbox{\hyperlink{classmath_1_1SEK3}{SEK3}} \&X, const Eigen\+::\+Vector\+Xd \&Theta, const Eigen\+::\+Matrix\+Xd \&P)
+\begin{DoxyCompactList}\small\item\em Construct a new Robot State object with state matrix X, bias matrix Theta and covariance matrix P. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getters}\par
+\begin{DoxyCompactItemize}
+\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classstate_1_1RobotState_af6983198cce693993630bea0e5cf3b15}{get\+\_\+X}} () const
+\begin{DoxyCompactList}\small\item\em Get state matrix X. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classstate_1_1RobotState_a3939d42fc7c123612df128e7c64f0c96}{get\+\_\+theta}} () const
+\begin{DoxyCompactList}\small\item\em Get the bias matrix Theta. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classstate_1_1RobotState_a1fc657d6ab5f88893d9cee29e2c2194c}{get\+\_\+P}} () const
+\begin{DoxyCompactList}\small\item\em Get the covariance matrix P. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix3d \mbox{\hyperlink{classstate_1_1RobotState_a8163046fef8df7c02792ef4b008b3ed7}{get\+\_\+rotation}} () const
+\begin{DoxyCompactList}\small\item\em Get the Rotation matrix R. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_a42a9428f9610f675d0a9be678d9d88e5}{get\+\_\+velocity}} () const
+\begin{DoxyCompactList}\small\item\em Get the Velocity matrix V. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_aac2fdcb30b6cade4ec2cd75588668bef}{get\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Get the Position matrix p. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_a2577df4eff426f6fec67c671f6321070}{get\+\_\+gyroscope\+\_\+bias}} () const
+\begin{DoxyCompactList}\small\item\em Get the gyroscope bias vector b. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_ab9a4e042567075fc1d5a94ef73fe163e}{get\+\_\+vector}} (int index) const
+\begin{DoxyCompactList}\small\item\em Get the a 3 by 1 vector from the state. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_a581ac54f50cf864e4a6d0d10b34d673f}{get\+\_\+accelerometer\+\_\+bias}} () const
+\begin{DoxyCompactList}\small\item\em Get the accelerometer bias matrix b. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix3d \mbox{\hyperlink{classstate_1_1RobotState_ab33d35d483ba4a423a17bbfca84a4a18}{get\+\_\+rotation\+\_\+covariance}} () const
+\begin{DoxyCompactList}\small\item\em Get the rotation covariance matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix3d \mbox{\hyperlink{classstate_1_1RobotState_af56effddededeb00a62b59a135225466}{get\+\_\+velocity\+\_\+covariance}} () const
+\begin{DoxyCompactList}\small\item\em Get the velocity covariance matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix3d \mbox{\hyperlink{classstate_1_1RobotState_a46b2e9cc8aaf5a481f575e51d0d286f5}{get\+\_\+position\+\_\+covariance}} () const
+\begin{DoxyCompactList}\small\item\em Get the position covariance matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix3d \mbox{\hyperlink{classstate_1_1RobotState_ac3d8637278f324242a8ab01501879c62}{get\+\_\+gyroscope\+\_\+bias\+\_\+covariance}} () const
+\begin{DoxyCompactList}\small\item\em Get the gyroscope bias covariance matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix3d \mbox{\hyperlink{classstate_1_1RobotState_a9ae1e4342c7704c66f85fd587dcfe0ae}{get\+\_\+accelerometer\+\_\+bias\+\_\+covariance}} () const
+\begin{DoxyCompactList}\small\item\em Get the accelerometer bias covariance matrix. \end{DoxyCompactList}\item 
+const double \mbox{\hyperlink{classstate_1_1RobotState_a6c64d24b069d3911de21d8c3bc810d8f}{get\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em Get timestamp of the latest modified state. \end{DoxyCompactList}\item 
+const double \mbox{\hyperlink{classstate_1_1RobotState_a0a516fd62d5cc6189879f6fdc537719e}{get\+\_\+propagate\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em Get timestamp of the state propagation. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_ab3d96e4b9a7eb15780d43e8255dc0c77}{get\+\_\+aug\+\_\+state}} (int matrix\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Get the augmented state vector giving matrix\+\_\+idx in the state. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classstate_1_1RobotState_a15a92def98127a06bb856aa5143e83db}{dimX}} () const
+\begin{DoxyCompactList}\small\item\em get the dimension of the state matrix X. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classstate_1_1RobotState_a4fb3e1d5a0c1cc8bc5bce41ed1dab4a0}{dim\+Theta}} () const
+\begin{DoxyCompactList}\small\item\em get the dimension of the augmented state matrix, X. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classstate_1_1RobotState_a4175ac383b32ac48c9243040c78fd926}{dimP}} () const
+\begin{DoxyCompactList}\small\item\em get the dimension of the covariance matrix, P. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classstate_1_1RobotState_a35061ddd086d12d3a54ef0a0bd028276}{dim\+Qc}} () const
+\begin{DoxyCompactList}\small\item\em get the dimension of the continuous noise covariance, Qc. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{robot__state_8h_a1615968a92950438f6e67a28e9d56e5c}{State\+Type}} \mbox{\hyperlink{classstate_1_1RobotState_a1fc7dcb0ab3edaae94a88487ed5a105d}{get\+\_\+state\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em get the the state type from\+: \{World\+Centric, Body\+Centric\} \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classstate_1_1RobotState_af4f9c12166438de73fae171b40d8198e}{get\+\_\+world\+\_\+X}} () const
+\begin{DoxyCompactList}\small\item\em Get the World\+Centric state matrix X. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix3d \mbox{\hyperlink{classstate_1_1RobotState_ac4765d9478ee169d3ddd3c99f0cfa24c}{get\+\_\+world\+\_\+rotation}} () const
+\begin{DoxyCompactList}\small\item\em Get the World\+Centric Rotation matrix R. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_a61dcab0806e303b27e182fda5bc4c7ee}{get\+\_\+world\+\_\+velocity}} () const
+\begin{DoxyCompactList}\small\item\em Get the World\+Centric Velocity vector v. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_af8445918a37e2f53e20685e082b5ec0d}{get\+\_\+world\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Get the World\+Centric Position vector p. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classstate_1_1RobotState_af991bf33fc3f7dc6f2d2eb55dee2149c}{get\+\_\+body\+\_\+X}} () const
+\begin{DoxyCompactList}\small\item\em Get the Body\+Centric state matrix X. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix3d \mbox{\hyperlink{classstate_1_1RobotState_ae09d556da855dda0d3006359738ec978}{get\+\_\+body\+\_\+rotation}} () const
+\begin{DoxyCompactList}\small\item\em Get the Body\+Centric Rotation matrix R. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_aadc8cf19e3f1b2b0bf5ce8853ea1ca15}{get\+\_\+body\+\_\+velocity}} () const
+\begin{DoxyCompactList}\small\item\em Get the Body\+Centric Velocity vector v. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_a49ea575bfa9d777849709fa5e8f08d41}{get\+\_\+body\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Get the Body\+Centric Position vector p. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classstate_1_1RobotState_aae9b607022a4f90bc644b3ca43fd2e9e}{get\+\_\+continuous\+\_\+noise\+\_\+covariance}} () const
+\begin{DoxyCompactList}\small\item\em Get the continuous noise covariance matrix. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_a7c52e5cef2a820ee05f6855e65a4ba33}{get\+\_\+aug\+\_\+bias}} (int matrix\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Get the Gyroscope Bias vector b\+\_\+aug according to matrix\+\_\+idx. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix3d \mbox{\hyperlink{classstate_1_1RobotState_af73f66536f59091fa8d18b2cac2df6de}{get\+\_\+aug\+\_\+cov}} (int matrix\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Get the aug cov matrix according to matrix column idx (matrix\+\_\+idx). \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classstate_1_1RobotState_a91ab751ec2451a3f54c0823c18889f1a}{get\+\_\+\+Xinv}} () const
+\begin{DoxyCompactList}\small\item\em compute the inverse of the state matrix X\+\_\+. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classstate_1_1RobotState_ace5376fa2ac6cd75332c8101519299a4}{get\+\_\+body\+\_\+angular\+\_\+velocity}} () const
+\begin{DoxyCompactList}\small\item\em Get the Body\+Centric Angular Velocity vector w. \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{classstate_1_1RobotState_a63c4562f3e5576bd3c9bba49304bd0f3}{get\+\_\+enable\+\_\+imu\+\_\+bias\+\_\+update}} () const
+\begin{DoxyCompactList}\small\item\em Get the boolean value enable\+\_\+imu\+\_\+bias\+\_\+update\+\_\+. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classstate_1_1RobotState_a935d070f77db7625dbf74f6e852ca799}{get\+\_\+slip\+\_\+flag}} () const
+\begin{DoxyCompactList}\small\item\em Get the slip flag object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Setters}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a8ab334e11db85c6f53df9222486c487e}{set\+\_\+body\+\_\+angular\+\_\+velocity}} (const Eigen\+::\+Vector3d \&w)
+\begin{DoxyCompactList}\small\item\em Set the Body\+Centric Angular Velocity vector w. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstate_1_1RobotState_a16b2a4292dedebe343cfa39a94e83ba1}{add\+\_\+aug\+\_\+state}} (const Eigen\+::\+Vector3d \&aug, const Eigen\+::\+Matrix\+Xd \&P\+\_\+aug, const Eigen\+::\+Matrix3d \&noise\+\_\+cov, std\+::shared\+\_\+ptr$<$ int $>$ col\+\_\+id\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Add the augmented state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_aff32c23c8f900a833a53cb10245342be}{set\+\_\+aug\+\_\+state}} (int matrix\+\_\+idx, const Eigen\+::\+Vector3d \&aug)
+\begin{DoxyCompactList}\small\item\em Set the augmented to the certain position (matrix\+\_\+idx-\/th) in the state vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a56d082404dd782c549261a8fb714d4f2}{del\+\_\+aug\+\_\+state}} (int matrix\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Delete certain augmented state (matrix\+\_\+idx-\/th) from the state matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a6923b852d8f5c63decee27c87b0a2993}{del\+\_\+aug\+\_\+noise\+\_\+cov}} (int matrix\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Delete certain augmented state (matrix\+\_\+idx-\/th) from the augmented noise covariance matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a0a6d9652eba9dc0de5fd04632932f9b1}{set\+\_\+X}} (const Eigen\+::\+Matrix\+Xd \&X)
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} whole matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a0266a3a17cb718c8d2b5a253d6383518}{set\+\_\+P}} (const Eigen\+::\+Matrix\+Xd \&P)
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} Bias matrix P. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a4bf7c692706eadba97154d4d68efa399}{set\+\_\+theta}} (const Eigen\+::\+Vector\+Xd \&Theta)
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} covariance matrix Theta. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a6b0f7584996341e4a82df7ac12513f11}{set\+\_\+rotation}} (const Eigen\+::\+Matrix3d \&R)
+\begin{DoxyCompactList}\small\item\em Set the Rotation matrix R in \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a8c5d0823e249d84d9bac5b91a986d581}{set\+\_\+velocity}} (const Eigen\+::\+Vector3d \&v)
+\begin{DoxyCompactList}\small\item\em Set the Velocity vector v in Robo\+State. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a2a933c2657b2acdd46e84378a198c920}{set\+\_\+position}} (const Eigen\+::\+Vector3d \&p)
+\begin{DoxyCompactList}\small\item\em Set the Position vector p in Robo\+State. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_ab1efc1f7d7e9877c282363b4b9b1c00c}{set\+\_\+gyroscope\+\_\+bias}} (const Eigen\+::\+Vector3d \&bg)
+\begin{DoxyCompactList}\small\item\em Set the Gyroscope Bias to bias matrix P. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a99ac74ef36b718015470bd446e82c195}{set\+\_\+accelerometer\+\_\+bias}} (const Eigen\+::\+Vector3d \&ba)
+\begin{DoxyCompactList}\small\item\em Set the Accelerometer Bias to bias matrix P. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a9a57275d2f0055b0ddb751b495a71e19}{set\+\_\+time}} (const double t)
+\begin{DoxyCompactList}\small\item\em Set timestamp to the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a66f8a79287aaa3149eaf895e9247b9d3}{set\+\_\+propagate\+\_\+time}} (const double t)
+\begin{DoxyCompactList}\small\item\em Set timestamp of the state propagation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_aa80a9d1e4d3136ded9d479421cfc19da}{add\+\_\+aug\+\_\+bias}} (const Eigen\+::\+Vector3d \&baug)
+\begin{DoxyCompactList}\small\item\em add the Gyroscope Bias vector baug to the end of the mapping. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_ae406fa582af925b154284912539d0c36}{del\+\_\+aug\+\_\+bias}} (int matrix\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em delete the Gyroscope Bias vector baug according to matrix\+\_\+idx. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_ac146d2f41285d3248eb5988fa4021ce3}{set\+\_\+rotation\+\_\+covariance}} (const Eigen\+::\+Matrix3d \&cov)
+\begin{DoxyCompactList}\small\item\em Set the Rotation Covariance cov to private member P\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a29f100330f8a33d11fdd06caacdaab0f}{set\+\_\+velocity\+\_\+covariance}} (const Eigen\+::\+Matrix3d \&cov)
+\begin{DoxyCompactList}\small\item\em Set the Velocity Covariance cov to private member P\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a0f98a00b2702d9268a98970b085da896}{set\+\_\+position\+\_\+covariance}} (const Eigen\+::\+Matrix3d \&cov)
+\begin{DoxyCompactList}\small\item\em Set the Position Covariance cov to private member P\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_ab22794b3f0218340f035c4fa3f2cbe41}{set\+\_\+gyroscope\+\_\+bias\+\_\+covariance}} (const Eigen\+::\+Matrix3d \&cov)
+\begin{DoxyCompactList}\small\item\em Set the Gyroscope Bias Covariance cov to private member P\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a5cc40219531604a926de4b1189305621}{set\+\_\+accelerometer\+\_\+bias\+\_\+covariance}} (const Eigen\+::\+Matrix3d \&cov)
+\begin{DoxyCompactList}\small\item\em Set the Accelerometer Bias Covariance cov to private member P\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_aebd9ce2b495529d311d967a38ce83569}{set\+\_\+continuous\+\_\+noise\+\_\+covariance}} (const Eigen\+::\+Matrix\+Xd \&cov)
+\begin{DoxyCompactList}\small\item\em Set the Continuous Noise Covariance cov to private member Qc\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a0b90f09404a4694c866d55dab39a48ef}{add\+\_\+aug\+\_\+cov}} (const Eigen\+::\+Matrix3d \&cov)
+\begin{DoxyCompactList}\small\item\em augment state covariance \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a00d66efd8a576acbccbcbb4a83519c0f}{del\+\_\+aug\+\_\+cov}} (int matrix\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em delete the aug cov matrix according to given matrix\+\_\+idx \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a05f99d75f8da5c6b9d70f68519a0ee2b}{set\+\_\+enable\+\_\+imu\+\_\+bias\+\_\+update}} (bool enable\+\_\+imu\+\_\+bias\+\_\+update\+\_\+)
+\begin{DoxyCompactList}\small\item\em set enable bias update boolean variable \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a17304c342fc275a3bbda15ee34697207}{set\+\_\+slip\+\_\+flag}} (int slip\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em set slip flag to given status \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_aa171723e67bd63ea6411ebaa18348b25}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the state matrix X\+\_\+, covariance matrices P\+\_\+, Qc\+\_\+ etc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Utility functions}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_a8917493f2e15fff6e9aa38d676d797e1}{copy\+\_\+diag\+\_\+X}} (int n, Eigen\+::\+Matrix\+Xd \&BigX) const
+\begin{DoxyCompactList}\small\item\em copy X\+\_\+ n times to right-\/lower side of the larger matrix BigX. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classstate_1_1RobotState_add018621d9f4fbb450f64a18bd1bcc6c}{copy\+\_\+diag\+\_\+\+Xinv}} (int n, Eigen\+::\+Matrix\+Xd \&Big\+Xinv) const
+\begin{DoxyCompactList}\small\item\em copy inverse of X\+\_\+ to right-\/lower side of the larger matrix BigX. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Friends}
+\begin{Indent}\textbf{ Overloaded operators}\par
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classstate_1_1RobotState_aaab7d99cf91cb5bbcb3e1bb089cfbc16}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&s)
+\begin{DoxyCompactList}\small\item\em Overloaded operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for printing the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+state class containing its pose and augmented states, biases, and covariances. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstate_1_1RobotState_a0206a6f1d4cd3efc841167b68723486e}\label{classstate_1_1RobotState_a0206a6f1d4cd3efc841167b68723486e}} 
+\index{state::RobotState@{state::RobotState}!RobotState@{RobotState}}
+\index{RobotState@{RobotState}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{RobotState()}{RobotState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily state\+::\+Robot\+State\+::\+Robot\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} constructor. 
+
+\mbox{\Hypertarget{classstate_1_1RobotState_a5aee2665c4ec92d34be8d651700bbf4d}\label{classstate_1_1RobotState_a5aee2665c4ec92d34be8d651700bbf4d}} 
+\index{state::RobotState@{state::RobotState}!RobotState@{RobotState}}
+\index{RobotState@{RobotState}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{RobotState()}{RobotState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily state\+::\+Robot\+State\+::\+Robot\+State (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{X }\end{DoxyParamCaption})}
+
+
+
+Construct a new Robot State object with state matrix X. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em X} & matrix of SE or SEk group represents for robot state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_aebf755dad8e2edfa01ccec9be4e2e67d}\label{classstate_1_1RobotState_aebf755dad8e2edfa01ccec9be4e2e67d}} 
+\index{state::RobotState@{state::RobotState}!RobotState@{RobotState}}
+\index{RobotState@{RobotState}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{RobotState()}{RobotState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily state\+::\+Robot\+State\+::\+Robot\+State (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{X,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{Theta }\end{DoxyParamCaption})}
+
+
+
+Construct a new Robot State object with state matrix X, and bias matrix Theta. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em X} & matrix of SE or SEk group represents for robot state. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Theta} & matrix of bias respect to X. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a5bfcd72135c8d0b5b9b76925fcb7d35b}\label{classstate_1_1RobotState_a5bfcd72135c8d0b5b9b76925fcb7d35b}} 
+\index{state::RobotState@{state::RobotState}!RobotState@{RobotState}}
+\index{RobotState@{RobotState}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{RobotState()}{RobotState()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily state\+::\+Robot\+State\+::\+Robot\+State (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{X,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{Theta,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{P }\end{DoxyParamCaption})}
+
+
+
+Construct a new Robot State object with state matrix X, bias matrix Theta, and covariance matrix P. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em X} & matrix of SE or SEk group represents for robot state. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Theta} & matrix of bias respect to X. \\
+\hline
+\mbox{\texttt{ in}}  & {\em P} & matrix of covariance respect to X. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a285e4fb0457b0c22b45bf474006693c2}\label{classstate_1_1RobotState_a285e4fb0457b0c22b45bf474006693c2}} 
+\index{state::RobotState@{state::RobotState}!RobotState@{RobotState}}
+\index{RobotState@{RobotState}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{RobotState()}{RobotState()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily state\+::\+Robot\+State\+::\+Robot\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmath_1_1SEK3}{SEK3}} \&}]{X }\end{DoxyParamCaption})}
+
+
+
+Construct a new Robot State object with state matrix X. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em X} & instance of SEK3 class. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a44dbba45eb1daef7bb0fc1ea80419ebf}\label{classstate_1_1RobotState_a44dbba45eb1daef7bb0fc1ea80419ebf}} 
+\index{state::RobotState@{state::RobotState}!RobotState@{RobotState}}
+\index{RobotState@{RobotState}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{RobotState()}{RobotState()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily state\+::\+Robot\+State\+::\+Robot\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmath_1_1SEK3}{SEK3}} \&}]{X,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{Theta }\end{DoxyParamCaption})}
+
+
+
+Construct a new Robot State object with state matrix X, and bias matrix Theta. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em X} & instance of SEK3 class. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Theta} & matrix of bias respect to X. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a37dde0f9e5eea29a9b655825898f6d02}\label{classstate_1_1RobotState_a37dde0f9e5eea29a9b655825898f6d02}} 
+\index{state::RobotState@{state::RobotState}!RobotState@{RobotState}}
+\index{RobotState@{RobotState}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{RobotState()}{RobotState()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily state\+::\+Robot\+State\+::\+Robot\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmath_1_1SEK3}{SEK3}} \&}]{X,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{Theta,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{P }\end{DoxyParamCaption})}
+
+
+
+Construct a new Robot State object with state matrix X, bias matrix Theta and covariance matrix P. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em X} & instance of SEK3 class. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Theta} & matrix of bias respect to X. \\
+\hline
+\mbox{\texttt{ in}}  & {\em P} & matrix of covariance respect to X. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstate_1_1RobotState_aa80a9d1e4d3136ded9d479421cfc19da}\label{classstate_1_1RobotState_aa80a9d1e4d3136ded9d479421cfc19da}} 
+\index{state::RobotState@{state::RobotState}!add\_aug\_bias@{add\_aug\_bias}}
+\index{add\_aug\_bias@{add\_aug\_bias}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{add\_aug\_bias()}{add\_aug\_bias()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::add\+\_\+aug\+\_\+bias (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{baug }\end{DoxyParamCaption})}
+
+
+
+add the Gyroscope Bias vector baug to the end of the mapping. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em baug} & 3x1 gyroscope bias vector baug. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d\+: gyroscope bias vector bg. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a0b90f09404a4694c866d55dab39a48ef}\label{classstate_1_1RobotState_a0b90f09404a4694c866d55dab39a48ef}} 
+\index{state::RobotState@{state::RobotState}!add\_aug\_cov@{add\_aug\_cov}}
+\index{add\_aug\_cov@{add\_aug\_cov}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{add\_aug\_cov()}{add\_aug\_cov()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::add\+\_\+aug\+\_\+cov (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{cov }\end{DoxyParamCaption})}
+
+
+
+augment state covariance 
+
+add augmented covariance matrix to the end of the mapping.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cov} & augmented covariance matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a16b2a4292dedebe343cfa39a94e83ba1}\label{classstate_1_1RobotState_a16b2a4292dedebe343cfa39a94e83ba1}} 
+\index{state::RobotState@{state::RobotState}!add\_aug\_state@{add\_aug\_state}}
+\index{add\_aug\_state@{add\_aug\_state}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{add\_aug\_state()}{add\_aug\_state()}}
+{\footnotesize\ttfamily int state\+::\+Robot\+State\+::add\+\_\+aug\+\_\+state (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{aug,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{P\+\_\+aug,  }\item[{const Eigen\+::\+Matrix3d \&}]{noise\+\_\+cov,  }\item[{std\+::shared\+\_\+ptr$<$ int $>$}]{col\+\_\+id\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Add the augmented state. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em aug} & Augmented state to be added to the index mapping. \\
+\hline
+\mbox{\texttt{ in}}  & {\em P\+\_\+aug} & Covariance of the state that is augmented. \\
+\hline
+\mbox{\texttt{ in}}  & {\em noise\+\_\+cov} & Covariance of noise. \\
+\hline
+\mbox{\texttt{ in}}  & {\em col\+\_\+id\+\_\+ptr} & the column id passed by correction mapping. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_aa171723e67bd63ea6411ebaa18348b25}\label{classstate_1_1RobotState_aa171723e67bd63ea6411ebaa18348b25}} 
+\index{state::RobotState@{state::RobotState}!clear@{clear}}
+\index{clear@{clear}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear the state matrix X\+\_\+, covariance matrices P\+\_\+, Qc\+\_\+ etc. 
+
+\mbox{\Hypertarget{classstate_1_1RobotState_a8917493f2e15fff6e9aa38d676d797e1}\label{classstate_1_1RobotState_a8917493f2e15fff6e9aa38d676d797e1}} 
+\index{state::RobotState@{state::RobotState}!copy\_diag\_X@{copy\_diag\_X}}
+\index{copy\_diag\_X@{copy\_diag\_X}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{copy\_diag\_X()}{copy\_diag\_X()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::copy\+\_\+diag\+\_\+X (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{BigX }\end{DoxyParamCaption}) const}
+
+
+
+copy X\+\_\+ n times to right-\/lower side of the larger matrix BigX. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & number of copies of X\+\_\+. \\
+\hline
+\mbox{\texttt{ in}}  & {\em BigX} & larger matrix of states. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_add018621d9f4fbb450f64a18bd1bcc6c}\label{classstate_1_1RobotState_add018621d9f4fbb450f64a18bd1bcc6c}} 
+\index{state::RobotState@{state::RobotState}!copy\_diag\_Xinv@{copy\_diag\_Xinv}}
+\index{copy\_diag\_Xinv@{copy\_diag\_Xinv}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{copy\_diag\_Xinv()}{copy\_diag\_Xinv()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::copy\+\_\+diag\+\_\+\+Xinv (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{Big\+Xinv }\end{DoxyParamCaption}) const}
+
+
+
+copy inverse of X\+\_\+ to right-\/lower side of the larger matrix BigX. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & number of copies of X\+\_\+. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Big\+Xinv} & larger matrix of inverse of states. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_ae406fa582af925b154284912539d0c36}\label{classstate_1_1RobotState_ae406fa582af925b154284912539d0c36}} 
+\index{state::RobotState@{state::RobotState}!del\_aug\_bias@{del\_aug\_bias}}
+\index{del\_aug\_bias@{del\_aug\_bias}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{del\_aug\_bias()}{del\_aug\_bias()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::del\+\_\+aug\+\_\+bias (\begin{DoxyParamCaption}\item[{int}]{matrix\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+delete the Gyroscope Bias vector baug according to matrix\+\_\+idx. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix\+\_\+idx} & the idx in the state matrix where the aug state is located \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a00d66efd8a576acbccbcbb4a83519c0f}\label{classstate_1_1RobotState_a00d66efd8a576acbccbcbb4a83519c0f}} 
+\index{state::RobotState@{state::RobotState}!del\_aug\_cov@{del\_aug\_cov}}
+\index{del\_aug\_cov@{del\_aug\_cov}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{del\_aug\_cov()}{del\_aug\_cov()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::del\+\_\+aug\+\_\+cov (\begin{DoxyParamCaption}\item[{int}]{matrix\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+delete the aug cov matrix according to given matrix\+\_\+idx 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix\+\_\+idx} & the idx in the state matrix where the aug state is located \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a6923b852d8f5c63decee27c87b0a2993}\label{classstate_1_1RobotState_a6923b852d8f5c63decee27c87b0a2993}} 
+\index{state::RobotState@{state::RobotState}!del\_aug\_noise\_cov@{del\_aug\_noise\_cov}}
+\index{del\_aug\_noise\_cov@{del\_aug\_noise\_cov}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{del\_aug\_noise\_cov()}{del\_aug\_noise\_cov()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::del\+\_\+aug\+\_\+noise\+\_\+cov (\begin{DoxyParamCaption}\item[{int}]{matrix\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Delete certain augmented state (matrix\+\_\+idx-\/th) from the augmented noise covariance matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix\+\_\+idx} & index of the augmented state in the state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a56d082404dd782c549261a8fb714d4f2}\label{classstate_1_1RobotState_a56d082404dd782c549261a8fb714d4f2}} 
+\index{state::RobotState@{state::RobotState}!del\_aug\_state@{del\_aug\_state}}
+\index{del\_aug\_state@{del\_aug\_state}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{del\_aug\_state()}{del\_aug\_state()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::del\+\_\+aug\+\_\+state (\begin{DoxyParamCaption}\item[{int}]{matrix\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Delete certain augmented state (matrix\+\_\+idx-\/th) from the state matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix\+\_\+idx} & index of the augmented state in the state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a4175ac383b32ac48c9243040c78fd926}\label{classstate_1_1RobotState_a4175ac383b32ac48c9243040c78fd926}} 
+\index{state::RobotState@{state::RobotState}!dimP@{dimP}}
+\index{dimP@{dimP}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{dimP()}{dimP()}}
+{\footnotesize\ttfamily const int state\+::\+Robot\+State\+::dimP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get the dimension of the covariance matrix, P. 
+
+\begin{DoxyReturn}{Returns}
+const int\+: dimension of the augmented covariance matrix P. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a35061ddd086d12d3a54ef0a0bd028276}\label{classstate_1_1RobotState_a35061ddd086d12d3a54ef0a0bd028276}} 
+\index{state::RobotState@{state::RobotState}!dimQc@{dimQc}}
+\index{dimQc@{dimQc}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{dimQc()}{dimQc()}}
+{\footnotesize\ttfamily const int state\+::\+Robot\+State\+::dim\+Qc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get the dimension of the continuous noise covariance, Qc. 
+
+\begin{DoxyReturn}{Returns}
+const int\+: dimension of the continuous noise covariance, Qc. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a4fb3e1d5a0c1cc8bc5bce41ed1dab4a0}\label{classstate_1_1RobotState_a4fb3e1d5a0c1cc8bc5bce41ed1dab4a0}} 
+\index{state::RobotState@{state::RobotState}!dimTheta@{dimTheta}}
+\index{dimTheta@{dimTheta}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{dimTheta()}{dimTheta()}}
+{\footnotesize\ttfamily const int state\+::\+Robot\+State\+::dim\+Theta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get the dimension of the augmented state matrix, X. 
+
+\begin{DoxyReturn}{Returns}
+const int\+: dimension of the augmented state matrix X. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a15a92def98127a06bb856aa5143e83db}\label{classstate_1_1RobotState_a15a92def98127a06bb856aa5143e83db}} 
+\index{state::RobotState@{state::RobotState}!dimX@{dimX}}
+\index{dimX@{dimX}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{dimX()}{dimX()}}
+{\footnotesize\ttfamily const int state\+::\+Robot\+State\+::dimX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get the dimension of the state matrix X. 
+
+\begin{DoxyReturn}{Returns}
+const int\+: dimension of the state matrix X. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a581ac54f50cf864e4a6d0d10b34d673f}\label{classstate_1_1RobotState_a581ac54f50cf864e4a6d0d10b34d673f}} 
+\index{state::RobotState@{state::RobotState}!get\_accelerometer\_bias@{get\_accelerometer\_bias}}
+\index{get\_accelerometer\_bias@{get\_accelerometer\_bias}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_accelerometer\_bias()}{get\_accelerometer\_bias()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+accelerometer\+\_\+bias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the accelerometer bias matrix b. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d b\+: represents for accelerometer bias matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a9ae1e4342c7704c66f85fd587dcfe0ae}\label{classstate_1_1RobotState_a9ae1e4342c7704c66f85fd587dcfe0ae}} 
+\index{state::RobotState@{state::RobotState}!get\_accelerometer\_bias\_covariance@{get\_accelerometer\_bias\_covariance}}
+\index{get\_accelerometer\_bias\_covariance@{get\_accelerometer\_bias\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_accelerometer\_bias\_covariance()}{get\_accelerometer\_bias\_covariance()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix3d state\+::\+Robot\+State\+::get\+\_\+accelerometer\+\_\+bias\+\_\+covariance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the accelerometer bias covariance matrix. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix3d\+: represents for accelerometer bias covariance matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a7c52e5cef2a820ee05f6855e65a4ba33}\label{classstate_1_1RobotState_a7c52e5cef2a820ee05f6855e65a4ba33}} 
+\index{state::RobotState@{state::RobotState}!get\_aug\_bias@{get\_aug\_bias}}
+\index{get\_aug\_bias@{get\_aug\_bias}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_aug\_bias()}{get\_aug\_bias()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+aug\+\_\+bias (\begin{DoxyParamCaption}\item[{int}]{matrix\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Get the Gyroscope Bias vector b\+\_\+aug according to matrix\+\_\+idx. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix\+\_\+idx} & the idx in the state matrix where the aug state is located \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d\+: gyroscope bias vector baug. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_af73f66536f59091fa8d18b2cac2df6de}\label{classstate_1_1RobotState_af73f66536f59091fa8d18b2cac2df6de}} 
+\index{state::RobotState@{state::RobotState}!get\_aug\_cov@{get\_aug\_cov}}
+\index{get\_aug\_cov@{get\_aug\_cov}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_aug\_cov()}{get\_aug\_cov()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix3d state\+::\+Robot\+State\+::get\+\_\+aug\+\_\+cov (\begin{DoxyParamCaption}\item[{int}]{matrix\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Get the aug cov matrix according to matrix column idx (matrix\+\_\+idx). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix\+\_\+idx} & the idx in the state matrix where the aug state is located \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix3d\+: augmented covariance matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_ab3d96e4b9a7eb15780d43e8255dc0c77}\label{classstate_1_1RobotState_ab3d96e4b9a7eb15780d43e8255dc0c77}} 
+\index{state::RobotState@{state::RobotState}!get\_aug\_state@{get\_aug\_state}}
+\index{get\_aug\_state@{get\_aug\_state}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_aug\_state()}{get\_aug\_state()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+aug\+\_\+state (\begin{DoxyParamCaption}\item[{int}]{matrix\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Get the augmented state vector giving matrix\+\_\+idx in the state. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix\+\_\+idx} & index of the augmented state in the state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_ace5376fa2ac6cd75332c8101519299a4}\label{classstate_1_1RobotState_ace5376fa2ac6cd75332c8101519299a4}} 
+\index{state::RobotState@{state::RobotState}!get\_body\_angular\_velocity@{get\_body\_angular\_velocity}}
+\index{get\_body\_angular\_velocity@{get\_body\_angular\_velocity}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_body\_angular\_velocity()}{get\_body\_angular\_velocity()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+body\+\_\+angular\+\_\+velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Body\+Centric Angular Velocity vector w. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d\+: angular velocity vector w in the body frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a49ea575bfa9d777849709fa5e8f08d41}\label{classstate_1_1RobotState_a49ea575bfa9d777849709fa5e8f08d41}} 
+\index{state::RobotState@{state::RobotState}!get\_body\_position@{get\_body\_position}}
+\index{get\_body\_position@{get\_body\_position}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_body\_position()}{get\_body\_position()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+body\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Body\+Centric Position vector p. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d\+: position vector p in the body frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_ae09d556da855dda0d3006359738ec978}\label{classstate_1_1RobotState_ae09d556da855dda0d3006359738ec978}} 
+\index{state::RobotState@{state::RobotState}!get\_body\_rotation@{get\_body\_rotation}}
+\index{get\_body\_rotation@{get\_body\_rotation}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_body\_rotation()}{get\_body\_rotation()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix3d state\+::\+Robot\+State\+::get\+\_\+body\+\_\+rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Body\+Centric Rotation matrix R. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix3d\+: state matrix R in the body frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_aadc8cf19e3f1b2b0bf5ce8853ea1ca15}\label{classstate_1_1RobotState_aadc8cf19e3f1b2b0bf5ce8853ea1ca15}} 
+\index{state::RobotState@{state::RobotState}!get\_body\_velocity@{get\_body\_velocity}}
+\index{get\_body\_velocity@{get\_body\_velocity}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_body\_velocity()}{get\_body\_velocity()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+body\+\_\+velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Body\+Centric Velocity vector v. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d\+: velocity vector v in the body frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_af991bf33fc3f7dc6f2d2eb55dee2149c}\label{classstate_1_1RobotState_af991bf33fc3f7dc6f2d2eb55dee2149c}} 
+\index{state::RobotState@{state::RobotState}!get\_body\_X@{get\_body\_X}}
+\index{get\_body\_X@{get\_body\_X}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_body\_X()}{get\_body\_X()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd state\+::\+Robot\+State\+::get\+\_\+body\+\_\+X (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Body\+Centric state matrix X. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix\+Xd\+: state matrix X in body frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_aae9b607022a4f90bc644b3ca43fd2e9e}\label{classstate_1_1RobotState_aae9b607022a4f90bc644b3ca43fd2e9e}} 
+\index{state::RobotState@{state::RobotState}!get\_continuous\_noise\_covariance@{get\_continuous\_noise\_covariance}}
+\index{get\_continuous\_noise\_covariance@{get\_continuous\_noise\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_continuous\_noise\_covariance()}{get\_continuous\_noise\_covariance()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd state\+::\+Robot\+State\+::get\+\_\+continuous\+\_\+noise\+\_\+covariance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the continuous noise covariance matrix. 
+
+\begin{DoxyReturn}{Returns}
+Eigen\+::\+Matrix\+Xd\+: Continuous noise covariance matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a63c4562f3e5576bd3c9bba49304bd0f3}\label{classstate_1_1RobotState_a63c4562f3e5576bd3c9bba49304bd0f3}} 
+\index{state::RobotState@{state::RobotState}!get\_enable\_imu\_bias\_update@{get\_enable\_imu\_bias\_update}}
+\index{get\_enable\_imu\_bias\_update@{get\_enable\_imu\_bias\_update}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_enable\_imu\_bias\_update()}{get\_enable\_imu\_bias\_update()}}
+{\footnotesize\ttfamily const bool state\+::\+Robot\+State\+::get\+\_\+enable\+\_\+imu\+\_\+bias\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the boolean value enable\+\_\+imu\+\_\+bias\+\_\+update\+\_\+. 
+
+\begin{DoxyReturn}{Returns}
+const bool\+: boolean value enable\+\_\+imu\+\_\+bias\+\_\+update\+\_\+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a2577df4eff426f6fec67c671f6321070}\label{classstate_1_1RobotState_a2577df4eff426f6fec67c671f6321070}} 
+\index{state::RobotState@{state::RobotState}!get\_gyroscope\_bias@{get\_gyroscope\_bias}}
+\index{get\_gyroscope\_bias@{get\_gyroscope\_bias}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_gyroscope\_bias()}{get\_gyroscope\_bias()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+gyroscope\+\_\+bias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the gyroscope bias vector b. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d b\+: represents for gyroscope bias vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_ac3d8637278f324242a8ab01501879c62}\label{classstate_1_1RobotState_ac3d8637278f324242a8ab01501879c62}} 
+\index{state::RobotState@{state::RobotState}!get\_gyroscope\_bias\_covariance@{get\_gyroscope\_bias\_covariance}}
+\index{get\_gyroscope\_bias\_covariance@{get\_gyroscope\_bias\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_gyroscope\_bias\_covariance()}{get\_gyroscope\_bias\_covariance()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix3d state\+::\+Robot\+State\+::get\+\_\+gyroscope\+\_\+bias\+\_\+covariance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the gyroscope bias covariance matrix. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix3d\+: represents for gyroscope bias covariance matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a1fc657d6ab5f88893d9cee29e2c2194c}\label{classstate_1_1RobotState_a1fc657d6ab5f88893d9cee29e2c2194c}} 
+\index{state::RobotState@{state::RobotState}!get\_P@{get\_P}}
+\index{get\_P@{get\_P}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_P()}{get\_P()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd state\+::\+Robot\+State\+::get\+\_\+P (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the covariance matrix P. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix\+Xd P\+: represents for covariance matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_aac2fdcb30b6cade4ec2cd75588668bef}\label{classstate_1_1RobotState_aac2fdcb30b6cade4ec2cd75588668bef}} 
+\index{state::RobotState@{state::RobotState}!get\_position@{get\_position}}
+\index{get\_position@{get\_position}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_position()}{get\_position()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Position matrix p. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d p\+: represents for position matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a46b2e9cc8aaf5a481f575e51d0d286f5}\label{classstate_1_1RobotState_a46b2e9cc8aaf5a481f575e51d0d286f5}} 
+\index{state::RobotState@{state::RobotState}!get\_position\_covariance@{get\_position\_covariance}}
+\index{get\_position\_covariance@{get\_position\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_position\_covariance()}{get\_position\_covariance()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix3d state\+::\+Robot\+State\+::get\+\_\+position\+\_\+covariance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the position covariance matrix. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix3d\+: represents for position covariance matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a0a516fd62d5cc6189879f6fdc537719e}\label{classstate_1_1RobotState_a0a516fd62d5cc6189879f6fdc537719e}} 
+\index{state::RobotState@{state::RobotState}!get\_propagate\_time@{get\_propagate\_time}}
+\index{get\_propagate\_time@{get\_propagate\_time}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_propagate\_time()}{get\_propagate\_time()}}
+{\footnotesize\ttfamily const double state\+::\+Robot\+State\+::get\+\_\+propagate\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get timestamp of the state propagation. 
+
+\begin{DoxyReturn}{Returns}
+double t\+: timestamp of the state propagation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a8163046fef8df7c02792ef4b008b3ed7}\label{classstate_1_1RobotState_a8163046fef8df7c02792ef4b008b3ed7}} 
+\index{state::RobotState@{state::RobotState}!get\_rotation@{get\_rotation}}
+\index{get\_rotation@{get\_rotation}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_rotation()}{get\_rotation()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix3d state\+::\+Robot\+State\+::get\+\_\+rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Rotation matrix R. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix\+Xd R\+: represents for rotation matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_ab33d35d483ba4a423a17bbfca84a4a18}\label{classstate_1_1RobotState_ab33d35d483ba4a423a17bbfca84a4a18}} 
+\index{state::RobotState@{state::RobotState}!get\_rotation\_covariance@{get\_rotation\_covariance}}
+\index{get\_rotation\_covariance@{get\_rotation\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_rotation\_covariance()}{get\_rotation\_covariance()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix3d state\+::\+Robot\+State\+::get\+\_\+rotation\+\_\+covariance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the rotation covariance matrix. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix3d\+: represents for rotation covariance matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a935d070f77db7625dbf74f6e852ca799}\label{classstate_1_1RobotState_a935d070f77db7625dbf74f6e852ca799}} 
+\index{state::RobotState@{state::RobotState}!get\_slip\_flag@{get\_slip\_flag}}
+\index{get\_slip\_flag@{get\_slip\_flag}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_slip\_flag()}{get\_slip\_flag()}}
+{\footnotesize\ttfamily const int state\+::\+Robot\+State\+::get\+\_\+slip\+\_\+flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the slip flag object. 
+
+\begin{DoxyReturn}{Returns}
+const int slip\+\_\+flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a1fc7dcb0ab3edaae94a88487ed5a105d}\label{classstate_1_1RobotState_a1fc7dcb0ab3edaae94a88487ed5a105d}} 
+\index{state::RobotState@{state::RobotState}!get\_state\_type@{get\_state\_type}}
+\index{get\_state\_type@{get\_state\_type}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_state\_type()}{get\_state\_type()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{robot__state_8h_a1615968a92950438f6e67a28e9d56e5c}{State\+Type}} state\+::\+Robot\+State\+::get\+\_\+state\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get the the state type from\+: \{World\+Centric, Body\+Centric\} 
+
+\begin{DoxyReturn}{Returns}
+const State\+Type\+: dimension of the augmented covariance matrix P. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a3939d42fc7c123612df128e7c64f0c96}\label{classstate_1_1RobotState_a3939d42fc7c123612df128e7c64f0c96}} 
+\index{state::RobotState@{state::RobotState}!get\_theta@{get\_theta}}
+\index{get\_theta@{get\_theta}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_theta()}{get\_theta()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xd state\+::\+Robot\+State\+::get\+\_\+theta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the bias matrix Theta. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector\+Xd Theta\+: represents for bias matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a6c64d24b069d3911de21d8c3bc810d8f}\label{classstate_1_1RobotState_a6c64d24b069d3911de21d8c3bc810d8f}} 
+\index{state::RobotState@{state::RobotState}!get\_time@{get\_time}}
+\index{get\_time@{get\_time}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_time()}{get\_time()}}
+{\footnotesize\ttfamily const double state\+::\+Robot\+State\+::get\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get timestamp of the latest modified state. 
+
+\begin{DoxyReturn}{Returns}
+double t\+: timestamp of the latest modified state. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_ab9a4e042567075fc1d5a94ef73fe163e}\label{classstate_1_1RobotState_ab9a4e042567075fc1d5a94ef73fe163e}} 
+\index{state::RobotState@{state::RobotState}!get\_vector@{get\_vector}}
+\index{get\_vector@{get\_vector}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_vector()}{get\_vector()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+vector (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Get the a 3 by 1 vector from the state. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a42a9428f9610f675d0a9be678d9d88e5}\label{classstate_1_1RobotState_a42a9428f9610f675d0a9be678d9d88e5}} 
+\index{state::RobotState@{state::RobotState}!get\_velocity@{get\_velocity}}
+\index{get\_velocity@{get\_velocity}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_velocity()}{get\_velocity()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Velocity matrix V. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d V\+: represents for velocity matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_af56effddededeb00a62b59a135225466}\label{classstate_1_1RobotState_af56effddededeb00a62b59a135225466}} 
+\index{state::RobotState@{state::RobotState}!get\_velocity\_covariance@{get\_velocity\_covariance}}
+\index{get\_velocity\_covariance@{get\_velocity\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_velocity\_covariance()}{get\_velocity\_covariance()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix3d state\+::\+Robot\+State\+::get\+\_\+velocity\+\_\+covariance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the velocity covariance matrix. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix3d\+: represents for velocity covariance matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_af8445918a37e2f53e20685e082b5ec0d}\label{classstate_1_1RobotState_af8445918a37e2f53e20685e082b5ec0d}} 
+\index{state::RobotState@{state::RobotState}!get\_world\_position@{get\_world\_position}}
+\index{get\_world\_position@{get\_world\_position}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_world\_position()}{get\_world\_position()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+world\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the World\+Centric Position vector p. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d\+: position vector p in the world frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_ac4765d9478ee169d3ddd3c99f0cfa24c}\label{classstate_1_1RobotState_ac4765d9478ee169d3ddd3c99f0cfa24c}} 
+\index{state::RobotState@{state::RobotState}!get\_world\_rotation@{get\_world\_rotation}}
+\index{get\_world\_rotation@{get\_world\_rotation}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_world\_rotation()}{get\_world\_rotation()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix3d state\+::\+Robot\+State\+::get\+\_\+world\+\_\+rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the World\+Centric Rotation matrix R. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix3d\+: state matrix R in the world frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a61dcab0806e303b27e182fda5bc4c7ee}\label{classstate_1_1RobotState_a61dcab0806e303b27e182fda5bc4c7ee}} 
+\index{state::RobotState@{state::RobotState}!get\_world\_velocity@{get\_world\_velocity}}
+\index{get\_world\_velocity@{get\_world\_velocity}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_world\_velocity()}{get\_world\_velocity()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d state\+::\+Robot\+State\+::get\+\_\+world\+\_\+velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the World\+Centric Velocity vector v. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d\+: velocity vector v in the world frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_af4f9c12166438de73fae171b40d8198e}\label{classstate_1_1RobotState_af4f9c12166438de73fae171b40d8198e}} 
+\index{state::RobotState@{state::RobotState}!get\_world\_X@{get\_world\_X}}
+\index{get\_world\_X@{get\_world\_X}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_world\_X()}{get\_world\_X()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd state\+::\+Robot\+State\+::get\+\_\+world\+\_\+X (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the World\+Centric state matrix X. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix\+Xd\+: state matrix X in world frame. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_af6983198cce693993630bea0e5cf3b15}\label{classstate_1_1RobotState_af6983198cce693993630bea0e5cf3b15}} 
+\index{state::RobotState@{state::RobotState}!get\_X@{get\_X}}
+\index{get\_X@{get\_X}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_X()}{get\_X()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd state\+::\+Robot\+State\+::get\+\_\+X (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get state matrix X. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix\+Xd X\+: represents for state matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a91ab751ec2451a3f54c0823c18889f1a}\label{classstate_1_1RobotState_a91ab751ec2451a3f54c0823c18889f1a}} 
+\index{state::RobotState@{state::RobotState}!get\_Xinv@{get\_Xinv}}
+\index{get\_Xinv@{get\_Xinv}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{get\_Xinv()}{get\_Xinv()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd state\+::\+Robot\+State\+::get\+\_\+\+Xinv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+compute the inverse of the state matrix X\+\_\+. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Matrix\+Xd\+: inverse of the state matrix X\+\_\+. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstate_1_1RobotState_a99ac74ef36b718015470bd446e82c195}\label{classstate_1_1RobotState_a99ac74ef36b718015470bd446e82c195}} 
+\index{state::RobotState@{state::RobotState}!set\_accelerometer\_bias@{set\_accelerometer\_bias}}
+\index{set\_accelerometer\_bias@{set\_accelerometer\_bias}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_accelerometer\_bias()}{set\_accelerometer\_bias()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+accelerometer\+\_\+bias (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{ba }\end{DoxyParamCaption})}
+
+
+
+Set the Accelerometer Bias to bias matrix P. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ba} & 3x1 accelerometer bias vector ba. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a5cc40219531604a926de4b1189305621}\label{classstate_1_1RobotState_a5cc40219531604a926de4b1189305621}} 
+\index{state::RobotState@{state::RobotState}!set\_accelerometer\_bias\_covariance@{set\_accelerometer\_bias\_covariance}}
+\index{set\_accelerometer\_bias\_covariance@{set\_accelerometer\_bias\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_accelerometer\_bias\_covariance()}{set\_accelerometer\_bias\_covariance()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+accelerometer\+\_\+bias\+\_\+covariance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{cov }\end{DoxyParamCaption})}
+
+
+
+Set the Accelerometer Bias Covariance cov to private member P\+\_\+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cov} & covariance matrix for the accelerometer bias. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_aff32c23c8f900a833a53cb10245342be}\label{classstate_1_1RobotState_aff32c23c8f900a833a53cb10245342be}} 
+\index{state::RobotState@{state::RobotState}!set\_aug\_state@{set\_aug\_state}}
+\index{set\_aug\_state@{set\_aug\_state}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_aug\_state()}{set\_aug\_state()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+aug\+\_\+state (\begin{DoxyParamCaption}\item[{int}]{matrix\+\_\+idx,  }\item[{const Eigen\+::\+Vector3d \&}]{aug }\end{DoxyParamCaption})}
+
+
+
+Set the augmented to the certain position (matrix\+\_\+idx-\/th) in the state vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix\+\_\+idx} & index of the augmented state in the state. \\
+\hline
+\mbox{\texttt{ in}}  & {\em aug} & augmented state to be set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a8ab334e11db85c6f53df9222486c487e}\label{classstate_1_1RobotState_a8ab334e11db85c6f53df9222486c487e}} 
+\index{state::RobotState@{state::RobotState}!set\_body\_angular\_velocity@{set\_body\_angular\_velocity}}
+\index{set\_body\_angular\_velocity@{set\_body\_angular\_velocity}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_body\_angular\_velocity()}{set\_body\_angular\_velocity()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+body\+\_\+angular\+\_\+velocity (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Set the Body\+Centric Angular Velocity vector w. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & Eigen\+::\+Vector3d\+: angular velocity vector w in the body frame. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_aebd9ce2b495529d311d967a38ce83569}\label{classstate_1_1RobotState_aebd9ce2b495529d311d967a38ce83569}} 
+\index{state::RobotState@{state::RobotState}!set\_continuous\_noise\_covariance@{set\_continuous\_noise\_covariance}}
+\index{set\_continuous\_noise\_covariance@{set\_continuous\_noise\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_continuous\_noise\_covariance()}{set\_continuous\_noise\_covariance()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+continuous\+\_\+noise\+\_\+covariance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{cov }\end{DoxyParamCaption})}
+
+
+
+Set the Continuous Noise Covariance cov to private member Qc\+\_\+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cov} & covariance matrix for the continuous noise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a05f99d75f8da5c6b9d70f68519a0ee2b}\label{classstate_1_1RobotState_a05f99d75f8da5c6b9d70f68519a0ee2b}} 
+\index{state::RobotState@{state::RobotState}!set\_enable\_imu\_bias\_update@{set\_enable\_imu\_bias\_update}}
+\index{set\_enable\_imu\_bias\_update@{set\_enable\_imu\_bias\_update}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_enable\_imu\_bias\_update()}{set\_enable\_imu\_bias\_update()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+enable\+\_\+imu\+\_\+bias\+\_\+update (\begin{DoxyParamCaption}\item[{bool}]{enable\+\_\+imu\+\_\+bias\+\_\+update\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+set enable bias update boolean variable 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em enable\+\_\+imu\+\_\+bias\+\_\+update\+\_\+} & boolean variable to enable/disable bias update \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_ab1efc1f7d7e9877c282363b4b9b1c00c}\label{classstate_1_1RobotState_ab1efc1f7d7e9877c282363b4b9b1c00c}} 
+\index{state::RobotState@{state::RobotState}!set\_gyroscope\_bias@{set\_gyroscope\_bias}}
+\index{set\_gyroscope\_bias@{set\_gyroscope\_bias}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_gyroscope\_bias()}{set\_gyroscope\_bias()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+gyroscope\+\_\+bias (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{bg }\end{DoxyParamCaption})}
+
+
+
+Set the Gyroscope Bias to bias matrix P. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em bg} & 3x1 gyroscope bias vector bg. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_ab22794b3f0218340f035c4fa3f2cbe41}\label{classstate_1_1RobotState_ab22794b3f0218340f035c4fa3f2cbe41}} 
+\index{state::RobotState@{state::RobotState}!set\_gyroscope\_bias\_covariance@{set\_gyroscope\_bias\_covariance}}
+\index{set\_gyroscope\_bias\_covariance@{set\_gyroscope\_bias\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_gyroscope\_bias\_covariance()}{set\_gyroscope\_bias\_covariance()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+gyroscope\+\_\+bias\+\_\+covariance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{cov }\end{DoxyParamCaption})}
+
+
+
+Set the Gyroscope Bias Covariance cov to private member P\+\_\+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cov} & covariance matrix for the gyroscope bias. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a0266a3a17cb718c8d2b5a253d6383518}\label{classstate_1_1RobotState_a0266a3a17cb718c8d2b5a253d6383518}} 
+\index{state::RobotState@{state::RobotState}!set\_P@{set\_P}}
+\index{set\_P@{set\_P}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_P()}{set\_P()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+P (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{P }\end{DoxyParamCaption})}
+
+
+
+Set the \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} Bias matrix P. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em P} & bias matrix P. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a2a933c2657b2acdd46e84378a198c920}\label{classstate_1_1RobotState_a2a933c2657b2acdd46e84378a198c920}} 
+\index{state::RobotState@{state::RobotState}!set\_position@{set\_position}}
+\index{set\_position@{set\_position}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_position()}{set\_position()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+position (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Set the Position vector p in Robo\+State. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p} & 3x1 position vector p. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a0f98a00b2702d9268a98970b085da896}\label{classstate_1_1RobotState_a0f98a00b2702d9268a98970b085da896}} 
+\index{state::RobotState@{state::RobotState}!set\_position\_covariance@{set\_position\_covariance}}
+\index{set\_position\_covariance@{set\_position\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_position\_covariance()}{set\_position\_covariance()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+position\+\_\+covariance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{cov }\end{DoxyParamCaption})}
+
+
+
+Set the Position Covariance cov to private member P\+\_\+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cov} & covariance matrix for the position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a66f8a79287aaa3149eaf895e9247b9d3}\label{classstate_1_1RobotState_a66f8a79287aaa3149eaf895e9247b9d3}} 
+\index{state::RobotState@{state::RobotState}!set\_propagate\_time@{set\_propagate\_time}}
+\index{set\_propagate\_time@{set\_propagate\_time}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_propagate\_time()}{set\_propagate\_time()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+propagate\+\_\+time (\begin{DoxyParamCaption}\item[{const double}]{t }\end{DoxyParamCaption})}
+
+
+
+Set timestamp of the state propagation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em t} & timestamp of the state propagation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a6b0f7584996341e4a82df7ac12513f11}\label{classstate_1_1RobotState_a6b0f7584996341e4a82df7ac12513f11}} 
+\index{state::RobotState@{state::RobotState}!set\_rotation@{set\_rotation}}
+\index{set\_rotation@{set\_rotation}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_rotation()}{set\_rotation()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+rotation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{R }\end{DoxyParamCaption})}
+
+
+
+Set the Rotation matrix R in \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em R} & 3x3 rotation matrix R. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_ac146d2f41285d3248eb5988fa4021ce3}\label{classstate_1_1RobotState_ac146d2f41285d3248eb5988fa4021ce3}} 
+\index{state::RobotState@{state::RobotState}!set\_rotation\_covariance@{set\_rotation\_covariance}}
+\index{set\_rotation\_covariance@{set\_rotation\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_rotation\_covariance()}{set\_rotation\_covariance()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+rotation\+\_\+covariance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{cov }\end{DoxyParamCaption})}
+
+
+
+Set the Rotation Covariance cov to private member P\+\_\+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cov} & covariance matrix for the rotation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a17304c342fc275a3bbda15ee34697207}\label{classstate_1_1RobotState_a17304c342fc275a3bbda15ee34697207}} 
+\index{state::RobotState@{state::RobotState}!set\_slip\_flag@{set\_slip\_flag}}
+\index{set\_slip\_flag@{set\_slip\_flag}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_slip\_flag()}{set\_slip\_flag()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+slip\+\_\+flag (\begin{DoxyParamCaption}\item[{int}]{slip\+\_\+flag }\end{DoxyParamCaption})}
+
+
+
+set slip flag to given status 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em slip\+\_\+flag} & slip status \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a4bf7c692706eadba97154d4d68efa399}\label{classstate_1_1RobotState_a4bf7c692706eadba97154d4d68efa399}} 
+\index{state::RobotState@{state::RobotState}!set\_theta@{set\_theta}}
+\index{set\_theta@{set\_theta}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_theta()}{set\_theta()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+theta (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{Theta }\end{DoxyParamCaption})}
+
+
+
+Set the \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} covariance matrix Theta. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Theta} & covariance matrix Theta. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a9a57275d2f0055b0ddb751b495a71e19}\label{classstate_1_1RobotState_a9a57275d2f0055b0ddb751b495a71e19}} 
+\index{state::RobotState@{state::RobotState}!set\_time@{set\_time}}
+\index{set\_time@{set\_time}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_time()}{set\_time()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+time (\begin{DoxyParamCaption}\item[{const double}]{t }\end{DoxyParamCaption})}
+
+
+
+Set timestamp to the state. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em t} & timestamp of the state \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a8c5d0823e249d84d9bac5b91a986d581}\label{classstate_1_1RobotState_a8c5d0823e249d84d9bac5b91a986d581}} 
+\index{state::RobotState@{state::RobotState}!set\_velocity@{set\_velocity}}
+\index{set\_velocity@{set\_velocity}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_velocity()}{set\_velocity()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+velocity (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Set the Velocity vector v in Robo\+State. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em v} & 3x1 velocity vector v. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a29f100330f8a33d11fdd06caacdaab0f}\label{classstate_1_1RobotState_a29f100330f8a33d11fdd06caacdaab0f}} 
+\index{state::RobotState@{state::RobotState}!set\_velocity\_covariance@{set\_velocity\_covariance}}
+\index{set\_velocity\_covariance@{set\_velocity\_covariance}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_velocity\_covariance()}{set\_velocity\_covariance()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+velocity\+\_\+covariance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{cov }\end{DoxyParamCaption})}
+
+
+
+Set the Velocity Covariance cov to private member P\+\_\+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cov} & covariance matrix for the velocity. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstate_1_1RobotState_a0a6d9652eba9dc0de5fd04632932f9b1}\label{classstate_1_1RobotState_a0a6d9652eba9dc0de5fd04632932f9b1}} 
+\index{state::RobotState@{state::RobotState}!set\_X@{set\_X}}
+\index{set\_X@{set\_X}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{set\_X()}{set\_X()}}
+{\footnotesize\ttfamily void state\+::\+Robot\+State\+::set\+\_\+X (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{X }\end{DoxyParamCaption})}
+
+
+
+Set the \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} whole matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & \\
+\hline
+\end{DoxyParams}
+X\+: state matrix X. 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classstate_1_1RobotState_aaab7d99cf91cb5bbcb3e1bb089cfbc16}\label{classstate_1_1RobotState_aaab7d99cf91cb5bbcb3e1bb089cfbc16}} 
+\index{state::RobotState@{state::RobotState}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!state::RobotState@{state::RobotState}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overloaded operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for printing the state. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em os} & output stream. \\
+\hline
+\mbox{\texttt{ in}}  & {\em s} & \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} to be printed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\&\+: output stream. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/state/\mbox{\hyperlink{robot__state_8h}{robot\+\_\+state.\+h}}\item 
+/home/neofelis/\+VRX/drift/src/state/\mbox{\hyperlink{robot__state_8cpp}{robot\+\_\+state.\+cpp}}\end{DoxyCompactItemize}

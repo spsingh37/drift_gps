@@ -1,0 +1,61 @@
+\hypertarget{imu__ang__vel__ekf_8h}{}\doxysection{/home/neofelis/\+VRX/drift/include/drift/imu\+\_\+filter/imu\+\_\+ang\+\_\+vel\+\_\+ekf.h File Reference}
+\label{imu__ang__vel__ekf_8h}\index{/home/neofelis/VRX/drift/include/drift/imu\_filter/imu\_ang\_vel\_ekf.h@{/home/neofelis/VRX/drift/include/drift/imu\_filter/imu\_ang\_vel\_ekf.h}}
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}drift/filter/base\+\_\+propagation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/filter/inekf/inekf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/math/lie\+\_\+group.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/measurement/angular\+\_\+velocity.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/measurement/imu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/utils/type\+\_\+def.\+h\char`\"{}}\newline
+Include dependency graph for imu\+\_\+ang\+\_\+vel\+\_\+ekf.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imu__ang__vel__ekf_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{imu__ang__vel__ekf_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF}{imu\+\_\+filter\+::\+Imu\+Ang\+Vel\+EKF}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceimu__filter}{imu\+\_\+filter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceimu__filter_a7806447d8020e941779c55be9ddd8023}{imu\+\_\+filter\+::\+PROPAGATION\+\_\+\+METHOD}} \{ \mbox{\hyperlink{namespaceimu__filter_a7806447d8020e941779c55be9ddd8023a8f3a7b1d44dcbe673d96cea0cb48285b}{imu\+\_\+filter\+::\+RANDOM\+\_\+\+WALK}} = 0
+, \mbox{\hyperlink{namespaceimu__filter_a7806447d8020e941779c55be9ddd8023a927702a267e9b28a798f87d7b02b788a}{imu\+\_\+filter\+::\+GYRO}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44}{imu\+\_\+filter\+::\+CORRECTION\+\_\+\+METHOD}} \{ \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44a4ed4cb6918cd23ea40099fa8e865824a}{imu\+\_\+filter\+::\+SINGLE\+\_\+\+IMU\+\_\+\+PLUS\+\_\+\+ANG\+\_\+\+VEL}} = 0
+, \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44ac02a605aafba42205a3a6b907d71109b}{imu\+\_\+filter\+::\+SINGLE\+\_\+\+IMU}} = 1
+, \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44ad678700cd13facebb80cb5e38e46897e}{imu\+\_\+filter\+::\+MULTI\+\_\+\+IMU}} = 2
+, \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44afeb9a09347ce8d6bc61e0de08cbbdc95}{imu\+\_\+filter\+::\+ANG\+\_\+\+VEL}} = 3
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Tzu-\/\+Yuan Lin, Tingjun Li
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 16, 2023 
+\end{DoxyDate}

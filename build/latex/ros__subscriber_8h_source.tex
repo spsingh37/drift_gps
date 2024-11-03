@@ -1,0 +1,261 @@
+\hypertarget{ros__subscriber_8h_source}{}\doxysection{ros\+\_\+subscriber.\+h}
+\label{ros__subscriber_8h_source}\index{/home/neofelis/VRX/drift/ROS/drift/include/communication/ros\_subscriber.h@{/home/neofelis/VRX/drift/ROS/drift/include/communication/ros\_subscriber.h}}
+\mbox{\hyperlink{ros__subscriber_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ROS\_COMMUNICATION\_ROS\_SUBSCRIBER\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ROS\_COMMUNICATION\_ROS\_SUBSCRIBER\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <tuple>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <message\_filters/subscriber.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <message\_filters/sync\_policies/approximate\_time.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <message\_filters/sync\_policies/exact\_time.h>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <message\_filters/synchronizer.h>}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <sensor\_msgs/NavSatFix.h>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <unsupported/Eigen/MatrixFunctions>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}boost/bind.hpp"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}custom\_sensor\_msgs/Contact.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}custom\_sensor\_msgs/ContactArray.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}geometry\_msgs/TwistStamped.h"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}geometry\_msgs/TwistWithCovarianceStamped.h"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}geometry\_msgs/Vector3Stamped.h"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}nav\_msgs/Odometry.h"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}ros/ros.h"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}sensor\_msgs/Imu.h"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}sensor\_msgs/JointState.h"{}}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{inekf__estimator_8h}{drift/estimator/inekf\_estimator.h}}"{}}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mini__cheetah__kinematics_8h}{drift/kinematics/mini\_cheetah\_kinematics.h}}"{}}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type__def_8h}{drift/utils/type\_def.h}}"{}}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemeasurement}{measurement}};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} std::pair<IMUQueuePtr, std::shared\_ptr<std::mutex>> \mbox{\hyperlink{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}{IMUQueuePair}}; }
+\DoxyCodeLine{52 \textcolor{keyword}{typedef} std::pair<VelocityQueuePtr, std::shared\_ptr<std::mutex>>}
+\DoxyCodeLine{53     \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{VelocityQueuePair}}; }
+\DoxyCodeLine{55 \textcolor{keyword}{typedef} std::pair<OdomQueuePtr, std::shared\_ptr<std::mutex>>}
+\DoxyCodeLine{56     \mbox{\hyperlink{ros__subscriber_8h_ac0758f66e9561765922d9b0c3f343122}{PoseQueuePair}}; }
+\DoxyCodeLine{58 \textcolor{keyword}{typedef} std::pair<AngularVelocityQueuePtr, std::shared\_ptr<std::mutex>>}
+\DoxyCodeLine{59     \mbox{\hyperlink{ros__subscriber_8h_a7d05cfebaa87abaa21dc2a8eef2a855f}{AngularVelocityQueuePair}}; }
+\DoxyCodeLine{62 \textcolor{keyword}{typedef} std::pair<OdomQueuePtr, std::shared\_ptr<std::mutex>> \mbox{\hyperlink{ros__subscriber_8h_a3a1d261ad9f4c35009ec223aff191ade}{OdomQueuePair}}; }
+\DoxyCodeLine{65 \textcolor{comment}{// Legged kinematics sync}}
+\DoxyCodeLine{66 \textcolor{keyword}{typedef} std::pair<LeggedKinQueuePtr, std::shared\_ptr<std::mutex>>}
+\DoxyCodeLine{67     \mbox{\hyperlink{ros__subscriber_8h_abfbdcb77174b83e89d3ea006ac0ebcf3}{LeggedKinQueuePair}}; }
+\DoxyCodeLine{69 \textcolor{keyword}{typedef} message\_filters::Subscriber<custom\_sensor\_msgs::ContactArray>}
+\DoxyCodeLine{70     \mbox{\hyperlink{ros__subscriber_8h_af12e02c9cfb7b9861e335244e715ee5e}{ContactMsgFilterT}}; }
+\DoxyCodeLine{71 \textcolor{keyword}{typedef} message\_filters::Subscriber<sensor\_msgs::JointState>}
+\DoxyCodeLine{72     \mbox{\hyperlink{ros__subscriber_8h_a71099fb9c12ec334e5eac593d2006722}{JointStateMsgFilterT}}; }
+\DoxyCodeLine{73 \textcolor{keyword}{typedef} std::shared\_ptr<}
+\DoxyCodeLine{74     message\_filters::Subscriber<custom\_sensor\_msgs::ContactArray>>}
+\DoxyCodeLine{75     \mbox{\hyperlink{ros__subscriber_8h_abe69c82f299afc0b4085c5b0c5b9c95a}{ContactMsgFilterTPtr}}; }
+\DoxyCodeLine{76 \textcolor{keyword}{typedef} std::shared\_ptr<message\_filters::Subscriber<sensor\_msgs::JointState>>}
+\DoxyCodeLine{77     \mbox{\hyperlink{ros__subscriber_8h_add46b5940e6661d97c9a20d807661f46}{JointStateMsgFilterTPtr}}; }
+\DoxyCodeLine{78 \textcolor{keyword}{typedef} message\_filters::sync\_policies::ApproximateTime<}
+\DoxyCodeLine{79     custom\_sensor\_msgs::ContactArray, sensor\_msgs::JointState>}
+\DoxyCodeLine{80     \mbox{\hyperlink{ros__subscriber_8h_a0dfebbf3bab528172f83afce39c2d78e}{LegKinSyncPolicy}}; }
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} std::shared\_ptr<message\_filters::Synchronizer<LegKinSyncPolicy>>}
+\DoxyCodeLine{82     \mbox{\hyperlink{ros__subscriber_8h_a31c7c4dcf11cda6391d24a580efbb083}{LegKinSyncPtr}}; }
+\DoxyCodeLine{84 \textcolor{comment}{// IMU sync}}
+\DoxyCodeLine{85 \textcolor{keyword}{typedef} message\_filters::Subscriber<sensor\_msgs::Imu>}
+\DoxyCodeLine{86     \mbox{\hyperlink{ros__subscriber_8h_a8eab5d8704f00f4b5a0ea038b6fdda92}{IMUMsgFilterT}}; }
+\DoxyCodeLine{87 \textcolor{keyword}{typedef} message\_filters::Subscriber<geometry\_msgs::Vector3Stamped>}
+\DoxyCodeLine{88     \mbox{\hyperlink{ros__subscriber_8h_a66c597c9da3c3e7310efc7a8e6ae5fcd}{IMUOffsetMsgFilterT}}; }
+\DoxyCodeLine{89 \textcolor{keyword}{typedef} std::shared\_ptr<IMUMsgFilterT>}
+\DoxyCodeLine{90     \mbox{\hyperlink{ros__subscriber_8h_a0c0f0aec7b3340bdb78885817ca3f42b}{IMUMsgFilterTPtr}}; }
+\DoxyCodeLine{91 \textcolor{keyword}{typedef} std::shared\_ptr<IMUOffsetMsgFilterT>}
+\DoxyCodeLine{92     \mbox{\hyperlink{ros__subscriber_8h_af88fe3631b8a6bdb9fec34a8b7c27141}{IMUOffsetMsgFilterTPtr}}; }
+\DoxyCodeLine{93 \textcolor{keyword}{typedef} message\_filters::sync\_policies::ApproximateTime<}
+\DoxyCodeLine{94     sensor\_msgs::Imu, geometry\_msgs::Vector3Stamped>}
+\DoxyCodeLine{95     \mbox{\hyperlink{ros__subscriber_8h_a195e51e3f973fb185d82d10dd1d8474f}{IMUSyncPolicy}}; }
+\DoxyCodeLine{96 \textcolor{keyword}{typedef} std::shared\_ptr<message\_filters::Synchronizer<IMUSyncPolicy>>}
+\DoxyCodeLine{97     \mbox{\hyperlink{ros__subscriber_8h_a35e7f5948b93ce3f0ae879776be7d36e}{IMUSyncPtr}}; }
+\DoxyCodeLine{99 \textcolor{comment}{// GPS}}
+\DoxyCodeLine{100 \textcolor{keyword}{typedef} std::queue<std::shared\_ptr<NavSatMeasurement<double>>> \mbox{\hyperlink{ros__subscriber_8h_af62d8700b839ad1fa36b1152171afb4c}{GPSNavSatQueue}};}
+\DoxyCodeLine{101 \textcolor{keyword}{typedef} std::shared\_ptr<GPSNavSatQueue> \mbox{\hyperlink{ros__subscriber_8h_ab4536c3d359c13395ac8de49eda99d9f}{GPSNavSatQueuePtr}};}
+\DoxyCodeLine{102 \textcolor{keyword}{typedef} std::pair<GPSNavSatQueuePtr, std::shared\_ptr<std::mutex>>}
+\DoxyCodeLine{103     \mbox{\hyperlink{ros__subscriber_8h_ad903ebc33a90ebb96d61317af14365ee}{GPSNavSatQueuePair}};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceros__wrapper}{ros\_wrapper}} \{}
+\DoxyCodeLine{112 \textcolor{keyword}{class }\mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber}{ROSSubscriber}} \{}
+\DoxyCodeLine{113  \textcolor{keyword}{public}:}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{121   \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber}{ROSSubscriber}}(ros::NodeHandle* nh);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{129   \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_aa015081ba21861d4ed512b25c3f48c52}{\string~ROSSubscriber}}();}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{143   \mbox{\hyperlink{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}{IMUQueuePair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_adaed4ab2b123a4074f35e6a19ee575ab}{AddIMUSubscriber}}(\textcolor{keyword}{const} std::string topic\_name);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{155   \mbox{\hyperlink{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}{IMUQueuePair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a913e1dad4e8582a336487c9ca2ed6dc3}{AddFetchIMUSubscriber}}(\textcolor{keyword}{const} std::string imu\_topic\_name,}
+\DoxyCodeLine{156                                      \textcolor{keyword}{const} std::string offset\_topic\_name);}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{167   \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{VelocityQueuePair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_abd06a89e98c584a5841cf29a02685c25}{AddVelocitySubscriber}}(\textcolor{keyword}{const} std::string topic\_name);}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{178   \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{VelocityQueuePair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_ae2f1521d81a15e050e4798308ab7daec}{AddVelocityWithCovarianceSubscriber}}(}
+\DoxyCodeLine{179       \textcolor{keyword}{const} std::string topic\_name);}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{188   \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{VelocityQueuePair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_ae1947d656038099679934fc5680115d5}{AddDifferentialDriveVelocitySubscriber}}(}
+\DoxyCodeLine{189       \textcolor{keyword}{const} std::string topic\_name, \textcolor{keywordtype}{double} wheel\_radius);}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{200   std::tuple<VelocityQueuePtr, std::shared\_ptr<std::mutex>,}
+\DoxyCodeLine{201              \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{AngularVelocityQueuePtr}}, std::shared\_ptr<std::mutex>>}
+\DoxyCodeLine{202   \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_ae1947d656038099679934fc5680115d5}{AddDifferentialDriveVelocitySubscriber}}(\textcolor{keyword}{const} std::string topic\_name,}
+\DoxyCodeLine{203                                          \textcolor{keywordtype}{double} wheel\_radius,}
+\DoxyCodeLine{204                                          \textcolor{keywordtype}{double} track\_width);}
+\DoxyCodeLine{209   \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{VelocityQueuePair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a06cebe7d014ab7fd913deb1ed8710c08}{AddOdom2VelocityCallback}}(}
+\DoxyCodeLine{210       \textcolor{keyword}{const} std::string topic\_name,}
+\DoxyCodeLine{211       \textcolor{keyword}{const} std::vector<double>\& translation\_odomsrc2body,}
+\DoxyCodeLine{212       \textcolor{keyword}{const} std::vector<double>\& rotation\_odomsrc2body);}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{220   \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{VelocityQueuePair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_ad513b8350ac0c57e721f74e364bf2c70}{AddGPS2VelocitySubscriber}}(}
+\DoxyCodeLine{221       \textcolor{keyword}{const} std::string\& topic\_name,}
+\DoxyCodeLine{222       \textcolor{keyword}{const} Eigen::Vector3d\& translation\_odomsrc2body,}
+\DoxyCodeLine{223       \textcolor{keyword}{const} Eigen::Matrix3d\& rotation\_odomsrc2body,}
+\DoxyCodeLine{224       \textcolor{keyword}{const} Eigen::Vector3d\& reference\_position);}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{230   \mbox{\hyperlink{ros__subscriber_8h_ac0758f66e9561765922d9b0c3f343122}{PoseQueuePair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a2b11d7f9a4c4ca73899803cfd332fe40}{AddOdom2PoseSubscriber}}(}
+\DoxyCodeLine{231       \textcolor{keyword}{const} std::string topic\_name,}
+\DoxyCodeLine{232       \textcolor{keyword}{const} std::vector<double>\& translation\_odomsrc2body,}
+\DoxyCodeLine{233       \textcolor{keyword}{const} std::vector<double>\& rotation\_odomsrc2body);}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{245   \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{VelocityQueuePair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a72fb705f9bbb97d44347b71b0669a6ba}{AddDifferentialDriveLinearVelocitySubscriber\_Fetch}}(}
+\DoxyCodeLine{246       \textcolor{keyword}{const} std::string topic\_name, \textcolor{keywordtype}{double} wheel\_radius);}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{259   std::tuple<VelocityQueuePtr, std::shared\_ptr<std::mutex>,}
+\DoxyCodeLine{260              \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{AngularVelocityQueuePtr}}, std::shared\_ptr<std::mutex>>}
+\DoxyCodeLine{261   \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a436f361da5948e58b571037a757fde23}{AddDifferentialDriveVelocitySubscriber\_Fetch}}(\textcolor{keyword}{const} std::string topic\_name,}
+\DoxyCodeLine{262                                                \textcolor{keywordtype}{double} wheel\_radius,}
+\DoxyCodeLine{263                                                \textcolor{keywordtype}{double} track\_width);}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{275   \mbox{\hyperlink{ros__subscriber_8h_abfbdcb77174b83e89d3ea006ac0ebcf3}{LeggedKinQueuePair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_aae00b3d8874f22ef0b12443d43e444e4}{AddMiniCheetahKinematicsSubscriber}}(}
+\DoxyCodeLine{276       \textcolor{keyword}{const} std::string contact\_topic\_name,}
+\DoxyCodeLine{277       \textcolor{keyword}{const} std::string encoder\_topic\_name);}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279 }
+\DoxyCodeLine{281 }
+\DoxyCodeLine{285   \textcolor{keywordtype}{void} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a09653df4dc1f72f021b7d1cf664b230a}{StartSubscribingThread}}();}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287  \textcolor{keyword}{private}:}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{297   \textcolor{keywordtype}{void} IMUCallback(\textcolor{keyword}{const} boost::shared\_ptr<const sensor\_msgs::Imu>\& imu\_msg,}
+\DoxyCodeLine{298                    \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& mutex,}
+\DoxyCodeLine{299                    \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}}\& imu\_queue);}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{308   \textcolor{keywordtype}{void} VelocityCallback(}
+\DoxyCodeLine{309       \textcolor{keyword}{const} boost::shared\_ptr<const geometry\_msgs::TwistStamped>\& vel\_msg,}
+\DoxyCodeLine{310       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& mutex, \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}}\& vel\_queue);}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{319   \textcolor{keywordtype}{void} VelocityWithCovarianceCallback(}
+\DoxyCodeLine{320       \textcolor{keyword}{const} boost::shared\_ptr<const geometry\_msgs::TwistWithCovarianceStamped>\&}
+\DoxyCodeLine{321           vel\_msg,}
+\DoxyCodeLine{322       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& mutex, \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}}\& vel\_queue);}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{331   \textcolor{keywordtype}{void} DifferentialEncoder2VelocityCallback(}
+\DoxyCodeLine{332       \textcolor{keyword}{const} boost::shared\_ptr<const sensor\_msgs::JointState>\& encoder\_msg,}
+\DoxyCodeLine{333       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& mutex, \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}}\& vel\_queue,}
+\DoxyCodeLine{334       \textcolor{keywordtype}{double} wheel\_radius);}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{347   \textcolor{keywordtype}{void} DifferentialEncoder2VelocityCallback(}
+\DoxyCodeLine{348       \textcolor{keyword}{const} boost::shared\_ptr<const sensor\_msgs::JointState>\& encoder\_msg,}
+\DoxyCodeLine{349       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& vel\_mutex,}
+\DoxyCodeLine{350       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& ang\_vel\_mutex,}
+\DoxyCodeLine{351       \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}}\& vel\_queue, \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{AngularVelocityQueuePtr}}\& ang\_vel\_queue,}
+\DoxyCodeLine{352       \textcolor{keywordtype}{double} wheel\_radius, \textcolor{keywordtype}{double} track\_width);}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{364   \textcolor{keywordtype}{void} DifferentialEncoder2LinearVelocityCallback\_Fetch(}
+\DoxyCodeLine{365       \textcolor{keyword}{const} boost::shared\_ptr<const sensor\_msgs::JointState>\& encoder\_msg,}
+\DoxyCodeLine{366       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& vel\_mutex, \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}}\& vel\_queue,}
+\DoxyCodeLine{367       \textcolor{keywordtype}{double} wheel\_radius);}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{381   \textcolor{keywordtype}{void} DifferentialEncoder2VelocityCallback\_Fetch(}
+\DoxyCodeLine{382       \textcolor{keyword}{const} boost::shared\_ptr<const sensor\_msgs::JointState>\& encoder\_msg,}
+\DoxyCodeLine{383       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& vel\_mutex,}
+\DoxyCodeLine{384       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& ang\_vel\_mutex,}
+\DoxyCodeLine{385       \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}}\& vel\_queue, \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{AngularVelocityQueuePtr}}\& ang\_vel\_queue,}
+\DoxyCodeLine{386       \textcolor{keywordtype}{double} wheel\_radius, \textcolor{keywordtype}{double} track\_width);}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{396   \textcolor{keywordtype}{void} MiniCheetahKinCallBack(}
+\DoxyCodeLine{397       \textcolor{keyword}{const} boost::shared\_ptr<const custom\_sensor\_msgs::ContactArray>\&}
+\DoxyCodeLine{398           contact\_msg,}
+\DoxyCodeLine{399       \textcolor{keyword}{const} boost::shared\_ptr<const sensor\_msgs::JointState>\& encoder\_msg,}
+\DoxyCodeLine{400       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& mutex, \mbox{\hyperlink{type__def_8h_aa0b6009ff28d4061513537e85d721021}{LeggedKinQueuePtr}}\& kin\_queue);}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{411   \textcolor{keywordtype}{void} FetchIMUCallBack(}
+\DoxyCodeLine{412       \textcolor{keyword}{const} boost::shared\_ptr<const sensor\_msgs::Imu>\& imu\_msg,}
+\DoxyCodeLine{413       \textcolor{keyword}{const} boost::shared\_ptr<const geometry\_msgs::Vector3Stamped>\&}
+\DoxyCodeLine{414           imu\_offset\_msg,}
+\DoxyCodeLine{415       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& mutex, \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}}\& imu\_queue);}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{426   \textcolor{keywordtype}{void} Odom2VelocityCallback(}
+\DoxyCodeLine{427       \textcolor{keyword}{const} boost::shared\_ptr<const nav\_msgs::Odometry>\& odom\_msg,}
+\DoxyCodeLine{428       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& vel\_mutex, \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}}\& vel\_queue,}
+\DoxyCodeLine{429       \textcolor{keywordtype}{int} odom\_src\_id);}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{439   \textcolor{keywordtype}{void} Odom2PoseCallback(}
+\DoxyCodeLine{440       \textcolor{keyword}{const} boost::shared\_ptr<const nav\_msgs::Odometry>\& odom\_msg,}
+\DoxyCodeLine{441       \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& pose\_mutex, \mbox{\hyperlink{type__def_8h_a52173582ec3a74be4249b4b0c5426ebd}{OdomQueuePtr}}\& pose\_queue);}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443   \textcolor{keywordtype}{void} GPS2VelocityCallback(\textcolor{keyword}{const} sensor\_msgs::NavSatFix::ConstPtr\& gps\_msg,}
+\DoxyCodeLine{444                             \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& vel\_mutex,}
+\DoxyCodeLine{445                             \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}}\& vel\_queue,}
+\DoxyCodeLine{446                             \textcolor{keyword}{const} Eigen::Vector3d\& translation\_odomsrc2body,}
+\DoxyCodeLine{447                             \textcolor{keyword}{const} Eigen::Matrix3d\& rotation\_odomsrc2body,}
+\DoxyCodeLine{448                             \textcolor{keyword}{const} Eigen::Vector3d\& reference\_position);}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450   \textcolor{keywordtype}{void} RosSpin();}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452   ros::NodeHandle* nh\_;                             \textcolor{comment}{// The ROS handle}}
+\DoxyCodeLine{453   std::vector<ros::Subscriber> subscriber\_list\_;    \textcolor{comment}{// List of subscribers}}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455   std::vector<ContactMsgFilterTPtr> contact\_subscriber\_list\_;}
+\DoxyCodeLine{456   std::vector<JointStateMsgFilterTPtr> joint\_state\_subscriber\_list\_;}
+\DoxyCodeLine{457 }
+\DoxyCodeLine{458   std::vector<IMUMsgFilterTPtr> imu\_subscriber\_list\_;}
+\DoxyCodeLine{459   std::vector<IMUOffsetMsgFilterTPtr> imu\_offset\_subscriber\_list\_;}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461   \textcolor{comment}{// measurement queue list}}
+\DoxyCodeLine{462   std::vector<IMUQueuePtr> imu\_queue\_list\_;    \textcolor{comment}{// List of IMU queue pointers}}
+\DoxyCodeLine{463   std::vector<VelocityQueuePtr>}
+\DoxyCodeLine{464       vel\_queue\_list\_;    \textcolor{comment}{// List of velocity queue pointers}}
+\DoxyCodeLine{465   std::vector<OdomQueuePtr> pose\_queue\_list\_;    \textcolor{comment}{// List of pose queue pointers}}
+\DoxyCodeLine{466   std::vector<AngularVelocityQueuePtr>}
+\DoxyCodeLine{467       ang\_vel\_queue\_list\_;    \textcolor{comment}{// List of angular velocity queue pointers}}
+\DoxyCodeLine{468   std::vector<LeggedKinQueuePtr>}
+\DoxyCodeLine{469       kin\_queue\_list\_;    \textcolor{comment}{// List of kinematics queue pointers}}
+\DoxyCodeLine{470   std::vector<LegKinSyncPtr> leg\_kin\_sync\_list\_;}
+\DoxyCodeLine{471   std::vector<IMUSyncPtr> imu\_sync\_list\_;}
+\DoxyCodeLine{472   std::vector<std::shared\_ptr<std::mutex>> mutex\_list\_;    \textcolor{comment}{// List of mutexes}}
+\DoxyCodeLine{473   std::unordered\_map<int, OdomMeasurementPtr>}
+\DoxyCodeLine{474       prev\_odom\_map\_;                   \textcolor{comment}{// odom\_src\_id -\/> prev\_odom\_measurement}}
+\DoxyCodeLine{475   Eigen::Matrix4d odom\_src\_to\_body\_;    \textcolor{comment}{// Camera to body transformation matrix}}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{477 }
+\DoxyCodeLine{478   \textcolor{keywordtype}{bool} thread\_started\_;    \textcolor{comment}{// Flag of the thread started, true for started,}}
+\DoxyCodeLine{479                            \textcolor{comment}{// false for not started}}
+\DoxyCodeLine{480   std::thread subscribing\_thread\_;}
+\DoxyCodeLine{481 }
+\DoxyCodeLine{482   ros::MultiThreadedSpinner spinner\_;}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484   \textcolor{keywordtype}{int} odom\_src\_id\_ = 0;    \textcolor{comment}{// Keep track of the odom source id, start from 0 and}}
+\DoxyCodeLine{485                            \textcolor{comment}{// increment by 1 for each new odom source}}
+\DoxyCodeLine{486 \};}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488 \}    \textcolor{comment}{// namespace ros\_wrapper}}
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

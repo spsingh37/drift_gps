@@ -1,0 +1,246 @@
+Although we provided a ROS wrapper inside our repository, users can actually write their own communication wrappers according to their needs. The only requirement is that the wrapper should be able to send and receive messages to and from the robot or simulator. In this tutorial, we will show you how to write a communication wrapper. The wrapper includes three parts\+: message types, communication subscriber, and communication publisher. It is relatively simple once you understan the framework.\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_communication_wrapper_autotoc_md30}{}\doxysubsection{Step 1\+: Create custom message types if necessary}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_communication_wrapper_autotoc_md30}
+Although most of the time, you can use the message types provided by the simulator or robot, sometimes you may need to create your own message types. For example, in our case, we need to create {\ttfamily contact} related messages for the MIT mini-\/cheetah robot. In this case, we created the new message types by following the \href{http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv}{\texttt{ ROS tutorial}} and put them under {\ttfamily drift/\+ROS/drift/msg} folder. After creating the message type, the {\ttfamily ./build\+\_\+ros.sh} script will automatically build the message types. The specific lines of message builder is shown below\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{MSG\_NAMESPACE=custom\_sensor\_msgs}
+\DoxyCodeLine{MSG\_PATH=./ROS/drift/msg}
+\DoxyCodeLine{MSG\_HEADER\_OUTPUT\_PATH=./ROS/drift/include/\$MSG\_NAMESPACE/}
+\DoxyCodeLine{}
+\DoxyCodeLine{for file in \$MSG\_PATH/*}
+\DoxyCodeLine{do}
+\DoxyCodeLine{  if [[ -\/a \$file ]]}
+\DoxyCodeLine{  then}
+\DoxyCodeLine{    rosrun gencpp gen\_cpp.py -\/p \$MSG\_NAMESPACE -\/o \$MSG\_HEADER\_OUTPUT\_PATH -\/e /opt/ros/noetic/share/gencpp "{}\$file"{} -\/I std\_msgs:/opt/ros/noetic/share/std\_msgs/msg -\/I \$MSG\_NAMESPACE:\$MSG\_PATH}
+\DoxyCodeLine{  fi}
+\DoxyCodeLine{done}
+
+\end{DoxyCode}
+
+
+If you need to use other communication methods, please refer to corresponding documentation on how to build custom message types.\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_communication_wrapper_autotoc_md31}{}\doxysubsection{Step 2\+: Create a new communication subscriber class}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_communication_wrapper_autotoc_md31}
+A communication subscriber mainly acts like an interface between robot/simulator messages and filter defined measurement types. The subscriber should be able to receive messages from the robot/simulator, and push them into corresponding sensor data buffers. In our filter, we used {\ttfamily std\+::queue\texorpdfstring{$<$}{<}std\+::shared\+\_\+ptr\texorpdfstring{$<$}{<}TYPE\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}} to be the sensor data buffer type. For example, when an IMU message comes in, the IMU subscriber should be able to convert the IMU message to {\ttfamily Imu\+Measurement\texorpdfstring{$<$}{<}double\texorpdfstring{$>$}{>}} type and push it into a {\ttfamily std\+::queue\texorpdfstring{$<$}{<}std\+::shared\+\_\+ptr\texorpdfstring{$<$}{<}Imu\+Measurement\texorpdfstring{$<$}{<}double\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}} data buffer. Because this data buffer is also shared with the filter interface on a different thread, a common {\ttfamily std\+::mutex} is required to protect the data sharing between threads. The following code snippet shows how we implemented the IMU subscriber in ROS. More examples can be found in {\ttfamily \mbox{\hyperlink{ros__subscriber_8cpp}{ros\+\_\+subscriber.\+cpp}}}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Use a function to add a new IMU subscriber}}
+\DoxyCodeLine{\mbox{\hyperlink{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}{IMUQueuePair}} ROSSubscriber::AddIMUSubscriber(\textcolor{keyword}{const} std::string topic\_name) \{}
+\DoxyCodeLine{  \textcolor{comment}{// Create a new queue for data buffers}}
+\DoxyCodeLine{  \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}} imu\_queue\_ptr(\textcolor{keyword}{new} \mbox{\hyperlink{type__def_8h_ac033f1b84fab28142a37626bde293295}{IMUQueue}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// Initialize a new mutex for this subscriber}}
+\DoxyCodeLine{  mutex\_list\_.emplace\_back(\textcolor{keyword}{new} std::mutex);}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// Create the subscriber}}
+\DoxyCodeLine{  subscriber\_list\_.push\_back(nh\_-\/>subscribe<sensor\_msgs::Imu>(}
+\DoxyCodeLine{      topic\_name, 1000,}
+\DoxyCodeLine{      boost::bind(\&ROSSubscriber::IMUCallback, \textcolor{keyword}{this}, \_1, mutex\_list\_.back(),}
+\DoxyCodeLine{                  imu\_queue\_ptr)));}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// Keep the ownership of the data queue in this class}}
+\DoxyCodeLine{  imu\_queue\_list\_.push\_back(imu\_queue\_ptr);}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} \{imu\_queue\_ptr, mutex\_list\_.back()\};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// The true function that handles IMU message}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} ROSSubscriber::IMUCallback(}
+\DoxyCodeLine{    \textcolor{keyword}{const} boost::shared\_ptr<const sensor\_msgs::Imu>\& imu\_msg,}
+\DoxyCodeLine{    \textcolor{keyword}{const} std::shared\_ptr<std::mutex>\& mutex, \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}}\& imu\_queue) \{}
+\DoxyCodeLine{  \textcolor{comment}{// Create an imu measurement object}}
+\DoxyCodeLine{  std::shared\_ptr<ImuMeasurement<double>> imu\_measurement(}
+\DoxyCodeLine{      \textcolor{keyword}{new} ImuMeasurement<double>);}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// Set headers and time stamps}}
+\DoxyCodeLine{  imu\_measurement-\/>set\_header(}
+\DoxyCodeLine{      imu\_msg-\/>header.seq,}
+\DoxyCodeLine{      imu\_msg-\/>header.stamp.sec + imu\_msg-\/>header.stamp.nsec / 1000000000.0,}
+\DoxyCodeLine{      imu\_msg-\/>header.frame\_id);}
+\DoxyCodeLine{  \textcolor{comment}{// Set angular velocity}}
+\DoxyCodeLine{  imu\_measurement-\/>set\_angular\_velocity(imu\_msg-\/>angular\_velocity.x,}
+\DoxyCodeLine{                               imu\_msg-\/>angular\_velocity.y,}
+\DoxyCodeLine{                               imu\_msg-\/>angular\_velocity.z);}
+\DoxyCodeLine{  \textcolor{comment}{// Set linear acceleration}}
+\DoxyCodeLine{  imu\_measurement-\/>set\_lin\_acc(imu\_msg-\/>linear\_acceleration.x,}
+\DoxyCodeLine{                               imu\_msg-\/>linear\_acceleration.y,}
+\DoxyCodeLine{                               imu\_msg-\/>linear\_acceleration.z);}
+\DoxyCodeLine{  \textcolor{comment}{// Set orientation estimate}}
+\DoxyCodeLine{  \textcolor{comment}{// Check if IMU has quaternion data:}}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (Eigen::Vector4d(\{imu\_msg-\/>orientation.w, imu\_msg-\/>orientation.x,}
+\DoxyCodeLine{                       imu\_msg-\/>orientation.y, imu\_msg-\/>orientation.z\})}
+\DoxyCodeLine{          .norm()}
+\DoxyCodeLine{      != 0) \{}
+\DoxyCodeLine{    imu\_measurement-\/>set\_quaternion(}
+\DoxyCodeLine{        imu\_msg-\/>orientation.w, imu\_msg-\/>orientation.x, imu\_msg-\/>orientation.y,}
+\DoxyCodeLine{        imu\_msg-\/>orientation.z);}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  mutex.get()-\/>lock();}
+\DoxyCodeLine{  imu\_queue-\/>push(imu\_measurement);}
+\DoxyCodeLine{  mutex.get()-\/>unlock();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Users can also create their own way in building subscribers. But please make sure that the message type is converted to the measurement type defined in the filter.\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_communication_wrapper_autotoc_md32}{}\doxysubsection{Step 3\+: Create a new communication publisher class}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_communication_wrapper_autotoc_md32}
+A publisher class is actually optional. If a user simply wants to have the poses saved into a file, she/he can simply write the pose data from {\ttfamily Robot\+State\+Queue} buffer into a {\ttfamily .txt} file. But having a publisher offers the ability to monitor the path output in realtime.
+
+The publisher class is much simpler than the subscriber class. This class acts as an interface between filter output and visualizable messages. The filter output is stored in a data buffer of type {\ttfamily Robot\+State\+Queue}, which is {\ttfamily std\+::queue\texorpdfstring{$<$}{<}std\+::shared\+\_\+ptr\texorpdfstring{$<$}{<}Robot\+State\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}}. The publisher class\textquotesingle{}s job is to read data from the buffer and use user prefered communication method to publish the data. In our case with ROS communication, the publisher converts the state estimate message to {\ttfamily geometry\+\_\+msgs\+::\+Pose\+Stamped} type. Because we also want to have a visulizable path shown in RVIZ, the message is also pushed into a {\ttfamily std\+::vector\texorpdfstring{$<$}{<}geometry\+\_\+msgs\+::\+Pose\+Stamped\texorpdfstring{$>$}{>}} data buffer, which will be constructed into a {\ttfamily nav\+\_\+msgs\+::\+Path} message. Because {\ttfamily Robot\+State} data buffer is also shared with the filter interface on a different thread, a common {\ttfamily std\+::mutex} is required to protect the data sharing between threads. The following code snippet shows how we implemented the publisher class in ROS. Header file can be found in {\ttfamily \mbox{\hyperlink{ros__publisher_8h}{ros\+\_\+publisher.\+h}}}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{```cpp}
+\DoxyCodeLine{\textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{\textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{\textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{\textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ros__publisher_8h}{communication/ros\_publisher.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceros__wrapper}{ros\_wrapper}} \{}
+\DoxyCodeLine{\mbox{\hyperlink{classros__wrapper_1_1ROSPublisher_ae94ee6271552f7ee8e66fe639d9515a9}{ROSPublisher::ROSPublisher}}(ros::NodeHandle* nh,}
+\DoxyCodeLine{                           \mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{RobotStateQueuePtr}}\& robot\_state\_queue\_ptr,}
+\DoxyCodeLine{                           std::shared\_ptr<std::mutex> robot\_state\_queue\_mutex)}
+\DoxyCodeLine{    : nh\_(nh),}
+\DoxyCodeLine{      robot\_state\_queue\_ptr\_(robot\_state\_queue\_ptr),}
+\DoxyCodeLine{      robot\_state\_queue\_mutex\_(robot\_state\_queue\_mutex),}
+\DoxyCodeLine{      thread\_started\_(false) \{}
+\DoxyCodeLine{  std::string pose\_topic;}
+\DoxyCodeLine{  std::string path\_topic;}
+\DoxyCodeLine{  nh\_-\/>param<std::string>(\textcolor{stringliteral}{"{}/curly\_state\_est\_settings/pose\_topic"{}}, pose\_topic,}
+\DoxyCodeLine{                          \textcolor{stringliteral}{"{}/robot/inekf\_estimation/pose"{}});}
+\DoxyCodeLine{  nh\_-\/>param<std::string>(\textcolor{stringliteral}{"{}/curly\_state\_est\_settings/map\_frame\_id"{}}, pose\_frame\_,}
+\DoxyCodeLine{                          \textcolor{stringliteral}{"{}/odom"{}});}
+\DoxyCodeLine{  nh-\/>param<std::string>(\textcolor{stringliteral}{"{}/curly\_state\_est\_settings/path\_topic"{}}, path\_topic,}
+\DoxyCodeLine{                         \textcolor{stringliteral}{"{}/robot/inekf\_estimation/path"{}});}
+\DoxyCodeLine{  nh\_-\/>param<\textcolor{keywordtype}{double}>(\textcolor{stringliteral}{"{}/curly\_state\_est\_settings/pose\_publish\_rate"{}},}
+\DoxyCodeLine{                     pose\_publish\_rate\_, 1000);}
+\DoxyCodeLine{  nh\_-\/>param<\textcolor{keywordtype}{double}>(\textcolor{stringliteral}{"{}/curly\_state\_est\_settings/path\_publish\_rate"{}},}
+\DoxyCodeLine{                     path\_publish\_rate\_, 1000);}
+\DoxyCodeLine{  nh\_-\/>param<\textcolor{keywordtype}{int}>(\textcolor{stringliteral}{"{}/curly\_state\_est\_settings/pose\_skip"{}}, pose\_skip\_, 1);}
+\DoxyCodeLine{  first\_pose\_ = \{0, 0, 0\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"{}pose\_topic: "{}} << pose\_topic << \textcolor{stringliteral}{"{}, pose publish rate: "{}} << pose\_publish\_rate << std::endl;}
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"{}path\_topic: "{}} << path\_topic << \textcolor{stringliteral}{"{}, path publish rate: "{}} << path\_publish\_rate\_ << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  pose\_pub\_ = nh\_-\/>advertise<geometry\_msgs::PoseWithCovarianceStamped>(}
+\DoxyCodeLine{      pose\_topic, 1000);}
+\DoxyCodeLine{  path\_pub\_ = nh\_-\/>advertise<nav\_msgs::Path>(path\_topic, 1000);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ROSPublisher::\string~ROSPublisher() \{}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (thread\_started\_ == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{    pose\_publishing\_thread\_.join();}
+\DoxyCodeLine{    path\_publishing\_thread\_.join();}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  poses\_.clear();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} ROSPublisher::StartPublishingThread() \{}
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"{}start publishing thread"{}} << std::endl;}
+\DoxyCodeLine{  this-\/>pose\_publishing\_thread\_}
+\DoxyCodeLine{      = std::thread([\textcolor{keyword}{this}] \{ this-\/>PosePublishingThread(); \});}
+\DoxyCodeLine{  this-\/>path\_publishing\_thread\_}
+\DoxyCodeLine{      = std::thread([\textcolor{keyword}{this}] \{ this-\/>PathPublishingThread(); \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{  thread\_started\_ = \textcolor{keyword}{true};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Publishes pose}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} ROSPublisher::PosePublish() \{}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (robot\_state\_queue\_ptr\_-\/>empty()) \{}
+\DoxyCodeLine{    \textcolor{comment}{// std::cout << "{}pose queue is empty"{} << std::endl;}}
+\DoxyCodeLine{    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// Get the first pose}}
+\DoxyCodeLine{  robot\_state\_queue\_mutex\_.get()-\/>lock();}
+\DoxyCodeLine{  \textcolor{keyword}{const} std::shared\_ptr<RobotState> state\_ptr = robot\_state\_queue\_ptr\_-\/>front();}
+\DoxyCodeLine{  robot\_state\_queue\_ptr\_-\/>pop();}
+\DoxyCodeLine{  robot\_state\_queue\_mutex\_.get()-\/>unlock();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keyword}{const} RobotState\& \mbox{\hyperlink{namespacestate}{state}} = *state\_ptr.get();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  geometry\_msgs::PoseWithCovarianceStamped pose\_msg;}
+\DoxyCodeLine{  \textcolor{comment}{// Header msg}}
+\DoxyCodeLine{  pose\_msg.header.seq = pose\_seq\_;}
+\DoxyCodeLine{  pose\_msg.header.stamp = ros::Time().fromSec(\mbox{\hyperlink{namespacestate}{state}}.get\_time());}
+\DoxyCodeLine{  pose\_msg.header.frame\_id = pose\_frame\_;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// Pose msg}}
+\DoxyCodeLine{  pose\_msg.pose.pose.position.x}
+\DoxyCodeLine{      = \mbox{\hyperlink{namespacestate}{state}}.get\_world\_position()(0) -\/ first\_pose\_[0];}
+\DoxyCodeLine{  pose\_msg.pose.pose.position.y}
+\DoxyCodeLine{      = \mbox{\hyperlink{namespacestate}{state}}.get\_world\_position()(1) -\/ first\_pose\_[1];}
+\DoxyCodeLine{  pose\_msg.pose.pose.position.z}
+\DoxyCodeLine{      = \mbox{\hyperlink{namespacestate}{state}}.get\_world\_position()(2) -\/ first\_pose\_[2];}
+\DoxyCodeLine{}
+\DoxyCodeLine{  Eigen::Quaterniond quat(\mbox{\hyperlink{namespacestate}{state}}.get\_world\_rotation());}
+\DoxyCodeLine{  pose\_msg.pose.pose.orientation.w = quat.w();}
+\DoxyCodeLine{  pose\_msg.pose.pose.orientation.x = quat.x();}
+\DoxyCodeLine{  pose\_msg.pose.pose.orientation.y = quat.y();}
+\DoxyCodeLine{  pose\_msg.pose.pose.orientation.z = quat.z();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// Covariance msg}}
+\DoxyCodeLine{  \textcolor{keyword}{auto}\& cov = \mbox{\hyperlink{namespacestate}{state}}.get\_P();}
+\DoxyCodeLine{  \textcolor{comment}{// Get the 6x6 covariance matrix in the following order:}}
+\DoxyCodeLine{  \textcolor{comment}{// (x, y, z, rotation about X axis, rotation about Y axis, rotation}}
+\DoxyCodeLine{  \textcolor{comment}{// about Z axis)}}
+\DoxyCodeLine{  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 6; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 6; j++) \{}
+\DoxyCodeLine{      pose\_msg.pose.covariance[i * 6 + j] = cov(i, j);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  pose\_pub\_.publish(pose\_msg);}
+\DoxyCodeLine{  pose\_seq\_++;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (\textcolor{keywordtype}{int}(pose\_seq\_) \% pose\_skip\_ == 0) \{}
+\DoxyCodeLine{    geometry\_msgs::PoseStamped pose\_stamped;}
+\DoxyCodeLine{    pose\_stamped.header = pose\_msg.header;}
+\DoxyCodeLine{    pose\_stamped.pose = pose\_msg.pose.pose;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::lock\_guard<std::mutex> lock(poses\_mutex\_);}
+\DoxyCodeLine{    poses\_.push\_back(pose\_stamped);}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Pose publishing thread}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} ROSPublisher::PosePublishingThread() \{}
+\DoxyCodeLine{  \textcolor{comment}{// Loop and publish data}}
+\DoxyCodeLine{  ros::Rate loop\_rate(pose\_publish\_rate\_);}
+\DoxyCodeLine{  \textcolor{keywordflow}{while} (ros::ok()) \{}
+\DoxyCodeLine{    PosePublish();}
+\DoxyCodeLine{    loop\_rate.sleep();}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Publishes path}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} ROSPublisher::PathPublish() \{}
+\DoxyCodeLine{  std::lock\_guard<std::mutex> lock(poses\_mutex\_);}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (poses\_.size() == 0) \{}
+\DoxyCodeLine{    \textcolor{comment}{// std::cout << "{}path is empty"{} << std::endl;}}
+\DoxyCodeLine{    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  nav\_msgs::Path path\_msg;}
+\DoxyCodeLine{  path\_msg.header.seq = path\_seq\_;}
+\DoxyCodeLine{  path\_msg.header.stamp = poses\_.back().header.stamp;}
+\DoxyCodeLine{  \textcolor{comment}{// path\_msg.header.stamp = ros::Time::now();}}
+\DoxyCodeLine{  path\_msg.header.frame\_id = pose\_frame\_;}
+\DoxyCodeLine{  path\_msg.poses = poses\_;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  path\_pub\_.publish(pa  th\_msg);}
+\DoxyCodeLine{  path\_seq\_++;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Path publishing thread}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} ROSPublisher::PathPublishingThread() \{}
+\DoxyCodeLine{  \textcolor{comment}{// Loop and publish data}}
+\DoxyCodeLine{  ros::Rate loop\_rate(path\_publish\_rate\_);}
+\DoxyCodeLine{  \textcolor{keywordflow}{while} (ros::ok()) \{}
+\DoxyCodeLine{    PathPublish();}
+\DoxyCodeLine{    loop\_rate.sleep();}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}    \textcolor{comment}{// namespace ros\_wrapper}}
+
+\end{DoxyCode}
+ Once the above three steps are finished, user may finish up writing the main function as well as the CMakelists.\+txt file. You are also more than welcome to share your wrapper to our repo by creating a pull request!
+
+Enjoy! 

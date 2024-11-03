@@ -1,0 +1,5 @@
+if(EXISTS "/home/neofelis/VRX/drift/build/tests/cheetahkinematics_test/TEST_cheetahkinematics_test[1]_tests.cmake")
+  include("/home/neofelis/VRX/drift/build/tests/cheetahkinematics_test/TEST_cheetahkinematics_test[1]_tests.cmake")
+else()
+  add_test(TEST_cheetahkinematics_test_NOT_BUILT TEST_cheetahkinematics_test_NOT_BUILT)
+endif()

@@ -1,0 +1,109 @@
+\hypertarget{measurement_8h}{}\doxysection{/home/neofelis/\+VRX/drift/include/drift/measurement/measurement.h File Reference}
+\label{measurement_8h}\index{/home/neofelis/VRX/drift/include/drift/measurement/measurement.h@{/home/neofelis/VRX/drift/include/drift/measurement/measurement.h}}
+
+
+Header file for measurement base class.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+Include dependency graph for measurement.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{measurement_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{measurement_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmeasurement_1_1Measurement}{measurement\+::\+Measurement}}
+\begin{DoxyCompactList}\small\item\em class for robot-\/state instantaneous measurement. This class is the base class for all measurements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacemeasurement}{measurement}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{Measurement\+Type}} \{ \newline
+\mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a2f0d18fc0d0fa4a6cd92dc328501874d}{EMPTY}}
+, \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7ae0aac3b1d47277f0d7593bda2847502a}{IMU}}
+, \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a9a2bdbfd2c71577d845c867d7653d695}{LEGGED\+\_\+\+KINEMATICS}}
+, \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a06e15744a8bd69fceeeb39ab3614b3f6}{VELOCITY}}
+, \newline
+\mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7ae4d95686a349611affcf1ebfeab077f1}{ANGULAR\+\_\+\+VELOCITY}}
+, \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7af5c091eaf3ff3ff714601dd8174dbe5b}{JOINT\+\_\+\+STATE}}
+, \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a6f7d7c84f5e891c3d7b4b588cd628b7e}{CONTACT}}
+, \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a06c69cbc09cb41870902c835e8d04f23}{ODOM}}
+, \newline
+\mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7abd4258be3226cc8e3a5d5480132b0013}{NAVSAT}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for measurement base class. 
+
+\begin{DoxyAuthor}{Author}
+Justin Yu 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 16, 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}\label{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}} 
+\index{measurement.h@{measurement.h}!MeasurementType@{MeasurementType}}
+\index{MeasurementType@{MeasurementType}!measurement.h@{measurement.h}}
+\doxysubsubsection{\texorpdfstring{MeasurementType}{MeasurementType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{Measurement\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMPTY@{EMPTY}!measurement.h@{measurement.h}}\index{measurement.h@{measurement.h}!EMPTY@{EMPTY}}}\mbox{\Hypertarget{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a2f0d18fc0d0fa4a6cd92dc328501874d}\label{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a2f0d18fc0d0fa4a6cd92dc328501874d}} 
+EMPTY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IMU@{IMU}!measurement.h@{measurement.h}}\index{measurement.h@{measurement.h}!IMU@{IMU}}}\mbox{\Hypertarget{measurement_8h_ad35f880f44d18d9c643f02c4057034f7ae0aac3b1d47277f0d7593bda2847502a}\label{measurement_8h_ad35f880f44d18d9c643f02c4057034f7ae0aac3b1d47277f0d7593bda2847502a}} 
+IMU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEGGED\_KINEMATICS@{LEGGED\_KINEMATICS}!measurement.h@{measurement.h}}\index{measurement.h@{measurement.h}!LEGGED\_KINEMATICS@{LEGGED\_KINEMATICS}}}\mbox{\Hypertarget{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a9a2bdbfd2c71577d845c867d7653d695}\label{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a9a2bdbfd2c71577d845c867d7653d695}} 
+LEGGED\+\_\+\+KINEMATICS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VELOCITY@{VELOCITY}!measurement.h@{measurement.h}}\index{measurement.h@{measurement.h}!VELOCITY@{VELOCITY}}}\mbox{\Hypertarget{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a06e15744a8bd69fceeeb39ab3614b3f6}\label{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a06e15744a8bd69fceeeb39ab3614b3f6}} 
+VELOCITY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANGULAR\_VELOCITY@{ANGULAR\_VELOCITY}!measurement.h@{measurement.h}}\index{measurement.h@{measurement.h}!ANGULAR\_VELOCITY@{ANGULAR\_VELOCITY}}}\mbox{\Hypertarget{measurement_8h_ad35f880f44d18d9c643f02c4057034f7ae4d95686a349611affcf1ebfeab077f1}\label{measurement_8h_ad35f880f44d18d9c643f02c4057034f7ae4d95686a349611affcf1ebfeab077f1}} 
+ANGULAR\+\_\+\+VELOCITY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOINT\_STATE@{JOINT\_STATE}!measurement.h@{measurement.h}}\index{measurement.h@{measurement.h}!JOINT\_STATE@{JOINT\_STATE}}}\mbox{\Hypertarget{measurement_8h_ad35f880f44d18d9c643f02c4057034f7af5c091eaf3ff3ff714601dd8174dbe5b}\label{measurement_8h_ad35f880f44d18d9c643f02c4057034f7af5c091eaf3ff3ff714601dd8174dbe5b}} 
+JOINT\+\_\+\+STATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTACT@{CONTACT}!measurement.h@{measurement.h}}\index{measurement.h@{measurement.h}!CONTACT@{CONTACT}}}\mbox{\Hypertarget{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a6f7d7c84f5e891c3d7b4b588cd628b7e}\label{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a6f7d7c84f5e891c3d7b4b588cd628b7e}} 
+CONTACT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ODOM@{ODOM}!measurement.h@{measurement.h}}\index{measurement.h@{measurement.h}!ODOM@{ODOM}}}\mbox{\Hypertarget{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a06c69cbc09cb41870902c835e8d04f23}\label{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a06c69cbc09cb41870902c835e8d04f23}} 
+ODOM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NAVSAT@{NAVSAT}!measurement.h@{measurement.h}}\index{measurement.h@{measurement.h}!NAVSAT@{NAVSAT}}}\mbox{\Hypertarget{measurement_8h_ad35f880f44d18d9c643f02c4057034f7abd4258be3226cc8e3a5d5480132b0013}\label{measurement_8h_ad35f880f44d18d9c643f02c4057034f7abd4258be3226cc8e3a5d5480132b0013}} 
+NAVSAT&\\
+\hline
+
+\end{DoxyEnumFields}

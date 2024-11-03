@@ -1,0 +1,229 @@
+\hypertarget{imu__ang__vel__ekf_8h_source}{}\doxysection{imu\+\_\+ang\+\_\+vel\+\_\+ekf.\+h}
+\label{imu__ang__vel__ekf_8h_source}\index{/home/neofelis/VRX/drift/include/drift/imu\_filter/imu\_ang\_vel\_ekf.h@{/home/neofelis/VRX/drift/include/drift/imu\_filter/imu\_ang\_vel\_ekf.h}}
+\mbox{\hyperlink{imu__ang__vel__ekf_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef IMU\_FILTER\_IMU\_ANG\_VEL\_EKF\_H}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define IMU\_FILTER\_IMU\_ANG\_VEL\_EKF\_H}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <atomic>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{base__propagation_8h}{drift/filter/base\_propagation.h}}"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{inekf_8h}{drift/filter/inekf/inekf.h}}"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lie__group_8h}{drift/math/lie\_group.h}}"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{angular__velocity_8h}{drift/measurement/angular\_velocity.h}}"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{imu_8h}{drift/measurement/imu.h}}"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type__def_8h}{drift/utils/type\_def.h}}"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemath}{math}};}
+\DoxyCodeLine{35 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacestate}{state}};}
+\DoxyCodeLine{36 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemeasurement}{measurement}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceimu__filter}{imu\_filter}} \{}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceimu__filter_a7806447d8020e941779c55be9ddd8023}{PROPAGATION\_METHOD}} \{}
+\DoxyCodeLine{42   \mbox{\hyperlink{namespaceimu__filter_a7806447d8020e941779c55be9ddd8023a8f3a7b1d44dcbe673d96cea0cb48285b}{RANDOM\_WALK}} = 0,}
+\DoxyCodeLine{43   \mbox{\hyperlink{namespaceimu__filter_a7806447d8020e941779c55be9ddd8023a927702a267e9b28a798f87d7b02b788a}{GYRO}} = 1,}
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44}{CORRECTION\_METHOD}} \{}
+\DoxyCodeLine{47   \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44a4ed4cb6918cd23ea40099fa8e865824a}{SINGLE\_IMU\_PLUS\_ANG\_VEL}} = 0,}
+\DoxyCodeLine{48   \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44ac02a605aafba42205a3a6b907d71109b}{SINGLE\_IMU}} = 1,}
+\DoxyCodeLine{49   \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44ad678700cd13facebb80cb5e38e46897e}{MULTI\_IMU}} = 2,}
+\DoxyCodeLine{50   \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44afeb9a09347ce8d6bc61e0de08cbbdc95}{ANG\_VEL}} = 3,}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{56 \textcolor{keyword}{class }\mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF}{ImuAngVelEKF}} \{}
+\DoxyCodeLine{57  \textcolor{keyword}{public}:}
+\DoxyCodeLine{58   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{62   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{75 \textcolor{comment}{}  \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF}{ImuAngVelEKF}}(\mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}} imu\_data\_buffer\_ptr,}
+\DoxyCodeLine{76                std::shared\_ptr<std::mutex> imu\_data\_buffer\_mutex\_ptr,}
+\DoxyCodeLine{77                \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{AngularVelocityQueuePtr}} ang\_vel\_data\_buffer\_ptr,}
+\DoxyCodeLine{78                std::shared\_ptr<std::mutex> ang\_vel\_data\_buffer\_mutex\_ptr,}
+\DoxyCodeLine{79                \textcolor{keyword}{const} std::string\& yaml\_filepath);}
+\DoxyCodeLine{84   \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF}{ImuAngVelEKF}}(\textcolor{keyword}{const} std::string\& yaml\_filepath);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{89   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{94 \textcolor{comment}{}  \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a4960406bff1b0b057ce9725a6a2d3ca7}{\string~ImuAngVelEKF}}();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{99   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{104 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a53c082dc483c109571d27509ac484098}{StartImuFilterThread}}();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{111 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a5633cedac0490abc28c4b798bb6e0028}{RunFilter}}();}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{119 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a567bbc32244c0bfc600eb4355fae2e04}{RunOnce}}();}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122   \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a3f18329fd5e18bf387a8a3ee813146c7}{LogInputIMU}}();}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{126   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{132 \textcolor{comment}{}  \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a79e3be4535df46bb71e0f6659e96aebc}{get\_filtered\_imu\_data\_buffer\_ptr}}();}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{141 \textcolor{comment}{}  std::shared\_ptr<std::mutex> \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_acf4bfbe0ee887b114766f035f1054c97}{get\_filtered\_imu\_data\_buffer\_mutex\_ptr}}();}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143   std::pair<IMUQueuePtr, std::shared\_ptr<std::mutex>>}
+\DoxyCodeLine{144   \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_ac11d89480710e832c3d0b6253ece889c}{get\_filtered\_imu\_data\_buffer\_and\_mutex\_ptr}}();}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147   \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a5782809f74d905f858d83bfef8a91a99}{InitializeFilter}}();}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{150   \textcolor{comment}{//\{}}
+\DoxyCodeLine{151   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{160 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_af6f6de929de5053df28e9137a5b6a079}{InitImuBias}}();}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{165   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{170 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a0ff59482493a212f23884ac24b344b62}{clear}}();}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{175   \textcolor{comment}{// =======================================================================}}
+\DoxyCodeLine{183 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a04c507acb417493175fee567241c904b}{add\_gyro\_propagate}}(}
+\DoxyCodeLine{184       \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}} imu\_data\_buffer\_ptr,}
+\DoxyCodeLine{185       std::shared\_ptr<std::mutex> imu\_data\_buffer\_mutex\_ptr);}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{195   \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_ab244959f2803c8114e5636090e1db05e}{add\_imu\_correction}}(}
+\DoxyCodeLine{196       \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}} imu\_data\_buffer\_ptr,}
+\DoxyCodeLine{197       std::shared\_ptr<std::mutex> imu\_data\_buffer\_mutex\_ptr);}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{207   \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a164cd0d4935cd44e1285276a74d8c1c8}{add\_ang\_vel\_correction}}(}
+\DoxyCodeLine{208       \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{AngularVelocityQueuePtr}} ang\_vel\_data\_buffer\_ptr,}
+\DoxyCodeLine{209       std::shared\_ptr<std::mutex> ang\_vel\_data\_buffer\_mutex\_ptr);}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{213   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{215 \textcolor{comment}{}}
+\DoxyCodeLine{218   \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a42867954ccf4f15a851c8d838739a347}{SingleImuCorrection}}();}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{223   \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a13cad7e6eb58d469b9f0784e9f9055d7}{MultiImuCorrection}}();}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{229   \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a667a0f6ab36fdfcf5d606e0627cfc0d9}{SingleImuAngVelCorrection}}();}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{234   \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a26ec7581fff4f348e8725e1c4d066e3d}{AngVelCorrection}}();}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{238   \textcolor{comment}{// =====================================================================}}
+\DoxyCodeLine{242 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a926e85b83ac479970fd4a36755ff8770}{GyroPropagate}}();}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{247   \textcolor{keywordtype}{void} \mbox{\hyperlink{classimu__filter_1_1ImuAngVelEKF_a1ae11e1150f440aac417932fa99488bc}{RandomWalkPropagate}}();}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250  \textcolor{keyword}{private}:}
+\DoxyCodeLine{253   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{259 \textcolor{comment}{}  \textcolor{keywordtype}{void} AngVelFilterPropagate();}
+\DoxyCodeLine{260   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{268 \textcolor{comment}{}  \mbox{\hyperlink{type__def_8h_aa48eb7ad7e7ce4c6571f7c3fe0ec261f}{ImuMeasurementPtr}} AngVelFilterCorrectIMU(}
+\DoxyCodeLine{269       \textcolor{keyword}{const} \mbox{\hyperlink{type__def_8h_aa48eb7ad7e7ce4c6571f7c3fe0ec261f}{ImuMeasurementPtr}}\& imu\_measurement);}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{284 \textcolor{comment}{}  \mbox{\hyperlink{type__def_8h_aa48eb7ad7e7ce4c6571f7c3fe0ec261f}{ImuMeasurementPtr}} AngVelFilterCorrectEncoder(}
+\DoxyCodeLine{285       \textcolor{keyword}{const} \mbox{\hyperlink{type__def_8h_aa48eb7ad7e7ce4c6571f7c3fe0ec261f}{ImuMeasurementPtr}}\& imu\_measurement,}
+\DoxyCodeLine{286       \textcolor{keyword}{const} \mbox{\hyperlink{type__def_8h_ac5f0ef3f7e34826fcd5fe80c21756cc8}{AngularVelocityMeasurementPtr}}\& ang\_vel\_measurement);}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290   \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}}}
+\DoxyCodeLine{291       gyro\_prop\_data\_buffer\_ptr\_;    \textcolor{comment}{// Pointer to gyro / IMU sensor data buffer}}
+\DoxyCodeLine{292   std::shared\_ptr<std::mutex> gyro\_prop\_data\_buffer\_mutex\_ptr\_;}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294   \textcolor{comment}{// These are pointer to measurements that will be used in correction step}}
+\DoxyCodeLine{295   \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}} imu\_data\_buffer\_ptr\_;    \textcolor{comment}{// Pointer to the sensor data buffer.}}
+\DoxyCodeLine{296   std::shared\_ptr<std::mutex> imu\_data\_buffer\_mutex\_ptr\_;}
+\DoxyCodeLine{297   std::vector<IMUQueuePtr>}
+\DoxyCodeLine{298       imu\_data\_buffer\_ptrs\_;    \textcolor{comment}{// Vector of imu data buffer pointers}}
+\DoxyCodeLine{299   std::vector<std::shared\_ptr<std::mutex>> imu\_data\_buffer\_mutex\_ptrs\_;}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301   \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{AngularVelocityQueuePtr}} ang\_vel\_data\_buffer\_ptr\_;}
+\DoxyCodeLine{302   std::shared\_ptr<std::mutex> ang\_vel\_data\_buffer\_mutex\_ptr\_;}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304   \textcolor{keywordtype}{double} last\_propagate\_time\_}
+\DoxyCodeLine{305       = -\/1;    \textcolor{comment}{// This will only be modified if user uses GyroPropagte method.}}
+\DoxyCodeLine{306   \textcolor{keywordtype}{double} t\_thres\_;    \textcolor{comment}{// Threshold between correction time and propagation time}}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308   \mbox{\hyperlink{namespaceimu__filter_a7806447d8020e941779c55be9ddd8023}{PROPAGATION\_METHOD}} propagation\_method\_ = \mbox{\hyperlink{namespaceimu__filter_a7806447d8020e941779c55be9ddd8023a8f3a7b1d44dcbe673d96cea0cb48285b}{RANDOM\_WALK}};}
+\DoxyCodeLine{309   \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44}{CORRECTION\_METHOD}} correction\_method\_ = \mbox{\hyperlink{namespaceimu__filter_a47a4e0d36bcc3c6cebbc08928fcd3a44a4ed4cb6918cd23ea40099fa8e865824a}{SINGLE\_IMU\_PLUS\_ANG\_VEL}};}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311   \textcolor{keywordtype}{int} num\_imu\_ = 0;}
+\DoxyCodeLine{312   \textcolor{keywordtype}{int} num\_ang\_vel\_ = 0;}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314   Eigen::Vector3d prev\_ang\_vel\_measurement\_ = Eigen::Vector3d::Zero();}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316   Eigen::Matrix3d}
+\DoxyCodeLine{317       R\_imu2body\_inverse\_;    \textcolor{comment}{// Inverse of rotation matrix that brings}}
+\DoxyCodeLine{318                               \textcolor{comment}{// measurement from IMU frame to body frame.}}
+\DoxyCodeLine{319                               \textcolor{comment}{// i.e. takes measurements in body frame to}}
+\DoxyCodeLine{320                               \textcolor{comment}{// imu frame.}}
+\DoxyCodeLine{321   \textcolor{comment}{// IMU bias initialization related variables:}}
+\DoxyCodeLine{322   Eigen::Vector3d bg0\_ = Eigen::Vector3d::Zero();    \textcolor{comment}{// Gyroscope bias prior.}}
+\DoxyCodeLine{323   Eigen::Vector3d ba0\_}
+\DoxyCodeLine{324       = Eigen::Vector3d::Zero();      \textcolor{comment}{// Accelerometer bias prior.}}
+\DoxyCodeLine{325   Eigen::Matrix3d gyro\_cov\_;          \textcolor{comment}{// Gyroscope measurement covariance.}}
+\DoxyCodeLine{326   Eigen::Matrix3d accel\_cov\_;         \textcolor{comment}{// Accelerometer measurement covariance.}}
+\DoxyCodeLine{327   Eigen::Matrix3d gyro\_bias\_cov\_;     \textcolor{comment}{// Gyroscope bias covariance.}}
+\DoxyCodeLine{328   Eigen::Matrix3d accel\_bias\_cov\_;    \textcolor{comment}{// Accelerometer bias covariance.}}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330   \textcolor{keywordtype}{bool} enable\_imu\_bias\_update\_;    \textcolor{comment}{// Boolean value that allows IMU bias update}}
+\DoxyCodeLine{331                                    \textcolor{comment}{// during propagation (true for enabling bias}}
+\DoxyCodeLine{332                                    \textcolor{comment}{// update, false for disabling).}}
+\DoxyCodeLine{333   \textcolor{keywordtype}{bool} static\_bias\_initialization\_;    \textcolor{comment}{// Flag for static bias initialization}}
+\DoxyCodeLine{334   \textcolor{keywordtype}{bool} use\_imu\_ori\_est\_to\_init\_;       \textcolor{comment}{// Flag for using orientation estimated}}
+\DoxyCodeLine{335                                        \textcolor{comment}{// from the imu to perform static bias}}
+\DoxyCodeLine{336                                        \textcolor{comment}{// initialization. If set to false, the}}
+\DoxyCodeLine{337   \textcolor{comment}{// initial orientation is set to identity.}}
+\DoxyCodeLine{338   \textcolor{comment}{// i.e. assumes the robot is on a}}
+\DoxyCodeLine{339   \textcolor{comment}{// horizontal flat surface.}}
+\DoxyCodeLine{340   \textcolor{keywordtype}{bool} bias\_initialized\_ = \textcolor{keyword}{false};    \textcolor{comment}{// Indicating whether IMU bias has been}}
+\DoxyCodeLine{341                                      \textcolor{comment}{// initialized using measurements.}}
+\DoxyCodeLine{342   \textcolor{keywordtype}{int} init\_bias\_size\_;    \textcolor{comment}{// Number of IMU measurements to use for bias}}
+\DoxyCodeLine{343                           \textcolor{comment}{// initialization.}}
+\DoxyCodeLine{344   std::vector<Eigen::Matrix<double, 3, 1>,}
+\DoxyCodeLine{345               Eigen::aligned\_allocator<Eigen::Matrix<double, 3, 1>>>}
+\DoxyCodeLine{346       bias\_init\_vec\_;    \textcolor{comment}{// The initialized gyro bias value in the order of}}
+\DoxyCodeLine{347   \textcolor{comment}{// [gyro\_x, gyro\_y, gyro\_z].}}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349   \textcolor{keywordtype}{bool} filter\_initialized\_ = \textcolor{keyword}{false};}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351   \textcolor{comment}{// Variables for the angular velocity filter}}
+\DoxyCodeLine{352   \mbox{\hyperlink{type__def_8h_aa48eb7ad7e7ce4c6571f7c3fe0ec261f}{ImuMeasurementPtr}} latest\_imu\_measurement\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{353   Eigen::VectorXd ang\_vel\_and\_bias\_est\_ = Eigen::VectorXd::Zero(6);}
+\DoxyCodeLine{354   Eigen::Matrix<double, 6, 6> ang\_vel\_and\_bias\_P\_;}
+\DoxyCodeLine{355   Eigen::Matrix<double, 6, 6> ang\_vel\_and\_bias\_Q\_;    \textcolor{comment}{// Process noise}}
+\DoxyCodeLine{356   Eigen::Matrix<double, 3, 3> ang\_vel\_imu\_R\_;         \textcolor{comment}{// IMU measurement noise}}
+\DoxyCodeLine{357   Eigen::Matrix<double, 3, 3> ang\_vel\_enc\_R\_;    \textcolor{comment}{// Encoder measurement noise}}
+\DoxyCodeLine{358   Eigen::Matrix<double, 3, 6> H\_imu\_;}
+\DoxyCodeLine{359   Eigen::Matrix<double, 3, 6> H\_enc\_;}
+\DoxyCodeLine{360   std::vector<Eigen::Matrix<double, 3, 1>,}
+\DoxyCodeLine{361               Eigen::aligned\_allocator<Eigen::Matrix<double, 3, 1>>>}
+\DoxyCodeLine{362       init\_vec\_;}
+\DoxyCodeLine{363   \textcolor{comment}{// Thread related:}}
+\DoxyCodeLine{364   std::atomic<bool> stop\_thread\_ = \textcolor{keyword}{false};}
+\DoxyCodeLine{365   std::thread imu\_filter\_thread\_;}
+\DoxyCodeLine{366   std::shared\_ptr<std::mutex> filtered\_imu\_data\_buffer\_mutex\_ptr\_;}
+\DoxyCodeLine{367   \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}} filtered\_imu\_data\_buffer\_ptr\_;}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370   \textcolor{comment}{// Debugging related:}}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372   std::ofstream imu\_propagate\_input\_outfile\_;}
+\DoxyCodeLine{373   std::ofstream imu\_propagate\_outfile\_;}
+\DoxyCodeLine{374   std::ofstream imu\_ang\_vel\_outfile\_;}
+\DoxyCodeLine{375   std::ofstream encoder\_ang\_vel\_outfile\_;}
+\DoxyCodeLine{376   std::ofstream filtered\_ang\_vel\_outfile\_;}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378 \};    \textcolor{comment}{// End of class FilteredImuPropagation}}
+\DoxyCodeLine{379 \}    \textcolor{comment}{// namespace imu\_filter}}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#endif    }\textcolor{comment}{// IMU\_FILTER\_IMU\_ANG\_VEL\_EKF\_H}}
+
+\end{DoxyCode}

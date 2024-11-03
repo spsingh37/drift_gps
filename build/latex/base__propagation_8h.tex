@@ -1,0 +1,80 @@
+\hypertarget{base__propagation_8h}{}\doxysection{/home/neofelis/\+VRX/drift/include/drift/filter/base\+\_\+propagation.h File Reference}
+\label{base__propagation_8h}\index{/home/neofelis/VRX/drift/include/drift/filter/base\_propagation.h@{/home/neofelis/VRX/drift/include/drift/filter/base\_propagation.h}}
+
+
+Header file for base propagation method.  
+
+
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$boost/circular\+\_\+buffer.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}yaml-\/cpp/yaml.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/measurement/measurement.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/state/robot\+\_\+state.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/utils/type\+\_\+def.\+h\char`\"{}}\newline
+Include dependency graph for base\+\_\+propagation.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{base__propagation_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{base__propagation_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfilter_1_1Propagation}{filter\+::\+Propagation}}
+\begin{DoxyCompactList}\small\item\em Base class for propagation method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacefilter}{filter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{base__propagation_8h_a2477a42547ead4995131c881e573ede5}{Propagation\+Type}} \{ \mbox{\hyperlink{base__propagation_8h_a2477a42547ead4995131c881e573ede5ae7b1a5c82772e0e055096008cb9883ef}{BASE}}
+, \mbox{\hyperlink{base__propagation_8h_a2477a42547ead4995131c881e573ede5aadce094d314507ad8b234a286aeff254}{IMU}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for base propagation method. 
+
+\begin{DoxyAuthor}{Author}
+Tingjun Li 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 16, 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{base__propagation_8h_a2477a42547ead4995131c881e573ede5}\label{base__propagation_8h_a2477a42547ead4995131c881e573ede5}} 
+\index{base\_propagation.h@{base\_propagation.h}!PropagationType@{PropagationType}}
+\index{PropagationType@{PropagationType}!base\_propagation.h@{base\_propagation.h}}
+\doxysubsubsection{\texorpdfstring{PropagationType}{PropagationType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{base__propagation_8h_a2477a42547ead4995131c881e573ede5}{Propagation\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BASE@{BASE}!base\_propagation.h@{base\_propagation.h}}\index{base\_propagation.h@{base\_propagation.h}!BASE@{BASE}}}\mbox{\Hypertarget{base__propagation_8h_a2477a42547ead4995131c881e573ede5ae7b1a5c82772e0e055096008cb9883ef}\label{base__propagation_8h_a2477a42547ead4995131c881e573ede5ae7b1a5c82772e0e055096008cb9883ef}} 
+BASE&Base propagation method. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IMU@{IMU}!base\_propagation.h@{base\_propagation.h}}\index{base\_propagation.h@{base\_propagation.h}!IMU@{IMU}}}\mbox{\Hypertarget{base__propagation_8h_a2477a42547ead4995131c881e573ede5aadce094d314507ad8b234a286aeff254}\label{base__propagation_8h_a2477a42547ead4995131c881e573ede5aadce094d314507ad8b234a286aeff254}} 
+IMU&IMU propagation method. \\
+\hline
+
+\end{DoxyEnumFields}

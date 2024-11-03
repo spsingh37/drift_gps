@@ -1,0 +1,176 @@
+\hypertarget{classfilter_1_1inekf_1_1VelocityCorrection}{}\doxysection{filter\+::inekf\+::Velocity\+Correction Class Reference}
+\label{classfilter_1_1inekf_1_1VelocityCorrection}\index{filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}}
+
+
+A class for state correction using velocity measurement data.  
+
+
+
+
+{\ttfamily \#include $<$velocity\+\_\+correction.\+h$>$}
+
+
+
+Inheritance diagram for filter\+::inekf\+::Velocity\+Correction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classfilter_1_1inekf_1_1VelocityCorrection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filter\+::inekf\+::Velocity\+Correction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classfilter_1_1inekf_1_1VelocityCorrection__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection_a5d02b7ddffb87127445816bafec0536d}{$\sim$\+Velocity\+Correction}} ()
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection_a1ab5ca176af26307e27f9892706922de}{Velocity\+Correction}} (\mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}} sensor\+\_\+data\+\_\+buffer\+\_\+ptr, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ sensor\+\_\+data\+\_\+buffer\+\_\+mutex\+\_\+ptr, const \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{Error\+Type}} \&error\+\_\+type, const std\+::string \&yaml\+\_\+filepath)
+\begin{DoxyCompactList}\small\item\em Constructor for velocity correction class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Correction Methods}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection_a199e959b9b940322780ea2ac11a14009}{Correct}} (\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&state) override
+\begin{DoxyCompactList}\small\item\em Corrects the state estimate using measured velocity \mbox{[}m/s\mbox{]} that is measured and covarinace of the velocity. Measurements are taken in body frame. This is a right-\/invariant measurement model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getters}\par
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}} \mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection_abe83fa7859f88d2e1f08e4a3466a1a42}{get\+\_\+sensor\+\_\+data\+\_\+buffer\+\_\+ptr}} () const
+\begin{DoxyCompactList}\small\item\em Return the pointer of the sensor data buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Setters}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection_aca1a4f9197813a1aae680c0130c52573}{initialize}} (\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&state) override
+\begin{DoxyCompactList}\small\item\em Set the initial velocity of the robot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection_a30525f78e38eb0e4522263eccc26d3e9}{clear}} () override
+\begin{DoxyCompactList}\small\item\em Clear the sensor\+\_\+data\+\_\+buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A class for state correction using velocity measurement data. 
+
+A class for state correction using velocity measurement data. This class handles the correction of the state estimate using the measured velocity between the body frame and the world frame. Default is a right-\/invariant measurement model. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1VelocityCorrection_a1ab5ca176af26307e27f9892706922de}\label{classfilter_1_1inekf_1_1VelocityCorrection_a1ab5ca176af26307e27f9892706922de}} 
+\index{filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}!VelocityCorrection@{VelocityCorrection}}
+\index{VelocityCorrection@{VelocityCorrection}!filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}}
+\doxysubsubsection{\texorpdfstring{VelocityCorrection()}{VelocityCorrection()}}
+{\footnotesize\ttfamily filter\+::inekf\+::\+Velocity\+Correction\+::\+Velocity\+Correction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}}}]{sensor\+\_\+data\+\_\+buffer\+\_\+ptr,  }\item[{std\+::shared\+\_\+ptr$<$ std\+::mutex $>$}]{sensor\+\_\+data\+\_\+buffer\+\_\+mutex\+\_\+ptr,  }\item[{const \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{Error\+Type}} \&}]{error\+\_\+type,  }\item[{const std\+::string \&}]{yaml\+\_\+filepath }\end{DoxyParamCaption})}
+
+
+
+Constructor for velocity correction class. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sensor\+\_\+data\+\_\+buffer\+\_\+ptr} & Pointer to the buffer of sensor data \\
+\hline
+\mbox{\texttt{ in}}  & {\em sensor\+\_\+data\+\_\+buffer\+\_\+mutex\+\_\+ptr} & Pointer to the mutex for the sensor data buffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+type} & Error type for the correction. Left\+Invariant or Right\+Invariant \\
+\hline
+\mbox{\texttt{ in}}  & {\em yaml\+\_\+filepath} & Path to the yaml file for the correction \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1VelocityCorrection_a5d02b7ddffb87127445816bafec0536d}\label{classfilter_1_1inekf_1_1VelocityCorrection_a5d02b7ddffb87127445816bafec0536d}} 
+\index{filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}!````~VelocityCorrection@{$\sim$VelocityCorrection}}
+\index{````~VelocityCorrection@{$\sim$VelocityCorrection}!filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}}
+\doxysubsubsection{\texorpdfstring{$\sim$VelocityCorrection()}{~VelocityCorrection()}}
+{\footnotesize\ttfamily filter\+::inekf\+::\+Velocity\+Correction\+::$\sim$\+Velocity\+Correction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1VelocityCorrection_a30525f78e38eb0e4522263eccc26d3e9}\label{classfilter_1_1inekf_1_1VelocityCorrection_a30525f78e38eb0e4522263eccc26d3e9}} 
+\index{filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}!clear@{clear}}
+\index{clear@{clear}!filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void filter\+::inekf\+::\+Velocity\+Correction\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clear the sensor\+\_\+data\+\_\+buffer. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classfilter_1_1Correction_ac021bf9144d6549ac70c09f3488aba33}{filter\+::\+Correction}}.
+
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1VelocityCorrection_a199e959b9b940322780ea2ac11a14009}\label{classfilter_1_1inekf_1_1VelocityCorrection_a199e959b9b940322780ea2ac11a14009}} 
+\index{filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}!Correct@{Correct}}
+\index{Correct@{Correct}!filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}}
+\doxysubsubsection{\texorpdfstring{Correct()}{Correct()}}
+{\footnotesize\ttfamily bool filter\+::inekf\+::\+Velocity\+Correction\+::\+Correct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Corrects the state estimate using measured velocity \mbox{[}m/s\mbox{]} that is measured and covarinace of the velocity. Measurements are taken in body frame. This is a right-\/invariant measurement model. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em state} & the current state estimate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: successfully correct state or not (if we do not receive a new message and this method is called it\textquotesingle{}ll return false.) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classfilter_1_1Correction_adf7ced0837a6bc272441dbe6482fba83}{filter\+::\+Correction}}.
+
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1VelocityCorrection_abe83fa7859f88d2e1f08e4a3466a1a42}\label{classfilter_1_1inekf_1_1VelocityCorrection_abe83fa7859f88d2e1f08e4a3466a1a42}} 
+\index{filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}!get\_sensor\_data\_buffer\_ptr@{get\_sensor\_data\_buffer\_ptr}}
+\index{get\_sensor\_data\_buffer\_ptr@{get\_sensor\_data\_buffer\_ptr}!filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}}
+\doxysubsubsection{\texorpdfstring{get\_sensor\_data\_buffer\_ptr()}{get\_sensor\_data\_buffer\_ptr()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}} filter\+::inekf\+::\+Velocity\+Correction\+::get\+\_\+sensor\+\_\+data\+\_\+buffer\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the pointer of the sensor data buffer. 
+
+\begin{DoxyReturn}{Returns}
+Velocity\+Queue\+Ptr\+: pointer of the sensor data buffer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1VelocityCorrection_aca1a4f9197813a1aae680c0130c52573}\label{classfilter_1_1inekf_1_1VelocityCorrection_aca1a4f9197813a1aae680c0130c52573}} 
+\index{filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}!initialize@{initialize}}
+\index{initialize@{initialize}!filter::inekf::VelocityCorrection@{filter::inekf::VelocityCorrection}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily bool filter\+::inekf\+::\+Velocity\+Correction\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the initial velocity of the robot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em state} & the current state estimate, which will be initialized \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: whether the initialization is successful 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classfilter_1_1Correction_a40aaef389d8cbe2ec0011ecd4bf74a8b}{filter\+::\+Correction}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/filter/inekf/correction/\mbox{\hyperlink{velocity__correction_8h}{velocity\+\_\+correction.\+h}}\item 
+/home/neofelis/\+VRX/drift/src/filter/inekf/correction/\mbox{\hyperlink{velocity__correction_8cpp}{velocity\+\_\+correction.\+cpp}}\end{DoxyCompactItemize}

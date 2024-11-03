@@ -1,0 +1,101 @@
+\hypertarget{ros__publisher_8h_source}{}\doxysection{ros\+\_\+publisher.\+h}
+\label{ros__publisher_8h_source}\index{/home/neofelis/VRX/drift/ROS/drift/include/communication/ros\_publisher.h@{/home/neofelis/VRX/drift/ROS/drift/include/communication/ros\_publisher.h}}
+\mbox{\hyperlink{ros__publisher_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ROS\_COMMUNICATION\_ROS\_PUBLISHER\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ROS\_COMMUNICATION\_ROS\_PUBLISHER\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <nav\_msgs/Path.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}boost/bind.hpp"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}geometry\_msgs/PoseWithCovarianceStamped.h"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}geometry\_msgs/Twist.h"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}geometry\_msgs/Vector3Stamped.h"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}ros/ros.h"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}yaml-\/cpp/yaml.h"{}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{robot__state_8h}{drift/state/robot\_state.h}}"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type__def_8h}{drift/utils/type\_def.h}}"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacestate}{state}};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceros__wrapper}{ros\_wrapper}} \{}
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{classros__wrapper_1_1ROSPublisher}{ROSPublisher}} \{}
+\DoxyCodeLine{46  \textcolor{keyword}{public}:}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{56   \mbox{\hyperlink{classros__wrapper_1_1ROSPublisher}{ROSPublisher}}(ros::NodeHandle* nh, \mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{RobotStateQueuePtr}}\& robot\_state\_queue,}
+\DoxyCodeLine{57                std::shared\_ptr<std::mutex> robot\_state\_queue\_mutex,}
+\DoxyCodeLine{58                \textcolor{keywordtype}{bool} enable\_slip\_publisher\_ = \textcolor{keyword}{false});}
+\DoxyCodeLine{67   \mbox{\hyperlink{classros__wrapper_1_1ROSPublisher}{ROSPublisher}}(ros::NodeHandle* nh, \mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{RobotStateQueuePtr}}\& robot\_state\_queue,}
+\DoxyCodeLine{68                std::shared\_ptr<std::mutex> robot\_state\_queue\_mutex,}
+\DoxyCodeLine{69                std::string config\_file);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{79   \mbox{\hyperlink{classros__wrapper_1_1ROSPublisher_ac9a5d42b30a438c3a5e0a083873c0527}{\string~ROSPublisher}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{86   \textcolor{keywordtype}{void} \mbox{\hyperlink{classros__wrapper_1_1ROSPublisher_abbf0c5822b2d001993bb143f26e00056}{StartPublishingThread}}();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88  \textcolor{keyword}{private}:}
+\DoxyCodeLine{89   ros::NodeHandle* nh\_;            \textcolor{comment}{// ROS node handle}}
+\DoxyCodeLine{90   \mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{RobotStateQueuePtr}}}
+\DoxyCodeLine{91       robot\_state\_queue\_ptr\_;      \textcolor{comment}{// Pointer to the robot state queue}}
+\DoxyCodeLine{92   std::shared\_ptr<std::mutex>}
+\DoxyCodeLine{93       robot\_state\_queue\_mutex\_;    \textcolor{comment}{// Pointer to the robot state queue mutex}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{keywordtype}{bool} thread\_started\_;            \textcolor{comment}{// Flag for thread started}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   ros::Publisher pose\_pub\_;        \textcolor{comment}{// Pose publisher}}
+\DoxyCodeLine{98   std::string}
+\DoxyCodeLine{99       pose\_frame\_;           \textcolor{comment}{// The name of a frame which poses are published in}}
+\DoxyCodeLine{100   uint32\_t pose\_seq\_ = 0;    \textcolor{comment}{// Sequence number for pose publisher}}
+\DoxyCodeLine{101   \textcolor{keywordtype}{double} pose\_publish\_rate\_;              \textcolor{comment}{// Pose publishing rate}}
+\DoxyCodeLine{102   std::thread pose\_publishing\_thread\_;    \textcolor{comment}{// Thread for pose publishing}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   ros::Publisher path\_pub\_;               \textcolor{comment}{// Path publisher}}
+\DoxyCodeLine{105   uint32\_t path\_seq\_ = 0;                 \textcolor{comment}{// Sequence number for path publisher}}
+\DoxyCodeLine{106   \textcolor{keywordtype}{double} path\_publish\_rate\_;              \textcolor{comment}{// Path publishing rate}}
+\DoxyCodeLine{107   std::thread path\_publishing\_thread\_;    \textcolor{comment}{// Thread for path publishing}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{keywordtype}{int} pose\_skip\_;    \textcolor{comment}{// Number of poses to skip while generating a path message}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111   std::array<float, 3> first\_pose\_;    \textcolor{comment}{// Initial pose of the robot}}
+\DoxyCodeLine{112   std::vector<geometry\_msgs::PoseStamped>}
+\DoxyCodeLine{113       poses\_;                          \textcolor{comment}{// Path message in ROS, a list of poses}}
+\DoxyCodeLine{114   std::mutex poses\_mutex\_;             \textcolor{comment}{// mutex for the path}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   \textcolor{keywordtype}{bool} enable\_slip\_publisher\_;         \textcolor{comment}{// Flag for slip publisher}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{123   \textcolor{keywordtype}{void} PathPublishingThread();}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{128   \textcolor{keywordtype}{void} PathPublish();}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{133   \textcolor{keywordtype}{void} PosePublishingThread();}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{138   \textcolor{keywordtype}{void} PosePublish();}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{143   \textcolor{keywordtype}{void} SlipPublish();}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{148   \textcolor{keywordtype}{void} SlipFlagPublish();}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{151 \};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \}    \textcolor{comment}{// namespace ros\_wrapper}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

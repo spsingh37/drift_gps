@@ -1,0 +1,5 @@
+add_test( JointStateMeasurementTest.Ctor /home/neofelis/VRX/drift/build/tests/jointstatemeasurement_test/TEST_jointstatemeasurement_test [==[--gtest_filter=JointStateMeasurementTest.Ctor]==] --gtest_also_run_disabled_tests)
+set_tests_properties( JointStateMeasurementTest.Ctor PROPERTIES WORKING_DIRECTORY /home/neofelis/VRX/drift/build/tests/jointstatemeasurement_test)
+add_test( JointStateMeasurementTest.SetGetBasic /home/neofelis/VRX/drift/build/tests/jointstatemeasurement_test/TEST_jointstatemeasurement_test [==[--gtest_filter=JointStateMeasurementTest.SetGetBasic]==] --gtest_also_run_disabled_tests)
+set_tests_properties( JointStateMeasurementTest.SetGetBasic PROPERTIES WORKING_DIRECTORY /home/neofelis/VRX/drift/build/tests/jointstatemeasurement_test)
+set( TEST_jointstatemeasurement_test_TESTS JointStateMeasurementTest.Ctor JointStateMeasurementTest.SetGetBasic)

@@ -1,0 +1,106 @@
+\hypertarget{namespacefilter_1_1inekf}{}\doxysection{filter\+::inekf Namespace Reference}
+\label{namespacefilter_1_1inekf}\index{filter::inekf@{filter::inekf}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfilter_1_1inekf_1_1ContactInfo}{Contact\+Info}}
+\begin{DoxyCompactList}\small\item\em A struct for contact information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation}{Imu\+Propagation}}
+\begin{DoxyCompactList}\small\item\em A class for state propagation using imu measurement data. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilter_1_1inekf_1_1LeggedKinematicsCorrection}{Legged\+Kinematics\+Correction}}
+\begin{DoxyCompactList}\small\item\em A class for state correction using foot kinematics and contact events. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilter_1_1inekf_1_1PoseCorrection}{Pose\+Correction}}
+\begin{DoxyCompactList}\small\item\em A class for state correction using pose measurement data. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection}{Velocity\+Correction}}
+\begin{DoxyCompactList}\small\item\em A class for state correction using velocity measurement data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{Error\+Type}} \{ \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823a384a94e2bf3c9d98825eb575f0bf5a47}{Left\+Invariant}}
+, \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823ae7df841b5d75339663cd0553cd0c23f9}{Right\+Invariant}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacefilter_1_1inekf_a6db952b8f8374d1378c929dbe62a02e8}{Correct\+Right\+Invariant}} (const Eigen\+::\+Matrix\+Xd \&Z, const Eigen\+::\+Matrix\+Xd \&H, const Eigen\+::\+Matrix\+Xd \&N, \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&state, \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{Error\+Type}} error\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Corrects the state using Right Invariant observation model with given measurement, output and matrices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefilter_1_1inekf_aedb6deac4ea9c850feceab44c3778168}{Correct\+Left\+Invariant}} (const Eigen\+::\+Matrix\+Xd \&Z, const Eigen\+::\+Matrix\+Xd \&H, const Eigen\+::\+Matrix\+Xd \&N, \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&state, \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{Error\+Type}} error\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Corrects the state using Left Invariant observation model with given measurement, output and matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}\label{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}} 
+\index{filter::inekf@{filter::inekf}!ErrorType@{ErrorType}}
+\index{ErrorType@{ErrorType}!filter::inekf@{filter::inekf}}
+\doxysubsubsection{\texorpdfstring{ErrorType}{ErrorType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{filter\+::inekf\+::\+Error\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LeftInvariant@{LeftInvariant}!filter::inekf@{filter::inekf}}\index{filter::inekf@{filter::inekf}!LeftInvariant@{LeftInvariant}}}\mbox{\Hypertarget{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823a384a94e2bf3c9d98825eb575f0bf5a47}\label{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823a384a94e2bf3c9d98825eb575f0bf5a47}} 
+Left\+Invariant&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RightInvariant@{RightInvariant}!filter::inekf@{filter::inekf}}\index{filter::inekf@{filter::inekf}!RightInvariant@{RightInvariant}}}\mbox{\Hypertarget{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823ae7df841b5d75339663cd0553cd0c23f9}\label{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823ae7df841b5d75339663cd0553cd0c23f9}} 
+Right\+Invariant&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacefilter_1_1inekf_aedb6deac4ea9c850feceab44c3778168}\label{namespacefilter_1_1inekf_aedb6deac4ea9c850feceab44c3778168}} 
+\index{filter::inekf@{filter::inekf}!CorrectLeftInvariant@{CorrectLeftInvariant}}
+\index{CorrectLeftInvariant@{CorrectLeftInvariant}!filter::inekf@{filter::inekf}}
+\doxysubsubsection{\texorpdfstring{CorrectLeftInvariant()}{CorrectLeftInvariant()}}
+{\footnotesize\ttfamily void filter\+::inekf\+::\+Correct\+Left\+Invariant (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Z,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{H,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{N,  }\item[{\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&}]{state,  }\item[{\mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{Error\+Type}}}]{error\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Corrects the state using Left Invariant observation model with given measurement, output and matrices. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Z} & innovation matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em H} & measurement error matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & measurement noise matrix \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em state} & Robot state \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+type} & Error type， Right\+Invariant or Left\+Invariant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefilter_1_1inekf_a6db952b8f8374d1378c929dbe62a02e8}\label{namespacefilter_1_1inekf_a6db952b8f8374d1378c929dbe62a02e8}} 
+\index{filter::inekf@{filter::inekf}!CorrectRightInvariant@{CorrectRightInvariant}}
+\index{CorrectRightInvariant@{CorrectRightInvariant}!filter::inekf@{filter::inekf}}
+\doxysubsubsection{\texorpdfstring{CorrectRightInvariant()}{CorrectRightInvariant()}}
+{\footnotesize\ttfamily void filter\+::inekf\+::\+Correct\+Right\+Invariant (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{Z,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{H,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{N,  }\item[{\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&}]{state,  }\item[{\mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{Error\+Type}}}]{error\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Corrects the state using Right Invariant observation model with given measurement, output and matrices. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Z} & innovation matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em H} & measurement error matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & measurement noise matrix \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em state} & Robot state \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+type} & Error type， Right\+Invariant or Left\+Invariant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+REMARK\+: set yaw bias derivative estimation to 0
+
+TODO\+: Add a flag to enable yaw covariance update

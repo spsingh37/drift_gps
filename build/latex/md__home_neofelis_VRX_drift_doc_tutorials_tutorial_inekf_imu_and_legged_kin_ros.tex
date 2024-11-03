@@ -1,0 +1,208 @@
+This tutorial will guide you through the process of creating a simple application using the DRIFT library. It assumes you have a basic knowledge of C++ and Robot Operating System (ROS). If you are not familiar with ROS, please refer to the \href{http://wiki.ros.org/ROS/Tutorials}{\texttt{ ROS tutorials}}. In this tutorial we focus on using the In\+EKF version of the state estimator with IMU propagation and legged kinematics correction.\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md34}{}\doxysubsection{Step 1\+: Edit Configs}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md34}
+There are at least two configuration files that need to be edited before running the state estimator. The first is the {\ttfamily \texorpdfstring{$<$}{<}propagation\texorpdfstring{$>$}{>}.yaml} file in the {\ttfamily drift/config/filter/inekf/propagation}. This file contains the settings for the propagation method and users can copy the {\ttfamily imu\+\_\+propagation.\+yaml} under that directory to start with a new set of settings. The second is the {\ttfamily \texorpdfstring{$<$}{<}correction\texorpdfstring{$>$}{>}.yaml} file in the {\ttfamily drift/config/filter/inekf/correction}. The {\ttfamily legged\+\_\+kinematics\+\_\+correction.\+yaml} file contains the settings for the legged kinematics correction method. All the example config files contains all the informations needed to run the state estimator with corresponding propagation or correction method.\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md35}{}\doxysubsection{Step 2\+: Create a new case with existing propagation and correction methods}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md35}
+Users can create a new case by following the comments in the {\ttfamily drift/\+ROS/drift/examples} directory. Let\textquotesingle{}s take the {\ttfamily \mbox{\hyperlink{mini__cheetah_8cpp}{mini\+\_\+cheetah.\+cpp}}} as an example. The full file looks like\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{\textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{\textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{\textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ros/ros.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ros__publisher_8h}{communication/ros\_publisher.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ros__subscriber_8h}{communication/ros\_subscriber.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{inekf__estimator_8h}{drift/estimator/inekf\_estimator.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacestate}{state}};}
+\DoxyCodeLine{\textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceestimator}{estimator}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{fetch_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv) \{}
+\DoxyCodeLine{  ros::init(argc, argv, \textcolor{stringliteral}{"{}robot\_state\_est"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"{}The subscriber is on!"{}} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  ros::NodeHandle nh;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber}{ros\_wrapper::ROSSubscriber}} ros\_sub(\&nh);}
+\DoxyCodeLine{}
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"{}Subscribing to imu channel..."{}} << std::endl;}
+\DoxyCodeLine{  \textcolor{keyword}{auto} qimu\_and\_mutex = ros\_sub.AddIMUSubscriber(\textcolor{stringliteral}{"{}/Imu"{}});}
+\DoxyCodeLine{  \textcolor{keyword}{auto} qimu = qimu\_and\_mutex.first;}
+\DoxyCodeLine{  \textcolor{keyword}{auto} qimu\_mutex = qimu\_and\_mutex.second;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"{}Subscribing to joint\_states and contact channel..."{}}}
+\DoxyCodeLine{            << std::endl;}
+\DoxyCodeLine{  \textcolor{keyword}{auto} qkin\_and\_mutex}
+\DoxyCodeLine{      = ros\_sub.AddMiniCheetahKinematicsSubscriber(\textcolor{stringliteral}{"{}/Contacts"{}}, \textcolor{stringliteral}{"{}/JointState"{}});}
+\DoxyCodeLine{  \textcolor{keyword}{auto} qkin = qkin\_and\_mutex.first;}
+\DoxyCodeLine{  \textcolor{keyword}{auto} qkin\_mutex = qkin\_and\_mutex.second;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  ros\_sub.StartSubscribingThread();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  inekf::ErrorType error\_type = \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823a384a94e2bf3c9d98825eb575f0bf5a47}{LeftInvariant}};}
+\DoxyCodeLine{  YAML::Node config\_ = YAML::LoadFile(}
+\DoxyCodeLine{      \textcolor{stringliteral}{"{}config/filter/inekf/propagation/mini\_cheetah\_imu\_propagation.yaml"{}});}
+\DoxyCodeLine{  \textcolor{keywordtype}{bool} enable\_imu\_bias\_update}
+\DoxyCodeLine{      = config\_[\textcolor{stringliteral}{"{}settings"{}}][\textcolor{stringliteral}{"{}enable\_imu\_bias\_update"{}}].as<\textcolor{keywordtype}{bool}>();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \mbox{\hyperlink{classestimator_1_1InekfEstimator}{InekfEstimator}} inekf\_estimator(error\_type, enable\_imu\_bias\_update);}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// Mini Cheetah's setting:}}
+\DoxyCodeLine{  inekf\_estimator.add\_imu\_propagation(}
+\DoxyCodeLine{      qimu, qimu\_mutex,}
+\DoxyCodeLine{      \textcolor{stringliteral}{"{}config/filter/inekf/propagation/mini\_cheetah\_imu\_propagation.yaml"{}});}
+\DoxyCodeLine{  inekf\_estimator.add\_legged\_kinematics\_correction(}
+\DoxyCodeLine{      qkin, qkin\_mutex,}
+\DoxyCodeLine{      \textcolor{stringliteral}{"{}config/filter/inekf/correction/"{}}}
+\DoxyCodeLine{      \textcolor{stringliteral}{"{}mini\_cheetah\_legged\_kinematics\_correction.yaml"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{RobotStateQueuePtr}} robot\_state\_queue\_ptr}
+\DoxyCodeLine{      = inekf\_estimator.get\_robot\_state\_queue\_ptr();}
+\DoxyCodeLine{  std::shared\_ptr<std::mutex> robot\_state\_queue\_mutex\_ptr}
+\DoxyCodeLine{      = inekf\_estimator.get\_robot\_state\_queue\_mutex\_ptr();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \mbox{\hyperlink{classros__wrapper_1_1ROSPublisher}{ros\_wrapper::ROSPublisher}} ros\_pub(\&nh, robot\_state\_queue\_ptr,}
+\DoxyCodeLine{                                    robot\_state\_queue\_mutex\_ptr);}
+\DoxyCodeLine{  ros\_pub.StartPublishingThread();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{while} (ros::ok()) \{}
+\DoxyCodeLine{    \textcolor{comment}{// Step behavior}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (inekf\_estimator.is\_enabled()) \{}
+\DoxyCodeLine{      inekf\_estimator.RunOnce();}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{      \textcolor{keywordflow}{if} (inekf\_estimator.BiasInitialized()) \{}
+\DoxyCodeLine{        inekf\_estimator.InitState();}
+\DoxyCodeLine{      \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{        inekf\_estimator.InitBias();}
+\DoxyCodeLine{      \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    ros::spinOnce();}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Let\textquotesingle{}s go through the code step by step.\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md36}{}\doxysubsubsection{2.\+1 Include necessary librarys}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md36}
+The first thing we need to do is to include necessary librarys\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <ros/ros.h>} \textcolor{comment}{// ROS}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}  \textcolor{comment}{// std::cout}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ros__publisher_8h}{communication/ros\_publisher.h}}"{}}  \textcolor{comment}{// ROS wrapper for publisher}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ros__subscriber_8h}{communication/ros\_subscriber.h}}"{}} \textcolor{comment}{// ROS wrapper for subscriber}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{inekf__estimator_8h}{drift/estimator/inekf\_estimator.h}}"{}}   \textcolor{comment}{// InEKF estimator, all the propagation and correction methods are also included in this header file}}
+
+\end{DoxyCode}
+ \hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md37}{}\doxysubsubsection{2.\+2 Create subscribers to receive sensor data}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md37}
+The next step is to create subscribers to receive sensor data. To use ROS, we first need to initialize ROS node and a ROS node handler. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros::init(argc, argv, \textcolor{stringliteral}{"{}robot\_state\_est"{}});}
+\DoxyCodeLine{ros::NodeHandle nh;}
+
+\end{DoxyCode}
+
+
+Then we can initilize the ROS subscriber wrapper and add topics to it. For example, if we want to use IMU data to perform propagation, we can create a subscriber to receive IMU data\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Create a ROS subscriber class}}
+\DoxyCodeLine{\mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber}{ros\_wrapper::ROSSubscriber}} ros\_sub(\&nh);}
+\DoxyCodeLine{\textcolor{comment}{// Create a subscriber to receive IMU data}}
+\DoxyCodeLine{\mbox{\hyperlink{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}{IMUQueuePair}} qimu\_and\_mutex = ros\_sub.AddIMUSubscriber(\textcolor{stringliteral}{"{}/Imu"{}});}
+\DoxyCodeLine{\textcolor{comment}{// Get the pointer to IMU queue and mutex for later use}}
+\DoxyCodeLine{\mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}} qimu = qimu\_and\_mutex.first;}
+\DoxyCodeLine{std::shared\_ptr<std::mutex> qimu\_mutex = qimu\_and\_mutex.second;}
+
+\end{DoxyCode}
+
+
+Similarly, to add a velocity subscriber, we can do\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{ros__subscriber_8h_abfbdcb77174b83e89d3ea006ac0ebcf3}{LeggedKinQueuePair}} qkin\_and\_mutex}
+\DoxyCodeLine{      = ros\_sub.AddMiniCheetahKinematicsSubscriber(\textcolor{stringliteral}{"{}/Contacts"{}}, \textcolor{stringliteral}{"{}/JointState"{}});}
+\DoxyCodeLine{\mbox{\hyperlink{type__def_8h_aa0b6009ff28d4061513537e85d721021}{LeggedKinQueuePtr}} qkin = qkin\_and\_mutex.first;}
+\DoxyCodeLine{std::shared\_ptr<std::mutex> qkin\_mutex = qkin\_and\_mutex.second;}
+
+\end{DoxyCode}
+
+
+The {\ttfamily Add\+Mini\+Cheetah\+Kinematics\+Subscriber(\texorpdfstring{$<$}{<}contact\+\_\+topic\texorpdfstring{$>$}{>}, \texorpdfstring{$<$}{<}joint\+\_\+state\+\_\+topic\texorpdfstring{$>$}{>})} will perform the following steps\+:
+\begin{DoxyEnumerate}
+\item Create an Approximate\+Time filter to synchronize the contact and joint state data.
+\item Call the {\ttfamily ROSSubscriber\+::\+Mini\+CHeetah\+Kin\+Call\+Back} to process the synchronized data and generates legged kinematics message required by the state estimator.
+\end{DoxyEnumerate}
+
+{\bfseries{REMINDER\+:}} Users needs to create a new subscriber as well as its callback function for a new robot. They also need to create their own kinematics measurement file resembles to {\ttfamily drift/include/kinematics/mini\+\_\+cheetah\+\_\+kinematics.\+h} and {\ttfamily \mbox{\hyperlink{mini__cheetah__kinematics_8cpp}{drift/src/kinematics/mini\+\_\+cheetah\+\_\+kinematics.\+cpp}}}.
+
+After adding all the subscribers, we can start the subscriber thread to avoid traffic jam\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros\_sub.StartSubscribingThread();}
+
+\end{DoxyCode}
+\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md38}{}\doxysubsubsection{2.\+3 Create a state estimator}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md38}
+The next step is to create a state estimator. In this example, we will use the In\+EKF estimator. To create an In\+EKF estimator, we need to create a propagation method and a correction method. The propagation method is created by calling the {\ttfamily add\+\_\+\texorpdfstring{$<$}{<}propagation\+\_\+method\texorpdfstring{$>$}{>}} function in the {\ttfamily \mbox{\hyperlink{inekf__estimator_8cpp}{inekf\+\_\+estimator.\+cpp}}} file. The correction method is created by calling the {\ttfamily add\+\_\+\texorpdfstring{$<$}{<}correction\+\_\+method\texorpdfstring{$>$}{>}} function in the {\ttfamily \mbox{\hyperlink{inekf__estimator_8cpp}{inekf\+\_\+estimator.\+cpp}}} file. For example, if we want to use IMU data to perform propagation and use velocity data to perform correction, we can do\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Define some configurations for the state estimator}}
+\DoxyCodeLine{inekf::ErrorType error\_type = \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823a384a94e2bf3c9d98825eb575f0bf5a47}{LeftInvariant}};}
+\DoxyCodeLine{YAML::Node config\_ = YAML::LoadFile(\textcolor{stringliteral}{"{}config/filter/inekf/propagation/mini\_cheetah\_imu\_propagation.yaml"{}});}
+\DoxyCodeLine{\textcolor{keywordtype}{bool} enable\_imu\_bias\_update = config\_[\textcolor{stringliteral}{"{}settings"{}}][\textcolor{stringliteral}{"{}enable\_imu\_bias\_update"{}}].as<\textcolor{keywordtype}{bool}>();}
+\DoxyCodeLine{    }
+\DoxyCodeLine{\textcolor{comment}{// Create an InEKF estimator}}
+\DoxyCodeLine{\mbox{\hyperlink{classestimator_1_1InekfEstimator}{InekfEstimator}} inekf\_estimator(error\_type, enable\_imu\_bias\_update);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Add a propagation and correction(s) methods}}
+\DoxyCodeLine{inekf\_estimator.add\_imu\_propagation(}
+\DoxyCodeLine{      qimu, qimu\_mutex,}
+\DoxyCodeLine{      \textcolor{stringliteral}{"{}config/filter/inekf/propagation/mini\_cheetah\_imu\_propagation.yaml"{}});}
+\DoxyCodeLine{inekf\_estimator.add\_legged\_kinematics\_correction(}
+\DoxyCodeLine{    qkin, qkin\_mutex,}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}config/filter/inekf/correction/mini\_cheetah\_legged\_kinematics\_correction.yaml"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Get the robot state queue and mutex from the state estimator for later use}}
+\DoxyCodeLine{\mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{RobotStateQueuePtr}} robot\_state\_queue\_ptr = inekf\_estimator.get\_robot\_state\_queue\_ptr();}
+\DoxyCodeLine{std::shared\_ptr<std::mutex> robot\_state\_queue\_mutex\_ptr = inekf\_estimator.get\_robot\_state\_queue\_mutex\_ptr();}
+
+\end{DoxyCode}
+ {\bfseries{REMINDER\+:}} If users have different legged robots, they need to create their own kinematics measurement file resembles to {\ttfamily drift/include/kinematics/mini\+\_\+cheetah\+\_\+kinematics.\+h} and {\ttfamily \mbox{\hyperlink{mini__cheetah__kinematics_8cpp}{drift/src/kinematics/mini\+\_\+cheetah\+\_\+kinematics.\+cpp}}}. These two files as well as their corresponding robot kinematics files are used to generate kinematics information needed by the filter. Once these files are settled, the our legged kinematics correction method can be used for user defined legged robots.\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md39}{}\doxysubsubsection{2.\+4 Create publisher to publish state estimation results}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md39}
+We have a ROS publisher wrapper to publish state estimation results. To use it, we need to create a publisher and start the publishing thread\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Create a ROS publisher and start the publishing thread}}
+\DoxyCodeLine{\mbox{\hyperlink{classros__wrapper_1_1ROSPublisher}{ros\_wrapper::ROSPublisher}} ros\_pub(\&nh, robot\_state\_queue\_ptr, robot\_state\_queue\_mutex\_ptr);}
+\DoxyCodeLine{ros\_pub.StartPublishingThread();}
+
+\end{DoxyCode}
+ This publisher will publish the robot state estimation results to the topic {\ttfamily /robot/\texorpdfstring{$<$}{<}robot\+\_\+name\texorpdfstring{$>$}{>}/state}. Users can use RVIZ to visualize the path. The path topic will be something like {\ttfamily /robot/$\ast$/path}.\hypertarget{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md40}{}\doxysubsection{Step 3\+: Run the state estimator (\+In\+EKF version)}\label{md__home_neofelis_VRX_drift_doc_tutorials_tutorial_inekf_imu_and_legged_kin_ros_autotoc_md40}
+Now almost everything is settled. The last step will be running the state estimator. The state estimator should be run in a loop like the following\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Run the state estimator}}
+\DoxyCodeLine{\textcolor{keywordflow}{while} (ros::ok()) \{}
+\DoxyCodeLine{  \textcolor{comment}{// Step behavior}}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (inekf\_estimator.is\_enabled()) \{}
+\DoxyCodeLine{    inekf\_estimator.RunOnce();}
+\DoxyCodeLine{  \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (inekf\_estimator.BiasInitialized()) \{}
+\DoxyCodeLine{      inekf\_estimator.InitState();}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{      inekf\_estimator.InitBias();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  ros::spinOnce();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{return} 0; \textcolor{comment}{// Exit}}
+
+\end{DoxyCode}
+ In the loop above, we first check if the state estimator is {\bfseries{enabled}}. By saying {\bfseries{enabled}}, we mean if the necessary biases and initial state are initialized so that the estimator is ready to run. If the estimator is enabled, we call the {\ttfamily Run\+Once()} function to perform one step of propagation and correction. If it is not enabled, we would initialize the biases and initial state according to user\textquotesingle{}s settings.
+
+After writing up your own case and adding it to {\ttfamily drift/\+ROS/drift/\+CMake\+Lists.\+txt}, you can run the state estimator by\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosrun drift <YOUR\_CASE>}
+
+\end{DoxyCode}
+
+
+Enjoy! 

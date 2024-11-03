@@ -1,0 +1,69 @@
+\hypertarget{mini__cheetah_8cpp}{}\doxysection{/home/neofelis/\+VRX/drift/\+ROS/drift/examples/mini\+\_\+cheetah.cpp File Reference}
+\label{mini__cheetah_8cpp}\index{/home/neofelis/VRX/drift/ROS/drift/examples/mini\_cheetah.cpp@{/home/neofelis/VRX/drift/ROS/drift/examples/mini\_cheetah.cpp}}
+
+
+Test file for Mini-\/\+Cheetah robot (IMU propagation + Legged Kinematics Correction)  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}communication/ros\+\_\+publisher.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}communication/ros\+\_\+subscriber.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/estimator/inekf\+\_\+estimator.\+h\char`\"{}}\newline
+Include dependency graph for mini\+\_\+cheetah.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mini__cheetah_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mini__cheetah_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test file for Mini-\/\+Cheetah robot (IMU propagation + Legged Kinematics Correction) 
+
+\begin{DoxyAuthor}{Author}
+Tingjun Li 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 20, 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mini__cheetah_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{mini__cheetah_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{mini\_cheetah.cpp@{mini\_cheetah.cpp}!main@{main}}
+\index{main@{main}!mini\_cheetah.cpp@{mini\_cheetah.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+TUTORIAL\+: Initialize ROS node
+
+TUTORIAL\+: Initialize ROS node handle. ROS handle handles the start/shutdown for us
+
+TUTORIAL\+: Create a ROS subscriber
+
+TUTORIAL\+: Load your yaml file
+
+TUTORIAL\+: Add a subscriber for IMU data and get its queue and mutex
+
+TUTORIAL\+: Add a subscriber for legged kinematics data and get its queue
+
+TUTORIAL\+: Start the subscriber thread
+
+TUTORIAL\+: Define some configurations for the state estimator
+
+TUTORIAL\+: Create a state estimator
+
+TUTORIAL\+: Add a propagation and correction(s) to the state estimator
+
+TUTORIAL\+: Get the robot state queue and mutex from the state estimator
+
+TUTORIAL\+: Create a ROS publisher and start the publishing thread
+
+TUTORIAL\+: Run the state estimator. Initialize the bias first, then initialize the state. After that, the state estimator will be enabled. The state estimator should be run in a loop. Users can use RVIZ to visualize the path. The path topic will be something like \char`\"{}/robot/$\ast$/path\char`\"{}

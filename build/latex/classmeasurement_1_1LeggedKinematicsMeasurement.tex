@@ -1,0 +1,323 @@
+\hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement}{}\doxysection{measurement\+::Legged\+Kinematics\+Measurement Class Reference}
+\label{classmeasurement_1_1LeggedKinematicsMeasurement}\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+
+
+Derived measurement class containing information about body-\/to-\/foot kinematics.  
+
+
+
+
+{\ttfamily \#include $<$legged\+\_\+kinematics.\+h$>$}
+
+
+
+Inheritance diagram for measurement\+::Legged\+Kinematics\+Measurement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classmeasurement_1_1LeggedKinematicsMeasurement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for measurement\+::Legged\+Kinematics\+Measurement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classmeasurement_1_1LeggedKinematicsMeasurement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_a1bdc0e3345580a34469dcd5149fd0066}{Legged\+Kinematics\+Measurement}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, will generate an empty measurement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_aa7a52d17fdf91500db25eda96119d8ba}{Legged\+Kinematics\+Measurement}} (const Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \&encoders, const Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \&d\+\_\+encoders, const Eigen\+::\+Matrix$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&contacts)
+\begin{DoxyCompactList}\small\item\em Overload constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Util functions}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_a61062a21e5695c56df9169d6bf80146a}{Compute\+Kinematics}} ()=0
+\begin{DoxyCompactList}\small\item\em Computes and stores foot position and Jacobian matricies based on encoder values. This method will be overloaded by the derived class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getter}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_ada93c7c72e2ae3b4dffd10534dacf6e7}{get\+\_\+num\+\_\+legs}} ()=0
+\begin{DoxyCompactList}\small\item\em Returns the number of actuated robot legs. This method will be overloaded by the derived class. \end{DoxyCompactList}\item 
+virtual const Eigen\+::\+Vector3d \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_afb5455fcf22f871f2a9fba1400e43158}{get\+\_\+init\+\_\+velocity}} (const Eigen\+::\+Vector3d \&w)
+\begin{DoxyCompactList}\small\item\em Returns the initial velocity of the robot. This method will be overloaded by the derived class. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ double, 3, Eigen\+::\+Dynamic $>$ \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_a8d2d1ea2f63f268974e8e7c9dbeec58f}{get\+\_\+J}} (int leg) const
+\begin{DoxyCompactList}\small\item\em Get the Jacobian matrix. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_a4a827ccde9528c91010171cbac6309cd}{get\+\_\+contact}} (int leg) const
+\begin{DoxyCompactList}\small\item\em Get the ground contact state vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_af3a522e6e3fb7e4a732c11ec1317de48}{get\+\_\+joint\+\_\+state}} (int encoder) const
+\begin{DoxyCompactList}\small\item\em Get the encoder position state vector. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ double, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_a1284ff875f2b2e3d0dfb36fb15854e9f}{get\+\_\+kin\+\_\+pos}} (int leg) const
+\begin{DoxyCompactList}\small\item\em Get the world-\/frame position in Euclidean space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Setter}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_af72a17673a22b2985bce44c8bc223ba5}{set\+\_\+contact}} (const Eigen\+::\+Matrix$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&contacts)
+\begin{DoxyCompactList}\small\item\em Set the ground contact state vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_a8ef6de6870501aec7f752f757b229cb7}{set\+\_\+joint\+\_\+state}} (const Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \&encoders)
+\begin{DoxyCompactList}\small\item\em Set the encoder position state vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_af082497f3ecd76b14a0b54815af52fbc}{set\+\_\+joint\+\_\+state\+\_\+velocity}} (const Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \&d\+\_\+encoders)
+\begin{DoxyCompactList}\small\item\em Set the encoder velocity state vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix$<$ double, 3, Eigen\+::\+Dynamic $>$ \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_a2c05010ecd72ce4de396760acdb7f536}{positions\+\_\+}}
+\item 
+Eigen\+::\+Matrix$<$ double, 3, Eigen\+::\+Dynamic $>$ \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_a21df879fe8b4f9ee8debf0560b19e6ff}{jacobians\+\_\+}}
+\item 
+Eigen\+::\+Matrix$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_a35c97f1b4a970cf0f9297ba211928cc9}{contacts\+\_\+}}
+\item 
+Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_a2fae6023cee026c7a55fb085c98b3d6a}{encoders\+\_\+}}
+\item 
+Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1LeggedKinematicsMeasurement_a8814bdea8f68519ce7477512114a89a0}{d\+\_\+encoders\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Derived measurement class containing information about body-\/to-\/foot kinematics. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_a1bdc0e3345580a34469dcd5149fd0066}\label{classmeasurement_1_1LeggedKinematicsMeasurement_a1bdc0e3345580a34469dcd5149fd0066}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!LeggedKinematicsMeasurement@{LeggedKinematicsMeasurement}}
+\index{LeggedKinematicsMeasurement@{LeggedKinematicsMeasurement}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{LeggedKinematicsMeasurement()}{LeggedKinematicsMeasurement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily measurement\+::\+Legged\+Kinematics\+Measurement\+::\+Legged\+Kinematics\+Measurement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor, will generate an empty measurement. 
+
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_aa7a52d17fdf91500db25eda96119d8ba}\label{classmeasurement_1_1LeggedKinematicsMeasurement_aa7a52d17fdf91500db25eda96119d8ba}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!LeggedKinematicsMeasurement@{LeggedKinematicsMeasurement}}
+\index{LeggedKinematicsMeasurement@{LeggedKinematicsMeasurement}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{LeggedKinematicsMeasurement()}{LeggedKinematicsMeasurement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily measurement\+::\+Legged\+Kinematics\+Measurement\+::\+Legged\+Kinematics\+Measurement (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \&}]{encoders,  }\item[{const Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \&}]{d\+\_\+encoders,  }\item[{const Eigen\+::\+Matrix$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{contacts }\end{DoxyParamCaption})}
+
+
+
+Overload constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em encoders} & Vector of encoder position coefficients (rad) \\
+\hline
+\mbox{\texttt{ in}}  & {\em d\+\_\+encoders} & Vector of encoder velocity coefficients (rad/s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em contacts} & Vector of contact states \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_a61062a21e5695c56df9169d6bf80146a}\label{classmeasurement_1_1LeggedKinematicsMeasurement_a61062a21e5695c56df9169d6bf80146a}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!ComputeKinematics@{ComputeKinematics}}
+\index{ComputeKinematics@{ComputeKinematics}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{ComputeKinematics()}{ComputeKinematics()}}
+{\footnotesize\ttfamily virtual void measurement\+::\+Legged\+Kinematics\+Measurement\+::\+Compute\+Kinematics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Computes and stores foot position and Jacobian matricies based on encoder values. This method will be overloaded by the derived class. 
+
+
+
+Implemented in \mbox{\hyperlink{classmeasurement_1_1kinematics_1_1MiniCheetahKinematics_ad29e1d4ac26a2e9faff7dd25f083449d}{measurement\+::kinematics\+::\+Mini\+Cheetah\+Kinematics}}.
+
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_a4a827ccde9528c91010171cbac6309cd}\label{classmeasurement_1_1LeggedKinematicsMeasurement_a4a827ccde9528c91010171cbac6309cd}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!get\_contact@{get\_contact}}
+\index{get\_contact@{get\_contact}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{get\_contact()}{get\_contact()}}
+{\footnotesize\ttfamily bool measurement\+::\+Legged\+Kinematics\+Measurement\+::get\+\_\+contact (\begin{DoxyParamCaption}\item[{int}]{leg }\end{DoxyParamCaption}) const}
+
+
+
+Get the ground contact state vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em leg} & Leg id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool of contact state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_afb5455fcf22f871f2a9fba1400e43158}\label{classmeasurement_1_1LeggedKinematicsMeasurement_afb5455fcf22f871f2a9fba1400e43158}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!get\_init\_velocity@{get\_init\_velocity}}
+\index{get\_init\_velocity@{get\_init\_velocity}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{get\_init\_velocity()}{get\_init\_velocity()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d measurement\+::\+Legged\+Kinematics\+Measurement\+::get\+\_\+init\+\_\+velocity (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the initial velocity of the robot. This method will be overloaded by the derived class. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em w} & Angular velocity of the robot \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Initial velocity of the robot 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classmeasurement_1_1kinematics_1_1MiniCheetahKinematics_a1144518e17bd302eb17fc79f4b780435}{measurement\+::kinematics\+::\+Mini\+Cheetah\+Kinematics}}.
+
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_a8d2d1ea2f63f268974e8e7c9dbeec58f}\label{classmeasurement_1_1LeggedKinematicsMeasurement_a8d2d1ea2f63f268974e8e7c9dbeec58f}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!get\_J@{get\_J}}
+\index{get\_J@{get\_J}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{get\_J()}{get\_J()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix$<$ double, 3, Eigen\+::\+Dynamic $>$ measurement\+::\+Legged\+Kinematics\+Measurement\+::get\+\_\+J (\begin{DoxyParamCaption}\item[{int}]{leg }\end{DoxyParamCaption}) const}
+
+
+
+Get the Jacobian matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em leg} & Leg id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Jacobian Matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_af3a522e6e3fb7e4a732c11ec1317de48}\label{classmeasurement_1_1LeggedKinematicsMeasurement_af3a522e6e3fb7e4a732c11ec1317de48}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!get\_joint\_state@{get\_joint\_state}}
+\index{get\_joint\_state@{get\_joint\_state}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{get\_joint\_state()}{get\_joint\_state()}}
+{\footnotesize\ttfamily double measurement\+::\+Legged\+Kinematics\+Measurement\+::get\+\_\+joint\+\_\+state (\begin{DoxyParamCaption}\item[{int}]{encoder }\end{DoxyParamCaption}) const}
+
+
+
+Get the encoder position state vector. 
+
+\begin{DoxyReturn}{Returns}
+Vector of encoder position coefficients (rad) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_a1284ff875f2b2e3d0dfb36fb15854e9f}\label{classmeasurement_1_1LeggedKinematicsMeasurement_a1284ff875f2b2e3d0dfb36fb15854e9f}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!get\_kin\_pos@{get\_kin\_pos}}
+\index{get\_kin\_pos@{get\_kin\_pos}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{get\_kin\_pos()}{get\_kin\_pos()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix$<$ double, 3, 1 $>$ measurement\+::\+Legged\+Kinematics\+Measurement\+::get\+\_\+kin\+\_\+pos (\begin{DoxyParamCaption}\item[{int}]{leg }\end{DoxyParamCaption}) const}
+
+
+
+Get the world-\/frame position in Euclidean space. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em leg} & Leg id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+3D-\/vector of body-\/to-\/foot frame position coefficients (m) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_ada93c7c72e2ae3b4dffd10534dacf6e7}\label{classmeasurement_1_1LeggedKinematicsMeasurement_ada93c7c72e2ae3b4dffd10534dacf6e7}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!get\_num\_legs@{get\_num\_legs}}
+\index{get\_num\_legs@{get\_num\_legs}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{get\_num\_legs()}{get\_num\_legs()}}
+{\footnotesize\ttfamily virtual int measurement\+::\+Legged\+Kinematics\+Measurement\+::get\+\_\+num\+\_\+legs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the number of actuated robot legs. This method will be overloaded by the derived class. 
+
+
+
+Implemented in \mbox{\hyperlink{classmeasurement_1_1kinematics_1_1MiniCheetahKinematics_a87d48de997efc17ea1f2f705044d36fe}{measurement\+::kinematics\+::\+Mini\+Cheetah\+Kinematics}}.
+
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_af72a17673a22b2985bce44c8bc223ba5}\label{classmeasurement_1_1LeggedKinematicsMeasurement_af72a17673a22b2985bce44c8bc223ba5}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!set\_contact@{set\_contact}}
+\index{set\_contact@{set\_contact}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{set\_contact()}{set\_contact()}}
+{\footnotesize\ttfamily void measurement\+::\+Legged\+Kinematics\+Measurement\+::set\+\_\+contact (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{contacts }\end{DoxyParamCaption})}
+
+
+
+Set the ground contact state vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em contacts} & Vector of contact states \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_a8ef6de6870501aec7f752f757b229cb7}\label{classmeasurement_1_1LeggedKinematicsMeasurement_a8ef6de6870501aec7f752f757b229cb7}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!set\_joint\_state@{set\_joint\_state}}
+\index{set\_joint\_state@{set\_joint\_state}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{set\_joint\_state()}{set\_joint\_state()}}
+{\footnotesize\ttfamily void measurement\+::\+Legged\+Kinematics\+Measurement\+::set\+\_\+joint\+\_\+state (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \&}]{encoders }\end{DoxyParamCaption})}
+
+
+
+Set the encoder position state vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em encoders} & Vector of encoder position coefficients (rad) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_af082497f3ecd76b14a0b54815af52fbc}\label{classmeasurement_1_1LeggedKinematicsMeasurement_af082497f3ecd76b14a0b54815af52fbc}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!set\_joint\_state\_velocity@{set\_joint\_state\_velocity}}
+\index{set\_joint\_state\_velocity@{set\_joint\_state\_velocity}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{set\_joint\_state\_velocity()}{set\_joint\_state\_velocity()}}
+{\footnotesize\ttfamily void measurement\+::\+Legged\+Kinematics\+Measurement\+::set\+\_\+joint\+\_\+state\+\_\+velocity (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \&}]{d\+\_\+encoders }\end{DoxyParamCaption})}
+
+
+
+Set the encoder velocity state vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em encoders} & Vector of encoder position coefficients (rad) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_a35c97f1b4a970cf0f9297ba211928cc9}\label{classmeasurement_1_1LeggedKinematicsMeasurement_a35c97f1b4a970cf0f9297ba211928cc9}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!contacts\_@{contacts\_}}
+\index{contacts\_@{contacts\_}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{contacts\_}{contacts\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix$<$bool, Eigen\+::\+Dynamic, 1$>$ measurement\+::\+Legged\+Kinematics\+Measurement\+::contacts\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+Contact state of each feet, \char`\"{}true\char`\"{} for having contact, \char`\"{}false\char`\"{} for not having contact \mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_a8814bdea8f68519ce7477512114a89a0}\label{classmeasurement_1_1LeggedKinematicsMeasurement_a8814bdea8f68519ce7477512114a89a0}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!d\_encoders\_@{d\_encoders\_}}
+\index{d\_encoders\_@{d\_encoders\_}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{d\_encoders\_}{d\_encoders\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix$<$double, Eigen\+::\+Dynamic, 1$>$ measurement\+::\+Legged\+Kinematics\+Measurement\+::d\+\_\+encoders\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+Encoder velocity state vector. \mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_a2fae6023cee026c7a55fb085c98b3d6a}\label{classmeasurement_1_1LeggedKinematicsMeasurement_a2fae6023cee026c7a55fb085c98b3d6a}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!encoders\_@{encoders\_}}
+\index{encoders\_@{encoders\_}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{encoders\_}{encoders\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix$<$double, Eigen\+::\+Dynamic, 1$>$ measurement\+::\+Legged\+Kinematics\+Measurement\+::encoders\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+Encoder position state vector. \mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_a21df879fe8b4f9ee8debf0560b19e6ff}\label{classmeasurement_1_1LeggedKinematicsMeasurement_a21df879fe8b4f9ee8debf0560b19e6ff}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!jacobians\_@{jacobians\_}}
+\index{jacobians\_@{jacobians\_}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{jacobians\_}{jacobians\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix$<$double, 3, Eigen\+::\+Dynamic$>$ measurement\+::\+Legged\+Kinematics\+Measurement\+::jacobians\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+Jacobian matrices of each feet in world frame. \mbox{\Hypertarget{classmeasurement_1_1LeggedKinematicsMeasurement_a2c05010ecd72ce4de396760acdb7f536}\label{classmeasurement_1_1LeggedKinematicsMeasurement_a2c05010ecd72ce4de396760acdb7f536}} 
+\index{measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}!positions\_@{positions\_}}
+\index{positions\_@{positions\_}!measurement::LeggedKinematicsMeasurement@{measurement::LeggedKinematicsMeasurement}}
+\doxysubsubsection{\texorpdfstring{positions\_}{positions\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix$<$double, 3, Eigen\+::\+Dynamic$>$ measurement\+::\+Legged\+Kinematics\+Measurement\+::positions\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+Position of each feet in world frame. Stored in a \mbox{[}3 x n\mbox{]} matrix while 3 represents (x, y, z) and n represents number of legs 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/measurement/\mbox{\hyperlink{legged__kinematics_8h}{legged\+\_\+kinematics.\+h}}\item 
+/home/neofelis/\+VRX/drift/src/measurement/\mbox{\hyperlink{legged__kinematics_8cpp}{legged\+\_\+kinematics.\+cpp}}\end{DoxyCompactItemize}

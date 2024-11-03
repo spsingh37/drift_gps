@@ -1,0 +1,55 @@
+\hypertarget{neya__gyro__filter_8cpp}{}\doxysection{/home/neofelis/\+VRX/drift/\+ROS/drift/examples/neya\+\_\+gyro\+\_\+filter.cpp File Reference}
+\label{neya__gyro__filter_8cpp}\index{/home/neofelis/VRX/drift/ROS/drift/examples/neya\_gyro\_filter.cpp@{/home/neofelis/VRX/drift/ROS/drift/examples/neya\_gyro\_filter.cpp}}
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}communication/ros\+\_\+publisher.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}communication/ros\+\_\+subscriber.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/estimator/inekf\+\_\+estimator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/imu\+\_\+filter/imu\+\_\+ang\+\_\+vel\+\_\+ekf.\+h\char`\"{}}\newline
+Include dependency graph for neya\+\_\+gyro\+\_\+filter.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{neya__gyro__filter_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{neya__gyro__filter_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{neya__gyro__filter_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{neya__gyro__filter_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{neya\_gyro\_filter.cpp@{neya\_gyro\_filter.cpp}!main@{main}}
+\index{main@{main}!neya\_gyro\_filter.cpp@{neya\_gyro\_filter.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+TUTORIAL\+: Initialize ROS node
+
+TUTORIAL\+: Initialize ROS node handle. ROS handle handles the start/shutdown for us
+
+TUTORIAL\+: Create a ROS subscriber
+
+TUTORIAL\+: Load your yaml file
+
+TUTORIAL\+: Add a subscriber for IMU data and get its queue and mutex
+
+TUTORIAL\+: Add a subscriber for velocity data and get its queue and mutex
+
+TUTORIAL\+: Start the subscriber thread
+
+TUTORIAL\+: Define some configurations for the state estimator
+
+TUTORIAL\+: Create a state estimator
+
+TUTORIAL\+: Add a propagation and correction(s) methods to the state estimator. Here is an example of IMU propagation and velocity correction
+
+TUTORIAL\+: Get the robot state queue and mutex from the state estimator
+
+TUTORIAL\+: Create a ROS publisher and start the publishing thread
+
+TUTORIAL\+: Run the state estimator. Initialize the bias first, then initialize the state. After that, the state estimator will be enabled. The state estimator should be run in a loop. Users can use RVIZ to visualize the path. The path topic will be something like \char`\"{}/robot/$\ast$/path\char`\"{}

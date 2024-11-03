@@ -1,0 +1,81 @@
+\hypertarget{se__k__3_8h_source}{}\doxysection{se\+\_\+k\+\_\+3.\+h}
+\label{se__k__3_8h_source}\index{/home/neofelis/VRX/drift/include/drift/math/se\_k\_3.h@{/home/neofelis/VRX/drift/include/drift/math/se\_k\_3.h}}
+\mbox{\hyperlink{se__k__3_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef MATH\_SE\_K\_3\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define MATH\_SE\_K\_3\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemath}{math}} \{}
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classmath_1_1SEK3}{SEK3}} \{}
+\DoxyCodeLine{35  \textcolor{keyword}{public}:}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{41   \mbox{\hyperlink{classmath_1_1SEK3_a5490e3a2d76c36e46ef675a8c09ef592}{SEK3}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{48   \mbox{\hyperlink{classmath_1_1SEK3_a5490e3a2d76c36e46ef675a8c09ef592}{SEK3}}(\textcolor{keyword}{const} Eigen::MatrixXd\& X);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{57   \mbox{\hyperlink{classmath_1_1SEK3_a5490e3a2d76c36e46ef675a8c09ef592}{SEK3}}(\textcolor{keyword}{const} Eigen::MatrixXd\& R, \textcolor{keyword}{const} Eigen::VectorXd\& p);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{67   \mbox{\hyperlink{classmath_1_1SEK3_a5490e3a2d76c36e46ef675a8c09ef592}{SEK3}}(\textcolor{keyword}{const} Eigen::MatrixXd\& R, \textcolor{keyword}{const} Eigen::VectorXd\& p,}
+\DoxyCodeLine{68        \textcolor{keyword}{const} Eigen::VectorXd\& v);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{76   \mbox{\hyperlink{classmath_1_1SEK3_ac587dab1f7bf92380ed4bf844e77b995}{\string~SEK3}}() \{\}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{86   \textcolor{keyword}{const} Eigen::MatrixXd \mbox{\hyperlink{classmath_1_1SEK3_af89dbda70655825e8a34de390b628e49}{get\_X}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{93   \textcolor{keyword}{const} Eigen::MatrixXd \mbox{\hyperlink{classmath_1_1SEK3_a26cf959e3177f2ba819f4302beadfa7b}{get\_R}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{100   \textcolor{keyword}{const} Eigen::MatrixXd \mbox{\hyperlink{classmath_1_1SEK3_a86af8093f62ef9915f99de46495f8e4f}{get\_p}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{107   \textcolor{keyword}{const} Eigen::MatrixXd \mbox{\hyperlink{classmath_1_1SEK3_a8d108dbcdd84dc95d3262866579166e0}{get\_v}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{114   \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classmath_1_1SEK3_ad274afbdaa58ebc47645c67941d608aa}{get\_K}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{121   \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classmath_1_1SEK3_add98643eb11a5e60a8bfb5b489708aff}{get\_dim}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{131   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmath_1_1SEK3_a2f775d4482e0452251b1829fcc201ed2}{set\_K}}(\textcolor{keywordtype}{int} K);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{138   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmath_1_1SEK3_add9434ece6d8285541a57e55257a133b}{set\_X}}(\textcolor{keyword}{const} Eigen::MatrixXd\& X);}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{145   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmath_1_1SEK3_aad2e52afc9829fe97fbfa18370bd5f9c}{set\_R}}(\textcolor{keyword}{const} Eigen::MatrixXd\& R);}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{152   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmath_1_1SEK3_a9f4d92e60286737fc41eab64dc466a0f}{set\_p}}(\textcolor{keyword}{const} Eigen::VectorXd\& p);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{159   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmath_1_1SEK3_a113a41083f7dc81b4cd49dc3bbc5788c}{set\_v}}(\textcolor{keyword}{const} Eigen::MatrixXd\& v);}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{170   \mbox{\hyperlink{classmath_1_1SEK3}{SEK3}} \mbox{\hyperlink{classmath_1_1SEK3_a18baf8ae59e30d8255ed44ffb98ce18d}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classmath_1_1SEK3}{SEK3}}\& X);}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{175 }
+\DoxyCodeLine{180   \mbox{\hyperlink{classmath_1_1SEK3}{SEK3}} \mbox{\hyperlink{classmath_1_1SEK3_a29ab8ef5dcbcb5f940c1467102fbcd47}{inverse}}();}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183  \textcolor{keyword}{private}:}
+\DoxyCodeLine{184   \textcolor{keywordtype}{int} K\_ = 5;}
+\DoxyCodeLine{185   Eigen::MatrixXd X\_ = Eigen::MatrixXd::Identity(K\_, K\_);}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \};    \textcolor{comment}{// class SEK3}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \}    \textcolor{comment}{// namespace math}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#endif    }\textcolor{comment}{// MATH\_SE\_3\_H}}
+
+\end{DoxyCode}

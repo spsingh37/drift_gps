@@ -1,0 +1,51 @@
+\hypertarget{lie__group_8h_source}{}\doxysection{lie\+\_\+group.\+h}
+\label{lie__group_8h_source}\index{/home/neofelis/VRX/drift/include/drift/math/lie\_group.h@{/home/neofelis/VRX/drift/include/drift/math/lie\_group.h}}
+\mbox{\hyperlink{lie__group_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef MATH\_LIEGROUP\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define MATH\_LIEGROUP\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemath}{math}} \{}
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }lie\_group \{}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{extern} \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacemath_1_1lie__group_a7e6288a71ad3952aa3dab5a321c67840}{TOLERANCE}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{34 \textcolor{comment}{}\textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespacemath_1_1lie__group_a2a2a8b3e4fa086b00ed516cfbbe112f7}{factorial}}(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{47 \textcolor{comment}{}Eigen::Matrix3d \mbox{\hyperlink{namespacemath_1_1lie__group_a89ae3708101b473e10c0185198e731ef}{skew}}(\textcolor{keyword}{const} Eigen::Vector3d\& v);}
+\DoxyCodeLine{48 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{57 \textcolor{comment}{}Eigen::Matrix3d \mbox{\hyperlink{namespacemath_1_1lie__group_af9c790ceeeb668f1c58dae712bbcf519}{Gamma\_SO3}}(\textcolor{keyword}{const} Eigen::Vector3d\& w, \textcolor{keywordtype}{int} m);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{66 \textcolor{comment}{}Eigen::Matrix3d \mbox{\hyperlink{namespacemath_1_1lie__group_a2756643c593a52c111f384cb3d2d5cb2}{Exp\_SO3}}(\textcolor{keyword}{const} Eigen::Vector3d\& w);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{75 \textcolor{comment}{}Eigen::Matrix3d \mbox{\hyperlink{namespacemath_1_1lie__group_a1b35216b1b668efa08d2528dc6b46569}{LeftJacobian\_SO3}}(\textcolor{keyword}{const} Eigen::Vector3d\& w);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{84 \textcolor{comment}{}Eigen::Matrix3d \mbox{\hyperlink{namespacemath_1_1lie__group_ab79284234b3e57bda646fdf020bc9e98}{RightJacobian\_SO3}}(\textcolor{keyword}{const} Eigen::Vector3d\& w);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{94 \textcolor{comment}{}Eigen::MatrixXd \mbox{\hyperlink{namespacemath_1_1lie__group_adca5c8857391a65c6d341977b8fb338a}{Exp\_SEK3}}(\textcolor{keyword}{const} Eigen::VectorXd\& v);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{103 \textcolor{comment}{}Eigen::MatrixXd \mbox{\hyperlink{namespacemath_1_1lie__group_ada1809fa5c3429700f7fd67b125950fc}{Adjoint\_SEK3}}(\textcolor{keyword}{const} Eigen::MatrixXd\& X);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \}    \textcolor{comment}{// namespace lie\_group}}
+\DoxyCodeLine{106 \}    \textcolor{comment}{// namespace math}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

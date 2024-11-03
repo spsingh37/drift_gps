@@ -1,0 +1,48 @@
+\hypertarget{navsat_8h_source}{}\doxysection{navsat.\+h}
+\label{navsat_8h_source}\index{/home/neofelis/VRX/drift/include/drift/measurement/navsat.h@{/home/neofelis/VRX/drift/include/drift/measurement/navsat.h}}
+\mbox{\hyperlink{navsat_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2022, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef NAVSAT\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define NAVSAT\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{measurement_8h}{measurement.h}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemeasurement}{measurement}} \{}
+\DoxyCodeLine{32 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement}{NavSatMeasurement}} : \textcolor{keyword}{public} \mbox{\hyperlink{classmeasurement_1_1Measurement}{Measurement}} \{}
+\DoxyCodeLine{34   \textcolor{keyword}{struct }Ellipsoid \{}
+\DoxyCodeLine{35     \textcolor{keywordtype}{double} semimajor\_axis;}
+\DoxyCodeLine{36     \textcolor{keywordtype}{double} semiminor\_axis;}
+\DoxyCodeLine{37   \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39  \textcolor{keyword}{public}:}
+\DoxyCodeLine{43   \mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement_ad50372f3d1c2dc316f7ca94ad40d094c}{NavSatMeasurement}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{54   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement_afcb340637ceeb9b2f344b51ecbfa72dc}{set\_navsatfix}}(T lat, T lon, T alt);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{61   Eigen::Matrix<T, 3, 1> \mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement_af3fdf19047b6f1b3d2e703240bbeea35}{get\_navsatfix}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{72   Eigen::Matrix<T, 3, 1> \mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement_a800517127af00a3f94be7ab374072aae}{get\_enu}}(T lat0, T lon0, T alt0) \textcolor{keyword}{const};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74  \textcolor{keyword}{private}:}
+\DoxyCodeLine{75   Eigen::Matrix<T, 3, 1> navsatfix\_;}
+\DoxyCodeLine{76   \textcolor{keyword}{constexpr} \textcolor{keyword}{static} Ellipsoid WGS84\_ = \{6378137.0, 6356752.314245\};}
+\DoxyCodeLine{77   Eigen::Matrix<T, 3, 1> geodetic2ecef(}
+\DoxyCodeLine{78       T lat, T lon, T alt,}
+\DoxyCodeLine{79       Ellipsoid ell = WGS84\_) \textcolor{keyword}{const};    \textcolor{comment}{// uses WGS 84 definition}}
+\DoxyCodeLine{80   Eigen::Matrix<T, 3, 1> uvw2enu(T u, T v, T w, T lat0, T lon0) \textcolor{keyword}{const};}
+\DoxyCodeLine{81 \};}
+\DoxyCodeLine{82 \}    \textcolor{comment}{// namespace measurement}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{navsat__impl_8cpp}{drift/measurement/impl/navsat\_impl.cpp}}"{}}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif    }\textcolor{comment}{// NAVSAT\_H}}
+
+\end{DoxyCode}

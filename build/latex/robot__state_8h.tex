@@ -1,0 +1,75 @@
+\hypertarget{robot__state_8h}{}\doxysection{/home/neofelis/\+VRX/drift/include/drift/state/robot\+\_\+state.h File Reference}
+\label{robot__state_8h}\index{/home/neofelis/VRX/drift/include/drift/state/robot\_state.h@{/home/neofelis/VRX/drift/include/drift/state/robot\_state.h}}
+
+
+Header file for robot state.  
+
+
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include \char`\"{}drift/math/lie\+\_\+group.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/math/se\+\_\+k\+\_\+3.\+h\char`\"{}}\newline
+Include dependency graph for robot\+\_\+state.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{robot__state_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{robot__state_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classstate_1_1RobotState}{state\+::\+Robot\+State}}
+\begin{DoxyCompactList}\small\item\em state class containing its pose and augmented states, biases, and covariances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacestate}{state}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{robot__state_8h_a1615968a92950438f6e67a28e9d56e5c}{State\+Type}} \{ \mbox{\hyperlink{robot__state_8h_a1615968a92950438f6e67a28e9d56e5cab5984c5f3b586c846f17294e87e0f21d}{World\+Centric}}
+, \mbox{\hyperlink{robot__state_8h_a1615968a92950438f6e67a28e9d56e5ca0efa536fbc55954d30ef8f55ade6b55d}{Body\+Centric}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for robot state. 
+
+\begin{DoxyAuthor}{Author}
+Wenzhe Tong, Tingjun Li 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 16, 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{robot__state_8h_a1615968a92950438f6e67a28e9d56e5c}\label{robot__state_8h_a1615968a92950438f6e67a28e9d56e5c}} 
+\index{robot\_state.h@{robot\_state.h}!StateType@{StateType}}
+\index{StateType@{StateType}!robot\_state.h@{robot\_state.h}}
+\doxysubsubsection{\texorpdfstring{StateType}{StateType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{robot__state_8h_a1615968a92950438f6e67a28e9d56e5c}{State\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WorldCentric@{WorldCentric}!robot\_state.h@{robot\_state.h}}\index{robot\_state.h@{robot\_state.h}!WorldCentric@{WorldCentric}}}\mbox{\Hypertarget{robot__state_8h_a1615968a92950438f6e67a28e9d56e5cab5984c5f3b586c846f17294e87e0f21d}\label{robot__state_8h_a1615968a92950438f6e67a28e9d56e5cab5984c5f3b586c846f17294e87e0f21d}} 
+World\+Centric&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BodyCentric@{BodyCentric}!robot\_state.h@{robot\_state.h}}\index{robot\_state.h@{robot\_state.h}!BodyCentric@{BodyCentric}}}\mbox{\Hypertarget{robot__state_8h_a1615968a92950438f6e67a28e9d56e5ca0efa536fbc55954d30ef8f55ade6b55d}\label{robot__state_8h_a1615968a92950438f6e67a28e9d56e5ca0efa536fbc55954d30ef8f55ade6b55d}} 
+Body\+Centric&\\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,71 @@
+\hypertarget{velocity__correction_8h_source}{}\doxysection{velocity\+\_\+correction.\+h}
+\label{velocity__correction_8h_source}\index{/home/neofelis/VRX/drift/include/drift/filter/inekf/correction/velocity\_correction.h@{/home/neofelis/VRX/drift/include/drift/filter/inekf/correction/velocity\_correction.h}}
+\mbox{\hyperlink{velocity__correction_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef FILTER\_INEKF\_CORRECTION\_VELOCITY\_CORRECTION\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define FILTER\_INEKF\_CORRECTION\_VELOCITY\_CORRECTION\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{base__correction_8h}{drift/filter/base\_correction.h}}"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{inekf_8h}{drift/filter/inekf/inekf.h}}"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lie__group_8h}{drift/math/lie\_group.h}}"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{velocity_8h}{drift/measurement/velocity.h}}"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type__def_8h}{drift/utils/type\_def.h}}"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemath}{math}};}
+\DoxyCodeLine{28 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacestate}{state}};}
+\DoxyCodeLine{29 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemeasurement}{measurement}};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacefilter_1_1inekf}{filter::inekf}} \{}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection}{VelocityCorrection}} : \textcolor{keyword}{public} \mbox{\hyperlink{classfilter_1_1Correction}{Correction}} \{}
+\DoxyCodeLine{45  \textcolor{keyword}{public}:}
+\DoxyCodeLine{46   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{60   \mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection}{VelocityCorrection}}(\mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}} sensor\_data\_buffer\_ptr,}
+\DoxyCodeLine{61                      std::shared\_ptr<std::mutex> sensor\_data\_buffer\_mutex\_ptr,}
+\DoxyCodeLine{62                      \textcolor{keyword}{const} \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{ErrorType}}\& error\_type,}
+\DoxyCodeLine{63                      \textcolor{keyword}{const} std::string\& yaml\_filepath);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection_a5d02b7ddffb87127445816bafec0536d}{\string~VelocityCorrection}}();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{70   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{80 \textcolor{comment}{}  \textcolor{keywordtype}{bool} \mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection_a199e959b9b940322780ea2ac11a14009}{Correct}}(\mbox{\hyperlink{classstate_1_1RobotState}{RobotState}}\& \mbox{\hyperlink{namespacestate}{state}}) \textcolor{keyword}{override};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{85   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{91 \textcolor{comment}{}  \textcolor{keyword}{const} \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}} \mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection_abe83fa7859f88d2e1f08e4a3466a1a42}{get\_sensor\_data\_buffer\_ptr}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{100   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection_aca1a4f9197813a1aae680c0130c52573}{initialize}}(\mbox{\hyperlink{classstate_1_1RobotState}{RobotState}}\& \mbox{\hyperlink{namespacestate}{state}}) \textcolor{keyword}{override};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{106   \textcolor{keywordtype}{void} \mbox{\hyperlink{classfilter_1_1inekf_1_1VelocityCorrection_a30525f78e38eb0e4522263eccc26d3e9}{clear}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110  \textcolor{keyword}{private}:}
+\DoxyCodeLine{111   \textcolor{keyword}{const} \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{ErrorType}} error\_type\_; }
+\DoxyCodeLine{113   \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}}}
+\DoxyCodeLine{114       sensor\_data\_buffer\_ptr\_; }
+\DoxyCodeLine{115   Eigen::Matrix3d covariance\_; }
+\DoxyCodeLine{116   Eigen::Matrix3d R\_vel2body\_; }
+\DoxyCodeLine{119   \textcolor{keywordtype}{double} velocity\_scale\_;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   std::ofstream est\_vel\_outfile\_;}
+\DoxyCodeLine{122 \};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \}    \textcolor{comment}{// namespace filter::inekf}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#endif    }\textcolor{comment}{// end FILTER\_INEKF\_CORRECTION\_VELOCITY\_CORRECTION\_H}}
+
+\end{DoxyCode}

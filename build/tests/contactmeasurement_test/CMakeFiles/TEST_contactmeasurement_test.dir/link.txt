@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++17 -O3   CMakeFiles/TEST_contactmeasurement_test.dir/contactmeasurement_test.cpp.o  -o TEST_contactmeasurement_test  ../../lib/libgtest_main.a ../../libdrift.a ../../lib/libgtest.a -lpthread 

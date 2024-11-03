@@ -1,0 +1,143 @@
+\hypertarget{classmeasurement_1_1VelocityMeasurement}{}\doxysection{measurement\+::Velocity\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classmeasurement_1_1VelocityMeasurement}\index{measurement::VelocityMeasurement$<$ T $>$@{measurement::VelocityMeasurement$<$ T $>$}}
+
+
+measurement class containing robot-\/frame velocity information.  
+
+
+
+
+{\ttfamily \#include $<$velocity.\+h$>$}
+
+
+
+Inheritance diagram for measurement\+::Velocity\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{classmeasurement_1_1VelocityMeasurement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for measurement\+::Velocity\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{classmeasurement_1_1VelocityMeasurement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmeasurement_1_1VelocityMeasurement_a9040f18b627f56f81086f264d3fe6d69}{Velocity\+Measurement}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Setter}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmeasurement_1_1VelocityMeasurement_ad350799baed793da380e10bd7744d0a3}{set\+\_\+velocity}} (T vx, T vy, T vz)
+\begin{DoxyCompactList}\small\item\em Set the velocity measurement coefficients (m/s). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getter}\par
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1VelocityMeasurement_ac2755675b406620fe2cb8037094410ea}{get\+\_\+velocity}} () const
+\begin{DoxyCompactList}\small\item\em Get the velocity measurement coefficients. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classmeasurement_1_1VelocityMeasurement_a8467810831dd2877fb234a789cfebe88}{get\+\_\+vel\+\_\+mag}} () const
+\begin{DoxyCompactList}\small\item\em Get the velocity vector magnitude. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1VelocityMeasurement_a331aed9342ff8a6e4afa03ed909df07b}{get\+\_\+vel\+\_\+unit\+\_\+vec}} () const
+\begin{DoxyCompactList}\small\item\em Get the velocity unit vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class measurement\+::\+Velocity\+Measurement$<$ T $>$}
+measurement class containing robot-\/frame velocity information. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1VelocityMeasurement_a9040f18b627f56f81086f264d3fe6d69}\label{classmeasurement_1_1VelocityMeasurement_a9040f18b627f56f81086f264d3fe6d69}} 
+\index{measurement::VelocityMeasurement$<$ T $>$@{measurement::VelocityMeasurement$<$ T $>$}!VelocityMeasurement@{VelocityMeasurement}}
+\index{VelocityMeasurement@{VelocityMeasurement}!measurement::VelocityMeasurement$<$ T $>$@{measurement::VelocityMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{VelocityMeasurement()}{VelocityMeasurement()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmeasurement_1_1VelocityMeasurement}{measurement\+::\+Velocity\+Measurement}}$<$ T $>$\+::\+Velocity\+Measurement}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1VelocityMeasurement_a8467810831dd2877fb234a789cfebe88}\label{classmeasurement_1_1VelocityMeasurement_a8467810831dd2877fb234a789cfebe88}} 
+\index{measurement::VelocityMeasurement$<$ T $>$@{measurement::VelocityMeasurement$<$ T $>$}!get\_vel\_mag@{get\_vel\_mag}}
+\index{get\_vel\_mag@{get\_vel\_mag}!measurement::VelocityMeasurement$<$ T $>$@{measurement::VelocityMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_vel\_mag()}{get\_vel\_mag()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+double \mbox{\hyperlink{classmeasurement_1_1VelocityMeasurement}{measurement\+::\+Velocity\+Measurement}}$<$ T $>$\+::get\+\_\+vel\+\_\+mag}
+
+
+
+Get the velocity vector magnitude. 
+
+\begin{DoxyReturn}{Returns}
+magnitude of robot-\/frame velocity vector (m/s). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1VelocityMeasurement_a331aed9342ff8a6e4afa03ed909df07b}\label{classmeasurement_1_1VelocityMeasurement_a331aed9342ff8a6e4afa03ed909df07b}} 
+\index{measurement::VelocityMeasurement$<$ T $>$@{measurement::VelocityMeasurement$<$ T $>$}!get\_vel\_unit\_vec@{get\_vel\_unit\_vec}}
+\index{get\_vel\_unit\_vec@{get\_vel\_unit\_vec}!measurement::VelocityMeasurement$<$ T $>$@{measurement::VelocityMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_vel\_unit\_vec()}{get\_vel\_unit\_vec()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1VelocityMeasurement}{measurement\+::\+Velocity\+Measurement}}$<$ T $>$\+::get\+\_\+vel\+\_\+unit\+\_\+vec}
+
+
+
+Get the velocity unit vector. 
+
+\begin{DoxyReturn}{Returns}
+3-\/vector containing normalized robot-\/frame velocity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1VelocityMeasurement_ac2755675b406620fe2cb8037094410ea}\label{classmeasurement_1_1VelocityMeasurement_ac2755675b406620fe2cb8037094410ea}} 
+\index{measurement::VelocityMeasurement$<$ T $>$@{measurement::VelocityMeasurement$<$ T $>$}!get\_velocity@{get\_velocity}}
+\index{get\_velocity@{get\_velocity}!measurement::VelocityMeasurement$<$ T $>$@{measurement::VelocityMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_velocity()}{get\_velocity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1VelocityMeasurement}{measurement\+::\+Velocity\+Measurement}}$<$ T $>$\+::get\+\_\+velocity}
+
+
+
+Get the velocity measurement coefficients. 
+
+\begin{DoxyReturn}{Returns}
+3-\/vector cotaining the robot-\/frame velocity (m/s). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1VelocityMeasurement_ad350799baed793da380e10bd7744d0a3}\label{classmeasurement_1_1VelocityMeasurement_ad350799baed793da380e10bd7744d0a3}} 
+\index{measurement::VelocityMeasurement$<$ T $>$@{measurement::VelocityMeasurement$<$ T $>$}!set\_velocity@{set\_velocity}}
+\index{set\_velocity@{set\_velocity}!measurement::VelocityMeasurement$<$ T $>$@{measurement::VelocityMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_velocity()}{set\_velocity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classmeasurement_1_1VelocityMeasurement}{measurement\+::\+Velocity\+Measurement}}$<$ T $>$\+::set\+\_\+velocity (\begin{DoxyParamCaption}\item[{T}]{vx,  }\item[{T}]{vy,  }\item[{T}]{vz }\end{DoxyParamCaption})}
+
+
+
+Set the velocity measurement coefficients (m/s). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vx} & x velocity coefficient. \\
+\hline
+\mbox{\texttt{ in}}  & {\em vy} & y velocity coefficient. \\
+\hline
+\mbox{\texttt{ in}}  & {\em vz} & z velocity coefficient. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/measurement/\mbox{\hyperlink{velocity_8h}{velocity.\+h}}\item 
+/home/neofelis/\+VRX/drift/include/drift/measurement/impl/\mbox{\hyperlink{velocity__impl_8cpp}{velocity\+\_\+impl.\+cpp}}\end{DoxyCompactItemize}

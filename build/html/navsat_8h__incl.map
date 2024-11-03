@@ -1,0 +1,9 @@
+<map id="/home/neofelis/VRX/drift/include/drift/measurement/navsat.h" name="/home/neofelis/VRX/drift/include/drift/measurement/navsat.h">
+<area shape="rect" id="node1" title="Header file for robot nav sat (gps) position estimate measurement." alt="" coords="72,5,249,60"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,115,73,141"/>
+<area shape="rect" id="node3" href="$measurement_8h.html" title="Header file for measurement base class." alt="" coords="98,115,223,141"/>
+<area shape="rect" id="node7" href="$navsat__impl_8cpp.html" title=" " alt="" coords="248,108,425,148"/>
+<area shape="rect" id="node4" title=" " alt="" coords="27,196,107,221"/>
+<area shape="rect" id="node5" title=" " alt="" coords="131,196,190,221"/>
+<area shape="rect" id="node6" title=" " alt="" coords="215,196,317,221"/>
+</map>

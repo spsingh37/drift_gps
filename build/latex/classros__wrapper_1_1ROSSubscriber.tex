@@ -1,0 +1,316 @@
+\hypertarget{classros__wrapper_1_1ROSSubscriber}{}\doxysection{ros\+\_\+wrapper\+::ROSSubscriber Class Reference}
+\label{classros__wrapper_1_1ROSSubscriber}\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+
+
+ROS subscriber class, which subscribes to the ROS topics and stores the measurements in the queue.  
+
+
+
+
+{\ttfamily \#include $<$ros\+\_\+subscriber.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a09653df4dc1f72f021b7d1cf664b230a}{Start\+Subscribing\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em Start the subscribing thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a7c74d49a7f48046f9f81f28d387a172a}{ROSSubscriber}} (ros\+::\+Node\+Handle $\ast$nh)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber}{ROSSubscriber}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_aa015081ba21861d4ed512b25c3f48c52}{$\sim$\+ROSSubscriber}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber}{ROSSubscriber}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ ROS subscriber adders}\par
+{\em TODO\+: Detail what message type each subscribers subscribe to. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}{IMUQueue\+Pair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_adaed4ab2b123a4074f35e6a19ee575ab}{Add\+IMUSubscriber}} (const std\+::string topic\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Add an IMU subscriber to the given topic and return a queue pair. The queue pair contains the queue and the mutex for the queue. The queue stores the IMU measurements and the mutex is used to protect the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}{IMUQueue\+Pair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a913e1dad4e8582a336487c9ca2ed6dc3}{Add\+Fetch\+IMUSubscriber}} (const std\+::string imu\+\_\+topic\+\_\+name, const std\+::string offset\+\_\+topic\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Add an IMU subscriber for Fetch to the given topic and return a queue pair. The queue pair contains the queue and the mutex for the queue. The queue stores the IMU measurements and the mutex is used to protect the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_abd06a89e98c584a5841cf29a02685c25}{Add\+Velocity\+Subscriber}} (const std\+::string topic\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Add velocity subscriber to the given topic and return a queue pair.\+The queue pair contains the queue and the mutex for the queue. The queue stores the velocity measurements and the mutex is used to protect the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_ae2f1521d81a15e050e4798308ab7daec}{Add\+Velocity\+With\+Covariance\+Subscriber}} (const std\+::string topic\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Add velocity with covariance subscriber to the given topic and return a queue pair.\+The queue pair contains the queue and the mutex for the queue. The queue stores the velocity measurements and the mutex is used to protect the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_ae1947d656038099679934fc5680115d5}{Add\+Differential\+Drive\+Velocity\+Subscriber}} (const std\+::string topic\+\_\+name, double wheel\+\_\+radius)
+\begin{DoxyCompactList}\small\item\em Add differential drive velocity subscriber. \end{DoxyCompactList}\item 
+std\+::tuple$<$ \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$, \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{Angular\+Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_ac3abec444b53223fd9f4aac2db5cfb06}{Add\+Differential\+Drive\+Velocity\+Subscriber}} (const std\+::string topic\+\_\+name, double wheel\+\_\+radius, double track\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Add differential drive velocity subscriber. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a06cebe7d014ab7fd913deb1ed8710c08}{Add\+Odom2\+Velocity\+Callback}} (const std\+::string topic\+\_\+name, const std\+::vector$<$ double $>$ \&translation\+\_\+odomsrc2body, const std\+::vector$<$ double $>$ \&rotation\+\_\+odomsrc2body)
+\item 
+\mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_ad513b8350ac0c57e721f74e364bf2c70}{Add\+GPS2\+Velocity\+Subscriber}} (const std\+::string \&topic\+\_\+name, const Eigen\+::\+Vector3d \&translation\+\_\+odomsrc2body, const Eigen\+::\+Matrix3d \&rotation\+\_\+odomsrc2body, const Eigen\+::\+Vector3d \&reference\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Add GPS Nav\+Sat subscriber. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ros__subscriber_8h_ac0758f66e9561765922d9b0c3f343122}{Pose\+Queue\+Pair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a2b11d7f9a4c4ca73899803cfd332fe40}{Add\+Odom2\+Pose\+Subscriber}} (const std\+::string topic\+\_\+name, const std\+::vector$<$ double $>$ \&translation\+\_\+odomsrc2body, const std\+::vector$<$ double $>$ \&rotation\+\_\+odomsrc2body)
+\item 
+\mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a72fb705f9bbb97d44347b71b0669a6ba}{Add\+Differential\+Drive\+Linear\+Velocity\+Subscriber\+\_\+\+Fetch}} (const std\+::string topic\+\_\+name, double wheel\+\_\+radius)
+\begin{DoxyCompactList}\small\item\em Add differential drive linear velocity subscriber (2 driving wheels) for Fetch to the given topic and return a queue pair. The queue pair contains the queue and the mutex for the queue. The queue stores the velocity measurements and the mutex is used to protect the queue. \end{DoxyCompactList}\item 
+std\+::tuple$<$ \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$, \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{Angular\+Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_a436f361da5948e58b571037a757fde23}{Add\+Differential\+Drive\+Velocity\+Subscriber\+\_\+\+Fetch}} (const std\+::string topic\+\_\+name, double wheel\+\_\+radius, double track\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Add differential drive velocity (linear + angular) subscriber (2 driving wheels) for Fetch to the given topic and return a queue pair. The queue pair contains the queue and the mutex for the queue. The queue stores the velocity measurements and the mutex is used to protect the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ros__subscriber_8h_abfbdcb77174b83e89d3ea006ac0ebcf3}{Legged\+Kin\+Queue\+Pair}} \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber_aae00b3d8874f22ef0b12443d43e444e4}{Add\+Mini\+Cheetah\+Kinematics\+Subscriber}} (const std\+::string contact\+\_\+topic\+\_\+name, const std\+::string encoder\+\_\+topic\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Add differential drive velocity subscriber for Mini Cheetah to the given topic and return a queue pair. The queue pair contains the queue and the mutex for the queue. The queue stores the velocity measurements and the mutex is used to protect the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+ROS subscriber class, which subscribes to the ROS topics and stores the measurements in the queue. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_a7c74d49a7f48046f9f81f28d387a172a}\label{classros__wrapper_1_1ROSSubscriber_a7c74d49a7f48046f9f81f28d387a172a}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!ROSSubscriber@{ROSSubscriber}}
+\index{ROSSubscriber@{ROSSubscriber}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{ROSSubscriber()}{ROSSubscriber()}}
+{\footnotesize\ttfamily ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+ROSSubscriber (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle $\ast$}]{nh }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber}{ROSSubscriber}} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nh} & ROS node handle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_aa015081ba21861d4ed512b25c3f48c52}\label{classros__wrapper_1_1ROSSubscriber_aa015081ba21861d4ed512b25c3f48c52}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!````~ROSSubscriber@{$\sim$ROSSubscriber}}
+\index{````~ROSSubscriber@{$\sim$ROSSubscriber}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{$\sim$ROSSubscriber()}{~ROSSubscriber()}}
+{\footnotesize\ttfamily ros\+\_\+wrapper\+::\+ROSSubscriber\+::$\sim$\+ROSSubscriber (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber}{ROSSubscriber}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_a72fb705f9bbb97d44347b71b0669a6ba}\label{classros__wrapper_1_1ROSSubscriber_a72fb705f9bbb97d44347b71b0669a6ba}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddDifferentialDriveLinearVelocitySubscriber\_Fetch@{AddDifferentialDriveLinearVelocitySubscriber\_Fetch}}
+\index{AddDifferentialDriveLinearVelocitySubscriber\_Fetch@{AddDifferentialDriveLinearVelocitySubscriber\_Fetch}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddDifferentialDriveLinearVelocitySubscriber\_Fetch()}{AddDifferentialDriveLinearVelocitySubscriber\_Fetch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+Differential\+Drive\+Linear\+Velocity\+Subscriber\+\_\+\+Fetch (\begin{DoxyParamCaption}\item[{const std\+::string}]{topic\+\_\+name,  }\item[{double}]{wheel\+\_\+radius }\end{DoxyParamCaption})}
+
+
+
+Add differential drive linear velocity subscriber (2 driving wheels) for Fetch to the given topic and return a queue pair. The queue pair contains the queue and the mutex for the queue. The queue stores the velocity measurements and the mutex is used to protect the queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em topic\+\_\+name} & differential drive velocity topic name \\
+\hline
+\mbox{\texttt{ in}}  & {\em wheel\+\_\+radius} & wheel radius \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Velocity\+Queue\+Pair velocity queue pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_ae1947d656038099679934fc5680115d5}\label{classros__wrapper_1_1ROSSubscriber_ae1947d656038099679934fc5680115d5}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddDifferentialDriveVelocitySubscriber@{AddDifferentialDriveVelocitySubscriber}}
+\index{AddDifferentialDriveVelocitySubscriber@{AddDifferentialDriveVelocitySubscriber}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddDifferentialDriveVelocitySubscriber()}{AddDifferentialDriveVelocitySubscriber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+Differential\+Drive\+Velocity\+Subscriber (\begin{DoxyParamCaption}\item[{const std\+::string}]{topic\+\_\+name,  }\item[{double}]{wheel\+\_\+radius }\end{DoxyParamCaption})}
+
+
+
+Add differential drive velocity subscriber. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em topic\+\_\+name} & differential drive velocity topic name \\
+\hline
+\mbox{\texttt{ in}}  & {\em wheel\+\_\+radius} & radius of the wheel in meters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pair of a pointer to the velocity queue and a mutex to the queue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_ac3abec444b53223fd9f4aac2db5cfb06}\label{classros__wrapper_1_1ROSSubscriber_ac3abec444b53223fd9f4aac2db5cfb06}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddDifferentialDriveVelocitySubscriber@{AddDifferentialDriveVelocitySubscriber}}
+\index{AddDifferentialDriveVelocitySubscriber@{AddDifferentialDriveVelocitySubscriber}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddDifferentialDriveVelocitySubscriber()}{AddDifferentialDriveVelocitySubscriber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::tuple$<$ \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$, \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{Angular\+Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+Differential\+Drive\+Velocity\+Subscriber (\begin{DoxyParamCaption}\item[{const std\+::string}]{topic\+\_\+name,  }\item[{double}]{wheel\+\_\+radius,  }\item[{double}]{track\+\_\+width }\end{DoxyParamCaption})}
+
+
+
+Add differential drive velocity subscriber. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em topic\+\_\+name} & differential drive velocity topic name \\
+\hline
+\mbox{\texttt{ in}}  & {\em wheel\+\_\+radius} & radius of the wheel in meters \\
+\hline
+\mbox{\texttt{ in}}  & {\em track\+\_\+width} & distance between the two wheels in meters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple of velocity queue pointer, velocity queue mutex, angular velocity queue pointer, and annular velocity queue mutex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_a436f361da5948e58b571037a757fde23}\label{classros__wrapper_1_1ROSSubscriber_a436f361da5948e58b571037a757fde23}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddDifferentialDriveVelocitySubscriber\_Fetch@{AddDifferentialDriveVelocitySubscriber\_Fetch}}
+\index{AddDifferentialDriveVelocitySubscriber\_Fetch@{AddDifferentialDriveVelocitySubscriber\_Fetch}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddDifferentialDriveVelocitySubscriber\_Fetch()}{AddDifferentialDriveVelocitySubscriber\_Fetch()}}
+{\footnotesize\ttfamily std\+::tuple$<$ \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$, \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{Angular\+Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+Differential\+Drive\+Velocity\+Subscriber\+\_\+\+Fetch (\begin{DoxyParamCaption}\item[{const std\+::string}]{topic\+\_\+name,  }\item[{double}]{wheel\+\_\+radius,  }\item[{double}]{track\+\_\+width }\end{DoxyParamCaption})}
+
+
+
+Add differential drive velocity (linear + angular) subscriber (2 driving wheels) for Fetch to the given topic and return a queue pair. The queue pair contains the queue and the mutex for the queue. The queue stores the velocity measurements and the mutex is used to protect the queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em topic\+\_\+name} & differential drive velocity topic name \\
+\hline
+\mbox{\texttt{ in}}  & {\em wheel\+\_\+radius} & wheel radius \\
+\hline
+\mbox{\texttt{ in}}  & {\em track\+\_\+width} & track width \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Velocity\+Queue\+Pair velocity queue pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_a913e1dad4e8582a336487c9ca2ed6dc3}\label{classros__wrapper_1_1ROSSubscriber_a913e1dad4e8582a336487c9ca2ed6dc3}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddFetchIMUSubscriber@{AddFetchIMUSubscriber}}
+\index{AddFetchIMUSubscriber@{AddFetchIMUSubscriber}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddFetchIMUSubscriber()}{AddFetchIMUSubscriber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}{IMUQueue\+Pair}} ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+Fetch\+IMUSubscriber (\begin{DoxyParamCaption}\item[{const std\+::string}]{imu\+\_\+topic\+\_\+name,  }\item[{const std\+::string}]{offset\+\_\+topic\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Add an IMU subscriber for Fetch to the given topic and return a queue pair. The queue pair contains the queue and the mutex for the queue. The queue stores the IMU measurements and the mutex is used to protect the queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em imu\+\_\+topic\+\_\+name} & IMU topic name \\
+\hline
+\mbox{\texttt{ in}}  & {\em offset\+\_\+topic\+\_\+name} & imu offset topic name (imu bias) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IMUQueue\+Pair IMU queue pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_ad513b8350ac0c57e721f74e364bf2c70}\label{classros__wrapper_1_1ROSSubscriber_ad513b8350ac0c57e721f74e364bf2c70}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddGPS2VelocitySubscriber@{AddGPS2VelocitySubscriber}}
+\index{AddGPS2VelocitySubscriber@{AddGPS2VelocitySubscriber}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddGPS2VelocitySubscriber()}{AddGPS2VelocitySubscriber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+GPS2\+Velocity\+Subscriber (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{topic\+\_\+name,  }\item[{const Eigen\+::\+Vector3d \&}]{translation\+\_\+odomsrc2body,  }\item[{const Eigen\+::\+Matrix3d \&}]{rotation\+\_\+odomsrc2body,  }\item[{const Eigen\+::\+Vector3d \&}]{reference\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+Add GPS Nav\+Sat subscriber. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em topic\+\_\+name} & GPS navsat topic name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+GPSNav\+Sat\+Queue\+Pair navsat queue pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_adaed4ab2b123a4074f35e6a19ee575ab}\label{classros__wrapper_1_1ROSSubscriber_adaed4ab2b123a4074f35e6a19ee575ab}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddIMUSubscriber@{AddIMUSubscriber}}
+\index{AddIMUSubscriber@{AddIMUSubscriber}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddIMUSubscriber()}{AddIMUSubscriber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}{IMUQueue\+Pair}} ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+IMUSubscriber (\begin{DoxyParamCaption}\item[{const std\+::string}]{topic\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Add an IMU subscriber to the given topic and return a queue pair. The queue pair contains the queue and the mutex for the queue. The queue stores the IMU measurements and the mutex is used to protect the queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em topic\+\_\+name} & IMU topic name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IMUQueue\+Pair IMU queue pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_aae00b3d8874f22ef0b12443d43e444e4}\label{classros__wrapper_1_1ROSSubscriber_aae00b3d8874f22ef0b12443d43e444e4}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddMiniCheetahKinematicsSubscriber@{AddMiniCheetahKinematicsSubscriber}}
+\index{AddMiniCheetahKinematicsSubscriber@{AddMiniCheetahKinematicsSubscriber}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddMiniCheetahKinematicsSubscriber()}{AddMiniCheetahKinematicsSubscriber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ros__subscriber_8h_abfbdcb77174b83e89d3ea006ac0ebcf3}{Legged\+Kin\+Queue\+Pair}} ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+Mini\+Cheetah\+Kinematics\+Subscriber (\begin{DoxyParamCaption}\item[{const std\+::string}]{contact\+\_\+topic\+\_\+name,  }\item[{const std\+::string}]{encoder\+\_\+topic\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Add differential drive velocity subscriber for Mini Cheetah to the given topic and return a queue pair. The queue pair contains the queue and the mutex for the queue. The queue stores the velocity measurements and the mutex is used to protect the queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em contact\+\_\+topic\+\_\+name} & differential drive velocity topic name \\
+\hline
+\mbox{\texttt{ in}}  & {\em encoder\+\_\+topic\+\_\+name} & encoder topic name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Velocity\+Queue\+Pair velocity queue pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_a2b11d7f9a4c4ca73899803cfd332fe40}\label{classros__wrapper_1_1ROSSubscriber_a2b11d7f9a4c4ca73899803cfd332fe40}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddOdom2PoseSubscriber@{AddOdom2PoseSubscriber}}
+\index{AddOdom2PoseSubscriber@{AddOdom2PoseSubscriber}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddOdom2PoseSubscriber()}{AddOdom2PoseSubscriber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ros__subscriber_8h_ac0758f66e9561765922d9b0c3f343122}{Pose\+Queue\+Pair}} ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+Odom2\+Pose\+Subscriber (\begin{DoxyParamCaption}\item[{const std\+::string}]{topic\+\_\+name,  }\item[{const std\+::vector$<$ double $>$ \&}]{translation\+\_\+odomsrc2body,  }\item[{const std\+::vector$<$ double $>$ \&}]{rotation\+\_\+odomsrc2body }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_a06cebe7d014ab7fd913deb1ed8710c08}\label{classros__wrapper_1_1ROSSubscriber_a06cebe7d014ab7fd913deb1ed8710c08}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddOdom2VelocityCallback@{AddOdom2VelocityCallback}}
+\index{AddOdom2VelocityCallback@{AddOdom2VelocityCallback}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddOdom2VelocityCallback()}{AddOdom2VelocityCallback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+Odom2\+Velocity\+Callback (\begin{DoxyParamCaption}\item[{const std\+::string}]{topic\+\_\+name,  }\item[{const std\+::vector$<$ double $>$ \&}]{translation\+\_\+odomsrc2body,  }\item[{const std\+::vector$<$ double $>$ \&}]{rotation\+\_\+odomsrc2body }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_abd06a89e98c584a5841cf29a02685c25}\label{classros__wrapper_1_1ROSSubscriber_abd06a89e98c584a5841cf29a02685c25}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddVelocitySubscriber@{AddVelocitySubscriber}}
+\index{AddVelocitySubscriber@{AddVelocitySubscriber}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddVelocitySubscriber()}{AddVelocitySubscriber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+Velocity\+Subscriber (\begin{DoxyParamCaption}\item[{const std\+::string}]{topic\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Add velocity subscriber to the given topic and return a queue pair.\+The queue pair contains the queue and the mutex for the queue. The queue stores the velocity measurements and the mutex is used to protect the queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em topic\+\_\+name} & velocity topic name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Velocity\+Queue\+Pair velocity queue pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_ae2f1521d81a15e050e4798308ab7daec}\label{classros__wrapper_1_1ROSSubscriber_ae2f1521d81a15e050e4798308ab7daec}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!AddVelocityWithCovarianceSubscriber@{AddVelocityWithCovarianceSubscriber}}
+\index{AddVelocityWithCovarianceSubscriber@{AddVelocityWithCovarianceSubscriber}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{AddVelocityWithCovarianceSubscriber()}{AddVelocityWithCovarianceSubscriber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}} ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Add\+Velocity\+With\+Covariance\+Subscriber (\begin{DoxyParamCaption}\item[{const std\+::string}]{topic\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Add velocity with covariance subscriber to the given topic and return a queue pair.\+The queue pair contains the queue and the mutex for the queue. The queue stores the velocity measurements and the mutex is used to protect the queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em topic\+\_\+name} & velocity topic name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Velocity\+Queue\+Pair velocity queue pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSSubscriber_a09653df4dc1f72f021b7d1cf664b230a}\label{classros__wrapper_1_1ROSSubscriber_a09653df4dc1f72f021b7d1cf664b230a}} 
+\index{ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}!StartSubscribingThread@{StartSubscribingThread}}
+\index{StartSubscribingThread@{StartSubscribingThread}!ros\_wrapper::ROSSubscriber@{ros\_wrapper::ROSSubscriber}}
+\doxysubsubsection{\texorpdfstring{StartSubscribingThread()}{StartSubscribingThread()}}
+{\footnotesize\ttfamily void ros\+\_\+wrapper\+::\+ROSSubscriber\+::\+Start\+Subscribing\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the subscribing thread. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/\+ROS/drift/include/communication/\mbox{\hyperlink{ros__subscriber_8h}{ros\+\_\+subscriber.\+h}}\item 
+/home/neofelis/\+VRX/drift/\+ROS/drift/src/communication/\mbox{\hyperlink{ros__subscriber_8cpp}{ros\+\_\+subscriber.\+cpp}}\end{DoxyCompactItemize}

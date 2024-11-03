@@ -1,0 +1,60 @@
+\hypertarget{structfilter_1_1inekf_1_1ContactInfo}{}\doxysection{filter\+::inekf\+::Contact\+Info Struct Reference}
+\label{structfilter_1_1inekf_1_1ContactInfo}\index{filter::inekf::ContactInfo@{filter::inekf::ContactInfo}}
+
+
+A struct for contact information.  
+
+
+
+
+{\ttfamily \#include $<$legged\+\_\+kinematics\+\_\+correction.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structfilter_1_1inekf_1_1ContactInfo_ab5b815a364461ce4d272141be138709c}{id}}
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{structfilter_1_1inekf_1_1ContactInfo_a5d52adcc7088e29193e573c472926269}{pose}}
+\item 
+Eigen\+::\+Matrix3d \mbox{\hyperlink{structfilter_1_1inekf_1_1ContactInfo_a87448de25c0db8d0844ee7d18482aabd}{cov}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A struct for contact information. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & Contact foot(leg)\textquotesingle{}s id \\
+\hline
+\mbox{\texttt{ in}}  & {\em pose} & Contact foot(leg)\textquotesingle{}s pose \\
+\hline
+\mbox{\texttt{ in}}  & {\em cov} & Contact foot(leg)\textquotesingle{}s pose covariance \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structfilter_1_1inekf_1_1ContactInfo_a87448de25c0db8d0844ee7d18482aabd}\label{structfilter_1_1inekf_1_1ContactInfo_a87448de25c0db8d0844ee7d18482aabd}} 
+\index{filter::inekf::ContactInfo@{filter::inekf::ContactInfo}!cov@{cov}}
+\index{cov@{cov}!filter::inekf::ContactInfo@{filter::inekf::ContactInfo}}
+\doxysubsubsection{\texorpdfstring{cov}{cov}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix3d filter\+::inekf\+::\+Contact\+Info\+::cov}
+
+Covariance of the contact foot(leg). \mbox{\Hypertarget{structfilter_1_1inekf_1_1ContactInfo_ab5b815a364461ce4d272141be138709c}\label{structfilter_1_1inekf_1_1ContactInfo_ab5b815a364461ce4d272141be138709c}} 
+\index{filter::inekf::ContactInfo@{filter::inekf::ContactInfo}!id@{id}}
+\index{id@{id}!filter::inekf::ContactInfo@{filter::inekf::ContactInfo}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int filter\+::inekf\+::\+Contact\+Info\+::id}
+
+ID of the contact foot(leg). \mbox{\Hypertarget{structfilter_1_1inekf_1_1ContactInfo_a5d52adcc7088e29193e573c472926269}\label{structfilter_1_1inekf_1_1ContactInfo_a5d52adcc7088e29193e573c472926269}} 
+\index{filter::inekf::ContactInfo@{filter::inekf::ContactInfo}!pose@{pose}}
+\index{pose@{pose}!filter::inekf::ContactInfo@{filter::inekf::ContactInfo}}
+\doxysubsubsection{\texorpdfstring{pose}{pose}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d filter\+::inekf\+::\+Contact\+Info\+::pose}
+
+Pose of the contact foot(leg). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/filter/inekf/correction/\mbox{\hyperlink{legged__kinematics__correction_8h}{legged\+\_\+kinematics\+\_\+correction.\+h}}\end{DoxyCompactItemize}

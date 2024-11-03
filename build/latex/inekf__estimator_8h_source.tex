@@ -1,0 +1,191 @@
+\hypertarget{inekf__estimator_8h_source}{}\doxysection{inekf\+\_\+estimator.\+h}
+\label{inekf__estimator_8h_source}\index{/home/neofelis/VRX/drift/include/drift/estimator/inekf\_estimator.h@{/home/neofelis/VRX/drift/include/drift/estimator/inekf\_estimator.h}}
+\mbox{\hyperlink{inekf__estimator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef ESTIMATOR\_INEKF\_ESTIMATOR\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ESTIMATOR\_INEKF\_ESTIMATOR\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <atomic>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <boost/circular\_buffer.hpp>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{base__correction_8h}{drift/filter/base\_correction.h}}"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{base__propagation_8h}{drift/filter/base\_propagation.h}}"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{legged__kinematics__correction_8h}{drift/filter/inekf/correction/legged\_kinematics\_correction.h}}"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pose__correction_8h}{drift/filter/inekf/correction/pose\_correction.h}}"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{velocity__correction_8h}{drift/filter/inekf/correction/velocity\_correction.h}}"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{imu__propagation_8h}{drift/filter/inekf/propagation/imu\_propagation.h}}"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{imu__ang__vel__ekf_8h}{drift/imu\_filter/imu\_ang\_vel\_ekf.h}}"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{angular__velocity_8h}{drift/measurement/angular\_velocity.h}}"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{imu_8h}{drift/measurement/imu.h}}"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{legged__kinematics_8h}{drift/measurement/legged\_kinematics.h}}"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{navsat_8h}{drift/measurement/navsat.h}}"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{odom_8h}{drift/measurement/odom.h}}"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{velocity_8h}{drift/measurement/velocity.h}}"{}}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{robot__state_8h}{drift/state/robot\_state.h}}"{}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type__def_8h}{drift/utils/type\_def.h}}"{}}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{using }\mbox{\hyperlink{inekf__estimator_8h_ad8558927a2ebdab1509674376e4ada84}{aug\_map\_t}} = std::map<int, int>;    \textcolor{comment}{// Augmented state map \{id, aug\_idx\}}}
+\DoxyCodeLine{46 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacefilter}{filter}};}
+\DoxyCodeLine{47 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacefilter_1_1inekf}{filter::inekf}};}
+\DoxyCodeLine{48 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacestate}{state}};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceestimator}{estimator}} \{}
+\DoxyCodeLine{58 \textcolor{keyword}{class }\mbox{\hyperlink{classestimator_1_1InekfEstimator}{InekfEstimator}} \{}
+\DoxyCodeLine{59  \textcolor{keyword}{public}:}
+\DoxyCodeLine{60   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{64   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{68 \textcolor{comment}{}  \mbox{\hyperlink{classestimator_1_1InekfEstimator_ab8c97f0d46d782036c0387cc3f928eed}{InekfEstimator}}();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{76   \mbox{\hyperlink{classestimator_1_1InekfEstimator_ab8c97f0d46d782036c0387cc3f928eed}{InekfEstimator}}(\mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{ErrorType}} error\_type, std::string config\_file);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{81   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{85 \textcolor{comment}{}  \mbox{\hyperlink{classestimator_1_1InekfEstimator_a990a2d75c89db6a91e0528fb59a84240}{\string~InekfEstimator}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{89   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{95 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a4f76a8ea0ee9cce00bfa4da92fc44e16}{set\_state}}(\textcolor{keyword}{const} \mbox{\hyperlink{classstate_1_1RobotState}{RobotState}}\& \mbox{\hyperlink{namespacestate}{state}});}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{100   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{106 \textcolor{comment}{}  \textcolor{keyword}{const} \mbox{\hyperlink{classstate_1_1RobotState}{RobotState}} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a02881bbc756eb092f9a509001af04c25}{get\_state}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{114 \textcolor{comment}{}  \mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{RobotStateQueuePtr}} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a0f8a89be12d4d53e0a4d417f9f3a7e7b}{get\_robot\_state\_queue\_ptr}}();}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{123 \textcolor{comment}{}  std::shared\_ptr<std::mutex> \mbox{\hyperlink{classestimator_1_1InekfEstimator_a2e1cc0a8dd48e3bc95f7e29660dc7ecb}{get\_robot\_state\_queue\_mutex\_ptr}}();}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{129   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{140 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a2cd6526527fb465458bfe819ac15759e}{add\_imu\_propagation}}(}
+\DoxyCodeLine{141       \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}} buffer\_ptr, std::shared\_ptr<std::mutex> buffer\_mutex\_ptr,}
+\DoxyCodeLine{142       \textcolor{keyword}{const} std::string\& yaml\_filepath}
+\DoxyCodeLine{143       = \textcolor{stringliteral}{"{}config/filter/inekf/propagation/imu\_propagation.yaml"{}});}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146   std::pair<IMUQueuePtr, std::shared\_ptr<std::mutex>> \mbox{\hyperlink{classestimator_1_1InekfEstimator_ab1c0376eb165d24b6c2daef7b968f1a5}{add\_imu\_ang\_vel\_ekf}}(}
+\DoxyCodeLine{147       \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueuePtr}} buffer\_ptr, std::shared\_ptr<std::mutex> buffer\_mutex\_ptr,}
+\DoxyCodeLine{148       \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{AngularVelocityQueuePtr}} ang\_vel\_buffer\_ptr,}
+\DoxyCodeLine{149       std::shared\_ptr<std::mutex> ang\_vel\_buffer\_mutex\_ptr,}
+\DoxyCodeLine{150       \textcolor{keyword}{const} std::string\& yaml\_filepath);}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{153 }
+\DoxyCodeLine{156   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{169 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_adbf9189f78f54ae787d78ebf4ee01ccf}{add\_legged\_kinematics\_correction}}(}
+\DoxyCodeLine{170       \mbox{\hyperlink{type__def_8h_aa0b6009ff28d4061513537e85d721021}{LeggedKinQueuePtr}} buffer\_ptr,}
+\DoxyCodeLine{171       std::shared\_ptr<std::mutex> buffer\_mutex\_ptr,}
+\DoxyCodeLine{172       \textcolor{keyword}{const} std::string\& yaml\_filepath}
+\DoxyCodeLine{173       = \textcolor{stringliteral}{"{}config/filter/inekf/"{}}}
+\DoxyCodeLine{174         \textcolor{stringliteral}{"{}correction/mini\_cheetah\_legged\_kinematics\_correction.yaml"{}});}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{188 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a7fe5cab1626ce4958fb8cbd3c14aa106}{add\_velocity\_correction}}(\mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{VelocityQueuePtr}} buffer\_ptr,}
+\DoxyCodeLine{189                                std::shared\_ptr<std::mutex> buffer\_mutex\_ptr,}
+\DoxyCodeLine{190                                \textcolor{keyword}{const} std::string\& yaml\_filepath}
+\DoxyCodeLine{191                                = \textcolor{stringliteral}{"{}config/filter/inekf/"{}}}
+\DoxyCodeLine{192                                  \textcolor{stringliteral}{"{}correction/velocity\_correction.yaml"{}});}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 }
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{209 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_aade3bfea4ea8a85797ec30e649eca04b}{add\_pose\_correction}}(\mbox{\hyperlink{type__def_8h_a52173582ec3a74be4249b4b0c5426ebd}{OdomQueuePtr}} buffer\_ptr,}
+\DoxyCodeLine{210                            std::shared\_ptr<std::mutex> buffer\_mutex\_ptr,}
+\DoxyCodeLine{211                            \textcolor{keyword}{const} std::string\& yaml\_filepath}
+\DoxyCodeLine{212                            = \textcolor{stringliteral}{"{}config/filter/inekf/"{}}}
+\DoxyCodeLine{213                              \textcolor{stringliteral}{"{}correction/pose\_correction.yaml"{}});}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{217   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{223 \textcolor{comment}{}  \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a49f6933fc9cc3ac668a198cbf21eb950}{is\_enabled}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{230 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_aaaba53977e8048871d3d5a3cb0f162dc}{EnableFilter}}();}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{237 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a81dabaf5d29d8380fdbd4cb21f5fa7ba}{InitBias}}();}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{245 \textcolor{comment}{}  \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a6c04f19ebb92096cfa8d8c08a9a97436}{BiasInitialized}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{252 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a4c133491c4ce9eada6b5e2f7cc5908c8}{InitState}}();}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{257   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{265 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a792c27a3cccad49adefa007b5cecf394}{RunOnce}}();}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{270   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{275 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a8442509866acf5843f9065b3b094a42c}{StartLoggingThread}}();}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{280   \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a535b9ef77e58f05371dd20c7a8cb0efa}{PoseLoggingThread}}();}
+\DoxyCodeLine{281   \textcolor{comment}{// @\} Pose logger}}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{290 \textcolor{comment}{}  \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_af2db0c4a2fdc0382853ff7c6fdbf668b}{clear}}();}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{293   \textcolor{keywordtype}{void} \mbox{\hyperlink{classestimator_1_1InekfEstimator_aaa5e8da1599121eaade93ed7bab84b95}{SlipEstimatorStep}}();}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296  \textcolor{keyword}{private}:}
+\DoxyCodeLine{297   \mbox{\hyperlink{classstate_1_1RobotState}{RobotState}} state\_;    \textcolor{comment}{// state of the robot}}
+\DoxyCodeLine{298   \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{ErrorType}} error\_type\_}
+\DoxyCodeLine{299       = \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823a384a94e2bf3c9d98825eb575f0bf5a47}{inekf::LeftInvariant}};    \textcolor{comment}{// Error Type of the InEKF filter}}
+\DoxyCodeLine{300                                  \textcolor{comment}{// (LeftInvariant or RightInvariant)}}
+\DoxyCodeLine{301   std::vector<std::shared\_ptr<Correction>>}
+\DoxyCodeLine{302       corrections\_;                   \textcolor{comment}{// List of correction methods}}
+\DoxyCodeLine{303   std::vector<aug\_map\_t> aug\_maps;    \textcolor{comment}{// List of augmented states mapping}}
+\DoxyCodeLine{304   std::shared\_ptr<Propagation>}
+\DoxyCodeLine{305       propagation\_;         \textcolor{comment}{// Propagation method of the filter}}
+\DoxyCodeLine{306   \textcolor{keywordtype}{bool} enabled\_ = \textcolor{keyword}{false};    \textcolor{comment}{// Boolean value indicating whether the filter is}}
+\DoxyCodeLine{307                             \textcolor{comment}{// enabled or not}}
+\DoxyCodeLine{308   \textcolor{keywordtype}{bool} new\_pose\_ready\_}
+\DoxyCodeLine{309       = \textcolor{keyword}{false};    \textcolor{comment}{// Boolean value indicating whether a new pose is generated}}
+\DoxyCodeLine{310   \mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{RobotStateQueuePtr}} robot\_state\_queue\_ptr\_;    \textcolor{comment}{// Pointer to the filter}}
+\DoxyCodeLine{311                                                 \textcolor{comment}{// estimated robot states queue}}
+\DoxyCodeLine{312   std::shared\_ptr<std::mutex>}
+\DoxyCodeLine{313       robot\_state\_queue\_mutex\_ptr\_;    \textcolor{comment}{// Mutex of the robot}}
+\DoxyCodeLine{314                                        \textcolor{comment}{// state queue}}
+\DoxyCodeLine{315   \textcolor{keywordtype}{bool} enable\_pose\_logger\_;            \textcolor{comment}{// Boolean value indicating whether}}
+\DoxyCodeLine{316                                        \textcolor{comment}{// the filter should log the pose}}
+\DoxyCodeLine{317   std::ofstream outfile\_;              \textcolor{comment}{// Output file stream for pose logger}}
+\DoxyCodeLine{318   std::ofstream vel\_outfile\_;          \textcolor{comment}{// Output file stream for velocity logger}}
+\DoxyCodeLine{319   std::ofstream vel\_body\_outfile\_;     \textcolor{comment}{// Output file stream for velocity in the}}
+\DoxyCodeLine{320                                        \textcolor{comment}{// body frame logger}}
+\DoxyCodeLine{321   \textcolor{keywordtype}{double} pose\_log\_rate\_;               \textcolor{comment}{// Pose logger rate}}
+\DoxyCodeLine{322   \textcolor{keywordtype}{double} last\_pub\_t\_ = 0.0;            \textcolor{comment}{// Last published time for pose logger}}
+\DoxyCodeLine{323   std::thread pose\_logging\_thread\_;    \textcolor{comment}{// Pose logging thread}}
+\DoxyCodeLine{324   std::mutex}
+\DoxyCodeLine{325       robot\_state\_log\_queue\_mutex\_;    \textcolor{comment}{// Mutex of the robot state log queue}}
+\DoxyCodeLine{326   \mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{RobotStateQueuePtr}} robot\_state\_log\_queue\_ptr\_;    \textcolor{comment}{// Pointer to the robot}}
+\DoxyCodeLine{327                                                     \textcolor{comment}{// state log queue}}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329   \textcolor{keywordtype}{double} rotation\_cov\_val\_;                  \textcolor{comment}{// Covariance value for rotation}}
+\DoxyCodeLine{330   \textcolor{keywordtype}{double} velocity\_cov\_val\_;                  \textcolor{comment}{// Covariance value for velocity}}
+\DoxyCodeLine{331   \textcolor{keywordtype}{double} position\_cov\_val\_;                  \textcolor{comment}{// Covariance value for position}}
+\DoxyCodeLine{332   std::atomic<bool> stop\_signal\_ = \textcolor{keyword}{false};    \textcolor{comment}{// Stop signal for pose logger}}
+\DoxyCodeLine{333   \textcolor{keywordtype}{bool} enabled\_slip\_estimator\_ = \textcolor{keyword}{false};      \textcolor{comment}{// Slip estimator enabled}}
+\DoxyCodeLine{334   std::string pose\_log\_file\_ = \textcolor{stringliteral}{"{}"{}};           \textcolor{comment}{// Pose log file path}}
+\DoxyCodeLine{335   std::string vel\_log\_file\_ = \textcolor{stringliteral}{"{}"{}};            \textcolor{comment}{// Velocity log file path}}
+\DoxyCodeLine{336   \textcolor{keywordtype}{int} init\_count\_ = 0;                       \textcolor{comment}{// Count for initialization}}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338   std::shared\_ptr<imu\_filter::ImuAngVelEKF> imu\_filter\_;}
+\DoxyCodeLine{339 \};    \textcolor{comment}{// class InekfEstimator}}
+\DoxyCodeLine{340 \}    \textcolor{comment}{// namespace estimator}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#endif    }\textcolor{comment}{// ESTIMATOR\_INEKF\_ESTIMATOR\_H}}
+
+\end{DoxyCode}

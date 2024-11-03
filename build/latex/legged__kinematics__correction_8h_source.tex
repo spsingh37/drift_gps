@@ -1,0 +1,67 @@
+\hypertarget{legged__kinematics__correction_8h_source}{}\doxysection{legged\+\_\+kinematics\+\_\+correction.\+h}
+\label{legged__kinematics__correction_8h_source}\index{/home/neofelis/VRX/drift/include/drift/filter/inekf/correction/legged\_kinematics\_correction.h@{/home/neofelis/VRX/drift/include/drift/filter/inekf/correction/legged\_kinematics\_correction.h}}
+\mbox{\hyperlink{legged__kinematics__correction_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef FILTER\_INEKF\_CORRECTION\_KINEMATIC\_CORRECTION\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define FILTER\_INEKF\_CORRECTION\_KINEMATIC\_CORRECTION\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{base__correction_8h}{drift/filter/base\_correction.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{inekf_8h}{drift/filter/inekf/inekf.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lie__group_8h}{drift/math/lie\_group.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{legged__kinematics_8h}{drift/measurement/legged\_kinematics.h}}"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type__def_8h}{drift/utils/type\_def.h}}"{}}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemath}{math}};}
+\DoxyCodeLine{25 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacestate}{state}};}
+\DoxyCodeLine{26 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemeasurement}{measurement}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacefilter_1_1inekf}{filter::inekf}} \{}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{37 \textcolor{keyword}{struct }\mbox{\hyperlink{structfilter_1_1inekf_1_1ContactInfo}{ContactInfo}} \{}
+\DoxyCodeLine{38   \textcolor{keywordtype}{int} \mbox{\hyperlink{structfilter_1_1inekf_1_1ContactInfo_ab5b815a364461ce4d272141be138709c}{id}};               }
+\DoxyCodeLine{39   Eigen::Vector3d \mbox{\hyperlink{structfilter_1_1inekf_1_1ContactInfo_a5d52adcc7088e29193e573c472926269}{pose}}; }
+\DoxyCodeLine{40   Eigen::Matrix3d \mbox{\hyperlink{structfilter_1_1inekf_1_1ContactInfo_a87448de25c0db8d0844ee7d18482aabd}{cov}};  }
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{56 \textcolor{keyword}{class }\mbox{\hyperlink{classfilter_1_1inekf_1_1LeggedKinematicsCorrection}{LeggedKinematicsCorrection}} : \textcolor{keyword}{public} \mbox{\hyperlink{classfilter_1_1Correction}{Correction}} \{}
+\DoxyCodeLine{57  \textcolor{keyword}{public}:}
+\DoxyCodeLine{58   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{71   \mbox{\hyperlink{classfilter_1_1inekf_1_1LeggedKinematicsCorrection}{LeggedKinematicsCorrection}}(}
+\DoxyCodeLine{72       \mbox{\hyperlink{type__def_8h_aa0b6009ff28d4061513537e85d721021}{LeggedKinQueuePtr}} sensor\_data\_buffer\_ptr,}
+\DoxyCodeLine{73       std::shared\_ptr<std::mutex> sensor\_data\_buffer\_mutex\_ptr,}
+\DoxyCodeLine{74       \textcolor{keyword}{const} \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{ErrorType}}\& error\_type, \textcolor{keyword}{const} std::string\& yaml\_filepath);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{78   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{91 \textcolor{comment}{}  \textcolor{keywordtype}{bool} \mbox{\hyperlink{classfilter_1_1inekf_1_1LeggedKinematicsCorrection_aa845425e0787cca07eb6f8200d2ce830}{Correct}}(\mbox{\hyperlink{classstate_1_1RobotState}{RobotState}}\& \mbox{\hyperlink{namespacestate}{state}}) \textcolor{keyword}{override};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{96   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{102 \textcolor{comment}{}  \textcolor{keyword}{const} \mbox{\hyperlink{type__def_8h_aa0b6009ff28d4061513537e85d721021}{LeggedKinQueuePtr}} \mbox{\hyperlink{classfilter_1_1inekf_1_1LeggedKinematicsCorrection_aa1c65a2e8296379a50d45c7c25bab3b1}{get\_sensor\_data\_buffer\_ptr}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{106   \textcolor{comment}{// ======================================================================}}
+\DoxyCodeLine{113 \textcolor{comment}{}  \textcolor{keywordtype}{bool} \mbox{\hyperlink{classfilter_1_1inekf_1_1LeggedKinematicsCorrection_aad6c45dae9868a65ac67408dbe2f546a}{initialize}}(\mbox{\hyperlink{classstate_1_1RobotState}{RobotState}}\& \mbox{\hyperlink{namespacestate}{state}}) \textcolor{keyword}{override};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{119   \textcolor{keywordtype}{void} \mbox{\hyperlink{classfilter_1_1inekf_1_1LeggedKinematicsCorrection_a549b63e6540f766dc21c4bbb1fbd5303}{clear}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122  \textcolor{keyword}{private}:}
+\DoxyCodeLine{123   \textcolor{keyword}{const} \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{ErrorType}} error\_type\_; }
+\DoxyCodeLine{132   std::unordered\_map<int, std::shared\_ptr<int>> aug\_id\_to\_column\_id\_ptr\_;}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134   \mbox{\hyperlink{type__def_8h_aa0b6009ff28d4061513537e85d721021}{LeggedKinQueuePtr}} sensor\_data\_buffer\_ptr\_; }
+\DoxyCodeLine{136   \textcolor{keywordtype}{double} encoder\_std\_val\_; }
+\DoxyCodeLine{139   \textcolor{keywordtype}{double} kinematics\_additive\_std\_val\_; }
+\DoxyCodeLine{143   Eigen::Matrix3d contact\_noise\_cov\_;  }
+\DoxyCodeLine{144 \};                                     \textcolor{comment}{// class LeggedKinematicsCorrection}}
+\DoxyCodeLine{145 \}    \textcolor{comment}{// namespace filter::inekf}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif    }\textcolor{comment}{// end FILTER\_INEKF\_CORRECTION\_KINEMATIC\_CORRECTION\_H}}
+
+\end{DoxyCode}

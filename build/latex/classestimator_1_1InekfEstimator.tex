@@ -1,0 +1,383 @@
+\hypertarget{classestimator_1_1InekfEstimator}{}\doxysection{estimator\+::Inekf\+Estimator Class Reference}
+\label{classestimator_1_1InekfEstimator}\index{estimator::InekfEstimator@{estimator::InekfEstimator}}
+
+
+class for state estimation using In\+EKF. This class will be used to estimate the state of the robot using user chosen filter methods.  
+
+
+
+
+{\ttfamily \#include $<$inekf\+\_\+estimator.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_aade3bfea4ea8a85797ec30e649eca04b}{add\+\_\+pose\+\_\+correction}} (\mbox{\hyperlink{type__def_8h_a52173582ec3a74be4249b4b0c5426ebd}{Odom\+Queue\+Ptr}} buffer\+\_\+ptr, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ buffer\+\_\+mutex\+\_\+ptr, const std\+::string \&yaml\+\_\+filepath=\char`\"{}config/filter/inekf/\char`\"{} \char`\"{}correction/pose\+\_\+correction.\+yaml\char`\"{})
+\begin{DoxyCompactList}\small\item\em Add a pose correction method to the \mbox{\hyperlink{classestimator_1_1InekfEstimator}{Inekf\+Estimator}} object, which uses pose data to correct the state of the robot. This correction method will be called in the when the filter is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classestimator_1_1InekfEstimator_ab8c97f0d46d782036c0387cc3f928eed}{Inekf\+Estimator}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new State Estimator object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classestimator_1_1InekfEstimator_a01d1df42c076477af98ddef3e9ba78a0}{Inekf\+Estimator}} (\mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{Error\+Type}} error\+\_\+type, std\+::string config\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Construct a new State Estimator object according to given settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classestimator_1_1InekfEstimator_a990a2d75c89db6a91e0528fb59a84240}{$\sim$\+Inekf\+Estimator}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the State Estimator object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Setters}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_a4f76a8ea0ee9cce00bfa4da92fc44e16}{set\+\_\+state}} (const \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&state)
+\begin{DoxyCompactList}\small\item\em Set the initial state of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getters}\par
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a02881bbc756eb092f9a509001af04c25}{get\+\_\+state}} () const
+\begin{DoxyCompactList}\small\item\em Get the state of the robot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{Robot\+State\+Queue\+Ptr}} \mbox{\hyperlink{classestimator_1_1InekfEstimator_a0f8a89be12d4d53e0a4d417f9f3a7e7b}{get\+\_\+robot\+\_\+state\+\_\+queue\+\_\+ptr}} ()
+\begin{DoxyCompactList}\small\item\em Get the robot state queue pointer. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ \mbox{\hyperlink{classestimator_1_1InekfEstimator_a2e1cc0a8dd48e3bc95f7e29660dc7ecb}{get\+\_\+robot\+\_\+state\+\_\+queue\+\_\+mutex\+\_\+ptr}} ()
+\begin{DoxyCompactList}\small\item\em Get the robot state queue mutex pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Propagation adders}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_a2cd6526527fb465458bfe819ac15759e}{add\+\_\+imu\+\_\+propagation}} (\mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}} buffer\+\_\+ptr, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ buffer\+\_\+mutex\+\_\+ptr, const std\+::string \&yaml\+\_\+filepath=\char`\"{}config/filter/inekf/propagation/imu\+\_\+propagation.\+yaml\char`\"{})
+\begin{DoxyCompactList}\small\item\em Add a propagation method to \mbox{\hyperlink{classestimator_1_1InekfEstimator}{Inekf\+Estimator}} object, which uses imu data to propagate the state of the robot. This propagation method will be called in the when the filter is running. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ \mbox{\hyperlink{classestimator_1_1InekfEstimator_ab1c0376eb165d24b6c2daef7b968f1a5}{add\+\_\+imu\+\_\+ang\+\_\+vel\+\_\+ekf}} (\mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}} buffer\+\_\+ptr, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ buffer\+\_\+mutex\+\_\+ptr, \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{Angular\+Velocity\+Queue\+Ptr}} ang\+\_\+vel\+\_\+buffer\+\_\+ptr, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ ang\+\_\+vel\+\_\+buffer\+\_\+mutex\+\_\+ptr, const std\+::string \&yaml\+\_\+filepath)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Correction adders}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_adbf9189f78f54ae787d78ebf4ee01ccf}{add\+\_\+legged\+\_\+kinematics\+\_\+correction}} (\mbox{\hyperlink{type__def_8h_aa0b6009ff28d4061513537e85d721021}{Legged\+Kin\+Queue\+Ptr}} buffer\+\_\+ptr, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ buffer\+\_\+mutex\+\_\+ptr, const std\+::string \&yaml\+\_\+filepath=\char`\"{}config/filter/inekf/\char`\"{} \char`\"{}correction/mini\+\_\+cheetah\+\_\+legged\+\_\+kinematics\+\_\+correction.\+yaml\char`\"{})
+\begin{DoxyCompactList}\small\item\em Add a legged kinematics correction method to the \mbox{\hyperlink{classestimator_1_1InekfEstimator}{Inekf\+Estimator}} object, which uses leg kinematic data to correct the state of the robot. This correction method will be called in the when the filter is running. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_a7fe5cab1626ce4958fb8cbd3c14aa106}{add\+\_\+velocity\+\_\+correction}} (\mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}} buffer\+\_\+ptr, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ buffer\+\_\+mutex\+\_\+ptr, const std\+::string \&yaml\+\_\+filepath=\char`\"{}config/filter/inekf/\char`\"{} \char`\"{}correction/velocity\+\_\+correction.\+yaml\char`\"{})
+\begin{DoxyCompactList}\small\item\em Add a velocity correction method to the \mbox{\hyperlink{classestimator_1_1InekfEstimator}{Inekf\+Estimator}} object, which uses velocity data to correct the state of the robot. This correction method will be called in the when the filter is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Utility functions}\par
+\begin{DoxyCompactItemize}
+\item 
+const bool \mbox{\hyperlink{classestimator_1_1InekfEstimator_a49f6933fc9cc3ac668a198cbf21eb950}{is\+\_\+enabled}} () const
+\begin{DoxyCompactList}\small\item\em Return whether or not the filter is enabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_aaaba53977e8048871d3d5a3cb0f162dc}{Enable\+Filter}} ()
+\begin{DoxyCompactList}\small\item\em Enable the filter, change enabled\+\_\+ to true. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_a81dabaf5d29d8380fdbd4cb21f5fa7ba}{Init\+Bias}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the IMU bias of the filter. \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{classestimator_1_1InekfEstimator_a6c04f19ebb92096cfa8d8c08a9a97436}{Bias\+Initialized}} () const
+\begin{DoxyCompactList}\small\item\em Return whether or not the IMU bias is initialized. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_a4c133491c4ce9eada6b5e2f7cc5908c8}{Init\+State}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the state of the filter using the IMU data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Activate filter}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_a792c27a3cccad49adefa007b5cecf394}{Run\+Once}} ()
+\begin{DoxyCompactList}\small\item\em Run the filter once. In the main function, users should first add propagation and correction methods, then call this method. This method will run the filter once, in which the robot state would be propagated and corrected if new data are received. Users should call this method in a loop. See ROS/example/$<$\+TEST$>$.cpp for examples. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Pose logger}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_a8442509866acf5843f9065b3b094a42c}{Start\+Logging\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em Start pose logging thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_a535b9ef77e58f05371dd20c7a8cb0efa}{Pose\+Logging\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em Enable the pose logger. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_af2db0c4a2fdc0382853ff7c6fdbf668b}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear and reset the filter. Must call \mbox{\hyperlink{classestimator_1_1InekfEstimator_a4c133491c4ce9eada6b5e2f7cc5908c8}{Init\+State()}} after calling this method to enable the filter again! \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classestimator_1_1InekfEstimator_aaa5e8da1599121eaade93ed7bab84b95}{Slip\+Estimator\+Step}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class for state estimation using In\+EKF. This class will be used to estimate the state of the robot using user chosen filter methods. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_ab8c97f0d46d782036c0387cc3f928eed}\label{classestimator_1_1InekfEstimator_ab8c97f0d46d782036c0387cc3f928eed}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!InekfEstimator@{InekfEstimator}}
+\index{InekfEstimator@{InekfEstimator}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{InekfEstimator()}{InekfEstimator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily estimator\+::\+Inekf\+Estimator\+::\+Inekf\+Estimator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new State Estimator object. 
+
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a01d1df42c076477af98ddef3e9ba78a0}\label{classestimator_1_1InekfEstimator_a01d1df42c076477af98ddef3e9ba78a0}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!InekfEstimator@{InekfEstimator}}
+\index{InekfEstimator@{InekfEstimator}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{InekfEstimator()}{InekfEstimator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily estimator\+::\+Inekf\+Estimator\+::\+Inekf\+Estimator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{Error\+Type}}}]{error\+\_\+type,  }\item[{std\+::string}]{config\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Construct a new State Estimator object according to given settings. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em error\+\_\+type} & Error type of the filter \\
+\hline
+\mbox{\texttt{ in}}  & {\em config\+\_\+file} & The yaml file path for the filter config \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a990a2d75c89db6a91e0528fb59a84240}\label{classestimator_1_1InekfEstimator_a990a2d75c89db6a91e0528fb59a84240}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!````~InekfEstimator@{$\sim$InekfEstimator}}
+\index{````~InekfEstimator@{$\sim$InekfEstimator}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{$\sim$InekfEstimator()}{~InekfEstimator()}}
+{\footnotesize\ttfamily estimator\+::\+Inekf\+Estimator\+::$\sim$\+Inekf\+Estimator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the State Estimator object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_ab1c0376eb165d24b6c2daef7b968f1a5}\label{classestimator_1_1InekfEstimator_ab1c0376eb165d24b6c2daef7b968f1a5}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!add\_imu\_ang\_vel\_ekf@{add\_imu\_ang\_vel\_ekf}}
+\index{add\_imu\_ang\_vel\_ekf@{add\_imu\_ang\_vel\_ekf}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{add\_imu\_ang\_vel\_ekf()}{add\_imu\_ang\_vel\_ekf()}}
+{\footnotesize\ttfamily std\+::pair$<$ \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ estimator\+::\+Inekf\+Estimator\+::add\+\_\+imu\+\_\+ang\+\_\+vel\+\_\+ekf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}}}]{buffer\+\_\+ptr,  }\item[{std\+::shared\+\_\+ptr$<$ std\+::mutex $>$}]{buffer\+\_\+mutex\+\_\+ptr,  }\item[{\mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{Angular\+Velocity\+Queue\+Ptr}}}]{ang\+\_\+vel\+\_\+buffer\+\_\+ptr,  }\item[{std\+::shared\+\_\+ptr$<$ std\+::mutex $>$}]{ang\+\_\+vel\+\_\+buffer\+\_\+mutex\+\_\+ptr,  }\item[{const std\+::string \&}]{yaml\+\_\+filepath }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a2cd6526527fb465458bfe819ac15759e}\label{classestimator_1_1InekfEstimator_a2cd6526527fb465458bfe819ac15759e}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!add\_imu\_propagation@{add\_imu\_propagation}}
+\index{add\_imu\_propagation@{add\_imu\_propagation}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{add\_imu\_propagation()}{add\_imu\_propagation()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::add\+\_\+imu\+\_\+propagation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}}}]{buffer\+\_\+ptr,  }\item[{std\+::shared\+\_\+ptr$<$ std\+::mutex $>$}]{buffer\+\_\+mutex\+\_\+ptr,  }\item[{const std\+::string \&}]{yaml\+\_\+filepath = {\ttfamily \char`\"{}config/filter/inekf/propagation/imu\+\_\+propagation.yaml\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Add a propagation method to \mbox{\hyperlink{classestimator_1_1InekfEstimator}{Inekf\+Estimator}} object, which uses imu data to propagate the state of the robot. This propagation method will be called in the when the filter is running. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+ptr} & The imu buffer queue temporarily stores the message from the subscriber. \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+mutex\+\_\+ptr} & The imu buffer mutex pointer \\
+\hline
+\mbox{\texttt{ in}}  & {\em yaml\+\_\+filepath} & The yaml file path for the imu propagation config \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_adbf9189f78f54ae787d78ebf4ee01ccf}\label{classestimator_1_1InekfEstimator_adbf9189f78f54ae787d78ebf4ee01ccf}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!add\_legged\_kinematics\_correction@{add\_legged\_kinematics\_correction}}
+\index{add\_legged\_kinematics\_correction@{add\_legged\_kinematics\_correction}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{add\_legged\_kinematics\_correction()}{add\_legged\_kinematics\_correction()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::add\+\_\+legged\+\_\+kinematics\+\_\+correction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{type__def_8h_aa0b6009ff28d4061513537e85d721021}{Legged\+Kin\+Queue\+Ptr}}}]{buffer\+\_\+ptr,  }\item[{std\+::shared\+\_\+ptr$<$ std\+::mutex $>$}]{buffer\+\_\+mutex\+\_\+ptr,  }\item[{const std\+::string \&}]{yaml\+\_\+filepath = {\ttfamily \char`\"{}config/filter/inekf/\char`\"{}~\char`\"{}correction/mini\+\_\+cheetah\+\_\+legged\+\_\+kinematics\+\_\+correction.yaml\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Add a legged kinematics correction method to the \mbox{\hyperlink{classestimator_1_1InekfEstimator}{Inekf\+Estimator}} object, which uses leg kinematic data to correct the state of the robot. This correction method will be called in the when the filter is running. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+ptr} & The kinematic buffer queue temporarily stores the message from the subscriber. \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+mutex\+\_\+ptr} & The kinematic buffer mutex pointer \\
+\hline
+\mbox{\texttt{ in}}  & {\em yaml\+\_\+filepath} & The yaml file path for the kinematic correction \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_aade3bfea4ea8a85797ec30e649eca04b}\label{classestimator_1_1InekfEstimator_aade3bfea4ea8a85797ec30e649eca04b}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!add\_pose\_correction@{add\_pose\_correction}}
+\index{add\_pose\_correction@{add\_pose\_correction}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{add\_pose\_correction()}{add\_pose\_correction()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::add\+\_\+pose\+\_\+correction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{type__def_8h_a52173582ec3a74be4249b4b0c5426ebd}{Odom\+Queue\+Ptr}}}]{buffer\+\_\+ptr,  }\item[{std\+::shared\+\_\+ptr$<$ std\+::mutex $>$}]{buffer\+\_\+mutex\+\_\+ptr,  }\item[{const std\+::string \&}]{yaml\+\_\+filepath = {\ttfamily \char`\"{}config/filter/inekf/\char`\"{}~\char`\"{}correction/pose\+\_\+correction.yaml\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Add a pose correction method to the \mbox{\hyperlink{classestimator_1_1InekfEstimator}{Inekf\+Estimator}} object, which uses pose data to correct the state of the robot. This correction method will be called in the when the filter is running. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+ptr} & The pose buffer queue temporarily stores the message from the subscriber. \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+mutex\+\_\+ptr} & The pose buffer mutex pointer \\
+\hline
+\mbox{\texttt{ in}}  & {\em yaml\+\_\+filepath} & The yaml file path for the pose correction config \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a7fe5cab1626ce4958fb8cbd3c14aa106}\label{classestimator_1_1InekfEstimator_a7fe5cab1626ce4958fb8cbd3c14aa106}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!add\_velocity\_correction@{add\_velocity\_correction}}
+\index{add\_velocity\_correction@{add\_velocity\_correction}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{add\_velocity\_correction()}{add\_velocity\_correction()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::add\+\_\+velocity\+\_\+correction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}}}]{buffer\+\_\+ptr,  }\item[{std\+::shared\+\_\+ptr$<$ std\+::mutex $>$}]{buffer\+\_\+mutex\+\_\+ptr,  }\item[{const std\+::string \&}]{yaml\+\_\+filepath = {\ttfamily \char`\"{}config/filter/inekf/\char`\"{}~\char`\"{}correction/velocity\+\_\+correction.yaml\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Add a velocity correction method to the \mbox{\hyperlink{classestimator_1_1InekfEstimator}{Inekf\+Estimator}} object, which uses velocity data to correct the state of the robot. This correction method will be called in the when the filter is running. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+ptr} & The velocity buffer queue temporarily stores the message from the subscriber. \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+mutex\+\_\+ptr} & The velocity buffer mutex pointer \\
+\hline
+\mbox{\texttt{ in}}  & {\em yaml\+\_\+filepath} & The yaml file path for the velocity correction config \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a6c04f19ebb92096cfa8d8c08a9a97436}\label{classestimator_1_1InekfEstimator_a6c04f19ebb92096cfa8d8c08a9a97436}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!BiasInitialized@{BiasInitialized}}
+\index{BiasInitialized@{BiasInitialized}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{BiasInitialized()}{BiasInitialized()}}
+{\footnotesize\ttfamily const bool estimator\+::\+Inekf\+Estimator\+::\+Bias\+Initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return whether or not the IMU bias is initialized. 
+
+\begin{DoxyReturn}{Returns}
+const bool\+: true for initialized, false for not initialized 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_af2db0c4a2fdc0382853ff7c6fdbf668b}\label{classestimator_1_1InekfEstimator_af2db0c4a2fdc0382853ff7c6fdbf668b}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!clear@{clear}}
+\index{clear@{clear}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear and reset the filter. Must call \mbox{\hyperlink{classestimator_1_1InekfEstimator_a4c133491c4ce9eada6b5e2f7cc5908c8}{Init\+State()}} after calling this method to enable the filter again! 
+
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_aaaba53977e8048871d3d5a3cb0f162dc}\label{classestimator_1_1InekfEstimator_aaaba53977e8048871d3d5a3cb0f162dc}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!EnableFilter@{EnableFilter}}
+\index{EnableFilter@{EnableFilter}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{EnableFilter()}{EnableFilter()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::\+Enable\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enable the filter, change enabled\+\_\+ to true. 
+
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a2e1cc0a8dd48e3bc95f7e29660dc7ecb}\label{classestimator_1_1InekfEstimator_a2e1cc0a8dd48e3bc95f7e29660dc7ecb}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!get\_robot\_state\_queue\_mutex\_ptr@{get\_robot\_state\_queue\_mutex\_ptr}}
+\index{get\_robot\_state\_queue\_mutex\_ptr@{get\_robot\_state\_queue\_mutex\_ptr}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{get\_robot\_state\_queue\_mutex\_ptr()}{get\_robot\_state\_queue\_mutex\_ptr()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ estimator\+::\+Inekf\+Estimator\+::get\+\_\+robot\+\_\+state\+\_\+queue\+\_\+mutex\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the robot state queue mutex pointer. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$std\+::mutex$>$\+: Pointer to the robot state queue mutex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a0f8a89be12d4d53e0a4d417f9f3a7e7b}\label{classestimator_1_1InekfEstimator_a0f8a89be12d4d53e0a4d417f9f3a7e7b}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!get\_robot\_state\_queue\_ptr@{get\_robot\_state\_queue\_ptr}}
+\index{get\_robot\_state\_queue\_ptr@{get\_robot\_state\_queue\_ptr}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{get\_robot\_state\_queue\_ptr()}{get\_robot\_state\_queue\_ptr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{Robot\+State\+Queue\+Ptr}} estimator\+::\+Inekf\+Estimator\+::get\+\_\+robot\+\_\+state\+\_\+queue\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the robot state queue pointer. 
+
+\begin{DoxyReturn}{Returns}
+Robot\+State\+Queue\+Ptr\+: Pointer to the robot state queue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a02881bbc756eb092f9a509001af04c25}\label{classestimator_1_1InekfEstimator_a02881bbc756eb092f9a509001af04c25}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!get\_state@{get\_state}}
+\index{get\_state@{get\_state}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{get\_state()}{get\_state()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} estimator\+::\+Inekf\+Estimator\+::get\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the state of the robot. 
+
+\begin{DoxyReturn}{Returns}
+Robot\+State\+: State of the robot 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a81dabaf5d29d8380fdbd4cb21f5fa7ba}\label{classestimator_1_1InekfEstimator_a81dabaf5d29d8380fdbd4cb21f5fa7ba}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!InitBias@{InitBias}}
+\index{InitBias@{InitBias}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{InitBias()}{InitBias()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::\+Init\+Bias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the IMU bias of the filter. 
+
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a4c133491c4ce9eada6b5e2f7cc5908c8}\label{classestimator_1_1InekfEstimator_a4c133491c4ce9eada6b5e2f7cc5908c8}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!InitState@{InitState}}
+\index{InitState@{InitState}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{InitState()}{InitState()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::\+Init\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the state of the filter using the IMU data. 
+
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a49f6933fc9cc3ac668a198cbf21eb950}\label{classestimator_1_1InekfEstimator_a49f6933fc9cc3ac668a198cbf21eb950}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!is\_enabled@{is\_enabled}}
+\index{is\_enabled@{is\_enabled}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{is\_enabled()}{is\_enabled()}}
+{\footnotesize\ttfamily const bool estimator\+::\+Inekf\+Estimator\+::is\+\_\+enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return whether or not the filter is enabled. 
+
+\begin{DoxyReturn}{Returns}
+const bool\+: true for enabled, false for disabled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a535b9ef77e58f05371dd20c7a8cb0efa}\label{classestimator_1_1InekfEstimator_a535b9ef77e58f05371dd20c7a8cb0efa}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!PoseLoggingThread@{PoseLoggingThread}}
+\index{PoseLoggingThread@{PoseLoggingThread}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{PoseLoggingThread()}{PoseLoggingThread()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::\+Pose\+Logging\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enable the pose logger. 
+
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a792c27a3cccad49adefa007b5cecf394}\label{classestimator_1_1InekfEstimator_a792c27a3cccad49adefa007b5cecf394}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!RunOnce@{RunOnce}}
+\index{RunOnce@{RunOnce}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{RunOnce()}{RunOnce()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::\+Run\+Once (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the filter once. In the main function, users should first add propagation and correction methods, then call this method. This method will run the filter once, in which the robot state would be propagated and corrected if new data are received. Users should call this method in a loop. See ROS/example/$<$\+TEST$>$.cpp for examples. 
+
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a4f76a8ea0ee9cce00bfa4da92fc44e16}\label{classestimator_1_1InekfEstimator_a4f76a8ea0ee9cce00bfa4da92fc44e16}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!set\_state@{set\_state}}
+\index{set\_state@{set\_state}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{set\_state()}{set\_state()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::set\+\_\+state (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&}]{state }\end{DoxyParamCaption})}
+
+
+
+Set the initial state of the robot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em state} & Initial state of the robot \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_aaa5e8da1599121eaade93ed7bab84b95}\label{classestimator_1_1InekfEstimator_aaa5e8da1599121eaade93ed7bab84b95}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!SlipEstimatorStep@{SlipEstimatorStep}}
+\index{SlipEstimatorStep@{SlipEstimatorStep}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{SlipEstimatorStep()}{SlipEstimatorStep()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::\+Slip\+Estimator\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classestimator_1_1InekfEstimator_a8442509866acf5843f9065b3b094a42c}\label{classestimator_1_1InekfEstimator_a8442509866acf5843f9065b3b094a42c}} 
+\index{estimator::InekfEstimator@{estimator::InekfEstimator}!StartLoggingThread@{StartLoggingThread}}
+\index{StartLoggingThread@{StartLoggingThread}!estimator::InekfEstimator@{estimator::InekfEstimator}}
+\doxysubsubsection{\texorpdfstring{StartLoggingThread()}{StartLoggingThread()}}
+{\footnotesize\ttfamily void estimator\+::\+Inekf\+Estimator\+::\+Start\+Logging\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start pose logging thread. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/estimator/\mbox{\hyperlink{inekf__estimator_8h}{inekf\+\_\+estimator.\+h}}\item 
+/home/neofelis/\+VRX/drift/src/estimator/\mbox{\hyperlink{inekf__estimator_8cpp}{inekf\+\_\+estimator.\+cpp}}\end{DoxyCompactItemize}

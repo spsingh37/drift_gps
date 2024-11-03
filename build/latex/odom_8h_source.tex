@@ -1,0 +1,77 @@
+\hypertarget{odom_8h_source}{}\doxysection{odom.\+h}
+\label{odom_8h_source}\index{/home/neofelis/VRX/drift/include/drift/measurement/odom.h@{/home/neofelis/VRX/drift/include/drift/measurement/odom.h}}
+\mbox{\hyperlink{odom_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef MEASUREMENT\_ODOM\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define MEASUREMENT\_ODOM\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{measurement_8h}{measurement.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemeasurement}{measurement}} \{}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classmeasurement_1_1OdomMeasurement}{OdomMeasurement}} : \textcolor{keyword}{public} \mbox{\hyperlink{classmeasurement_1_1Measurement}{Measurement}} \{}
+\DoxyCodeLine{21  \textcolor{keyword}{public}:}
+\DoxyCodeLine{22   \textcolor{comment}{// Construct Encoder measurement}}
+\DoxyCodeLine{23   \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_ac2e314b701b4e5e9037a188f3af1d0ca}{OdomMeasurement}}() \{}
+\DoxyCodeLine{24     \mbox{\hyperlink{classmeasurement_1_1Measurement_a4d9a46684eece357b649d2d064c791dc}{type\_}} = \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a06c69cbc09cb41870902c835e8d04f23}{ODOM}};}
+\DoxyCodeLine{25     translation\_ = Eigen::Vector3d::Zero();}
+\DoxyCodeLine{26     rotation\_ = Eigen::Matrix3d::Identity();}
+\DoxyCodeLine{27     transformation\_ = Eigen::Matrix4d::Identity();}
+\DoxyCodeLine{28   \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_af01fda2548145f2c2f965e844e4ed7af}{OdomMeasurement}}(\textcolor{keyword}{const} Eigen::Vector3d\& translation,}
+\DoxyCodeLine{31                   \textcolor{keyword}{const} Eigen::Quaternion<double>\& quaternion,}
+\DoxyCodeLine{32                   \textcolor{keyword}{const} uint64\_t seq\_in, \textcolor{keyword}{const} \textcolor{keywordtype}{double} time\_stamp\_in,}
+\DoxyCodeLine{33                   \textcolor{keyword}{const} std::string frame\_id\_in) \{}
+\DoxyCodeLine{34     \mbox{\hyperlink{classmeasurement_1_1Measurement_a4d9a46684eece357b649d2d064c791dc}{type\_}} = \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a06c69cbc09cb41870902c835e8d04f23}{ODOM}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     translation\_ = Eigen::Vector3d::Zero();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     rotation\_ = Eigen::Matrix3d::Identity();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     transformation\_ = Eigen::Matrix4d::Identity();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_ad99fcbac8ed2eb475f0d185b80f71fc5}{set\_translation}}(translation);    \textcolor{comment}{// [x, y, z]}}
+\DoxyCodeLine{43     \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_ac5a2d561fb404eaa0f1a4f0228a14021}{set\_rotation}}(quaternion);        \textcolor{comment}{// [x, y, z]}}
+\DoxyCodeLine{44     \mbox{\hyperlink{classmeasurement_1_1Measurement_a5a41c52ccc3cff553d8f9fe83a8d9a40}{set\_header}}(seq\_in, time\_stamp\_in, frame\_id\_in);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_a1e9565574d6678e5495ac5b4648d7bae}{set\_transformation}}();}
+\DoxyCodeLine{47   \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_ad99fcbac8ed2eb475f0d185b80f71fc5}{set\_translation}}(\textcolor{keyword}{const} Eigen::Vector3d\& position\_in) \{}
+\DoxyCodeLine{51     translation\_(0) = position\_in(0);}
+\DoxyCodeLine{52     translation\_(1) = position\_in(1);}
+\DoxyCodeLine{53     translation\_(2) = position\_in(2);}
+\DoxyCodeLine{54   \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_ac5a2d561fb404eaa0f1a4f0228a14021}{set\_rotation}}(\textcolor{keyword}{const} Eigen::Quaternion<double>\& orientation\_quat) \{}
+\DoxyCodeLine{57     rotation\_ = orientation\_quat.toRotationMatrix();}
+\DoxyCodeLine{58   \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_a1e9565574d6678e5495ac5b4648d7bae}{set\_transformation}}() \{}
+\DoxyCodeLine{61     transformation\_.block<3, 3>(0, 0) = rotation\_;}
+\DoxyCodeLine{62     transformation\_.block<3, 1>(0, 3) = translation\_;}
+\DoxyCodeLine{63   \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65   \textcolor{keyword}{inline} \textcolor{keyword}{const} Eigen::Matrix4d\& \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_a59e8b89088c4729eb1e12f0337470d2a}{get\_transformation}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} transformation\_;}
+\DoxyCodeLine{67   \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70  \textcolor{keyword}{private}:}
+\DoxyCodeLine{71   Eigen::Vector3d translation\_;}
+\DoxyCodeLine{72   Eigen::Matrix3d rotation\_;}
+\DoxyCodeLine{73   Eigen::Matrix4d transformation\_;}
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \}    \textcolor{comment}{// namespace measurement}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif    }\textcolor{comment}{// MEASUREMENT\_ODOM\_H}}
+
+\end{DoxyCode}

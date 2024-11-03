@@ -1,0 +1,121 @@
+\hypertarget{classmeasurement_1_1NavSatMeasurement}{}\doxysection{measurement\+::Nav\+Sat\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classmeasurement_1_1NavSatMeasurement}\index{measurement::NavSatMeasurement$<$ T $>$@{measurement::NavSatMeasurement$<$ T $>$}}
+
+
+{\ttfamily \#include $<$navsat.\+h$>$}
+
+
+
+Inheritance diagram for measurement\+::Nav\+Sat\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classmeasurement_1_1NavSatMeasurement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for measurement\+::Nav\+Sat\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classmeasurement_1_1NavSatMeasurement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement_ad50372f3d1c2dc316f7ca94ad40d094c}{Nav\+Sat\+Measurement}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement_afcb340637ceeb9b2f344b51ecbfa72dc}{set\+\_\+navsatfix}} (T lat, T lon, T alt)
+\begin{DoxyCompactList}\small\item\em Set the geodetic measurement coefficients. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement_af3fdf19047b6f1b3d2e703240bbeea35}{get\+\_\+navsatfix}} () const
+\begin{DoxyCompactList}\small\item\em Get the geodetic measurement coefficients. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement_a800517127af00a3f94be7ab374072aae}{get\+\_\+enu}} (T lat0, T lon0, T alt0) const
+\begin{DoxyCompactList}\small\item\em Get the ENU (East, North, Up) measurement coefficients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class measurement\+::\+Nav\+Sat\+Measurement$<$ T $>$}
+Derived measurement class containing Nav\+Sat\+Fix and ENU information transform. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1NavSatMeasurement_ad50372f3d1c2dc316f7ca94ad40d094c}\label{classmeasurement_1_1NavSatMeasurement_ad50372f3d1c2dc316f7ca94ad40d094c}} 
+\index{measurement::NavSatMeasurement$<$ T $>$@{measurement::NavSatMeasurement$<$ T $>$}!NavSatMeasurement@{NavSatMeasurement}}
+\index{NavSatMeasurement@{NavSatMeasurement}!measurement::NavSatMeasurement$<$ T $>$@{measurement::NavSatMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{NavSatMeasurement()}{NavSatMeasurement()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement}{measurement\+::\+Nav\+Sat\+Measurement}}$<$ T $>$\+::\+Nav\+Sat\+Measurement}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1NavSatMeasurement_a800517127af00a3f94be7ab374072aae}\label{classmeasurement_1_1NavSatMeasurement_a800517127af00a3f94be7ab374072aae}} 
+\index{measurement::NavSatMeasurement$<$ T $>$@{measurement::NavSatMeasurement$<$ T $>$}!get\_enu@{get\_enu}}
+\index{get\_enu@{get\_enu}!measurement::NavSatMeasurement$<$ T $>$@{measurement::NavSatMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_enu()}{get\_enu()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement}{measurement\+::\+Nav\+Sat\+Measurement}}$<$ T $>$\+::get\+\_\+enu (\begin{DoxyParamCaption}\item[{T}]{lat0,  }\item[{T}]{lon0,  }\item[{T}]{alt0 }\end{DoxyParamCaption}) const}
+
+
+
+Get the ENU (East, North, Up) measurement coefficients. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lat0} & initial latitude (degrees). \\
+\hline
+\mbox{\texttt{ in}}  & {\em lon0} & initial longitude (degrees). \\
+\hline
+\mbox{\texttt{ in}}  & {\em alt0} & initial altidude (degrees). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the east, north, up (m, m, m) displacement relative to initial state. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1NavSatMeasurement_af3fdf19047b6f1b3d2e703240bbeea35}\label{classmeasurement_1_1NavSatMeasurement_af3fdf19047b6f1b3d2e703240bbeea35}} 
+\index{measurement::NavSatMeasurement$<$ T $>$@{measurement::NavSatMeasurement$<$ T $>$}!get\_navsatfix@{get\_navsatfix}}
+\index{get\_navsatfix@{get\_navsatfix}!measurement::NavSatMeasurement$<$ T $>$@{measurement::NavSatMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_navsatfix()}{get\_navsatfix()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement}{measurement\+::\+Nav\+Sat\+Measurement}}$<$ T $>$\+::get\+\_\+navsatfix}
+
+
+
+Get the geodetic measurement coefficients. 
+
+\begin{DoxyReturn}{Returns}
+the latitude, longitude, altitude (deg, deg, m) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1NavSatMeasurement_afcb340637ceeb9b2f344b51ecbfa72dc}\label{classmeasurement_1_1NavSatMeasurement_afcb340637ceeb9b2f344b51ecbfa72dc}} 
+\index{measurement::NavSatMeasurement$<$ T $>$@{measurement::NavSatMeasurement$<$ T $>$}!set\_navsatfix@{set\_navsatfix}}
+\index{set\_navsatfix@{set\_navsatfix}!measurement::NavSatMeasurement$<$ T $>$@{measurement::NavSatMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_navsatfix()}{set\_navsatfix()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement}{measurement\+::\+Nav\+Sat\+Measurement}}$<$ T $>$\+::set\+\_\+navsatfix (\begin{DoxyParamCaption}\item[{T}]{lat,  }\item[{T}]{lon,  }\item[{T}]{alt }\end{DoxyParamCaption})}
+
+
+
+Set the geodetic measurement coefficients. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lat} & latitude (degrees). Positive is north of equator; negative is south. \\
+\hline
+\mbox{\texttt{ in}}  & {\em lon} & longitude (degrees). Positive is east of prime meridian; negative is west. \\
+\hline
+\mbox{\texttt{ in}}  & {\em alt} & altitude (m). Positive is above the ellipsoid definition. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/measurement/\mbox{\hyperlink{navsat_8h}{navsat.\+h}}\item 
+/home/neofelis/\+VRX/drift/include/drift/measurement/impl/\mbox{\hyperlink{navsat__impl_8cpp}{navsat\+\_\+impl.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,228 @@
+\hypertarget{classfilter_1_1Propagation}{}\doxysection{filter\+::Propagation Class Reference}
+\label{classfilter_1_1Propagation}\index{filter::Propagation@{filter::Propagation}}
+
+
+Base class for propagation method.  
+
+
+
+
+{\ttfamily \#include $<$base\+\_\+propagation.\+h$>$}
+
+
+
+Inheritance diagram for filter\+::Propagation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classfilter_1_1Propagation__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilter_1_1Propagation_a248991426414d1026d6c8c62f8489db3}{Propagation}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the propagation class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfilter_1_1Propagation_a51b7b2b8b9c95cfc138848cfda2d0623}{Propagation}} (std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ sensor\+\_\+data\+\_\+buffer\+\_\+mutex\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classfilter_1_1Propagation}{Propagation}} object with mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Propagation}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classfilter_1_1Propagation_a62cd208396f8b969427b86eb0166de28}{Propagate}} (\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&state)
+\begin{DoxyCompactList}\small\item\em This is a skeleton for the propagation method. It should be implemented in the child class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getters}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{type__def_8h_a8e77af02b888a3b41151a1bfdef770c1}{Measurement\+Queue\+Ptr}} \mbox{\hyperlink{classfilter_1_1Propagation_a6fd269d9e1d715e9342359774c6ef398}{get\+\_\+sensor\+\_\+data\+\_\+buffer\+\_\+ptr}} ()
+\begin{DoxyCompactList}\small\item\em Get the pointer of sensor data buffer. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{base__propagation_8h_a2477a42547ead4995131c881e573ede5}{Propagation\+Type}} \mbox{\hyperlink{classfilter_1_1Propagation_a06a7b29464a6e50b30243f72e2a37cc2}{get\+\_\+propagation\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em Get the propagation type. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ \mbox{\hyperlink{classfilter_1_1Propagation_a0d94a64d30977b9de117966aa5fc7559}{get\+\_\+mutex\+\_\+ptr}} ()
+\begin{DoxyCompactList}\small\item\em Get the mutex pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Setters}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classfilter_1_1Propagation_a057bf3ffb21e71ccba0120f28695348d}{set\+\_\+initial\+\_\+state}} (\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&state)
+\begin{DoxyCompactList}\small\item\em Set the initial state of the robot. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfilter_1_1Propagation_a8343c05b3a00cadd6fc6b9a747786805}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the sensor data buffer. Need to be override in the child class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classfilter_1_1Propagation_a39d85a15c274b185ba03ee8dc66079f2}{g\+\_\+}}
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classfilter_1_1Propagation_a6da1850a71c7c2ebfda9430803b265ac}{magnetic\+\_\+field\+\_\+}}
+\item 
+\mbox{\hyperlink{base__propagation_8h_a2477a42547ead4995131c881e573ede5}{Propagation\+Type}} \mbox{\hyperlink{classfilter_1_1Propagation_a8584ca13d84d406ea2033a887ffb0dc0}{propagation\+\_\+type\+\_\+}}
+\item 
+std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ \mbox{\hyperlink{classfilter_1_1Propagation_adead7b35a8bbcf2f7c990941cde03823}{sensor\+\_\+data\+\_\+buffer\+\_\+mutex\+\_\+ptr\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for propagation method. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfilter_1_1Propagation_a248991426414d1026d6c8c62f8489db3}\label{classfilter_1_1Propagation_a248991426414d1026d6c8c62f8489db3}} 
+\index{filter::Propagation@{filter::Propagation}!Propagation@{Propagation}}
+\index{Propagation@{Propagation}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{Propagation()}{Propagation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily filter\+::\+Propagation\+::\+Propagation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the propagation class. 
+
+\mbox{\Hypertarget{classfilter_1_1Propagation_a51b7b2b8b9c95cfc138848cfda2d0623}\label{classfilter_1_1Propagation_a51b7b2b8b9c95cfc138848cfda2d0623}} 
+\index{filter::Propagation@{filter::Propagation}!Propagation@{Propagation}}
+\index{Propagation@{Propagation}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{Propagation()}{Propagation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily filter\+::\+Propagation\+::\+Propagation (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ std\+::mutex $>$}]{sensor\+\_\+data\+\_\+buffer\+\_\+mutex\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classfilter_1_1Propagation}{Propagation}} object with mutex. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sensor\+\_\+data\+\_\+buffer\+\_\+mutex\+\_\+ptr} & a pointer to the mutex of the sensor data buffer \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfilter_1_1Propagation_a8343c05b3a00cadd6fc6b9a747786805}\label{classfilter_1_1Propagation_a8343c05b3a00cadd6fc6b9a747786805}} 
+\index{filter::Propagation@{filter::Propagation}!clear@{clear}}
+\index{clear@{clear}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void filter\+::\+Propagation\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clear the sensor data buffer. Need to be override in the child class. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_a3b046e708ac1b5299efa132a23d7773d}{filter\+::inekf\+::\+Imu\+Propagation}}.
+
+\mbox{\Hypertarget{classfilter_1_1Propagation_a0d94a64d30977b9de117966aa5fc7559}\label{classfilter_1_1Propagation_a0d94a64d30977b9de117966aa5fc7559}} 
+\index{filter::Propagation@{filter::Propagation}!get\_mutex\_ptr@{get\_mutex\_ptr}}
+\index{get\_mutex\_ptr@{get\_mutex\_ptr}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{get\_mutex\_ptr()}{get\_mutex\_ptr()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ filter\+::\+Propagation\+::get\+\_\+mutex\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the mutex pointer. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$std\+::mutex$>$\+: a pointer to the mutex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfilter_1_1Propagation_a06a7b29464a6e50b30243f72e2a37cc2}\label{classfilter_1_1Propagation_a06a7b29464a6e50b30243f72e2a37cc2}} 
+\index{filter::Propagation@{filter::Propagation}!get\_propagation\_type@{get\_propagation\_type}}
+\index{get\_propagation\_type@{get\_propagation\_type}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{get\_propagation\_type()}{get\_propagation\_type()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{base__propagation_8h_a2477a42547ead4995131c881e573ede5}{Propagation\+Type}} filter\+::\+Propagation\+::get\+\_\+propagation\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the propagation type. 
+
+\begin{DoxyReturn}{Returns}
+Propagation\+Type\+: the propagation type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfilter_1_1Propagation_a6fd269d9e1d715e9342359774c6ef398}\label{classfilter_1_1Propagation_a6fd269d9e1d715e9342359774c6ef398}} 
+\index{filter::Propagation@{filter::Propagation}!get\_sensor\_data\_buffer\_ptr@{get\_sensor\_data\_buffer\_ptr}}
+\index{get\_sensor\_data\_buffer\_ptr@{get\_sensor\_data\_buffer\_ptr}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{get\_sensor\_data\_buffer\_ptr()}{get\_sensor\_data\_buffer\_ptr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{type__def_8h_a8e77af02b888a3b41151a1bfdef770c1}{Measurement\+Queue\+Ptr}} filter\+::\+Propagation\+::get\+\_\+sensor\+\_\+data\+\_\+buffer\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the pointer of sensor data buffer. 
+
+\begin{DoxyReturn}{Returns}
+Measurement\+Queue\+Ptr\+: a pointer to the sensor data buffer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfilter_1_1Propagation_a62cd208396f8b969427b86eb0166de28}\label{classfilter_1_1Propagation_a62cd208396f8b969427b86eb0166de28}} 
+\index{filter::Propagation@{filter::Propagation}!Propagate@{Propagate}}
+\index{Propagate@{Propagate}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{Propagate()}{Propagate()}}
+{\footnotesize\ttfamily bool filter\+::\+Propagation\+::\+Propagate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This is a skeleton for the propagation method. It should be implemented in the child class. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em state} & The current state of the robot \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: successfully propagate state or not (if we do not receive a new message and this method is called it\textquotesingle{}ll return false.) 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_acb0e0bf386489dbda5c93537dda110f2}{filter\+::inekf\+::\+Imu\+Propagation}}.
+
+\mbox{\Hypertarget{classfilter_1_1Propagation_a057bf3ffb21e71ccba0120f28695348d}\label{classfilter_1_1Propagation_a057bf3ffb21e71ccba0120f28695348d}} 
+\index{filter::Propagation@{filter::Propagation}!set\_initial\_state@{set\_initial\_state}}
+\index{set\_initial\_state@{set\_initial\_state}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{set\_initial\_state()}{set\_initial\_state()}}
+{\footnotesize\ttfamily bool filter\+::\+Propagation\+::set\+\_\+initial\+\_\+state (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the initial state of the robot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em state} & The state of the robot, which will be initialized in this method \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: whether the initialization is successful 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_a6a575ba77e8cd7562c48f52d9790c85e}{filter\+::inekf\+::\+Imu\+Propagation}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classfilter_1_1Propagation_a39d85a15c274b185ba03ee8dc66079f2}\label{classfilter_1_1Propagation_a39d85a15c274b185ba03ee8dc66079f2}} 
+\index{filter::Propagation@{filter::Propagation}!g\_@{g\_}}
+\index{g\_@{g\_}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{g\_}{g\_}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d filter\+::\+Propagation\+::g\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+Gravity vector (m/s$^\wedge$2) in world frame (z-\/up). Default is 9.\+80 m/s$^\wedge$2 \mbox{\Hypertarget{classfilter_1_1Propagation_a6da1850a71c7c2ebfda9430803b265ac}\label{classfilter_1_1Propagation_a6da1850a71c7c2ebfda9430803b265ac}} 
+\index{filter::Propagation@{filter::Propagation}!magnetic\_field\_@{magnetic\_field\_}}
+\index{magnetic\_field\_@{magnetic\_field\_}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{magnetic\_field\_}{magnetic\_field\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d filter\+::\+Propagation\+::magnetic\+\_\+field\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+Magnetic field vector in world frame (z-\/up). \mbox{\Hypertarget{classfilter_1_1Propagation_a8584ca13d84d406ea2033a887ffb0dc0}\label{classfilter_1_1Propagation_a8584ca13d84d406ea2033a887ffb0dc0}} 
+\index{filter::Propagation@{filter::Propagation}!propagation\_type\_@{propagation\_type\_}}
+\index{propagation\_type\_@{propagation\_type\_}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{propagation\_type\_}{propagation\_type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{base__propagation_8h_a2477a42547ead4995131c881e573ede5}{Propagation\+Type}} filter\+::\+Propagation\+::propagation\+\_\+type\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+The type of the propagation method. \mbox{\Hypertarget{classfilter_1_1Propagation_adead7b35a8bbcf2f7c990941cde03823}\label{classfilter_1_1Propagation_adead7b35a8bbcf2f7c990941cde03823}} 
+\index{filter::Propagation@{filter::Propagation}!sensor\_data\_buffer\_mutex\_ptr\_@{sensor\_data\_buffer\_mutex\_ptr\_}}
+\index{sensor\_data\_buffer\_mutex\_ptr\_@{sensor\_data\_buffer\_mutex\_ptr\_}!filter::Propagation@{filter::Propagation}}
+\doxysubsubsection{\texorpdfstring{sensor\_data\_buffer\_mutex\_ptr\_}{sensor\_data\_buffer\_mutex\_ptr\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$std\+::mutex$>$ filter\+::\+Propagation\+::sensor\+\_\+data\+\_\+buffer\+\_\+mutex\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+The mutex of the sensor data buffer. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/filter/\mbox{\hyperlink{base__propagation_8h}{base\+\_\+propagation.\+h}}\item 
+/home/neofelis/\+VRX/drift/src/filter/\mbox{\hyperlink{base__propagation_8cpp}{base\+\_\+propagation.\+cpp}}\end{DoxyCompactItemize}

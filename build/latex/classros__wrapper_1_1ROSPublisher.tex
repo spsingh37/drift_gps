@@ -1,0 +1,107 @@
+\hypertarget{classros__wrapper_1_1ROSPublisher}{}\doxysection{ros\+\_\+wrapper\+::ROSPublisher Class Reference}
+\label{classros__wrapper_1_1ROSPublisher}\index{ros\_wrapper::ROSPublisher@{ros\_wrapper::ROSPublisher}}
+
+
+ROS publisher class, which publishes robot state to ROS topics including pose and path.  
+
+
+
+
+{\ttfamily \#include $<$ros\+\_\+publisher.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classros__wrapper_1_1ROSPublisher_abbf0c5822b2d001993bb143f26e00056}{Start\+Publishing\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em Start publishing thread for pose and path publishers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classros__wrapper_1_1ROSPublisher_ae94ee6271552f7ee8e66fe639d9515a9}{ROSPublisher}} (ros\+::\+Node\+Handle $\ast$nh, \mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{Robot\+State\+Queue\+Ptr}} \&robot\+\_\+state\+\_\+queue, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ robot\+\_\+state\+\_\+queue\+\_\+mutex, bool enable\+\_\+slip\+\_\+publisher\+\_\+=false)
+\begin{DoxyCompactList}\small\item\em Construct a new ROS Publisher object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classros__wrapper_1_1ROSPublisher_a22e0f42a782214ab5741e73a3aec401f}{ROSPublisher}} (ros\+::\+Node\+Handle $\ast$nh, \mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{Robot\+State\+Queue\+Ptr}} \&robot\+\_\+state\+\_\+queue, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ robot\+\_\+state\+\_\+queue\+\_\+mutex, std\+::string config\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Construct a new ROS Publisher object with configuration file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classros__wrapper_1_1ROSPublisher_ac9a5d42b30a438c3a5e0a083873c0527}{$\sim$\+ROSPublisher}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classros__wrapper_1_1ROSPublisher}{ROSPublisher}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+ROS publisher class, which publishes robot state to ROS topics including pose and path. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSPublisher_ae94ee6271552f7ee8e66fe639d9515a9}\label{classros__wrapper_1_1ROSPublisher_ae94ee6271552f7ee8e66fe639d9515a9}} 
+\index{ros\_wrapper::ROSPublisher@{ros\_wrapper::ROSPublisher}!ROSPublisher@{ROSPublisher}}
+\index{ROSPublisher@{ROSPublisher}!ros\_wrapper::ROSPublisher@{ros\_wrapper::ROSPublisher}}
+\doxysubsubsection{\texorpdfstring{ROSPublisher()}{ROSPublisher()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ros\+\_\+wrapper\+::\+ROSPublisher\+::\+ROSPublisher (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle $\ast$}]{nh,  }\item[{\mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{Robot\+State\+Queue\+Ptr}} \&}]{robot\+\_\+state\+\_\+queue,  }\item[{std\+::shared\+\_\+ptr$<$ std\+::mutex $>$}]{robot\+\_\+state\+\_\+queue\+\_\+mutex,  }\item[{bool}]{enable\+\_\+slip\+\_\+publisher\+\_\+ = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Construct a new ROS Publisher object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nh} & ROS node handle \\
+\hline
+\mbox{\texttt{ in}}  & {\em robot\+\_\+state\+\_\+queue} & Robot state queue \\
+\hline
+\mbox{\texttt{ in}}  & {\em robot\+\_\+state\+\_\+queue\+\_\+mutex} & Robot state queue mutex \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSPublisher_a22e0f42a782214ab5741e73a3aec401f}\label{classros__wrapper_1_1ROSPublisher_a22e0f42a782214ab5741e73a3aec401f}} 
+\index{ros\_wrapper::ROSPublisher@{ros\_wrapper::ROSPublisher}!ROSPublisher@{ROSPublisher}}
+\index{ROSPublisher@{ROSPublisher}!ros\_wrapper::ROSPublisher@{ros\_wrapper::ROSPublisher}}
+\doxysubsubsection{\texorpdfstring{ROSPublisher()}{ROSPublisher()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ros\+\_\+wrapper\+::\+ROSPublisher\+::\+ROSPublisher (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle $\ast$}]{nh,  }\item[{\mbox{\hyperlink{type__def_8h_a64c0065bd95d5bc87f07b183e516aa95}{Robot\+State\+Queue\+Ptr}} \&}]{robot\+\_\+state\+\_\+queue,  }\item[{std\+::shared\+\_\+ptr$<$ std\+::mutex $>$}]{robot\+\_\+state\+\_\+queue\+\_\+mutex,  }\item[{std\+::string}]{config\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Construct a new ROS Publisher object with configuration file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nh} & ROS node handle \\
+\hline
+\mbox{\texttt{ in}}  & {\em robot\+\_\+state\+\_\+queue} & Robot state queue \\
+\hline
+\mbox{\texttt{ in}}  & {\em robot\+\_\+state\+\_\+queue\+\_\+mutex} & Robot state queue mutex \\
+\hline
+\mbox{\texttt{ in}}  & {\em config\+\_\+file} & Configuration file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSPublisher_ac9a5d42b30a438c3a5e0a083873c0527}\label{classros__wrapper_1_1ROSPublisher_ac9a5d42b30a438c3a5e0a083873c0527}} 
+\index{ros\_wrapper::ROSPublisher@{ros\_wrapper::ROSPublisher}!````~ROSPublisher@{$\sim$ROSPublisher}}
+\index{````~ROSPublisher@{$\sim$ROSPublisher}!ros\_wrapper::ROSPublisher@{ros\_wrapper::ROSPublisher}}
+\doxysubsubsection{\texorpdfstring{$\sim$ROSPublisher()}{~ROSPublisher()}}
+{\footnotesize\ttfamily ros\+\_\+wrapper\+::\+ROSPublisher\+::$\sim$\+ROSPublisher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{classros__wrapper_1_1ROSPublisher}{ROSPublisher}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classros__wrapper_1_1ROSPublisher_abbf0c5822b2d001993bb143f26e00056}\label{classros__wrapper_1_1ROSPublisher_abbf0c5822b2d001993bb143f26e00056}} 
+\index{ros\_wrapper::ROSPublisher@{ros\_wrapper::ROSPublisher}!StartPublishingThread@{StartPublishingThread}}
+\index{StartPublishingThread@{StartPublishingThread}!ros\_wrapper::ROSPublisher@{ros\_wrapper::ROSPublisher}}
+\doxysubsubsection{\texorpdfstring{StartPublishingThread()}{StartPublishingThread()}}
+{\footnotesize\ttfamily void ros\+\_\+wrapper\+::\+ROSPublisher\+::\+Start\+Publishing\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start publishing thread for pose and path publishers. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/\+ROS/drift/include/communication/\mbox{\hyperlink{ros__publisher_8h}{ros\+\_\+publisher.\+h}}\item 
+/home/neofelis/\+VRX/drift/\+ROS/drift/src/communication/\mbox{\hyperlink{ros__publisher_8cpp}{ros\+\_\+publisher.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,208 @@
+\hypertarget{classmeasurement_1_1ImuMeasurement}{}\doxysection{measurement\+::Imu\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classmeasurement_1_1ImuMeasurement}\index{measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}}
+
+
+measurement class containing intertial measurement unit estimated parameters.  
+
+
+
+
+{\ttfamily \#include $<$imu.\+h$>$}
+
+
+
+Inheritance diagram for measurement\+::Imu\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classmeasurement_1_1ImuMeasurement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for measurement\+::Imu\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classmeasurement_1_1ImuMeasurement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a9cc29725dded62e67a6129e3c1ffb128}{Imu\+Measurement}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Setter}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a3d49755f7f666af50d5506c677dd14c9}{set\+\_\+quaternion}} (T w, T x, T y, T z)
+\begin{DoxyCompactList}\small\item\em Set the imu measurement quaternion coefficients. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a3d9308b813d08746583517282d47d0cd}{set\+\_\+angular\+\_\+velocity}} (T x, T y, T z)
+\begin{DoxyCompactList}\small\item\em Set the imu measurement angular velocity (rad/s). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a384591765353aadf9c0bcf7c7548e43d}{set\+\_\+lin\+\_\+acc}} (T x, T y, T z)
+\begin{DoxyCompactList}\small\item\em Set the imu measurement linear acceleration (m/s$^\wedge$2). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getter}\par
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix$<$ T, 3, 3 $>$ \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a3b71450a28565dd42f487ea20981d45e}{get\+\_\+rotation\+\_\+matrix}} () const
+\begin{DoxyCompactList}\small\item\em Get the orthonormal 3D rotation matrix for the imu measurement. \end{DoxyCompactList}\item 
+Eigen\+::\+Quaternion$<$ T $>$ \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_ab9b110225c99cfcdb754a6bcde78a6d7}{get\+\_\+quaternion}} () const
+\begin{DoxyCompactList}\small\item\em Get the imu measurement quaternion coefficients. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a5335ecf620b2f21716f7037b5939fa63}{get\+\_\+angular\+\_\+velocity}} () const
+\begin{DoxyCompactList}\small\item\em Get the imu measurement angular velocity coefficients (rad/s). \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a7f4d8209535b4eae042b14e0eb55cf2f}{get\+\_\+lin\+\_\+acc}} () const
+\begin{DoxyCompactList}\small\item\em Get the imu measurement linear acceleration coefficients (m/s$^\wedge$2). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class measurement\+::\+Imu\+Measurement$<$ T $>$}
+measurement class containing intertial measurement unit estimated parameters. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1ImuMeasurement_a9cc29725dded62e67a6129e3c1ffb128}\label{classmeasurement_1_1ImuMeasurement_a9cc29725dded62e67a6129e3c1ffb128}} 
+\index{measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}!ImuMeasurement@{ImuMeasurement}}
+\index{ImuMeasurement@{ImuMeasurement}!measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ImuMeasurement()}{ImuMeasurement()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmeasurement_1_1ImuMeasurement}{measurement\+::\+Imu\+Measurement}}$<$ T $>$\+::\+Imu\+Measurement}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1ImuMeasurement_a5335ecf620b2f21716f7037b5939fa63}\label{classmeasurement_1_1ImuMeasurement_a5335ecf620b2f21716f7037b5939fa63}} 
+\index{measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}!get\_angular\_velocity@{get\_angular\_velocity}}
+\index{get\_angular\_velocity@{get\_angular\_velocity}!measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_angular\_velocity()}{get\_angular\_velocity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement}{measurement\+::\+Imu\+Measurement}}$<$ T $>$\+::get\+\_\+angular\+\_\+velocity}
+
+
+
+Get the imu measurement angular velocity coefficients (rad/s). 
+
+\begin{DoxyReturn}{Returns}
+The angular velocity (x, y, z). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1ImuMeasurement_a7f4d8209535b4eae042b14e0eb55cf2f}\label{classmeasurement_1_1ImuMeasurement_a7f4d8209535b4eae042b14e0eb55cf2f}} 
+\index{measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}!get\_lin\_acc@{get\_lin\_acc}}
+\index{get\_lin\_acc@{get\_lin\_acc}!measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_lin\_acc()}{get\_lin\_acc()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement}{measurement\+::\+Imu\+Measurement}}$<$ T $>$\+::get\+\_\+lin\+\_\+acc}
+
+
+
+Get the imu measurement linear acceleration coefficients (m/s$^\wedge$2). 
+
+\begin{DoxyReturn}{Returns}
+The linear acceleration (x, y, z). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1ImuMeasurement_ab9b110225c99cfcdb754a6bcde78a6d7}\label{classmeasurement_1_1ImuMeasurement_ab9b110225c99cfcdb754a6bcde78a6d7}} 
+\index{measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}!get\_quaternion@{get\_quaternion}}
+\index{get\_quaternion@{get\_quaternion}!measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_quaternion()}{get\_quaternion()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Eigen\+::\+Quaternion$<$ T $>$ \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement}{measurement\+::\+Imu\+Measurement}}$<$ T $>$\+::get\+\_\+quaternion}
+
+
+
+Get the imu measurement quaternion coefficients. 
+
+\begin{DoxyReturn}{Returns}
+The quaternion (w, x, y, z). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1ImuMeasurement_a3b71450a28565dd42f487ea20981d45e}\label{classmeasurement_1_1ImuMeasurement_a3b71450a28565dd42f487ea20981d45e}} 
+\index{measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}!get\_rotation\_matrix@{get\_rotation\_matrix}}
+\index{get\_rotation\_matrix@{get\_rotation\_matrix}!measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_rotation\_matrix()}{get\_rotation\_matrix()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Eigen\+::\+Matrix$<$ T, 3, 3 $>$ \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement}{measurement\+::\+Imu\+Measurement}}$<$ T $>$\+::get\+\_\+rotation\+\_\+matrix}
+
+
+
+Get the orthonormal 3D rotation matrix for the imu measurement. 
+
+\begin{DoxyReturn}{Returns}
+3x3 Matrix in SO(3). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1ImuMeasurement_a3d9308b813d08746583517282d47d0cd}\label{classmeasurement_1_1ImuMeasurement_a3d9308b813d08746583517282d47d0cd}} 
+\index{measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}!set\_angular\_velocity@{set\_angular\_velocity}}
+\index{set\_angular\_velocity@{set\_angular\_velocity}!measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_angular\_velocity()}{set\_angular\_velocity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement}{measurement\+::\+Imu\+Measurement}}$<$ T $>$\+::set\+\_\+angular\+\_\+velocity (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{y,  }\item[{T}]{z }\end{DoxyParamCaption})}
+
+
+
+Set the imu measurement angular velocity (rad/s). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & axis coefficient. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & axis coefficient. \\
+\hline
+\mbox{\texttt{ in}}  & {\em z} & axis coefficient. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmeasurement_1_1ImuMeasurement_a384591765353aadf9c0bcf7c7548e43d}\label{classmeasurement_1_1ImuMeasurement_a384591765353aadf9c0bcf7c7548e43d}} 
+\index{measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}!set\_lin\_acc@{set\_lin\_acc}}
+\index{set\_lin\_acc@{set\_lin\_acc}!measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_lin\_acc()}{set\_lin\_acc()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement}{measurement\+::\+Imu\+Measurement}}$<$ T $>$\+::set\+\_\+lin\+\_\+acc (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{y,  }\item[{T}]{z }\end{DoxyParamCaption})}
+
+
+
+Set the imu measurement linear acceleration (m/s$^\wedge$2). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & axis coefficient. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & axis coefficient. \\
+\hline
+\mbox{\texttt{ in}}  & {\em z} & axis coefficient. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmeasurement_1_1ImuMeasurement_a3d49755f7f666af50d5506c677dd14c9}\label{classmeasurement_1_1ImuMeasurement_a3d49755f7f666af50d5506c677dd14c9}} 
+\index{measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}!set\_quaternion@{set\_quaternion}}
+\index{set\_quaternion@{set\_quaternion}!measurement::ImuMeasurement$<$ T $>$@{measurement::ImuMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_quaternion()}{set\_quaternion()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement}{measurement\+::\+Imu\+Measurement}}$<$ T $>$\+::set\+\_\+quaternion (\begin{DoxyParamCaption}\item[{T}]{w,  }\item[{T}]{x,  }\item[{T}]{y,  }\item[{T}]{z }\end{DoxyParamCaption})}
+
+
+
+Set the imu measurement quaternion coefficients. 
+
+\begin{DoxyWarning}{Warning}
+Arguments must be normalized. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em w} & real quaternion coefficient. \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & imaginary quaternion coefficient. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & imaginary quaternion coefficient. \\
+\hline
+\mbox{\texttt{ in}}  & {\em z} & imaginary quaternion coefficient. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/measurement/\mbox{\hyperlink{imu_8h}{imu.\+h}}\item 
+/home/neofelis/\+VRX/drift/include/drift/measurement/impl/\mbox{\hyperlink{imu__impl_8cpp}{imu\+\_\+impl.\+cpp}}\end{DoxyCompactItemize}

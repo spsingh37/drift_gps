@@ -1,0 +1,227 @@
+\hypertarget{ros__subscriber_8h}{}\doxysection{/home/neofelis/\+VRX/drift/\+ROS/drift/include/communication/ros\+\_\+subscriber.h File Reference}
+\label{ros__subscriber_8h}\index{/home/neofelis/VRX/drift/ROS/drift/include/communication/ros\_subscriber.h@{/home/neofelis/VRX/drift/ROS/drift/include/communication/ros\_subscriber.h}}
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$message\+\_\+filters/subscriber.\+h$>$}\newline
+{\ttfamily \#include $<$message\+\_\+filters/sync\+\_\+policies/approximate\+\_\+time.\+h$>$}\newline
+{\ttfamily \#include $<$message\+\_\+filters/sync\+\_\+policies/exact\+\_\+time.\+h$>$}\newline
+{\ttfamily \#include $<$message\+\_\+filters/synchronizer.\+h$>$}\newline
+{\ttfamily \#include $<$sensor\+\_\+msgs/\+Nav\+Sat\+Fix.\+h$>$}\newline
+{\ttfamily \#include $<$unsupported/\+Eigen/\+Matrix\+Functions$>$}\newline
+{\ttfamily \#include \char`\"{}boost/bind.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+sensor\+\_\+msgs/\+Contact.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}custom\+\_\+sensor\+\_\+msgs/\+Contact\+Array.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Twist\+Stamped.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Twist\+With\+Covariance\+Stamped.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Vector3\+Stamped.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nav\+\_\+msgs/\+Odometry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sensor\+\_\+msgs/\+Imu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sensor\+\_\+msgs/\+Joint\+State.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/estimator/inekf\+\_\+estimator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/kinematics/mini\+\_\+cheetah\+\_\+kinematics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/utils/type\+\_\+def.\+h\char`\"{}}\newline
+Include dependency graph for ros\+\_\+subscriber.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ros__subscriber_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ros__subscriber_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classros__wrapper_1_1ROSSubscriber}{ros\+\_\+wrapper\+::\+ROSSubscriber}}
+\begin{DoxyCompactList}\small\item\em ROS subscriber class, which subscribes to the ROS topics and stores the measurements in the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceros__wrapper}{ros\+\_\+wrapper}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}{IMUQueue\+Pair}}
+\item 
+typedef std\+::pair$<$ \mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}}
+\item 
+typedef std\+::pair$<$ \mbox{\hyperlink{type__def_8h_a52173582ec3a74be4249b4b0c5426ebd}{Odom\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_ac0758f66e9561765922d9b0c3f343122}{Pose\+Queue\+Pair}}
+\item 
+typedef std\+::pair$<$ \mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{Angular\+Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a7d05cfebaa87abaa21dc2a8eef2a855f}{Angular\+Velocity\+Queue\+Pair}}
+\item 
+typedef std\+::pair$<$ \mbox{\hyperlink{type__def_8h_a52173582ec3a74be4249b4b0c5426ebd}{Odom\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a3a1d261ad9f4c35009ec223aff191ade}{Odom\+Queue\+Pair}}
+\item 
+typedef std\+::pair$<$ \mbox{\hyperlink{type__def_8h_aa0b6009ff28d4061513537e85d721021}{Legged\+Kin\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_abfbdcb77174b83e89d3ea006ac0ebcf3}{Legged\+Kin\+Queue\+Pair}}
+\item 
+typedef message\+\_\+filters\+::\+Subscriber$<$ custom\+\_\+sensor\+\_\+msgs\+::\+Contact\+Array $>$ \mbox{\hyperlink{ros__subscriber_8h_af12e02c9cfb7b9861e335244e715ee5e}{Contact\+Msg\+FilterT}}
+\item 
+typedef message\+\_\+filters\+::\+Subscriber$<$ sensor\+\_\+msgs\+::\+Joint\+State $>$ \mbox{\hyperlink{ros__subscriber_8h_a71099fb9c12ec334e5eac593d2006722}{Joint\+State\+Msg\+FilterT}}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ message\+\_\+filters\+::\+Subscriber$<$ custom\+\_\+sensor\+\_\+msgs\+::\+Contact\+Array $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_abe69c82f299afc0b4085c5b0c5b9c95a}{Contact\+Msg\+Filter\+TPtr}}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ message\+\_\+filters\+::\+Subscriber$<$ sensor\+\_\+msgs\+::\+Joint\+State $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_add46b5940e6661d97c9a20d807661f46}{Joint\+State\+Msg\+Filter\+TPtr}}
+\item 
+typedef message\+\_\+filters\+::sync\+\_\+policies\+::\+Approximate\+Time$<$ custom\+\_\+sensor\+\_\+msgs\+::\+Contact\+Array, sensor\+\_\+msgs\+::\+Joint\+State $>$ \mbox{\hyperlink{ros__subscriber_8h_a0dfebbf3bab528172f83afce39c2d78e}{Leg\+Kin\+Sync\+Policy}}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ message\+\_\+filters\+::\+Synchronizer$<$ \mbox{\hyperlink{ros__subscriber_8h_a0dfebbf3bab528172f83afce39c2d78e}{Leg\+Kin\+Sync\+Policy}} $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a31c7c4dcf11cda6391d24a580efbb083}{Leg\+Kin\+Sync\+Ptr}}
+\item 
+typedef message\+\_\+filters\+::\+Subscriber$<$ sensor\+\_\+msgs\+::\+Imu $>$ \mbox{\hyperlink{ros__subscriber_8h_a8eab5d8704f00f4b5a0ea038b6fdda92}{IMUMsg\+FilterT}}
+\item 
+typedef message\+\_\+filters\+::\+Subscriber$<$ geometry\+\_\+msgs\+::\+Vector3\+Stamped $>$ \mbox{\hyperlink{ros__subscriber_8h_a66c597c9da3c3e7310efc7a8e6ae5fcd}{IMUOffset\+Msg\+FilterT}}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{ros__subscriber_8h_a8eab5d8704f00f4b5a0ea038b6fdda92}{IMUMsg\+FilterT}} $>$ \mbox{\hyperlink{ros__subscriber_8h_a0c0f0aec7b3340bdb78885817ca3f42b}{IMUMsg\+Filter\+TPtr}}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{ros__subscriber_8h_a66c597c9da3c3e7310efc7a8e6ae5fcd}{IMUOffset\+Msg\+FilterT}} $>$ \mbox{\hyperlink{ros__subscriber_8h_af88fe3631b8a6bdb9fec34a8b7c27141}{IMUOffset\+Msg\+Filter\+TPtr}}
+\item 
+typedef message\+\_\+filters\+::sync\+\_\+policies\+::\+Approximate\+Time$<$ sensor\+\_\+msgs\+::\+Imu, geometry\+\_\+msgs\+::\+Vector3\+Stamped $>$ \mbox{\hyperlink{ros__subscriber_8h_a195e51e3f973fb185d82d10dd1d8474f}{IMUSync\+Policy}}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ message\+\_\+filters\+::\+Synchronizer$<$ \mbox{\hyperlink{ros__subscriber_8h_a195e51e3f973fb185d82d10dd1d8474f}{IMUSync\+Policy}} $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a35e7f5948b93ce3f0ae879776be7d36e}{IMUSync\+Ptr}}
+\item 
+typedef std\+::queue$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement}{Nav\+Sat\+Measurement}}$<$ double $>$ $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_af62d8700b839ad1fa36b1152171afb4c}{GPSNav\+Sat\+Queue}}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{ros__subscriber_8h_af62d8700b839ad1fa36b1152171afb4c}{GPSNav\+Sat\+Queue}} $>$ \mbox{\hyperlink{ros__subscriber_8h_ab4536c3d359c13395ac8de49eda99d9f}{GPSNav\+Sat\+Queue\+Ptr}}
+\item 
+typedef std\+::pair$<$ \mbox{\hyperlink{ros__subscriber_8h_ab4536c3d359c13395ac8de49eda99d9f}{GPSNav\+Sat\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_ad903ebc33a90ebb96d61317af14365ee}{GPSNav\+Sat\+Queue\+Pair}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ros__subscriber_8h_a7d05cfebaa87abaa21dc2a8eef2a855f}\label{ros__subscriber_8h_a7d05cfebaa87abaa21dc2a8eef2a855f}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!AngularVelocityQueuePair@{AngularVelocityQueuePair}}
+\index{AngularVelocityQueuePair@{AngularVelocityQueuePair}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{AngularVelocityQueuePair}{AngularVelocityQueuePair}}
+{\footnotesize\ttfamily typedef std\+::pair$<$\mbox{\hyperlink{type__def_8h_ab7278aa41a61ce9bf0df7c732688cd11}{Angular\+Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$std\+::mutex$>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a7d05cfebaa87abaa21dc2a8eef2a855f}{Angular\+Velocity\+Queue\+Pair}}}
+
+Pair of Angular\+Velocity\+Queue\+Ptr and Velocity\+Queue mutex. \mbox{\Hypertarget{ros__subscriber_8h_af12e02c9cfb7b9861e335244e715ee5e}\label{ros__subscriber_8h_af12e02c9cfb7b9861e335244e715ee5e}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!ContactMsgFilterT@{ContactMsgFilterT}}
+\index{ContactMsgFilterT@{ContactMsgFilterT}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{ContactMsgFilterT}{ContactMsgFilterT}}
+{\footnotesize\ttfamily typedef message\+\_\+filters\+::\+Subscriber$<$custom\+\_\+sensor\+\_\+msgs\+::\+Contact\+Array$>$ \mbox{\hyperlink{ros__subscriber_8h_af12e02c9cfb7b9861e335244e715ee5e}{Contact\+Msg\+FilterT}}}
+
+Message filter for contact messages. \mbox{\Hypertarget{ros__subscriber_8h_abe69c82f299afc0b4085c5b0c5b9c95a}\label{ros__subscriber_8h_abe69c82f299afc0b4085c5b0c5b9c95a}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!ContactMsgFilterTPtr@{ContactMsgFilterTPtr}}
+\index{ContactMsgFilterTPtr@{ContactMsgFilterTPtr}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{ContactMsgFilterTPtr}{ContactMsgFilterTPtr}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$ message\+\_\+filters\+::\+Subscriber$<$custom\+\_\+sensor\+\_\+msgs\+::\+Contact\+Array$>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_abe69c82f299afc0b4085c5b0c5b9c95a}{Contact\+Msg\+Filter\+TPtr}}}
+
+Pointer to the Contact\+Msg\+FilterT. \mbox{\Hypertarget{ros__subscriber_8h_af62d8700b839ad1fa36b1152171afb4c}\label{ros__subscriber_8h_af62d8700b839ad1fa36b1152171afb4c}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!GPSNavSatQueue@{GPSNavSatQueue}}
+\index{GPSNavSatQueue@{GPSNavSatQueue}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{GPSNavSatQueue}{GPSNavSatQueue}}
+{\footnotesize\ttfamily typedef std\+::queue$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classmeasurement_1_1NavSatMeasurement}{Nav\+Sat\+Measurement}}$<$double$>$ $>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_af62d8700b839ad1fa36b1152171afb4c}{GPSNav\+Sat\+Queue}}}
+
+\mbox{\Hypertarget{ros__subscriber_8h_ad903ebc33a90ebb96d61317af14365ee}\label{ros__subscriber_8h_ad903ebc33a90ebb96d61317af14365ee}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!GPSNavSatQueuePair@{GPSNavSatQueuePair}}
+\index{GPSNavSatQueuePair@{GPSNavSatQueuePair}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{GPSNavSatQueuePair}{GPSNavSatQueuePair}}
+{\footnotesize\ttfamily typedef std\+::pair$<$\mbox{\hyperlink{ros__subscriber_8h_ab4536c3d359c13395ac8de49eda99d9f}{GPSNav\+Sat\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$std\+::mutex$>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_ad903ebc33a90ebb96d61317af14365ee}{GPSNav\+Sat\+Queue\+Pair}}}
+
+\mbox{\Hypertarget{ros__subscriber_8h_ab4536c3d359c13395ac8de49eda99d9f}\label{ros__subscriber_8h_ab4536c3d359c13395ac8de49eda99d9f}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!GPSNavSatQueuePtr@{GPSNavSatQueuePtr}}
+\index{GPSNavSatQueuePtr@{GPSNavSatQueuePtr}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{GPSNavSatQueuePtr}{GPSNavSatQueuePtr}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{ros__subscriber_8h_af62d8700b839ad1fa36b1152171afb4c}{GPSNav\+Sat\+Queue}}$>$ \mbox{\hyperlink{ros__subscriber_8h_ab4536c3d359c13395ac8de49eda99d9f}{GPSNav\+Sat\+Queue\+Ptr}}}
+
+\mbox{\Hypertarget{ros__subscriber_8h_a8eab5d8704f00f4b5a0ea038b6fdda92}\label{ros__subscriber_8h_a8eab5d8704f00f4b5a0ea038b6fdda92}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!IMUMsgFilterT@{IMUMsgFilterT}}
+\index{IMUMsgFilterT@{IMUMsgFilterT}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{IMUMsgFilterT}{IMUMsgFilterT}}
+{\footnotesize\ttfamily typedef message\+\_\+filters\+::\+Subscriber$<$sensor\+\_\+msgs\+::\+Imu$>$ \mbox{\hyperlink{ros__subscriber_8h_a8eab5d8704f00f4b5a0ea038b6fdda92}{IMUMsg\+FilterT}}}
+
+Message filter for IMU messages. \mbox{\Hypertarget{ros__subscriber_8h_a0c0f0aec7b3340bdb78885817ca3f42b}\label{ros__subscriber_8h_a0c0f0aec7b3340bdb78885817ca3f42b}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!IMUMsgFilterTPtr@{IMUMsgFilterTPtr}}
+\index{IMUMsgFilterTPtr@{IMUMsgFilterTPtr}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{IMUMsgFilterTPtr}{IMUMsgFilterTPtr}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{ros__subscriber_8h_a8eab5d8704f00f4b5a0ea038b6fdda92}{IMUMsg\+FilterT}}$>$ \mbox{\hyperlink{ros__subscriber_8h_a0c0f0aec7b3340bdb78885817ca3f42b}{IMUMsg\+Filter\+TPtr}}}
+
+Pointer to the IMUMsg\+FilterT. \mbox{\Hypertarget{ros__subscriber_8h_a66c597c9da3c3e7310efc7a8e6ae5fcd}\label{ros__subscriber_8h_a66c597c9da3c3e7310efc7a8e6ae5fcd}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!IMUOffsetMsgFilterT@{IMUOffsetMsgFilterT}}
+\index{IMUOffsetMsgFilterT@{IMUOffsetMsgFilterT}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{IMUOffsetMsgFilterT}{IMUOffsetMsgFilterT}}
+{\footnotesize\ttfamily typedef message\+\_\+filters\+::\+Subscriber$<$geometry\+\_\+msgs\+::\+Vector3\+Stamped$>$ \mbox{\hyperlink{ros__subscriber_8h_a66c597c9da3c3e7310efc7a8e6ae5fcd}{IMUOffset\+Msg\+FilterT}}}
+
+Message filter for IMU offset messages. \mbox{\Hypertarget{ros__subscriber_8h_af88fe3631b8a6bdb9fec34a8b7c27141}\label{ros__subscriber_8h_af88fe3631b8a6bdb9fec34a8b7c27141}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!IMUOffsetMsgFilterTPtr@{IMUOffsetMsgFilterTPtr}}
+\index{IMUOffsetMsgFilterTPtr@{IMUOffsetMsgFilterTPtr}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{IMUOffsetMsgFilterTPtr}{IMUOffsetMsgFilterTPtr}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{ros__subscriber_8h_a66c597c9da3c3e7310efc7a8e6ae5fcd}{IMUOffset\+Msg\+FilterT}}$>$ \mbox{\hyperlink{ros__subscriber_8h_af88fe3631b8a6bdb9fec34a8b7c27141}{IMUOffset\+Msg\+Filter\+TPtr}}}
+
+Pointer to the IMUOffset\+Msg\+FilterT. \mbox{\Hypertarget{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}\label{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!IMUQueuePair@{IMUQueuePair}}
+\index{IMUQueuePair@{IMUQueuePair}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{IMUQueuePair}{IMUQueuePair}}
+{\footnotesize\ttfamily typedef std\+::pair$<$\mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}}, std\+::shared\+\_\+ptr$<$std\+::mutex$>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a21a48d02eceb8daac4166e966d384de4}{IMUQueue\+Pair}}}
+
+Pair of IMUQueue\+Ptr and IMUQueue mutex. \mbox{\Hypertarget{ros__subscriber_8h_a195e51e3f973fb185d82d10dd1d8474f}\label{ros__subscriber_8h_a195e51e3f973fb185d82d10dd1d8474f}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!IMUSyncPolicy@{IMUSyncPolicy}}
+\index{IMUSyncPolicy@{IMUSyncPolicy}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{IMUSyncPolicy}{IMUSyncPolicy}}
+{\footnotesize\ttfamily typedef message\+\_\+filters\+::sync\+\_\+policies\+::\+Approximate\+Time$<$ sensor\+\_\+msgs\+::\+Imu, geometry\+\_\+msgs\+::\+Vector3\+Stamped$>$ \mbox{\hyperlink{ros__subscriber_8h_a195e51e3f973fb185d82d10dd1d8474f}{IMUSync\+Policy}}}
+
+Sync policy for IMU. \mbox{\Hypertarget{ros__subscriber_8h_a35e7f5948b93ce3f0ae879776be7d36e}\label{ros__subscriber_8h_a35e7f5948b93ce3f0ae879776be7d36e}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!IMUSyncPtr@{IMUSyncPtr}}
+\index{IMUSyncPtr@{IMUSyncPtr}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{IMUSyncPtr}{IMUSyncPtr}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$message\+\_\+filters\+::\+Synchronizer$<$\mbox{\hyperlink{ros__subscriber_8h_a195e51e3f973fb185d82d10dd1d8474f}{IMUSync\+Policy}}$>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a35e7f5948b93ce3f0ae879776be7d36e}{IMUSync\+Ptr}}}
+
+Pointer to the IMUSync\+Policy. \mbox{\Hypertarget{ros__subscriber_8h_a71099fb9c12ec334e5eac593d2006722}\label{ros__subscriber_8h_a71099fb9c12ec334e5eac593d2006722}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!JointStateMsgFilterT@{JointStateMsgFilterT}}
+\index{JointStateMsgFilterT@{JointStateMsgFilterT}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{JointStateMsgFilterT}{JointStateMsgFilterT}}
+{\footnotesize\ttfamily typedef message\+\_\+filters\+::\+Subscriber$<$sensor\+\_\+msgs\+::\+Joint\+State$>$ \mbox{\hyperlink{ros__subscriber_8h_a71099fb9c12ec334e5eac593d2006722}{Joint\+State\+Msg\+FilterT}}}
+
+Message filter for joint state messages. \mbox{\Hypertarget{ros__subscriber_8h_add46b5940e6661d97c9a20d807661f46}\label{ros__subscriber_8h_add46b5940e6661d97c9a20d807661f46}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!JointStateMsgFilterTPtr@{JointStateMsgFilterTPtr}}
+\index{JointStateMsgFilterTPtr@{JointStateMsgFilterTPtr}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{JointStateMsgFilterTPtr}{JointStateMsgFilterTPtr}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$message\+\_\+filters\+::\+Subscriber$<$sensor\+\_\+msgs\+::\+Joint\+State$>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_add46b5940e6661d97c9a20d807661f46}{Joint\+State\+Msg\+Filter\+TPtr}}}
+
+Pointer to the Joint\+State\+Msg\+FilterT. \mbox{\Hypertarget{ros__subscriber_8h_abfbdcb77174b83e89d3ea006ac0ebcf3}\label{ros__subscriber_8h_abfbdcb77174b83e89d3ea006ac0ebcf3}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!LeggedKinQueuePair@{LeggedKinQueuePair}}
+\index{LeggedKinQueuePair@{LeggedKinQueuePair}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{LeggedKinQueuePair}{LeggedKinQueuePair}}
+{\footnotesize\ttfamily typedef std\+::pair$<$\mbox{\hyperlink{type__def_8h_aa0b6009ff28d4061513537e85d721021}{Legged\+Kin\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$std\+::mutex$>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_abfbdcb77174b83e89d3ea006ac0ebcf3}{Legged\+Kin\+Queue\+Pair}}}
+
+Pair of Legged\+Kin\+Queue\+Ptr and Legged\+Kin\+Queue mutex. \mbox{\Hypertarget{ros__subscriber_8h_a0dfebbf3bab528172f83afce39c2d78e}\label{ros__subscriber_8h_a0dfebbf3bab528172f83afce39c2d78e}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!LegKinSyncPolicy@{LegKinSyncPolicy}}
+\index{LegKinSyncPolicy@{LegKinSyncPolicy}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{LegKinSyncPolicy}{LegKinSyncPolicy}}
+{\footnotesize\ttfamily typedef message\+\_\+filters\+::sync\+\_\+policies\+::\+Approximate\+Time$<$ custom\+\_\+sensor\+\_\+msgs\+::\+Contact\+Array, sensor\+\_\+msgs\+::\+Joint\+State$>$ \mbox{\hyperlink{ros__subscriber_8h_a0dfebbf3bab528172f83afce39c2d78e}{Leg\+Kin\+Sync\+Policy}}}
+
+Sync policy for legged kinematics. \mbox{\Hypertarget{ros__subscriber_8h_a31c7c4dcf11cda6391d24a580efbb083}\label{ros__subscriber_8h_a31c7c4dcf11cda6391d24a580efbb083}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!LegKinSyncPtr@{LegKinSyncPtr}}
+\index{LegKinSyncPtr@{LegKinSyncPtr}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{LegKinSyncPtr}{LegKinSyncPtr}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$message\+\_\+filters\+::\+Synchronizer$<$\mbox{\hyperlink{ros__subscriber_8h_a0dfebbf3bab528172f83afce39c2d78e}{Leg\+Kin\+Sync\+Policy}}$>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a31c7c4dcf11cda6391d24a580efbb083}{Leg\+Kin\+Sync\+Ptr}}}
+
+Pointer to the Leg\+Kin\+Sync\+Policy. \mbox{\Hypertarget{ros__subscriber_8h_a3a1d261ad9f4c35009ec223aff191ade}\label{ros__subscriber_8h_a3a1d261ad9f4c35009ec223aff191ade}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!OdomQueuePair@{OdomQueuePair}}
+\index{OdomQueuePair@{OdomQueuePair}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{OdomQueuePair}{OdomQueuePair}}
+{\footnotesize\ttfamily typedef std\+::pair$<$\mbox{\hyperlink{type__def_8h_a52173582ec3a74be4249b4b0c5426ebd}{Odom\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$std\+::mutex$>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a3a1d261ad9f4c35009ec223aff191ade}{Odom\+Queue\+Pair}}}
+
+Pair of Odom\+Queue\+Ptr and Odom\+Queue mutex. \mbox{\Hypertarget{ros__subscriber_8h_ac0758f66e9561765922d9b0c3f343122}\label{ros__subscriber_8h_ac0758f66e9561765922d9b0c3f343122}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!PoseQueuePair@{PoseQueuePair}}
+\index{PoseQueuePair@{PoseQueuePair}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{PoseQueuePair}{PoseQueuePair}}
+{\footnotesize\ttfamily typedef std\+::pair$<$\mbox{\hyperlink{type__def_8h_a52173582ec3a74be4249b4b0c5426ebd}{Odom\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$std\+::mutex$>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_ac0758f66e9561765922d9b0c3f343122}{Pose\+Queue\+Pair}}}
+
+Pair of Pose\+Queue\+Ptr and Pose\+Queue mutex. \mbox{\Hypertarget{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}\label{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}} 
+\index{ros\_subscriber.h@{ros\_subscriber.h}!VelocityQueuePair@{VelocityQueuePair}}
+\index{VelocityQueuePair@{VelocityQueuePair}!ros\_subscriber.h@{ros\_subscriber.h}}
+\doxysubsubsection{\texorpdfstring{VelocityQueuePair}{VelocityQueuePair}}
+{\footnotesize\ttfamily typedef std\+::pair$<$\mbox{\hyperlink{type__def_8h_a029e5284c12539fbd042c29a06b78ecd}{Velocity\+Queue\+Ptr}}, std\+::shared\+\_\+ptr$<$std\+::mutex$>$ $>$ \mbox{\hyperlink{ros__subscriber_8h_a41616e861cd2220dbf7c9603153047e5}{Velocity\+Queue\+Pair}}}
+
+Pair of Velocity\+Queue\+Ptr and Velocity\+Queue mutex. 

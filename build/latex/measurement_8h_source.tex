@@ -1,0 +1,74 @@
+\hypertarget{measurement_8h_source}{}\doxysection{measurement.\+h}
+\label{measurement_8h_source}\index{/home/neofelis/VRX/drift/include/drift/measurement/measurement.h@{/home/neofelis/VRX/drift/include/drift/measurement/measurement.h}}
+\mbox{\hyperlink{measurement_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef MEASUREMENT\_MEASUREMENT\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define MEASUREMENT\_MEASUREMENT\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{enum} \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{MeasurementType}} \{}
+\DoxyCodeLine{23   \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a2f0d18fc0d0fa4a6cd92dc328501874d}{EMPTY}},}
+\DoxyCodeLine{24   \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7ae0aac3b1d47277f0d7593bda2847502a}{IMU}},}
+\DoxyCodeLine{25   \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a9a2bdbfd2c71577d845c867d7653d695}{LEGGED\_KINEMATICS}},}
+\DoxyCodeLine{26   \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a06e15744a8bd69fceeeb39ab3614b3f6}{VELOCITY}},}
+\DoxyCodeLine{27   \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7ae4d95686a349611affcf1ebfeab077f1}{ANGULAR\_VELOCITY}},}
+\DoxyCodeLine{28   \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7af5c091eaf3ff3ff714601dd8174dbe5b}{JOINT\_STATE}},}
+\DoxyCodeLine{29   \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a6f7d7c84f5e891c3d7b4b588cd628b7e}{CONTACT}},}
+\DoxyCodeLine{30   \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7a06c69cbc09cb41870902c835e8d04f23}{ODOM}},}
+\DoxyCodeLine{31   \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7abd4258be3226cc8e3a5d5480132b0013}{NAVSAT}}}
+\DoxyCodeLine{32 \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemeasurement}{measurement}} \{}
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classmeasurement_1_1Measurement}{Measurement}} \{}
+\DoxyCodeLine{42   \textcolor{keyword}{struct }MeasurementHeader \{}
+\DoxyCodeLine{43     uint64\_t seq;}
+\DoxyCodeLine{44     \textcolor{keywordtype}{double} stamp;}
+\DoxyCodeLine{45     std::string frame\_id;}
+\DoxyCodeLine{46   \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48  \textcolor{keyword}{public}:}
+\DoxyCodeLine{49   EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{56   \mbox{\hyperlink{classmeasurement_1_1Measurement_a8c3bc4f8aca15532c7037158416f608a}{Measurement}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{61   \mbox{\hyperlink{classmeasurement_1_1Measurement_a8c3bc4f8aca15532c7037158416f608a}{Measurement}}(\mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{MeasurementType}} type);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{69   \textcolor{keyword}{virtual} \mbox{\hyperlink{classmeasurement_1_1Measurement_a9536fb14bd6233da3a0fb1e54ed4f81e}{\string~Measurement}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   MeasurementHeader \mbox{\hyperlink{classmeasurement_1_1Measurement_a61d60b9a912adb7b97a9e3877bb40004}{header}};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmeasurement_1_1Measurement_aa6522409500dc2d8248b0856b58d3a26}{set\_time}}(\textcolor{keywordtype}{double} stamp);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{88   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmeasurement_1_1Measurement_a5a41c52ccc3cff553d8f9fe83a8d9a40}{set\_header}}(\textcolor{keyword}{const} MeasurementHeader\& \mbox{\hyperlink{classmeasurement_1_1Measurement_a61d60b9a912adb7b97a9e3877bb40004}{header}});}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{97   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmeasurement_1_1Measurement_a5a41c52ccc3cff553d8f9fe83a8d9a40}{set\_header}}(\textcolor{keyword}{const} uint64\_t seq\_in, \textcolor{keyword}{const} \textcolor{keywordtype}{double} time\_stamp\_in,}
+\DoxyCodeLine{98                   \textcolor{keyword}{const} std::string frame\_id\_in);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{108   \textcolor{keywordtype}{double} \mbox{\hyperlink{classmeasurement_1_1Measurement_a522be8842912d75c371f452ed4be0527}{get\_time}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{115   \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{MeasurementType}} \mbox{\hyperlink{classmeasurement_1_1Measurement_a7bd2607a8a586e40a841d62b884e9fa9}{get\_type}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118   \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classmeasurement_1_1Measurement_a80a60c34f1f23f897e330b3c598abc40}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classmeasurement_1_1Measurement}{Measurement}}\& m);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{121   \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{MeasurementType}} \mbox{\hyperlink{classmeasurement_1_1Measurement_a4d9a46684eece357b649d2d064c791dc}{type\_}};}
+\DoxyCodeLine{122 \};}
+\DoxyCodeLine{123 \}    \textcolor{comment}{// namespace measurement}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

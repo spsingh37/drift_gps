@@ -1,0 +1,40 @@
+<map id="/home/neofelis/VRX/drift/include/drift/state/robot_state.h" name="/home/neofelis/VRX/drift/include/drift/state/robot_state.h">
+<area shape="rect" id="node1" title="Header file for robot state." alt="" coords="1809,5,1960,60"/>
+<area shape="rect" id="node2" href="$ros__publisher_8h.html" title="Header file for ROS publisher class." alt="" coords="1285,548,1516,603"/>
+<area shape="rect" id="node17" href="$inekf__estimator_8h.html" title="Header file for state estimator class." alt="" coords="1734,438,1942,493"/>
+<area shape="rect" id="node21" href="$base__correction_8h.html" title="Header file for base correction method." alt="" coords="1277,211,1453,265"/>
+<area shape="rect" id="node29" href="$base__propagation_8h.html" title="Header file for base propagation method." alt="" coords="2185,211,2374,265"/>
+<area shape="rect" id="node35" href="$inekf_8h.html" title="Header file for Invariant EKF. Original paper: https://journals.sagepub.com/doi/full/10...." alt="" coords="1657,211,1808,265"/>
+<area shape="rect" id="node37" href="$type__def_8h.html" title=" " alt="" coords="1809,108,1960,163"/>
+<area shape="rect" id="node38" href="$robot__state_8cpp.html" title="Source file for RobotState." alt="" coords="2236,108,2387,163"/>
+<area shape="rect" id="node3" href="$fetch_8cpp.html" title="Test file for Fetch robot (IMU Propagation + Velocity Correction)" alt="" coords="483,651,665,705"/>
+<area shape="rect" id="node4" href="$fetch__gyro__filter_8cpp.html" title=" " alt="" coords="2855,651,3037,705"/>
+<area shape="rect" id="node5" href="$girona500_8cpp.html" title=" " alt="" coords="896,651,1079,705"/>
+<area shape="rect" id="node6" href="$husky_8cpp.html" title="Example file for underwater vehicle Girona500 (IMU Propagation + Velocity Correction)" alt="" coords="2205,651,2388,705"/>
+<area shape="rect" id="node7" href="$husky__double__imu__filter_8cpp.html" title=" " alt="" coords="2619,651,2831,705"/>
+<area shape="rect" id="node8" href="$husky__gyro__filter_8cpp.html" title=" " alt="" coords="2412,651,2595,705"/>
+<area shape="rect" id="node9" href="$husky__odom_8cpp.html" title=" " alt="" coords="5,651,188,705"/>
+<area shape="rect" id="node10" href="$mini__cheetah_8cpp.html" title="Test file for Mini&#45;Cheetah robot (IMU propagation + Legged Kinematics Correction)" alt="" coords="689,651,872,705"/>
+<area shape="rect" id="node11" href="$neya_8cpp.html" title=" " alt="" coords="1103,651,1285,705"/>
+<area shape="rect" id="node12" href="$neya__gyro__filter_8cpp.html" title=" " alt="" coords="3061,651,3244,705"/>
+<area shape="rect" id="node13" href="$wamv__gps__vel_8cpp.html" title=" " alt="" coords="1309,651,1492,705"/>
+<area shape="rect" id="node14" href="$wamv__gtpose_8cpp.html" title=" " alt="" coords="1516,651,1699,705"/>
+<area shape="rect" id="node15" href="$wamv__gtpose__vel_8cpp.html" title="Test file for WAMV robot setup (IMU Propagation + Ground&#45;truth based Velocity Correction)" alt="" coords="1723,651,1905,705"/>
+<area shape="rect" id="node16" href="$ros__publisher_8cpp.html" title="Source file for ROS publisher class." alt="" coords="213,651,458,705"/>
+<area shape="rect" id="node18" href="$ros__subscriber_8h.html" title=" " alt="" coords="1875,548,2113,603"/>
+<area shape="rect" id="node20" href="$inekf__estimator_8cpp.html" title="Source file for InEKF estimator class." alt="" coords="1644,548,1800,603"/>
+<area shape="rect" id="node19" href="$ros__subscriber_8cpp.html" title=" " alt="" coords="1929,651,2181,705"/>
+<area shape="rect" id="node22" href="$legged__kinematics__correction_8h.html" title="Header file for Invariant EKF kinematic correction method." alt="" coords="800,313,1033,383"/>
+<area shape="rect" id="node24" href="$pose__correction_8h.html" title="Header file for Invariant EKF pose correction method." alt="" coords="1283,313,1446,383"/>
+<area shape="rect" id="node26" href="$velocity__correction_8h.html" title="Header file for Invariant EKF velocity correction method." alt="" coords="1470,313,1633,383"/>
+<area shape="rect" id="node28" href="$base__correction_8cpp.html" title="Source file for base correction method." alt="" coords="1057,321,1208,375"/>
+<area shape="rect" id="node23" href="$legged__kinematics__correction_8cpp.html" title=" " alt="" coords="807,431,1026,500"/>
+<area shape="rect" id="node25" href="$pose__correction_8cpp.html" title=" " alt="" coords="1164,438,1389,493"/>
+<area shape="rect" id="node27" href="$velocity__correction_8cpp.html" title="Source file for Invariant EKF velocity correction method." alt="" coords="1413,438,1660,493"/>
+<area shape="rect" id="node30" href="$imu__propagation_8h.html" title="Header file for Invariant EKF imu propagation method Part of the code is modified from Ross Hartley&#39;s..." alt="" coords="1934,313,2110,383"/>
+<area shape="rect" id="node32" href="$imu__ang__vel__ekf_8h.html" title=" " alt="" coords="2295,321,2509,375"/>
+<area shape="rect" id="node34" href="$base__propagation_8cpp.html" title="Source file for base propagation method." alt="" coords="2533,321,2684,375"/>
+<area shape="rect" id="node31" href="$imu__propagation_8cpp.html" title="Source file for Invariant EKF imu propagation method Part of the code is modified from Ross Hartley&#39;s..." alt="" coords="1966,438,2211,493"/>
+<area shape="rect" id="node33" href="$imu__ang__vel__ekf_8cpp.html" title=" " alt="" coords="2439,438,2602,493"/>
+<area shape="rect" id="node36" href="$inekf_8cpp.html" title=" " alt="" coords="1657,321,1808,375"/>
+</map>

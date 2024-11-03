@@ -1,0 +1,221 @@
+\hypertarget{classmeasurement_1_1Measurement}{}\doxysection{measurement\+::Measurement Class Reference}
+\label{classmeasurement_1_1Measurement}\index{measurement::Measurement@{measurement::Measurement}}
+
+
+class for robot-\/state instantaneous measurement. This class is the base class for all measurements.  
+
+
+
+
+{\ttfamily \#include $<$measurement.\+h$>$}
+
+
+
+Inheritance diagram for measurement\+::Measurement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmeasurement_1_1Measurement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for measurement\+::Measurement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classmeasurement_1_1Measurement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmeasurement_1_1Measurement_a8c3bc4f8aca15532c7037158416f608a}{Measurement}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmeasurement_1_1Measurement_a651daff918ac70f8ecdc24c96185f796}{Measurement}} (\mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{Measurement\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Constructs an initialized \mbox{\hyperlink{classmeasurement_1_1Measurement}{Measurement}} with given type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classmeasurement_1_1Measurement_a9536fb14bd6233da3a0fb1e54ed4f81e}{$\sim$\+Measurement}} ()=default
+\begin{DoxyCompactList}\small\item\em Default Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Setters}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmeasurement_1_1Measurement_aa6522409500dc2d8248b0856b58d3a26}{set\+\_\+time}} (double stamp)
+\begin{DoxyCompactList}\small\item\em Set the timestamp value for the measurement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmeasurement_1_1Measurement_a5a41c52ccc3cff553d8f9fe83a8d9a40}{set\+\_\+header}} (const Measurement\+Header \&\mbox{\hyperlink{classmeasurement_1_1Measurement_a61d60b9a912adb7b97a9e3877bb40004}{header}})
+\begin{DoxyCompactList}\small\item\em Set the header value for the measurement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmeasurement_1_1Measurement_a7b1d6465855f80785395f946ba04a49a}{set\+\_\+header}} (const uint64\+\_\+t seq\+\_\+in, const double time\+\_\+stamp\+\_\+in, const std\+::string frame\+\_\+id\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Set the header value for the measurement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getters}\par
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classmeasurement_1_1Measurement_a522be8842912d75c371f452ed4be0527}{get\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em Get the timestamp value for the measurement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{Measurement\+Type}} \mbox{\hyperlink{classmeasurement_1_1Measurement_a7bd2607a8a586e40a841d62b884e9fa9}{get\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em Get the measurement type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Measurement\+Header \mbox{\hyperlink{classmeasurement_1_1Measurement_a61d60b9a912adb7b97a9e3877bb40004}{header}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{Measurement\+Type}} \mbox{\hyperlink{classmeasurement_1_1Measurement_a4d9a46684eece357b649d2d064c791dc}{type\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classmeasurement_1_1Measurement_a80a60c34f1f23f897e330b3c598abc40}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classmeasurement_1_1Measurement}{Measurement}} \&m)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class for robot-\/state instantaneous measurement. This class is the base class for all measurements. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1Measurement_a8c3bc4f8aca15532c7037158416f608a}\label{classmeasurement_1_1Measurement_a8c3bc4f8aca15532c7037158416f608a}} 
+\index{measurement::Measurement@{measurement::Measurement}!Measurement@{Measurement}}
+\index{Measurement@{Measurement}!measurement::Measurement@{measurement::Measurement}}
+\doxysubsubsection{\texorpdfstring{Measurement()}{Measurement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily measurement\+::\+Measurement\+::\+Measurement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classmeasurement_1_1Measurement_a651daff918ac70f8ecdc24c96185f796}\label{classmeasurement_1_1Measurement_a651daff918ac70f8ecdc24c96185f796}} 
+\index{measurement::Measurement@{measurement::Measurement}!Measurement@{Measurement}}
+\index{Measurement@{Measurement}!measurement::Measurement@{measurement::Measurement}}
+\doxysubsubsection{\texorpdfstring{Measurement()}{Measurement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily measurement\+::\+Measurement\+::\+Measurement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{Measurement\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Constructs an initialized \mbox{\hyperlink{classmeasurement_1_1Measurement}{Measurement}} with given type. 
+
+\mbox{\Hypertarget{classmeasurement_1_1Measurement_a9536fb14bd6233da3a0fb1e54ed4f81e}\label{classmeasurement_1_1Measurement_a9536fb14bd6233da3a0fb1e54ed4f81e}} 
+\index{measurement::Measurement@{measurement::Measurement}!````~Measurement@{$\sim$Measurement}}
+\index{````~Measurement@{$\sim$Measurement}!measurement::Measurement@{measurement::Measurement}}
+\doxysubsubsection{\texorpdfstring{$\sim$Measurement()}{~Measurement()}}
+{\footnotesize\ttfamily virtual measurement\+::\+Measurement\+::$\sim$\+Measurement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1Measurement_a522be8842912d75c371f452ed4be0527}\label{classmeasurement_1_1Measurement_a522be8842912d75c371f452ed4be0527}} 
+\index{measurement::Measurement@{measurement::Measurement}!get\_time@{get\_time}}
+\index{get\_time@{get\_time}!measurement::Measurement@{measurement::Measurement}}
+\doxysubsubsection{\texorpdfstring{get\_time()}{get\_time()}}
+{\footnotesize\ttfamily double measurement\+::\+Measurement\+::get\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the timestamp value for the measurement. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classmeasurement_1_1Measurement}{Measurement}} timestamp. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1Measurement_a7bd2607a8a586e40a841d62b884e9fa9}\label{classmeasurement_1_1Measurement_a7bd2607a8a586e40a841d62b884e9fa9}} 
+\index{measurement::Measurement@{measurement::Measurement}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!measurement::Measurement@{measurement::Measurement}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{Measurement\+Type}} measurement\+::\+Measurement\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the measurement type. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classmeasurement_1_1Measurement}{Measurement}} type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1Measurement_a5a41c52ccc3cff553d8f9fe83a8d9a40}\label{classmeasurement_1_1Measurement_a5a41c52ccc3cff553d8f9fe83a8d9a40}} 
+\index{measurement::Measurement@{measurement::Measurement}!set\_header@{set\_header}}
+\index{set\_header@{set\_header}!measurement::Measurement@{measurement::Measurement}}
+\doxysubsubsection{\texorpdfstring{set\_header()}{set\_header()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void measurement\+::\+Measurement\+::set\+\_\+header (\begin{DoxyParamCaption}\item[{const Measurement\+Header \&}]{header }\end{DoxyParamCaption})}
+
+
+
+Set the header value for the measurement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em header} & The Measurement\+Header POD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmeasurement_1_1Measurement_a7b1d6465855f80785395f946ba04a49a}\label{classmeasurement_1_1Measurement_a7b1d6465855f80785395f946ba04a49a}} 
+\index{measurement::Measurement@{measurement::Measurement}!set\_header@{set\_header}}
+\index{set\_header@{set\_header}!measurement::Measurement@{measurement::Measurement}}
+\doxysubsubsection{\texorpdfstring{set\_header()}{set\_header()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void measurement\+::\+Measurement\+::set\+\_\+header (\begin{DoxyParamCaption}\item[{const uint64\+\_\+t}]{seq\+\_\+in,  }\item[{const double}]{time\+\_\+stamp\+\_\+in,  }\item[{const std\+::string}]{frame\+\_\+id\+\_\+in }\end{DoxyParamCaption})}
+
+
+
+Set the header value for the measurement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em seq\+\_\+in} & The sequence number \\
+\hline
+\mbox{\texttt{ in}}  & {\em time\+\_\+stamp\+\_\+in} & The time stamp of this measurement \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame\+\_\+id\+\_\+in} & The frame id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmeasurement_1_1Measurement_aa6522409500dc2d8248b0856b58d3a26}\label{classmeasurement_1_1Measurement_aa6522409500dc2d8248b0856b58d3a26}} 
+\index{measurement::Measurement@{measurement::Measurement}!set\_time@{set\_time}}
+\index{set\_time@{set\_time}!measurement::Measurement@{measurement::Measurement}}
+\doxysubsubsection{\texorpdfstring{set\_time()}{set\_time()}}
+{\footnotesize\ttfamily void measurement\+::\+Measurement\+::set\+\_\+time (\begin{DoxyParamCaption}\item[{double}]{stamp }\end{DoxyParamCaption})}
+
+
+
+Set the timestamp value for the measurement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stamp} & The timestamp. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1Measurement_a80a60c34f1f23f897e330b3c598abc40}\label{classmeasurement_1_1Measurement_a80a60c34f1f23f897e330b3c598abc40}} 
+\index{measurement::Measurement@{measurement::Measurement}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!measurement::Measurement@{measurement::Measurement}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classmeasurement_1_1Measurement}{Measurement}} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1Measurement_a61d60b9a912adb7b97a9e3877bb40004}\label{classmeasurement_1_1Measurement_a61d60b9a912adb7b97a9e3877bb40004}} 
+\index{measurement::Measurement@{measurement::Measurement}!header@{header}}
+\index{header@{header}!measurement::Measurement@{measurement::Measurement}}
+\doxysubsubsection{\texorpdfstring{header}{header}}
+{\footnotesize\ttfamily Measurement\+Header measurement\+::\+Measurement\+::header}
+
+\mbox{\Hypertarget{classmeasurement_1_1Measurement_a4d9a46684eece357b649d2d064c791dc}\label{classmeasurement_1_1Measurement_a4d9a46684eece357b649d2d064c791dc}} 
+\index{measurement::Measurement@{measurement::Measurement}!type\_@{type\_}}
+\index{type\_@{type\_}!measurement::Measurement@{measurement::Measurement}}
+\doxysubsubsection{\texorpdfstring{type\_}{type\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measurement_8h_ad35f880f44d18d9c643f02c4057034f7}{Measurement\+Type}} measurement\+::\+Measurement\+::type\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/measurement/\mbox{\hyperlink{measurement_8h}{measurement.\+h}}\item 
+/home/neofelis/\+VRX/drift/src/measurement/\mbox{\hyperlink{measurement_8cpp}{measurement.\+cpp}}\end{DoxyCompactItemize}

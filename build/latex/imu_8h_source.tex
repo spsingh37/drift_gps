@@ -1,0 +1,51 @@
+\hypertarget{imu_8h_source}{}\doxysection{imu.\+h}
+\label{imu_8h_source}\index{/home/neofelis/VRX/drift/include/drift/measurement/imu.h@{/home/neofelis/VRX/drift/include/drift/measurement/imu.h}}
+\mbox{\hyperlink{imu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright 2023, CURLY Lab, University of Michigan}}
+\DoxyCodeLine{3 \textcolor{comment}{ * All Rights Reserved}}
+\DoxyCodeLine{4 \textcolor{comment}{ * See LICENSE for the license information}}
+\DoxyCodeLine{5 \textcolor{comment}{ * -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef MEASUREMENT\_IMU\_H}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define MEASUREMENT\_IMU\_H}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{measurement_8h}{measurement.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemeasurement}{measurement}} \{}
+\DoxyCodeLine{26 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classmeasurement_1_1ImuMeasurement}{ImuMeasurement}} : \textcolor{keyword}{public} \mbox{\hyperlink{classmeasurement_1_1Measurement}{Measurement}} \{}
+\DoxyCodeLine{28  \textcolor{keyword}{public}:}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{34   \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a9cc29725dded62e67a6129e3c1ffb128}{ImuMeasurement}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{47   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a3d49755f7f666af50d5506c677dd14c9}{set\_quaternion}}(T w, T x, T y, T z);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a3d9308b813d08746583517282d47d0cd}{set\_angular\_velocity}}(T x, T y, T z);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a384591765353aadf9c0bcf7c7548e43d}{set\_lin\_acc}}(T x, T y, T z);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{76   Eigen::Matrix<T, 3, 3> \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a3b71450a28565dd42f487ea20981d45e}{get\_rotation\_matrix}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{83   Eigen::Quaternion<T> \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_ab9b110225c99cfcdb754a6bcde78a6d7}{get\_quaternion}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{90   Eigen::Matrix<T, 3, 1> \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a5335ecf620b2f21716f7037b5939fa63}{get\_angular\_velocity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{97   Eigen::Matrix<T, 3, 1> \mbox{\hyperlink{classmeasurement_1_1ImuMeasurement_a7f4d8209535b4eae042b14e0eb55cf2f}{get\_lin\_acc}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100  \textcolor{keyword}{private}:}
+\DoxyCodeLine{101   Eigen::Quaternion<T> quaternion\_;}
+\DoxyCodeLine{102   Eigen::Matrix<T, 3, 1> angular\_velocity\_;}
+\DoxyCodeLine{103   Eigen::Matrix<T, 3, 1> linear\_acceleration\_;}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{111   \textcolor{keywordtype}{void} validate\_quat(T w, T x, T y, T z);}
+\DoxyCodeLine{112 \};}
+\DoxyCodeLine{113 \}    \textcolor{comment}{// namespace measurement}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{imu__impl_8cpp}{drift/measurement/impl/imu\_impl.cpp}}"{}}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif    }\textcolor{comment}{// MEASUREMENT\_IMU\_H}}
+
+\end{DoxyCode}

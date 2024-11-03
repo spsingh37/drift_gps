@@ -1,0 +1,71 @@
+\hypertarget{fetch_8cpp}{}\doxysection{/home/neofelis/\+VRX/drift/\+ROS/drift/examples/fetch.cpp File Reference}
+\label{fetch_8cpp}\index{/home/neofelis/VRX/drift/ROS/drift/examples/fetch.cpp@{/home/neofelis/VRX/drift/ROS/drift/examples/fetch.cpp}}
+
+
+Test file for Fetch robot (IMU Propagation + Velocity Correction)  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}communication/ros\+\_\+publisher.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}communication/ros\+\_\+subscriber.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}drift/estimator/inekf\+\_\+estimator.\+h\char`\"{}}\newline
+Include dependency graph for fetch.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fetch_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{fetch_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test file for Fetch robot (IMU Propagation + Velocity Correction) 
+
+\begin{DoxyAuthor}{Author}
+Tingjun Li 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 20, 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fetch_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{fetch_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{fetch.cpp@{fetch.cpp}!main@{main}}
+\index{main@{main}!fetch.cpp@{fetch.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+TUTORIAL\+: Initialize ROS node
+
+TUTORIAL\+: Initialize ROS node handle. ROS handle handles the start/shutdown for us
+
+TUTORIAL\+: Create a ROS subscriber
+
+TUTORIAL\+: Load your yaml file
+
+REMARK\+: To use Fetch\textquotesingle{}s IMU data, please use the following line (\char`\"{}\+Add\+Fetch\+IMUSubscriber\char`\"{}) instead of the \char`\"{}\+Add\+IMUSubscriber\char`\"{}
+
+TUTORIAL\+: Add a subscriber for IMU data and get its queue and mutex
+
+TUTORIAL\+: Add a subscriber for velocity data and get its queue and mutex
+
+TUTORIAL\+: Start the subscriber thread
+
+TUTORIAL\+: Define some configurations for the state estimator
+
+TUTORIAL\+: Create a state estimator
+
+TUTORIAL\+: Add a propagation and correction(s) to the state estimator\+:
+
+TUTORIAL\+: Get the robot state queue and mutex from the state estimator
+
+TUTORIAL\+: Create a ROS publisher and start the publishing thread
+
+TUTORIAL\+: Run the state estimator. Initialize the bias first, then initialize the state. After that, the state estimator will be enabled. The state estimator should be run in a loop. Users can use RVIZ to visualize the path. The path topic will be something like \char`\"{}/robot/$\ast$/path\char`\"{}

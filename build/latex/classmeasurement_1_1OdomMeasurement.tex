@@ -1,0 +1,87 @@
+\hypertarget{classmeasurement_1_1OdomMeasurement}{}\doxysection{measurement\+::Odom\+Measurement Class Reference}
+\label{classmeasurement_1_1OdomMeasurement}\index{measurement::OdomMeasurement@{measurement::OdomMeasurement}}
+
+
+{\ttfamily \#include $<$odom.\+h$>$}
+
+
+
+Inheritance diagram for measurement\+::Odom\+Measurement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classmeasurement_1_1OdomMeasurement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for measurement\+::Odom\+Measurement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classmeasurement_1_1OdomMeasurement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_ac2e314b701b4e5e9037a188f3af1d0ca}{Odom\+Measurement}} ()
+\item 
+\mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_af01fda2548145f2c2f965e844e4ed7af}{Odom\+Measurement}} (const Eigen\+::\+Vector3d \&translation, const Eigen\+::\+Quaternion$<$ double $>$ \&quaternion, const uint64\+\_\+t seq\+\_\+in, const double time\+\_\+stamp\+\_\+in, const std\+::string frame\+\_\+id\+\_\+in)
+\item 
+void \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_ad99fcbac8ed2eb475f0d185b80f71fc5}{set\+\_\+translation}} (const Eigen\+::\+Vector3d \&position\+\_\+in)
+\item 
+void \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_ac5a2d561fb404eaa0f1a4f0228a14021}{set\+\_\+rotation}} (const Eigen\+::\+Quaternion$<$ double $>$ \&orientation\+\_\+quat)
+\item 
+void \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_a1e9565574d6678e5495ac5b4648d7bae}{set\+\_\+transformation}} ()
+\item 
+const Eigen\+::\+Matrix4d \& \mbox{\hyperlink{classmeasurement_1_1OdomMeasurement_a59e8b89088c4729eb1e12f0337470d2a}{get\+\_\+transformation}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1OdomMeasurement_ac2e314b701b4e5e9037a188f3af1d0ca}\label{classmeasurement_1_1OdomMeasurement_ac2e314b701b4e5e9037a188f3af1d0ca}} 
+\index{measurement::OdomMeasurement@{measurement::OdomMeasurement}!OdomMeasurement@{OdomMeasurement}}
+\index{OdomMeasurement@{OdomMeasurement}!measurement::OdomMeasurement@{measurement::OdomMeasurement}}
+\doxysubsubsection{\texorpdfstring{OdomMeasurement()}{OdomMeasurement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily measurement\+::\+Odom\+Measurement\+::\+Odom\+Measurement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmeasurement_1_1OdomMeasurement_af01fda2548145f2c2f965e844e4ed7af}\label{classmeasurement_1_1OdomMeasurement_af01fda2548145f2c2f965e844e4ed7af}} 
+\index{measurement::OdomMeasurement@{measurement::OdomMeasurement}!OdomMeasurement@{OdomMeasurement}}
+\index{OdomMeasurement@{OdomMeasurement}!measurement::OdomMeasurement@{measurement::OdomMeasurement}}
+\doxysubsubsection{\texorpdfstring{OdomMeasurement()}{OdomMeasurement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily measurement\+::\+Odom\+Measurement\+::\+Odom\+Measurement (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{translation,  }\item[{const Eigen\+::\+Quaternion$<$ double $>$ \&}]{quaternion,  }\item[{const uint64\+\_\+t}]{seq\+\_\+in,  }\item[{const double}]{time\+\_\+stamp\+\_\+in,  }\item[{const std\+::string}]{frame\+\_\+id\+\_\+in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1OdomMeasurement_a59e8b89088c4729eb1e12f0337470d2a}\label{classmeasurement_1_1OdomMeasurement_a59e8b89088c4729eb1e12f0337470d2a}} 
+\index{measurement::OdomMeasurement@{measurement::OdomMeasurement}!get\_transformation@{get\_transformation}}
+\index{get\_transformation@{get\_transformation}!measurement::OdomMeasurement@{measurement::OdomMeasurement}}
+\doxysubsubsection{\texorpdfstring{get\_transformation()}{get\_transformation()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix4d \& measurement\+::\+Odom\+Measurement\+::get\+\_\+transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmeasurement_1_1OdomMeasurement_ac5a2d561fb404eaa0f1a4f0228a14021}\label{classmeasurement_1_1OdomMeasurement_ac5a2d561fb404eaa0f1a4f0228a14021}} 
+\index{measurement::OdomMeasurement@{measurement::OdomMeasurement}!set\_rotation@{set\_rotation}}
+\index{set\_rotation@{set\_rotation}!measurement::OdomMeasurement@{measurement::OdomMeasurement}}
+\doxysubsubsection{\texorpdfstring{set\_rotation()}{set\_rotation()}}
+{\footnotesize\ttfamily void measurement\+::\+Odom\+Measurement\+::set\+\_\+rotation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Quaternion$<$ double $>$ \&}]{orientation\+\_\+quat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmeasurement_1_1OdomMeasurement_a1e9565574d6678e5495ac5b4648d7bae}\label{classmeasurement_1_1OdomMeasurement_a1e9565574d6678e5495ac5b4648d7bae}} 
+\index{measurement::OdomMeasurement@{measurement::OdomMeasurement}!set\_transformation@{set\_transformation}}
+\index{set\_transformation@{set\_transformation}!measurement::OdomMeasurement@{measurement::OdomMeasurement}}
+\doxysubsubsection{\texorpdfstring{set\_transformation()}{set\_transformation()}}
+{\footnotesize\ttfamily void measurement\+::\+Odom\+Measurement\+::set\+\_\+transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmeasurement_1_1OdomMeasurement_ad99fcbac8ed2eb475f0d185b80f71fc5}\label{classmeasurement_1_1OdomMeasurement_ad99fcbac8ed2eb475f0d185b80f71fc5}} 
+\index{measurement::OdomMeasurement@{measurement::OdomMeasurement}!set\_translation@{set\_translation}}
+\index{set\_translation@{set\_translation}!measurement::OdomMeasurement@{measurement::OdomMeasurement}}
+\doxysubsubsection{\texorpdfstring{set\_translation()}{set\_translation()}}
+{\footnotesize\ttfamily void measurement\+::\+Odom\+Measurement\+::set\+\_\+translation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{position\+\_\+in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/measurement/\mbox{\hyperlink{odom_8h}{odom.\+h}}\end{DoxyCompactItemize}

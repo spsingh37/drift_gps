@@ -1,0 +1,143 @@
+\hypertarget{classmeasurement_1_1AngularVelocityMeasurement}{}\doxysection{measurement\+::Angular\+Velocity\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classmeasurement_1_1AngularVelocityMeasurement}\index{measurement::AngularVelocityMeasurement$<$ T $>$@{measurement::AngularVelocityMeasurement$<$ T $>$}}
+
+
+measurement class containing robot-\/frame velocity information.  
+
+
+
+
+{\ttfamily \#include $<$angular\+\_\+velocity.\+h$>$}
+
+
+
+Inheritance diagram for measurement\+::Angular\+Velocity\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classmeasurement_1_1AngularVelocityMeasurement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for measurement\+::Angular\+Velocity\+Measurement\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classmeasurement_1_1AngularVelocityMeasurement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmeasurement_1_1AngularVelocityMeasurement_a7227f4c097bd25bdc360bc294380c9ed}{Angular\+Velocity\+Measurement}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Setter}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmeasurement_1_1AngularVelocityMeasurement_a282b99c0fd10c279ce59f1bc34c0fbd0}{set\+\_\+angular\+\_\+velocity}} (T vx, T vy, T vz)
+\begin{DoxyCompactList}\small\item\em Set the velocity measurement coefficients (m/s). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getter}\par
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1AngularVelocityMeasurement_ab8bfb65542e2766b4a0c3b78086ebc48}{get\+\_\+angular\+\_\+velocity}} () const
+\begin{DoxyCompactList}\small\item\em Get the velocity measurement coefficients. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classmeasurement_1_1AngularVelocityMeasurement_a025baef0fbb3ada05072fe088e03ba69}{get\+\_\+angular\+\_\+velocity\+\_\+magnitude}} () const
+\begin{DoxyCompactList}\small\item\em Get the velocity vector magnitude. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1AngularVelocityMeasurement_a1e3f013fe81344283722bc19ed736849}{get\+\_\+ang\+\_\+vel\+\_\+unit\+\_\+vec}} () const
+\begin{DoxyCompactList}\small\item\em Get the velocity unit vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class measurement\+::\+Angular\+Velocity\+Measurement$<$ T $>$}
+measurement class containing robot-\/frame velocity information. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1AngularVelocityMeasurement_a7227f4c097bd25bdc360bc294380c9ed}\label{classmeasurement_1_1AngularVelocityMeasurement_a7227f4c097bd25bdc360bc294380c9ed}} 
+\index{measurement::AngularVelocityMeasurement$<$ T $>$@{measurement::AngularVelocityMeasurement$<$ T $>$}!AngularVelocityMeasurement@{AngularVelocityMeasurement}}
+\index{AngularVelocityMeasurement@{AngularVelocityMeasurement}!measurement::AngularVelocityMeasurement$<$ T $>$@{measurement::AngularVelocityMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AngularVelocityMeasurement()}{AngularVelocityMeasurement()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmeasurement_1_1AngularVelocityMeasurement}{measurement\+::\+Angular\+Velocity\+Measurement}}$<$ T $>$\+::\+Angular\+Velocity\+Measurement}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmeasurement_1_1AngularVelocityMeasurement_a1e3f013fe81344283722bc19ed736849}\label{classmeasurement_1_1AngularVelocityMeasurement_a1e3f013fe81344283722bc19ed736849}} 
+\index{measurement::AngularVelocityMeasurement$<$ T $>$@{measurement::AngularVelocityMeasurement$<$ T $>$}!get\_ang\_vel\_unit\_vec@{get\_ang\_vel\_unit\_vec}}
+\index{get\_ang\_vel\_unit\_vec@{get\_ang\_vel\_unit\_vec}!measurement::AngularVelocityMeasurement$<$ T $>$@{measurement::AngularVelocityMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_ang\_vel\_unit\_vec()}{get\_ang\_vel\_unit\_vec()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1AngularVelocityMeasurement}{measurement\+::\+Angular\+Velocity\+Measurement}}$<$ T $>$\+::get\+\_\+ang\+\_\+vel\+\_\+unit\+\_\+vec}
+
+
+
+Get the velocity unit vector. 
+
+\begin{DoxyReturn}{Returns}
+3-\/vector containing normalized robot-\/frame velocity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1AngularVelocityMeasurement_ab8bfb65542e2766b4a0c3b78086ebc48}\label{classmeasurement_1_1AngularVelocityMeasurement_ab8bfb65542e2766b4a0c3b78086ebc48}} 
+\index{measurement::AngularVelocityMeasurement$<$ T $>$@{measurement::AngularVelocityMeasurement$<$ T $>$}!get\_angular\_velocity@{get\_angular\_velocity}}
+\index{get\_angular\_velocity@{get\_angular\_velocity}!measurement::AngularVelocityMeasurement$<$ T $>$@{measurement::AngularVelocityMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_angular\_velocity()}{get\_angular\_velocity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \mbox{\hyperlink{classmeasurement_1_1AngularVelocityMeasurement}{measurement\+::\+Angular\+Velocity\+Measurement}}$<$ T $>$\+::get\+\_\+angular\+\_\+velocity}
+
+
+
+Get the velocity measurement coefficients. 
+
+\begin{DoxyReturn}{Returns}
+3-\/vector cotaining the robot-\/frame velocity (m/s). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1AngularVelocityMeasurement_a025baef0fbb3ada05072fe088e03ba69}\label{classmeasurement_1_1AngularVelocityMeasurement_a025baef0fbb3ada05072fe088e03ba69}} 
+\index{measurement::AngularVelocityMeasurement$<$ T $>$@{measurement::AngularVelocityMeasurement$<$ T $>$}!get\_angular\_velocity\_magnitude@{get\_angular\_velocity\_magnitude}}
+\index{get\_angular\_velocity\_magnitude@{get\_angular\_velocity\_magnitude}!measurement::AngularVelocityMeasurement$<$ T $>$@{measurement::AngularVelocityMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_angular\_velocity\_magnitude()}{get\_angular\_velocity\_magnitude()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+double \mbox{\hyperlink{classmeasurement_1_1AngularVelocityMeasurement}{measurement\+::\+Angular\+Velocity\+Measurement}}$<$ T $>$\+::get\+\_\+angular\+\_\+velocity\+\_\+magnitude}
+
+
+
+Get the velocity vector magnitude. 
+
+\begin{DoxyReturn}{Returns}
+magnitude of robot-\/frame velocity vector (m/s). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmeasurement_1_1AngularVelocityMeasurement_a282b99c0fd10c279ce59f1bc34c0fbd0}\label{classmeasurement_1_1AngularVelocityMeasurement_a282b99c0fd10c279ce59f1bc34c0fbd0}} 
+\index{measurement::AngularVelocityMeasurement$<$ T $>$@{measurement::AngularVelocityMeasurement$<$ T $>$}!set\_angular\_velocity@{set\_angular\_velocity}}
+\index{set\_angular\_velocity@{set\_angular\_velocity}!measurement::AngularVelocityMeasurement$<$ T $>$@{measurement::AngularVelocityMeasurement$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_angular\_velocity()}{set\_angular\_velocity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classmeasurement_1_1AngularVelocityMeasurement}{measurement\+::\+Angular\+Velocity\+Measurement}}$<$ T $>$\+::set\+\_\+angular\+\_\+velocity (\begin{DoxyParamCaption}\item[{T}]{vx,  }\item[{T}]{vy,  }\item[{T}]{vz }\end{DoxyParamCaption})}
+
+
+
+Set the velocity measurement coefficients (m/s). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vx} & x velocity coefficient. \\
+\hline
+\mbox{\texttt{ in}}  & {\em vy} & y velocity coefficient. \\
+\hline
+\mbox{\texttt{ in}}  & {\em vz} & z velocity coefficient. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/measurement/\mbox{\hyperlink{angular__velocity_8h}{angular\+\_\+velocity.\+h}}\item 
+/home/neofelis/\+VRX/drift/include/drift/measurement/impl/\mbox{\hyperlink{angular__velocity__impl_8cpp}{angular\+\_\+velocity\+\_\+impl.\+cpp}}\end{DoxyCompactItemize}

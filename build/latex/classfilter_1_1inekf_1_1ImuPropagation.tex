@@ -1,0 +1,229 @@
+\hypertarget{classfilter_1_1inekf_1_1ImuPropagation}{}\doxysection{filter\+::inekf\+::Imu\+Propagation Class Reference}
+\label{classfilter_1_1inekf_1_1ImuPropagation}\index{filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}}
+
+
+A class for state propagation using imu measurement data.  
+
+
+
+
+{\ttfamily \#include $<$imu\+\_\+propagation.\+h$>$}
+
+
+
+Inheritance diagram for filter\+::inekf\+::Imu\+Propagation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classfilter_1_1inekf_1_1ImuPropagation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for filter\+::inekf\+::Imu\+Propagation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classfilter_1_1inekf_1_1ImuPropagation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_a02d2795444613332d41eb172e4ebc8e7}{Imu\+Propagation}} (\mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}} sensor\+\_\+data\+\_\+buffer\+\_\+ptr, std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ sensor\+\_\+data\+\_\+buffer\+\_\+mutex\+\_\+ptr, const \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{Error\+Type}} \&error\+\_\+type, const std\+::string \&yaml\+\_\+filepath)
+\begin{DoxyCompactList}\small\item\em Constructor for the propagation class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Propagation}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_acb0e0bf386489dbda5c93537dda110f2}{Propagate}} (\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&state) override
+\begin{DoxyCompactList}\small\item\em Propagates the estimated state mean and covariance forward using inertial measurements. All landmarks positions are assumed to be static. All contacts\textquotesingle{} velocities are assumed to be zero + Gaussian noise. The propagation model currently assumes that the covariance is for the right invariant error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Getters}\par
+\begin{DoxyCompactItemize}
+\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_af7611c07f289cfd33a95918a85a59e46}{get\+\_\+estimate\+\_\+gyro\+\_\+bias}} () const
+\begin{DoxyCompactList}\small\item\em Get the estimate gyro bias. \end{DoxyCompactList}\item 
+const Eigen\+::\+Vector3d \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_abf389d980f3374fe0c5e505bf1bb199f}{get\+\_\+estimate\+\_\+accel\+\_\+bias}} () const
+\begin{DoxyCompactList}\small\item\em Get the estimate accel bias. \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_afbfc6a1454d76de70cb15cfbf3dfa445}{get\+\_\+bias\+\_\+initialized}} () const
+\begin{DoxyCompactList}\small\item\em Check if the bias is initialized or not. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}} \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_a0eeb549b42c48974f3121e12aa7dd281}{get\+\_\+sensor\+\_\+data\+\_\+buffer\+\_\+ptr}} () const
+\begin{DoxyCompactList}\small\item\em Get the pointer to the sensor data buffer, which is a queue that contains all the measurements received from the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Initialze IMU bias}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_ada424877921c3c31f32dea9f704affda}{Init\+Imu\+Bias}} ()
+\begin{DoxyCompactList}\small\item\em Initialize IMU bias using the static assumption. This assumes the robot is static at a horizontal surface. (i.\+e. The gravity = /f\$9.80 m/s$^\wedge$2/f\$ is pointing downward.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Setters}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_a6a575ba77e8cd7562c48f52d9790c85e}{set\+\_\+initial\+\_\+state}} (\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&state) override
+\begin{DoxyCompactList}\small\item\em Set the initial state of the robot according to IMU measurement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfilter_1_1inekf_1_1ImuPropagation_a3b046e708ac1b5299efa132a23d7773d}{clear}} () override
+\begin{DoxyCompactList}\small\item\em Clear the sensor data buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A class for state propagation using imu measurement data. 
+
+A class for state propagation using imu measurement data. This propagation class holds methods for propagating the state forward by one step using one IMU data. The model is based on the paper\+: \href{https://journals.sagepub.com/doi/full/10.1177/0278364919894385}{\texttt{ https\+://journals.\+sagepub.\+com/doi/full/10.\+1177/0278364919894385}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1ImuPropagation_a02d2795444613332d41eb172e4ebc8e7}\label{classfilter_1_1inekf_1_1ImuPropagation_a02d2795444613332d41eb172e4ebc8e7}} 
+\index{filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}!ImuPropagation@{ImuPropagation}}
+\index{ImuPropagation@{ImuPropagation}!filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}}
+\doxysubsubsection{\texorpdfstring{ImuPropagation()}{ImuPropagation()}}
+{\footnotesize\ttfamily filter\+::inekf\+::\+Imu\+Propagation\+::\+Imu\+Propagation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}}}]{sensor\+\_\+data\+\_\+buffer\+\_\+ptr,  }\item[{std\+::shared\+\_\+ptr$<$ std\+::mutex $>$}]{sensor\+\_\+data\+\_\+buffer\+\_\+mutex\+\_\+ptr,  }\item[{const \mbox{\hyperlink{namespacefilter_1_1inekf_a7ef14ea922d7f9fc9e348cb4a18e1823}{Error\+Type}} \&}]{error\+\_\+type,  }\item[{const std\+::string \&}]{yaml\+\_\+filepath }\end{DoxyParamCaption})}
+
+
+
+Constructor for the propagation class. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sensor\+\_\+data\+\_\+buffer\+\_\+ptr} & Pointer to the buffer of sensor data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em sensor\+\_\+data\+\_\+buffer\+\_\+mutex\+\_\+ptr} & Pointer to the mutex for the. sensor data buffer. \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+type} & Error type for the propagation. Left\+Invariant or Right\+Invariant \\
+\hline
+\mbox{\texttt{ in}}  & {\em yaml\+\_\+filepath} & Path to the yaml file for the propagation \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1ImuPropagation_a3b046e708ac1b5299efa132a23d7773d}\label{classfilter_1_1inekf_1_1ImuPropagation_a3b046e708ac1b5299efa132a23d7773d}} 
+\index{filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}!clear@{clear}}
+\index{clear@{clear}!filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void filter\+::inekf\+::\+Imu\+Propagation\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clear the sensor data buffer. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classfilter_1_1Propagation_a8343c05b3a00cadd6fc6b9a747786805}{filter\+::\+Propagation}}.
+
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1ImuPropagation_afbfc6a1454d76de70cb15cfbf3dfa445}\label{classfilter_1_1inekf_1_1ImuPropagation_afbfc6a1454d76de70cb15cfbf3dfa445}} 
+\index{filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}!get\_bias\_initialized@{get\_bias\_initialized}}
+\index{get\_bias\_initialized@{get\_bias\_initialized}!filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}}
+\doxysubsubsection{\texorpdfstring{get\_bias\_initialized()}{get\_bias\_initialized()}}
+{\footnotesize\ttfamily const bool filter\+::inekf\+::\+Imu\+Propagation\+::get\+\_\+bias\+\_\+initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the bias is initialized or not. 
+
+\begin{DoxyReturn}{Returns}
+true\+: Bias has been successfully initialized or the static bias initialization feature is turned off. 
+
+false\+: The bias has not been initialized. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1ImuPropagation_abf389d980f3374fe0c5e505bf1bb199f}\label{classfilter_1_1inekf_1_1ImuPropagation_abf389d980f3374fe0c5e505bf1bb199f}} 
+\index{filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}!get\_estimate\_accel\_bias@{get\_estimate\_accel\_bias}}
+\index{get\_estimate\_accel\_bias@{get\_estimate\_accel\_bias}!filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}}
+\doxysubsubsection{\texorpdfstring{get\_estimate\_accel\_bias()}{get\_estimate\_accel\_bias()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d filter\+::inekf\+::\+Imu\+Propagation\+::get\+\_\+estimate\+\_\+accel\+\_\+bias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the estimate accel bias. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d\+:Estimated acceleration bias. (m/s$^\wedge$2) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1ImuPropagation_af7611c07f289cfd33a95918a85a59e46}\label{classfilter_1_1inekf_1_1ImuPropagation_af7611c07f289cfd33a95918a85a59e46}} 
+\index{filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}!get\_estimate\_gyro\_bias@{get\_estimate\_gyro\_bias}}
+\index{get\_estimate\_gyro\_bias@{get\_estimate\_gyro\_bias}!filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}}
+\doxysubsubsection{\texorpdfstring{get\_estimate\_gyro\_bias()}{get\_estimate\_gyro\_bias()}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector3d filter\+::inekf\+::\+Imu\+Propagation\+::get\+\_\+estimate\+\_\+gyro\+\_\+bias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the estimate gyro bias. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Vector3d\+: Estimated gyro bias. (rad/s) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1ImuPropagation_a0eeb549b42c48974f3121e12aa7dd281}\label{classfilter_1_1inekf_1_1ImuPropagation_a0eeb549b42c48974f3121e12aa7dd281}} 
+\index{filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}!get\_sensor\_data\_buffer\_ptr@{get\_sensor\_data\_buffer\_ptr}}
+\index{get\_sensor\_data\_buffer\_ptr@{get\_sensor\_data\_buffer\_ptr}!filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}}
+\doxysubsubsection{\texorpdfstring{get\_sensor\_data\_buffer\_ptr()}{get\_sensor\_data\_buffer\_ptr()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{type__def_8h_ac57b15fb1e344a7041a287e5d13e1b00}{IMUQueue\+Ptr}} filter\+::inekf\+::\+Imu\+Propagation\+::get\+\_\+sensor\+\_\+data\+\_\+buffer\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the pointer to the sensor data buffer, which is a queue that contains all the measurements received from the sensor. 
+
+\begin{DoxyReturn}{Returns}
+const IMUQueue\+Ptr\+: A smart pointer to the IMU measurement queue. {\ttfamily std\+::shared\+\_\+ptr\texorpdfstring{$<$}{<}std\+::queue\texorpdfstring{$<$}{<}std\+::shared\+\_\+ptr\texorpdfstring{$<$}{<}Imu\+Measurement\texorpdfstring{$<$}{<}double\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1ImuPropagation_ada424877921c3c31f32dea9f704affda}\label{classfilter_1_1inekf_1_1ImuPropagation_ada424877921c3c31f32dea9f704affda}} 
+\index{filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}!InitImuBias@{InitImuBias}}
+\index{InitImuBias@{InitImuBias}!filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}}
+\doxysubsubsection{\texorpdfstring{InitImuBias()}{InitImuBias()}}
+{\footnotesize\ttfamily void filter\+::inekf\+::\+Imu\+Propagation\+::\+Init\+Imu\+Bias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize IMU bias using the static assumption. This assumes the robot is static at a horizontal surface. (i.\+e. The gravity = /f\$9.80 m/s$^\wedge$2/f\$ is pointing downward.) 
+
+The function takes the first n data points, average their value, and subtract the gravity to get the initial bias. \mbox{\Hypertarget{classfilter_1_1inekf_1_1ImuPropagation_acb0e0bf386489dbda5c93537dda110f2}\label{classfilter_1_1inekf_1_1ImuPropagation_acb0e0bf386489dbda5c93537dda110f2}} 
+\index{filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}!Propagate@{Propagate}}
+\index{Propagate@{Propagate}!filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}}
+\doxysubsubsection{\texorpdfstring{Propagate()}{Propagate()}}
+{\footnotesize\ttfamily bool filter\+::inekf\+::\+Imu\+Propagation\+::\+Propagate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Propagates the estimated state mean and covariance forward using inertial measurements. All landmarks positions are assumed to be static. All contacts\textquotesingle{} velocities are assumed to be zero + Gaussian noise. The propagation model currently assumes that the covariance is for the right invariant error. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em state} & state of the robot. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: successfully propagate state or not (if we do not receive a new message and this method is called it\textquotesingle{}ll return false.) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classfilter_1_1Propagation_a62cd208396f8b969427b86eb0166de28}{filter\+::\+Propagation}}.
+
+\mbox{\Hypertarget{classfilter_1_1inekf_1_1ImuPropagation_a6a575ba77e8cd7562c48f52d9790c85e}\label{classfilter_1_1inekf_1_1ImuPropagation_a6a575ba77e8cd7562c48f52d9790c85e}} 
+\index{filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}!set\_initial\_state@{set\_initial\_state}}
+\index{set\_initial\_state@{set\_initial\_state}!filter::inekf::ImuPropagation@{filter::inekf::ImuPropagation}}
+\doxysubsubsection{\texorpdfstring{set\_initial\_state()}{set\_initial\_state()}}
+{\footnotesize\ttfamily bool filter\+::inekf\+::\+Imu\+Propagation\+::set\+\_\+initial\+\_\+state (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstate_1_1RobotState}{Robot\+State}} \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the initial state of the robot according to IMU measurement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em state} & The state of the robot, which will be initialized in this method \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+: whether the initialization is successful 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classfilter_1_1Propagation_a057bf3ffb21e71ccba0120f28695348d}{filter\+::\+Propagation}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/neofelis/\+VRX/drift/include/drift/filter/inekf/propagation/\mbox{\hyperlink{imu__propagation_8h}{imu\+\_\+propagation.\+h}}\item 
+/home/neofelis/\+VRX/drift/src/filter/inekf/propagation/\mbox{\hyperlink{imu__propagation_8cpp}{imu\+\_\+propagation.\+cpp}}\end{DoxyCompactItemize}
