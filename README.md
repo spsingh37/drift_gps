@@ -81,7 +81,7 @@ We provide several examples in the `ROS/examples` directory.
   ```
 
 ## Run examples
-1. First run the drift like following:<br>
+### First run the drift like following:
 **Clearpath Husky robot:**
 ```
 rosrun drift husky
@@ -113,7 +113,7 @@ rosrun drift girona500
 rosrun drift wamv_gps
 ```
 
-2. In another terminal:<br>
+### In another terminal:
 - Run the bag file:
 ```
 rosbag play circle.bag
