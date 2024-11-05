@@ -1,4 +1,0 @@
-<map id="filter::inekf::PoseCorrection" name="filter::inekf::PoseCorrection">
-<area shape="rect" id="node1" title="A class for state correction using pose measurement data." alt="" coords="5,79,204,104"/>
-<area shape="rect" id="node2" href="$classfilter_1_1Correction.html" title="Base class for correction method. This class just provides a skeleton for the correction method...." alt="" coords="41,5,169,31"/>
-</map>

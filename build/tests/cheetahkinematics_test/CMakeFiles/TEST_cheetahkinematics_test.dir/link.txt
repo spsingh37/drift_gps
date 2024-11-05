@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++17 -O3   CMakeFiles/TEST_cheetahkinematics_test.dir/cheetahkinematics_test.cpp.o  -o TEST_cheetahkinematics_test  ../../lib/libgtest_main.a ../../libdrift.a ../../lib/libgtest.a -lpthread 

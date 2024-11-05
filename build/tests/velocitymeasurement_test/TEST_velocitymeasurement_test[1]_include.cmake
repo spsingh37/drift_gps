@@ -1,5 +1,0 @@
-if(EXISTS "/home/neofelis/VRX/drift/build/tests/velocitymeasurement_test/TEST_velocitymeasurement_test[1]_tests.cmake")
-  include("/home/neofelis/VRX/drift/build/tests/velocitymeasurement_test/TEST_velocitymeasurement_test[1]_tests.cmake")
-else()
-  add_test(TEST_velocitymeasurement_test_NOT_BUILT TEST_velocitymeasurement_test_NOT_BUILT)
-endif()

@@ -1,8 +1,0 @@
-<map id="/home/neofelis/VRX/drift/include/drift/measurement/joint_state.h" name="/home/neofelis/VRX/drift/include/drift/measurement/joint_state.h">
-<area shape="rect" id="node1" title="Header file for robot joint state measurement." alt="" coords="125,5,328,60"/>
-<area shape="rect" id="node2" href="$measurement_8h.html" title="Header file for measurement base class." alt="" coords="76,115,201,141"/>
-<area shape="rect" id="node6" href="$joint__state__impl_8cpp.html" title="Implementation for joint_state measurement." alt="" coords="226,108,403,148"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,196,85,221"/>
-<area shape="rect" id="node4" title=" " alt="" coords="109,196,168,221"/>
-<area shape="rect" id="node5" title=" " alt="" coords="193,196,295,221"/>
-</map>
