@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/neofelis/VRX/drift/ROS/drift
+CMAKE_SOURCE_DIR = /home/neofelis/drift_gps/ROS/drift
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/neofelis/VRX/drift/ROS/drift/build
+CMAKE_BINARY_DIR = /home/neofelis/drift_gps/ROS/drift/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +126,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/neofelis/VRX/drift/ROS/drift/build/CMakeFiles /home/neofelis/VRX/drift/ROS/drift/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/neofelis/drift_gps/ROS/drift/build/CMakeFiles /home/neofelis/drift_gps/ROS/drift/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/neofelis/VRX/drift/ROS/drift/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/neofelis/drift_gps/ROS/drift/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -1445,1517 +1445,1517 @@ examples/wamv_gtodom_vel.cpp.s:
 	$(MAKE) -f CMakeFiles/wamv_gtodom_vel.dir/build.make CMakeFiles/wamv_gtodom_vel.dir/examples/wamv_gtodom_vel.cpp.s
 .PHONY : examples/wamv_gtodom_vel.cpp.s
 
-home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.o: home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.o
+home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.o: home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.o
-
-# target to build an object file
-home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.o:
-	$(MAKE) -f CMakeFiles/baselines.dir/build.make CMakeFiles/baselines.dir/home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.o
-.PHONY : home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.o
-
-home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.i: home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.i
-
-.PHONY : home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.i
-
-# target to preprocess a source file
-home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.i:
-	$(MAKE) -f CMakeFiles/baselines.dir/build.make CMakeFiles/baselines.dir/home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.i
-.PHONY : home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.i
-
-home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.s: home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.s
-
-.PHONY : home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.s
-
-# target to generate assembly for a file
-home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.s:
-	$(MAKE) -f CMakeFiles/baselines.dir/build.make CMakeFiles/baselines.dir/home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.s
-.PHONY : home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.s
-
-home/neofelis/VRX/drift/src/estimator/inekf_estimator.o: home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.o
-
-.PHONY : home/neofelis/VRX/drift/src/estimator/inekf_estimator.o
+.PHONY : home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.o
+home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.o:
+	$(MAKE) -f CMakeFiles/baselines.dir/build.make CMakeFiles/baselines.dir/home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.o
+.PHONY : home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.o
 
-home/neofelis/VRX/drift/src/estimator/inekf_estimator.i: home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.i
+home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.i: home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/estimator/inekf_estimator.i
+.PHONY : home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.i
+home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.i:
+	$(MAKE) -f CMakeFiles/baselines.dir/build.make CMakeFiles/baselines.dir/home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.i
+.PHONY : home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.i
 
-home/neofelis/VRX/drift/src/estimator/inekf_estimator.s: home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.s
+home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.s: home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/estimator/inekf_estimator.s
+.PHONY : home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/estimator/inekf_estimator.cpp.s
+home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.s:
+	$(MAKE) -f CMakeFiles/baselines.dir/build.make CMakeFiles/baselines.dir/home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.s
+.PHONY : home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.s
 
-home/neofelis/VRX/drift/src/filter/base_correction.o: home/neofelis/VRX/drift/src/filter/base_correction.cpp.o
+home/neofelis/drift_gps/src/estimator/inekf_estimator.o: home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/filter/base_correction.o
+.PHONY : home/neofelis/drift_gps/src/estimator/inekf_estimator.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/filter/base_correction.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/base_correction.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/filter/base_correction.cpp.o
+home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.o
+.PHONY : home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.o
 
-home/neofelis/VRX/drift/src/filter/base_correction.i: home/neofelis/VRX/drift/src/filter/base_correction.cpp.i
+home/neofelis/drift_gps/src/estimator/inekf_estimator.i: home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/filter/base_correction.i
+.PHONY : home/neofelis/drift_gps/src/estimator/inekf_estimator.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/filter/base_correction.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/base_correction.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/filter/base_correction.cpp.i
+home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.i
+.PHONY : home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.i
 
-home/neofelis/VRX/drift/src/filter/base_correction.s: home/neofelis/VRX/drift/src/filter/base_correction.cpp.s
+home/neofelis/drift_gps/src/estimator/inekf_estimator.s: home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/filter/base_correction.s
+.PHONY : home/neofelis/drift_gps/src/estimator/inekf_estimator.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/filter/base_correction.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/base_correction.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/filter/base_correction.cpp.s
+home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.s
+.PHONY : home/neofelis/drift_gps/src/estimator/inekf_estimator.cpp.s
 
-home/neofelis/VRX/drift/src/filter/base_propagation.o: home/neofelis/VRX/drift/src/filter/base_propagation.cpp.o
+home/neofelis/drift_gps/src/filter/base_correction.o: home/neofelis/drift_gps/src/filter/base_correction.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/filter/base_propagation.o
+.PHONY : home/neofelis/drift_gps/src/filter/base_correction.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/filter/base_propagation.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/base_propagation.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/filter/base_propagation.cpp.o
+home/neofelis/drift_gps/src/filter/base_correction.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/base_correction.cpp.o
+.PHONY : home/neofelis/drift_gps/src/filter/base_correction.cpp.o
 
-home/neofelis/VRX/drift/src/filter/base_propagation.i: home/neofelis/VRX/drift/src/filter/base_propagation.cpp.i
+home/neofelis/drift_gps/src/filter/base_correction.i: home/neofelis/drift_gps/src/filter/base_correction.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/filter/base_propagation.i
+.PHONY : home/neofelis/drift_gps/src/filter/base_correction.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/filter/base_propagation.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/base_propagation.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/filter/base_propagation.cpp.i
+home/neofelis/drift_gps/src/filter/base_correction.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/base_correction.cpp.i
+.PHONY : home/neofelis/drift_gps/src/filter/base_correction.cpp.i
 
-home/neofelis/VRX/drift/src/filter/base_propagation.s: home/neofelis/VRX/drift/src/filter/base_propagation.cpp.s
+home/neofelis/drift_gps/src/filter/base_correction.s: home/neofelis/drift_gps/src/filter/base_correction.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/filter/base_propagation.s
+.PHONY : home/neofelis/drift_gps/src/filter/base_correction.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/filter/base_propagation.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/base_propagation.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/filter/base_propagation.cpp.s
+home/neofelis/drift_gps/src/filter/base_correction.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/base_correction.cpp.s
+.PHONY : home/neofelis/drift_gps/src/filter/base_correction.cpp.s
 
-home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.o: home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.o
+home/neofelis/drift_gps/src/filter/base_propagation.o: home/neofelis/drift_gps/src/filter/base_propagation.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.o
+.PHONY : home/neofelis/drift_gps/src/filter/base_propagation.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.o
+home/neofelis/drift_gps/src/filter/base_propagation.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/base_propagation.cpp.o
+.PHONY : home/neofelis/drift_gps/src/filter/base_propagation.cpp.o
 
-home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.i: home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.i
+home/neofelis/drift_gps/src/filter/base_propagation.i: home/neofelis/drift_gps/src/filter/base_propagation.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.i
+.PHONY : home/neofelis/drift_gps/src/filter/base_propagation.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.i
+home/neofelis/drift_gps/src/filter/base_propagation.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/base_propagation.cpp.i
+.PHONY : home/neofelis/drift_gps/src/filter/base_propagation.cpp.i
 
-home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.s: home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.s
+home/neofelis/drift_gps/src/filter/base_propagation.s: home/neofelis/drift_gps/src/filter/base_propagation.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.s
+.PHONY : home/neofelis/drift_gps/src/filter/base_propagation.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.cpp.s
+home/neofelis/drift_gps/src/filter/base_propagation.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/base_propagation.cpp.s
+.PHONY : home/neofelis/drift_gps/src/filter/base_propagation.cpp.s
 
-home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.o: home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.o
+home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.o: home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.o
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.o
+home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.o
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.o
 
-home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.i: home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.i
+home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.i: home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.i
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.i
+home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.i
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.i
 
-home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.s: home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.s
+home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.s: home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.s
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp.s
+home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.s
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.cpp.s
 
-home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.o: home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.o
+home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.o: home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.o
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.o
+home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.o
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.o
 
-home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.i: home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.i
+home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.i: home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.i
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.i
+home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.i
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.i
 
-home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.s: home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.s
+home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.s: home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.s
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.cpp.s
+home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.s
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp.s
 
-home/neofelis/VRX/drift/src/filter/inekf/inekf.o: home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.o
+home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.o: home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/inekf.o
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.o
+home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.o
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.o
 
-home/neofelis/VRX/drift/src/filter/inekf/inekf.i: home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.i
+home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.i: home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/inekf.i
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.i
+home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.i
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.i
 
-home/neofelis/VRX/drift/src/filter/inekf/inekf.s: home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.s
+home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.s: home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/inekf.s
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/inekf.cpp.s
+home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.s
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.cpp.s
 
-home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.o: home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.o
+home/neofelis/drift_gps/src/filter/inekf/inekf.o: home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.o
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/inekf.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.o
+home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.o
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.o
 
-home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.i: home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.i
+home/neofelis/drift_gps/src/filter/inekf/inekf.i: home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.i
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/inekf.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.i
+home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.i
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.i
 
-home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.s: home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.s
+home/neofelis/drift_gps/src/filter/inekf/inekf.s: home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.s
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/inekf.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.cpp.s
+home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.s
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/inekf.cpp.s
 
-home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.o: home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.o
+home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.o: home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.o
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.o
+home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.o
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.o
 
-home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.i: home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.i
+home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.i: home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.i
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.i
+home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.i
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.i
 
-home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.s: home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.s
+home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.s: home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.s
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.cpp.s
+home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.s
+.PHONY : home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.o: home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.o
+home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.o: home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.o
+.PHONY : home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.o
+home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.o
+.PHONY : home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.i: home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.i
+home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.i: home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.i
+.PHONY : home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.i
+home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.i
+.PHONY : home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.s: home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.s
+home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.s: home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.s
+.PHONY : home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.cpp.s
+home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.s
+.PHONY : home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.o: home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.i: home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.s: home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.o: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.o
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.i: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.i
 
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.s: home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.cpp.s
 
-home/neofelis/VRX/drift/src/math/lie_group.o: home/neofelis/VRX/drift/src/math/lie_group.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.o: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/math/lie_group.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/math/lie_group.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/math/lie_group.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/math/lie_group.cpp.o
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.o
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.o
 
-home/neofelis/VRX/drift/src/math/lie_group.i: home/neofelis/VRX/drift/src/math/lie_group.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.i: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/math/lie_group.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/math/lie_group.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/math/lie_group.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/math/lie_group.cpp.i
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.i
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.i
 
-home/neofelis/VRX/drift/src/math/lie_group.s: home/neofelis/VRX/drift/src/math/lie_group.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.s: home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/math/lie_group.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/math/lie_group.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/math/lie_group.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/math/lie_group.cpp.s
+home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.s
+.PHONY : home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.cpp.s
 
-home/neofelis/VRX/drift/src/math/se_k_3.o: home/neofelis/VRX/drift/src/math/se_k_3.cpp.o
+home/neofelis/drift_gps/src/math/lie_group.o: home/neofelis/drift_gps/src/math/lie_group.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/math/se_k_3.o
+.PHONY : home/neofelis/drift_gps/src/math/lie_group.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/math/se_k_3.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/math/se_k_3.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/math/se_k_3.cpp.o
+home/neofelis/drift_gps/src/math/lie_group.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/math/lie_group.cpp.o
+.PHONY : home/neofelis/drift_gps/src/math/lie_group.cpp.o
 
-home/neofelis/VRX/drift/src/math/se_k_3.i: home/neofelis/VRX/drift/src/math/se_k_3.cpp.i
+home/neofelis/drift_gps/src/math/lie_group.i: home/neofelis/drift_gps/src/math/lie_group.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/math/se_k_3.i
+.PHONY : home/neofelis/drift_gps/src/math/lie_group.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/math/se_k_3.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/math/se_k_3.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/math/se_k_3.cpp.i
+home/neofelis/drift_gps/src/math/lie_group.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/math/lie_group.cpp.i
+.PHONY : home/neofelis/drift_gps/src/math/lie_group.cpp.i
 
-home/neofelis/VRX/drift/src/math/se_k_3.s: home/neofelis/VRX/drift/src/math/se_k_3.cpp.s
+home/neofelis/drift_gps/src/math/lie_group.s: home/neofelis/drift_gps/src/math/lie_group.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/math/se_k_3.s
+.PHONY : home/neofelis/drift_gps/src/math/lie_group.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/math/se_k_3.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/math/se_k_3.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/math/se_k_3.cpp.s
+home/neofelis/drift_gps/src/math/lie_group.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/math/lie_group.cpp.s
+.PHONY : home/neofelis/drift_gps/src/math/lie_group.cpp.s
 
-home/neofelis/VRX/drift/src/measurement/legged_kinematics.o: home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.o
+home/neofelis/drift_gps/src/math/se_k_3.o: home/neofelis/drift_gps/src/math/se_k_3.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/measurement/legged_kinematics.o
+.PHONY : home/neofelis/drift_gps/src/math/se_k_3.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.o
+home/neofelis/drift_gps/src/math/se_k_3.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/math/se_k_3.cpp.o
+.PHONY : home/neofelis/drift_gps/src/math/se_k_3.cpp.o
 
-home/neofelis/VRX/drift/src/measurement/legged_kinematics.i: home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.i
+home/neofelis/drift_gps/src/math/se_k_3.i: home/neofelis/drift_gps/src/math/se_k_3.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/measurement/legged_kinematics.i
+.PHONY : home/neofelis/drift_gps/src/math/se_k_3.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.i
+home/neofelis/drift_gps/src/math/se_k_3.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/math/se_k_3.cpp.i
+.PHONY : home/neofelis/drift_gps/src/math/se_k_3.cpp.i
 
-home/neofelis/VRX/drift/src/measurement/legged_kinematics.s: home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.s
+home/neofelis/drift_gps/src/math/se_k_3.s: home/neofelis/drift_gps/src/math/se_k_3.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/measurement/legged_kinematics.s
+.PHONY : home/neofelis/drift_gps/src/math/se_k_3.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/measurement/legged_kinematics.cpp.s
+home/neofelis/drift_gps/src/math/se_k_3.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/math/se_k_3.cpp.s
+.PHONY : home/neofelis/drift_gps/src/math/se_k_3.cpp.s
 
-home/neofelis/VRX/drift/src/measurement/measurement.o: home/neofelis/VRX/drift/src/measurement/measurement.cpp.o
+home/neofelis/drift_gps/src/measurement/legged_kinematics.o: home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/measurement/measurement.o
+.PHONY : home/neofelis/drift_gps/src/measurement/legged_kinematics.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/measurement/measurement.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/measurement/measurement.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/measurement/measurement.cpp.o
+home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.o
+.PHONY : home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.o
 
-home/neofelis/VRX/drift/src/measurement/measurement.i: home/neofelis/VRX/drift/src/measurement/measurement.cpp.i
+home/neofelis/drift_gps/src/measurement/legged_kinematics.i: home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/measurement/measurement.i
+.PHONY : home/neofelis/drift_gps/src/measurement/legged_kinematics.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/measurement/measurement.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/measurement/measurement.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/measurement/measurement.cpp.i
+home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.i
+.PHONY : home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.i
 
-home/neofelis/VRX/drift/src/measurement/measurement.s: home/neofelis/VRX/drift/src/measurement/measurement.cpp.s
+home/neofelis/drift_gps/src/measurement/legged_kinematics.s: home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/measurement/measurement.s
+.PHONY : home/neofelis/drift_gps/src/measurement/legged_kinematics.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/measurement/measurement.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/measurement/measurement.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/measurement/measurement.cpp.s
+home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.s
+.PHONY : home/neofelis/drift_gps/src/measurement/legged_kinematics.cpp.s
 
-home/neofelis/VRX/drift/src/state/robot_state.o: home/neofelis/VRX/drift/src/state/robot_state.cpp.o
+home/neofelis/drift_gps/src/measurement/measurement.o: home/neofelis/drift_gps/src/measurement/measurement.cpp.o
 
-.PHONY : home/neofelis/VRX/drift/src/state/robot_state.o
+.PHONY : home/neofelis/drift_gps/src/measurement/measurement.o
 
 # target to build an object file
-home/neofelis/VRX/drift/src/state/robot_state.cpp.o:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/state/robot_state.cpp.o
-.PHONY : home/neofelis/VRX/drift/src/state/robot_state.cpp.o
+home/neofelis/drift_gps/src/measurement/measurement.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/measurement/measurement.cpp.o
+.PHONY : home/neofelis/drift_gps/src/measurement/measurement.cpp.o
 
-home/neofelis/VRX/drift/src/state/robot_state.i: home/neofelis/VRX/drift/src/state/robot_state.cpp.i
+home/neofelis/drift_gps/src/measurement/measurement.i: home/neofelis/drift_gps/src/measurement/measurement.cpp.i
 
-.PHONY : home/neofelis/VRX/drift/src/state/robot_state.i
+.PHONY : home/neofelis/drift_gps/src/measurement/measurement.i
 
 # target to preprocess a source file
-home/neofelis/VRX/drift/src/state/robot_state.cpp.i:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/state/robot_state.cpp.i
-.PHONY : home/neofelis/VRX/drift/src/state/robot_state.cpp.i
+home/neofelis/drift_gps/src/measurement/measurement.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/measurement/measurement.cpp.i
+.PHONY : home/neofelis/drift_gps/src/measurement/measurement.cpp.i
 
-home/neofelis/VRX/drift/src/state/robot_state.s: home/neofelis/VRX/drift/src/state/robot_state.cpp.s
+home/neofelis/drift_gps/src/measurement/measurement.s: home/neofelis/drift_gps/src/measurement/measurement.cpp.s
 
-.PHONY : home/neofelis/VRX/drift/src/state/robot_state.s
+.PHONY : home/neofelis/drift_gps/src/measurement/measurement.s
 
 # target to generate assembly for a file
-home/neofelis/VRX/drift/src/state/robot_state.cpp.s:
-	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/VRX/drift/src/state/robot_state.cpp.s
-.PHONY : home/neofelis/VRX/drift/src/state/robot_state.cpp.s
+home/neofelis/drift_gps/src/measurement/measurement.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/measurement/measurement.cpp.s
+.PHONY : home/neofelis/drift_gps/src/measurement/measurement.cpp.s
+
+home/neofelis/drift_gps/src/state/robot_state.o: home/neofelis/drift_gps/src/state/robot_state.cpp.o
+
+.PHONY : home/neofelis/drift_gps/src/state/robot_state.o
+
+# target to build an object file
+home/neofelis/drift_gps/src/state/robot_state.cpp.o:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/state/robot_state.cpp.o
+.PHONY : home/neofelis/drift_gps/src/state/robot_state.cpp.o
+
+home/neofelis/drift_gps/src/state/robot_state.i: home/neofelis/drift_gps/src/state/robot_state.cpp.i
+
+.PHONY : home/neofelis/drift_gps/src/state/robot_state.i
+
+# target to preprocess a source file
+home/neofelis/drift_gps/src/state/robot_state.cpp.i:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/state/robot_state.cpp.i
+.PHONY : home/neofelis/drift_gps/src/state/robot_state.cpp.i
+
+home/neofelis/drift_gps/src/state/robot_state.s: home/neofelis/drift_gps/src/state/robot_state.cpp.s
+
+.PHONY : home/neofelis/drift_gps/src/state/robot_state.s
+
+# target to generate assembly for a file
+home/neofelis/drift_gps/src/state/robot_state.cpp.s:
+	$(MAKE) -f CMakeFiles/drift.dir/build.make CMakeFiles/drift.dir/home/neofelis/drift_gps/src/state/robot_state.cpp.s
+.PHONY : home/neofelis/drift_gps/src/state/robot_state.cpp.s
 
 src/communication/ros_publisher.o: src/communication/ros_publisher.cpp.o
 
@@ -3136,174 +3136,174 @@ help:
 	@echo "... examples/wamv_gtodom_vel.o"
 	@echo "... examples/wamv_gtodom_vel.i"
 	@echo "... examples/wamv_gtodom_vel.s"
-	@echo "... home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.o"
-	@echo "... home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.i"
-	@echo "... home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.s"
-	@echo "... home/neofelis/VRX/drift/src/estimator/inekf_estimator.o"
-	@echo "... home/neofelis/VRX/drift/src/estimator/inekf_estimator.i"
-	@echo "... home/neofelis/VRX/drift/src/estimator/inekf_estimator.s"
-	@echo "... home/neofelis/VRX/drift/src/filter/base_correction.o"
-	@echo "... home/neofelis/VRX/drift/src/filter/base_correction.i"
-	@echo "... home/neofelis/VRX/drift/src/filter/base_correction.s"
-	@echo "... home/neofelis/VRX/drift/src/filter/base_propagation.o"
-	@echo "... home/neofelis/VRX/drift/src/filter/base_propagation.i"
-	@echo "... home/neofelis/VRX/drift/src/filter/base_propagation.s"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.o"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.i"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/correction/legged_kinematics_correction.s"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.o"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.i"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.s"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.o"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.i"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/correction/velocity_correction.s"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/inekf.o"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/inekf.i"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/inekf.s"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.o"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.i"
-	@echo "... home/neofelis/VRX/drift/src/filter/inekf/propagation/imu_propagation.s"
-	@echo "... home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.o"
-	@echo "... home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.i"
-	@echo "... home/neofelis/VRX/drift/src/imu_filter/imu_ang_vel_ekf.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/mini_cheetah_kinematics.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.o"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.i"
-	@echo "... home/neofelis/VRX/drift/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.s"
-	@echo "... home/neofelis/VRX/drift/src/math/lie_group.o"
-	@echo "... home/neofelis/VRX/drift/src/math/lie_group.i"
-	@echo "... home/neofelis/VRX/drift/src/math/lie_group.s"
-	@echo "... home/neofelis/VRX/drift/src/math/se_k_3.o"
-	@echo "... home/neofelis/VRX/drift/src/math/se_k_3.i"
-	@echo "... home/neofelis/VRX/drift/src/math/se_k_3.s"
-	@echo "... home/neofelis/VRX/drift/src/measurement/legged_kinematics.o"
-	@echo "... home/neofelis/VRX/drift/src/measurement/legged_kinematics.i"
-	@echo "... home/neofelis/VRX/drift/src/measurement/legged_kinematics.s"
-	@echo "... home/neofelis/VRX/drift/src/measurement/measurement.o"
-	@echo "... home/neofelis/VRX/drift/src/measurement/measurement.i"
-	@echo "... home/neofelis/VRX/drift/src/measurement/measurement.s"
-	@echo "... home/neofelis/VRX/drift/src/state/robot_state.o"
-	@echo "... home/neofelis/VRX/drift/src/state/robot_state.i"
-	@echo "... home/neofelis/VRX/drift/src/state/robot_state.s"
+	@echo "... home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.o"
+	@echo "... home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.i"
+	@echo "... home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.s"
+	@echo "... home/neofelis/drift_gps/src/estimator/inekf_estimator.o"
+	@echo "... home/neofelis/drift_gps/src/estimator/inekf_estimator.i"
+	@echo "... home/neofelis/drift_gps/src/estimator/inekf_estimator.s"
+	@echo "... home/neofelis/drift_gps/src/filter/base_correction.o"
+	@echo "... home/neofelis/drift_gps/src/filter/base_correction.i"
+	@echo "... home/neofelis/drift_gps/src/filter/base_correction.s"
+	@echo "... home/neofelis/drift_gps/src/filter/base_propagation.o"
+	@echo "... home/neofelis/drift_gps/src/filter/base_propagation.i"
+	@echo "... home/neofelis/drift_gps/src/filter/base_propagation.s"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.o"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.i"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/correction/legged_kinematics_correction.s"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.o"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.i"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.s"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.o"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.i"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/correction/velocity_correction.s"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/inekf.o"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/inekf.i"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/inekf.s"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.o"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.i"
+	@echo "... home/neofelis/drift_gps/src/filter/inekf/propagation/imu_propagation.s"
+	@echo "... home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.o"
+	@echo "... home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.i"
+	@echo "... home/neofelis/drift_gps/src/imu_filter/imu_ang_vel_ekf.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/mini_cheetah_kinematics.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_FrontRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/H_Body_to_HindRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_FrontRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jb_Body_to_HindRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_FrontRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jp_Body_to_HindRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_FrontRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Js_Body_to_HindRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_FrontRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvb_Body_to_HindRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_FrontRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jvs_Body_to_HindRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_FrontRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jwb_Body_to_HindRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_FrontRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/Jws_Body_to_HindRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_FrontRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/R_Body_to_HindRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_FrontRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindLeftFoot.s"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.o"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.i"
+	@echo "... home/neofelis/drift_gps/src/kinematics/robots/mini_cheetah/p_Body_to_HindRightFoot.s"
+	@echo "... home/neofelis/drift_gps/src/math/lie_group.o"
+	@echo "... home/neofelis/drift_gps/src/math/lie_group.i"
+	@echo "... home/neofelis/drift_gps/src/math/lie_group.s"
+	@echo "... home/neofelis/drift_gps/src/math/se_k_3.o"
+	@echo "... home/neofelis/drift_gps/src/math/se_k_3.i"
+	@echo "... home/neofelis/drift_gps/src/math/se_k_3.s"
+	@echo "... home/neofelis/drift_gps/src/measurement/legged_kinematics.o"
+	@echo "... home/neofelis/drift_gps/src/measurement/legged_kinematics.i"
+	@echo "... home/neofelis/drift_gps/src/measurement/legged_kinematics.s"
+	@echo "... home/neofelis/drift_gps/src/measurement/measurement.o"
+	@echo "... home/neofelis/drift_gps/src/measurement/measurement.i"
+	@echo "... home/neofelis/drift_gps/src/measurement/measurement.s"
+	@echo "... home/neofelis/drift_gps/src/state/robot_state.o"
+	@echo "... home/neofelis/drift_gps/src/state/robot_state.i"
+	@echo "... home/neofelis/drift_gps/src/state/robot_state.s"
 	@echo "... src/communication/ros_publisher.o"
 	@echo "... src/communication/ros_publisher.i"
 	@echo "... src/communication/ros_publisher.s"

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/usr/src/googletest/googletest/src/gtest_main.cc" "/home/neofelis/VRX/drift/ROS/drift/build/gtest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+  "/usr/src/googletest/googletest/src/gtest_main.cc" "/home/neofelis/drift_gps/ROS/drift/build/gtest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/neofelis/VRX/drift/ROS/drift/include"
+  "/home/neofelis/drift_gps/ROS/drift/include"
   "/opt/ros/noetic/include"
   "/usr/src/googletest/googletest/include"
   "/usr/src/googletest/googletest"
@@ -25,7 +25,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/neofelis/VRX/drift/ROS/drift/build/gtest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/neofelis/drift_gps/ROS/drift/build/gtest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

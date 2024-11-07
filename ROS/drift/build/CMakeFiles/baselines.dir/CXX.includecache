@@ -138,9 +138,9 @@ drift/measurement/velocity.h
 drift/state/robot_state.h
 ../../../include/drift/utils/drift/state/robot_state.h
 
-/home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp
+/home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp
 wheel_odometry/wheel_odometry.h
-/home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry/wheel_odometry.h
+/home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry/wheel_odometry.h
 
 /usr/local/include/eigen3/Eigen/Cholesky
 Core

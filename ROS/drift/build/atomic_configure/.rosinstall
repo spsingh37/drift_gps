@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/neofelis/VRX/drift/ROS/drift/build/devel/setup.sh
+    local-name: /home/neofelis/drift_gps/ROS/drift/build/devel/setup.sh

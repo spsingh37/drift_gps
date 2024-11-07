@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/neofelis/VRX/drift/ROS/drift
+CMAKE_SOURCE_DIR = /home/neofelis/drift_gps/ROS/drift
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/neofelis/VRX/drift/ROS/drift/build
+CMAKE_BINARY_DIR = /home/neofelis/drift_gps/ROS/drift/build
 
 # Utility rule file for download_extra_data.
 
@@ -67,6 +67,6 @@ CMakeFiles/download_extra_data.dir/clean:
 .PHONY : CMakeFiles/download_extra_data.dir/clean
 
 CMakeFiles/download_extra_data.dir/depend:
-	cd /home/neofelis/VRX/drift/ROS/drift/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neofelis/VRX/drift/ROS/drift /home/neofelis/VRX/drift/ROS/drift /home/neofelis/VRX/drift/ROS/drift/build /home/neofelis/VRX/drift/ROS/drift/build /home/neofelis/VRX/drift/ROS/drift/build/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/neofelis/drift_gps/ROS/drift/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neofelis/drift_gps/ROS/drift /home/neofelis/drift_gps/ROS/drift /home/neofelis/drift_gps/ROS/drift/build /home/neofelis/drift_gps/ROS/drift/build /home/neofelis/drift_gps/ROS/drift/build/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/download_extra_data.dir/depend
 

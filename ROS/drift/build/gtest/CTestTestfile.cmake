@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
 # Source directory: /usr/src/googletest
-# Build directory: /home/neofelis/VRX/drift/ROS/drift/build/gtest
+# Build directory: /home/neofelis/drift_gps/ROS/drift/build/gtest
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

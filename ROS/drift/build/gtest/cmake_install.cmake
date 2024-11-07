@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/neofelis/VRX/drift/ROS/drift/build/gtest/googlemock/cmake_install.cmake")
+  include("/home/neofelis/drift_gps/ROS/drift/build/gtest/googlemock/cmake_install.cmake")
 
 endif()
 

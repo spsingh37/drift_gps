@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST
 
 CXX_DEFINES = -DGTEST_CREATE_SHARED_LIBRARY=1 -DROS_PACKAGE_NAME=\"drift\" -Dgtest_EXPORTS
 
-CXX_INCLUDES = -I/home/neofelis/VRX/drift/ROS/drift/include -I/opt/ros/noetic/include -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest 
+CXX_INCLUDES = -I/home/neofelis/drift_gps/ROS/drift/include -I/opt/ros/noetic/include -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest 
 

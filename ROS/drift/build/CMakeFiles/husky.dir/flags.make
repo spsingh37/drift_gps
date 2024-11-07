@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall  -O3 -march=native -O3 -DNDEBUG   -W -Wall -Wno-unused-parame
 
 CXX_DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_CHRONO_DYN_LINK -DBOOST_TIMER_DYN_LINK -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"drift\"
 
-CXX_INCLUDES = -I/home/neofelis/VRX/drift/ROS/drift/../../baselines/include -isystem /home/neofelis/VRX/drift/ROS/drift/include -isystem /opt/ros/noetic/include -isystem /home/neofelis/VRX/drift/ROS/drift/../../include -isystem /usr/local/include/eigen3 -isystem /usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/../../../../../include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/neofelis/drift_gps/ROS/drift/../../baselines/include -isystem /home/neofelis/drift_gps/ROS/drift/include -isystem /opt/ros/noetic/include -isystem /home/neofelis/drift_gps/ROS/drift/../../include -isystem /usr/local/include/eigen3 -isystem /usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/../../../../../include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

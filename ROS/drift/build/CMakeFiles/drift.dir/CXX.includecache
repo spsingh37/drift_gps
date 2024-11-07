@@ -174,9 +174,9 @@ drift/measurement/velocity.h
 drift/state/robot_state.h
 ../../../include/drift/utils/drift/state/robot_state.h
 
-/home/neofelis/VRX/drift/src/filter/inekf/correction/position_correction.cpp
+/home/neofelis/drift_gps/src/filter/inekf/correction/position_correction.cpp
 drift/filter/inekf/correction/position_correction.h
-/home/neofelis/VRX/drift/src/filter/inekf/correction/drift/filter/inekf/correction/position_correction.h
+/home/neofelis/drift_gps/src/filter/inekf/correction/drift/filter/inekf/correction/position_correction.h
 fstream
 -
 

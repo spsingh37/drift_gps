@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/neofelis/VRX/drift/ROS/drift
+CMAKE_SOURCE_DIR = /home/neofelis/drift_gps/ROS/drift
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/neofelis/VRX/drift/ROS/drift/build
+CMAKE_BINARY_DIR = /home/neofelis/drift_gps/ROS/drift/build
 
 # Utility rule file for clean_test_results.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/neofelis/VRX/drift/ROS/drift/build
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/home/neofelis/anaconda3/envs/VRX/bin/python /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/neofelis/VRX/drift/ROS/drift/build/test_results
+	/home/neofelis/anaconda3/bin/python /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/neofelis/drift_gps/ROS/drift/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 CMakeFiles/clean_test_results.dir/depend:
-	cd /home/neofelis/VRX/drift/ROS/drift/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neofelis/VRX/drift/ROS/drift /home/neofelis/VRX/drift/ROS/drift /home/neofelis/VRX/drift/ROS/drift/build /home/neofelis/VRX/drift/ROS/drift/build /home/neofelis/VRX/drift/ROS/drift/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/neofelis/drift_gps/ROS/drift/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neofelis/drift_gps/ROS/drift /home/neofelis/drift_gps/ROS/drift /home/neofelis/drift_gps/ROS/drift/build /home/neofelis/drift_gps/ROS/drift/build /home/neofelis/drift_gps/ROS/drift/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results.dir/depend
 

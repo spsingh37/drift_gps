@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall  -O3 -march=native -O3 -DNDEBUG -fPIC   -W -Wall -Wno-unused-
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"drift\" -Dros_communication_lib_EXPORTS
 
-CXX_INCLUDES = -I/home/neofelis/VRX/drift/ROS/drift/../../baselines/include -isystem /home/neofelis/VRX/drift/ROS/drift/include -isystem /opt/ros/noetic/include -isystem /home/neofelis/VRX/drift/ROS/drift/../../include -isystem /usr/local/include/eigen3 -isystem /usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/../../../../../include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/neofelis/drift_gps/ROS/drift/../../baselines/include -isystem /home/neofelis/drift_gps/ROS/drift/include -isystem /opt/ros/noetic/include -isystem /home/neofelis/drift_gps/ROS/drift/../../include -isystem /usr/local/include/eigen3 -isystem /usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/../../../../../include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

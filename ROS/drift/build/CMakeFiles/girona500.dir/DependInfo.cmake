@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/neofelis/VRX/drift/ROS/drift/examples/girona500.cpp" "/home/neofelis/VRX/drift/ROS/drift/build/CMakeFiles/girona500.dir/examples/girona500.cpp.o"
+  "/home/neofelis/drift_gps/ROS/drift/examples/girona500.cpp" "/home/neofelis/drift_gps/ROS/drift/build/CMakeFiles/girona500.dir/examples/girona500.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -31,8 +31,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/neofelis/VRX/drift/ROS/drift/build/CMakeFiles/ros_communication_lib.dir/DependInfo.cmake"
-  "/home/neofelis/VRX/drift/ROS/drift/build/CMakeFiles/drift.dir/DependInfo.cmake"
+  "/home/neofelis/drift_gps/ROS/drift/build/CMakeFiles/ros_communication_lib.dir/DependInfo.cmake"
+  "/home/neofelis/drift_gps/ROS/drift/build/CMakeFiles/drift.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

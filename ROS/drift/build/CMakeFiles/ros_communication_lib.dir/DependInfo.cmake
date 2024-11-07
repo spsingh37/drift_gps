@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/neofelis/VRX/drift/ROS/drift/src/communication/ros_publisher.cpp" "/home/neofelis/VRX/drift/ROS/drift/build/CMakeFiles/ros_communication_lib.dir/src/communication/ros_publisher.cpp.o"
-  "/home/neofelis/VRX/drift/ROS/drift/src/communication/ros_subscriber.cpp" "/home/neofelis/VRX/drift/ROS/drift/build/CMakeFiles/ros_communication_lib.dir/src/communication/ros_subscriber.cpp.o"
+  "/home/neofelis/drift_gps/ROS/drift/src/communication/ros_publisher.cpp" "/home/neofelis/drift_gps/ROS/drift/build/CMakeFiles/ros_communication_lib.dir/src/communication/ros_publisher.cpp.o"
+  "/home/neofelis/drift_gps/ROS/drift/src/communication/ros_subscriber.cpp" "/home/neofelis/drift_gps/ROS/drift/build/CMakeFiles/ros_communication_lib.dir/src/communication/ros_subscriber.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

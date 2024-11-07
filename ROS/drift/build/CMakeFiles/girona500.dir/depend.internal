@@ -39,7 +39,7 @@ CMakeFiles/girona500.dir/examples/girona500.cpp.o
  ../include/communication/ros_subscriber.h
  ../include/custom_sensor_msgs/Contact.h
  ../include/custom_sensor_msgs/ContactArray.h
- /home/neofelis/VRX/drift/ROS/drift/examples/girona500.cpp
+ /home/neofelis/drift_gps/ROS/drift/examples/girona500.cpp
  /opt/ros/noetic/include/geometry_msgs/Point.h
  /opt/ros/noetic/include/geometry_msgs/Pose.h
  /opt/ros/noetic/include/geometry_msgs/PoseStamped.h

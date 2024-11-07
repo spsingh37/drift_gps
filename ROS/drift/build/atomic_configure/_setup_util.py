@@ -1,4 +1,4 @@
-#!/home/neofelis/anaconda3/envs/VRX/bin/python
+#!/home/neofelis/anaconda3/bin/python
 # -*- coding: utf-8 -*-
 
 # Software License Agreement (BSD License)

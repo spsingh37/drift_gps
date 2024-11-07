@@ -472,9 +472,9 @@ std_msgs/Header.h
 custom_sensor_msgs/Contact.h
 -
 
-/home/neofelis/VRX/drift/ROS/drift/src/communication/ros_subscriber.cpp
+/home/neofelis/drift_gps/ROS/drift/src/communication/ros_subscriber.cpp
 communication/ros_subscriber.h
-/home/neofelis/VRX/drift/ROS/drift/src/communication/communication/ros_subscriber.h
+/home/neofelis/drift_gps/ROS/drift/src/communication/communication/ros_subscriber.h
 
 /opt/ros/noetic/include/geometry_msgs/Point.h
 string

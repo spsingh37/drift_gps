@@ -3,7 +3,7 @@ file(REMOVE_RECURSE
   "../lib/libbaselines.so"
   "../msg_gen"
   "../src/drift/msg"
-  "CMakeFiles/baselines.dir/home/neofelis/VRX/drift/baselines/src/wheel_odometry/wheel_odometry.cpp.o"
+  "CMakeFiles/baselines.dir/home/neofelis/drift_gps/baselines/src/wheel_odometry/wheel_odometry.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.
