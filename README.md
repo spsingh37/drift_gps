@@ -81,7 +81,6 @@ We provide several examples in the `ROS/examples` directory.
   ```
 
 ## Run examples
-1. First run the drift like following:
 **Clearpath Husky robot:**
 ```
 rosrun drift husky
@@ -108,19 +107,9 @@ rosrun drift girona500
 ```
 
 **WAMV (Surface vehicle):**
-* With GPS-based position correction *
+* With GPS-based position correction:
 ```
 rosrun drift wamv_gps
-```
-
-2. In another terminal:
-- Run the bag file:
-```
-rosbag play circle.bag
-```
-- (Optional) If using odometry for correction, you can also visualize the odometry-based path in rviz, in addition to running the bag file:
-```
-./bag_gtodom.sh
 ```
 
 ## Run the repo with your own robots:
